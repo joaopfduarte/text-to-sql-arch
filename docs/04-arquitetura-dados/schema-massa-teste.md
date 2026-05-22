@@ -31,22 +31,22 @@ O subconjunto XPTO substitui qualquer schema sintético legado como única massa
 
 Critério de seleção: tabelas com FKs explícitas no export (notação `-> tabela.coluna`) ou tabelas-âncora de domínios distintos para cobrir filtros, agregações e junções.
 
-| Tabela | Domínio | Função na avaliação | Evidência |
-|--------|---------|---------------------|-----------|
-| `tbl_b35a889b` | Franquias | Tabela-âncora, possui FKs `col_65a24b80`, `col_d1dee7b9`. | [`base de referência XPTO.md` L1173–1215](../monografia.md) |
-| `tbl_68086640` | Franquias | Lookup para junções 1:N a partir de `tbl_b35a889b`. | [`base de referência XPTO.md` L1407+](../monografia.md) |
-| `tbl_3decb5f8` | Franquias | Lookup para junções 1:N a partir de `tbl_b35a889b`. | [`base de referência XPTO.md` L1319+](../monografia.md) |
-| `tbl_619e750e` | Franquias | Granularidade fina, suporta agregações. | [`base de referência XPTO.md` L1494+](../monografia.md) |
-| `tbl_ea4e241a` | Projetos | Tabela-âncora, enum `col_be09dec4`. | [`base de referência XPTO.md` L2709+](../monografia.md) |
-| `tbl_dd1db895` | Projetos | Filhos de `tbl_ea4e241a`, suporta junção + filtro. | [`base de referência XPTO.md` L3249+](../monografia.md) |
-| `tbl_68a51161` | Projetos | Permite agregações monetárias. | [`base de referência XPTO.md` L3385+](../monografia.md) |
-| `tbl_3246b982` | Pessoa | Tabela-âncora referenciada por múltiplos domínios. | [`base de referência XPTO.md` L2198+](../monografia.md) |
-| `tbl_7f77967c` | Produto | Tabela-âncora simples, junções com `tbl_74a9f8a6`. | [`base de referência XPTO.md` L2550+](../monografia.md) |
-| `tbl_74a9f8a6` | Produto | Lookup. | [`base de referência XPTO.md` L2668+](../monografia.md) |
-| `tbl_baf8a113` | Transação | Tabela-âncora, suporta agregações e filtros temporais. | [`base de referência XPTO.md` L5343+](../monografia.md) |
-| `tbl_f57abbbd` | Transação | Junção 1:N, cenário de filtro condicional. | [`base de referência XPTO.md` L5462+](../monografia.md) |
-| `tbl_1d129a77` | Geografia | Junção geográfica com FK para `tbl_f8413ca9`. | [`base de referência XPTO.md` L1523+](../monografia.md) |
-| `tbl_f8413ca9` | Geografia | Lookup. | [`base de referência XPTO.md` L1801+](../monografia.md) |
+| Tabela | Função na avaliação | Evidência |
+|--------|---------------------|-----------|
+| `tbl_b35a889b` | Tabela-âncora, possui FKs `col_65a24b80`, `col_d1dee7b9`. | [`base de referência XPTO.md` L1173–1215](../monografia.md) |
+| `tbl_68086640` | Lookup para junções 1:N a partir de `tbl_b35a889b`. | [`base de referência XPTO.md` L1407+](../monografia.md) |
+| `tbl_3decb5f8` | Lookup para junções 1:N a partir de `tbl_b35a889b`. | [`base de referência XPTO.md` L1319+](../monografia.md) |
+| `tbl_619e750e` | Granularidade fina, suporta agregações. | [`base de referência XPTO.md` L1494+](../monografia.md) |
+| `tbl_ea4e241a` | Tabela-âncora, enum `col_be09dec4`. | [`base de referência XPTO.md` L2709+](../monografia.md) |
+| `tbl_dd1db895` | Filhos de `tbl_ea4e241a`, suporta junção + filtro. | [`base de referência XPTO.md` L3249+](../monografia.md) |
+| `tbl_68a51161` | Permite agregações monetárias. | [`base de referência XPTO.md` L3385+](../monografia.md) |
+| `tbl_3246b982` | Tabela-âncora referenciada por múltiplas tabelas do subconjunto. | [`base de referência XPTO.md` L2198+](../monografia.md) |
+| `tbl_7f77967c` | Tabela-âncora simples, junções com `tbl_74a9f8a6`. | [`base de referência XPTO.md` L2550+](../monografia.md) |
+| `tbl_74a9f8a6` | Lookup. | [`base de referência XPTO.md` L2668+](../monografia.md) |
+| `tbl_baf8a113` | Tabela-âncora, suporta agregações e filtros temporais. | [`base de referência XPTO.md` L5343+](../monografia.md) |
+| `tbl_f57abbbd` | Junção 1:N, cenário de filtro condicional. | [`base de referência XPTO.md` L5462+](../monografia.md) |
+| `tbl_1d129a77` | Junção geográfica com FK para `tbl_f8413ca9`. | [`base de referência XPTO.md` L1523+](../monografia.md) |
+| `tbl_f8413ca9` | Lookup. | [`base de referência XPTO.md` L1801+](../monografia.md) |
 
 ### FKs confirmadas do subconjunto
 
