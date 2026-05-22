@@ -15,6 +15,11 @@
   --title: #1a1a1a;
   --primary: #1a1a1a;
   --background: #fafafa;
+  /* Layout */
+  --doc-max-width: 1440px;
+  --doc-page-gutter: clamp(1.25rem, 3vw, 2.5rem);
+  --doc-sidebar-width: 18rem;
+  --doc-layout-gap: 2rem;
 }
 
 html[data-bs-theme="dark"] {
@@ -42,6 +47,105 @@ body {
   line-height: 1.65;
   background-color: var(--doc-bg) !important;
   color: var(--doc-text) !important;
+}
+
+/* Shell: largura útil maior, com respiro nas laterais */
+body > .container {
+  max-width: var(--doc-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--doc-page-gutter);
+  padding-right: var(--doc-page-gutter);
+}
+
+/* Header em largura total; textos mantêm a posição atual */
+body > .container > header {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  background-color: var(--doc-surface);
+  border-bottom: 1px solid var(--doc-border);
+}
+
+body > .container > header .navbar {
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: none !important;
+  max-width: var(--doc-max-width);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Conteúdo do header alinhado ao corpo (mesma caixa que main/sidebar) */
+body > .container > header .navbar .container-fluid {
+  max-width: var(--doc-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--doc-page-gutter);
+  padding-right: var(--doc-page-gutter);
+  box-sizing: border-box;
+}
+
+/* Área principal: sem segundo .container Bootstrap (ver overrides/base.html) */
+main > .doc-layout,
+main > .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+main > .container > .row {
+  --bs-gutter-x: var(--doc-layout-gap);
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  main > .container > .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  main > .container > .row > #component-sidebar.col-md-3 {
+    flex: 0 0 var(--doc-sidebar-width) !important;
+    width: var(--doc-sidebar-width) !important;
+    max-width: var(--doc-sidebar-width) !important;
+  }
+
+  main > .container > .row > #component-content.col-md-9 {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0;
+  }
+}
+
+/* Coluna de conteúdo + artigo sem segundo .container Bootstrap */
+#component-content.col-md-9 {
+  max-width: none !important;
+  width: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.doc-article,
+#component-content .post {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
 }
 
 .site-name,
@@ -156,16 +260,18 @@ body {
   display: none !important;
 }
 
-#component-content.post,
+.doc-article,
 #component-content article {
   background-color: var(--doc-surface);
-  padding: 1rem 1.25rem;
+  padding: 1.5rem 2rem;
   border: 1px solid var(--doc-border);
   border-radius: 0.25rem;
+  box-sizing: border-box;
 }
 
 .post-content {
   width: 100%;
+  max-width: none;
 }
 
 .post-content > h1:first-child {
