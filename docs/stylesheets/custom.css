@@ -16,10 +16,10 @@
   --primary: #1a1a1a;
   --background: #fafafa;
   /* Layout */
-  --doc-max-width: 1440px;
+  --doc-max-width: 1280px;
   --doc-page-gutter: clamp(1.25rem, 3vw, 2.5rem);
-  --doc-sidebar-width: 18rem;
-  --doc-layout-gap: 2rem;
+  --doc-sidebar-width: 17rem;
+  --doc-layout-gap: 1.75rem;
 }
 
 html[data-bs-theme="dark"] {
@@ -103,6 +103,7 @@ main > .container {
   margin-right: 0 !important;
 }
 
+main > .doc-layout > .row.doc-row,
 main > .container > .row {
   --bs-gutter-x: var(--doc-layout-gap);
   margin-left: 0;
@@ -111,41 +112,50 @@ main > .container > .row {
 }
 
 @media (min-width: 768px) {
+  main > .doc-layout > .row.doc-row,
   main > .container > .row {
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
   }
 
+  main > .doc-layout > .row.doc-row > #component-sidebar.col-md-3,
   main > .container > .row > #component-sidebar.col-md-3 {
     flex: 0 0 var(--doc-sidebar-width) !important;
     width: var(--doc-sidebar-width) !important;
     max-width: var(--doc-sidebar-width) !important;
+    min-width: 0;
   }
 
+  main > .doc-layout > .row.doc-row > #component-content.col-md-9,
   main > .container > .row > #component-content.col-md-9 {
-    flex: 1 1 auto !important;
-    width: auto !important;
-    max-width: none !important;
+    flex: 1 1 0 !important;
+    width: 0 !important;
+    max-width: 100% !important;
     min-width: 0;
   }
 }
 
-/* Coluna de conteúdo + artigo sem segundo .container Bootstrap */
+/* Coluna de conteúdo: limitada à área ao lado da sidebar */
 #component-content.col-md-9 {
-  max-width: none !important;
-  width: auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  min-width: 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .doc-article,
 #component-content .post {
-  max-width: none !important;
+  max-width: 100% !important;
   width: 100% !important;
+  min-width: 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin: 0 !important;
+  box-sizing: border-box;
 }
 
 .site-name,
@@ -188,6 +198,13 @@ main > .container > .row {
   position: sticky;
   top: 1rem;
   align-self: flex-start;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#site-nav-sidebar {
+  width: 100%;
+  max-width: 100%;
 }
 
 #component-sidebar .sidebar,
@@ -271,7 +288,43 @@ main > .container > .row {
 
 .post-content {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.post-content > * {
+  max-width: 100%;
+}
+
+.post-content pre,
+.post-content table,
+.post-content .mermaid,
+.post-content img,
+.post-content svg {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.post-content pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+.post-content img,
+.post-content svg {
+  height: auto;
 }
 
 .post-content > h1:first-child {

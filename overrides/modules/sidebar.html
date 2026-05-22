@@ -1,5 +1,5 @@
 <!-- Navegação do site à esquerda + sumário da página -->
-<div class="navbar-expand-md" role="navigation" id="site-nav-sidebar">
+<nav role="navigation" id="site-nav-sidebar" aria-label="Navegação do site">
     {% macro site_nav_item(item) %}
         <li class="nav-item site-nav-item" data-level="{{ item.level }}">
             {%- if item.children %}
@@ -31,7 +31,7 @@
         {%- endif %}
     {%- endmacro %}
 
-    <div class="sidebar navbar-collapse collapse show card site-sidebar-panel">
+    <div class="sidebar card site-sidebar-panel">
         <p class="sidebar-heading">Documentação</p>
         <ul class="nav flex-column site-nav" aria-label="Navegação principal">
             {%- for item in nav %}
@@ -49,4 +49,4 @@
         </ul>
         {%- endif %}
     </div>
-</div>
+</nav>

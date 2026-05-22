@@ -32,7 +32,16 @@
     {%- for lang in config.hljs_languages %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/{{lang}}.min.js"></script>
     {%- endfor %}
-    <script>hljs.highlightAll();</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("pre code").forEach(function (block) {
+          if (block.closest("pre.mermaid")) {
+            return;
+          }
+          hljs.highlightElement(block);
+        });
+      });
+    </script>
     {%- endif %}
 
     {%- endblock %}
@@ -85,10 +94,6 @@
 
     {%- for path in extra_css %}
     <link href="{{ path }}" rel="stylesheet">
-    {%- endfor %}
-
-    {%- for path in extra_javascript %}
-    <script src="{{ path }}"></script>
     {%- endfor %}
 
     {% if config.theme.theme_style %}
