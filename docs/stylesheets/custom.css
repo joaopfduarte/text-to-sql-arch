@@ -16,10 +16,21 @@
   --primary: #1a1a1a;
   --background: #fafafa;
   /* Layout */
-  --doc-max-width: 1280px;
+  --doc-base-max-width: 1880px;
   --doc-page-gutter: clamp(1.25rem, 3vw, 2.5rem);
-  --doc-sidebar-width: 17rem;
+  --doc-sidebar-base-width: 25rem;
+  --doc-sidebar-scale: 1.18;
+  --doc-sidebar-width: calc(var(--doc-sidebar-base-width) * var(--doc-sidebar-scale));
   --doc-layout-gap: 1.75rem;
+  --doc-content-scale: 1.25;
+  /* +25% só na coluna do artigo; sidebar e gap mantêm-se */
+  --doc-content-width: calc(
+    var(--doc-base-max-width) - var(--doc-sidebar-width) - var(--doc-layout-gap) -
+      2 * var(--doc-page-gutter)
+  );
+  --doc-max-width: calc(
+    var(--doc-base-max-width) + (var(--doc-content-scale) - 1) * var(--doc-content-width)
+  );
 }
 
 html[data-bs-theme="dark"] {

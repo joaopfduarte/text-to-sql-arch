@@ -1,8 +1,8 @@
 flowchart LR
-    dump[DumpPutzExportado] --> extracao[ExtracaoSubconjunto]
+    dump[DumpXPTOExportado] --> extracao[ExtracaoSubconjunto]
     extracao --> mascarar[MascararPII]
     mascarar --> bronze[ArquivosBronze]
-    bronze --> hdfsBronze[HDFSDadosPutzBronze]
+    bronze --> hdfsBronze[HDFSDadosXPTOBronze]
     hdfsBronze --> hiveExt[TabelasHiveExternas]
     hiveExt --> atlasReg[RegistroNoApacheAtlas]
     atlasReg --> mcpTools[ToolsMCPCatalog]

@@ -34,8 +34,8 @@ Pessoa que opera a ingestão de dados ou prepara o ambiente para corridas.
 
 | Camada | Localização proposta | Tooling | Estado |
 |--------|----------------------|---------|--------|
-| Bruto | `hdfs:///dados/xpto/bronze/<tabela>/` | `spark.write.parquet` | Definido |
-| Consultável | Tabelas Hive `xpto_teste.<tabela>` em `hive_metastore` | `CREATE EXTERNAL TABLE` apontando para o bruto | Definido |
+| Bruto | `hdfs:///dados/xpto/bronze/<tbl_opaco>/` | `spark.write.parquet` | Definido |
+| Consultável | Tabelas Hive `xpto_teste.<tbl_opaco>` em `hive_metastore` | `CREATE EXTERNAL TABLE` apontando para o bruto | Definido |
 | Catálogo | Entidades `hive_table` registradas em Apache Atlas | Hook nativo do Hive ou registro manual via API Atlas | Ver [`catalogo-atlas.md`](catalogo-atlas.md) |
 
 Camadas bronze/silver/gold não são adotadas porque o MVP não exige transformações intermediárias; o XPTO entra como camada única consultável.
@@ -57,7 +57,7 @@ O baseline observado do schema `xpto_teste` é ~1388,27 MB. A carga para estudo 
 Fluxo recomendado:
 
 1. **Bronze:** ingestão do baseline em Parquet.
-2. **Amplificação sintética:** geração de lotes adicionais preservando FKs (prioridade para `project_item`, `transaction`, `transaction_coupon`).
+2. **Amplificação sintética:** geração de lotes adicionais preservando FKs (prioridade para `tbl_dd1db895`, `tbl_baf8a113`, `tbl_f57abbbd`).
 3. **Prata consultável:** publicação das tabelas amplificadas em `xpto_teste`.
 4. **Registro:** atualização de `datasetVersion` e metadados de amplificação por corrida.
 
@@ -79,9 +79,9 @@ Riscos e controles:
 
 | Verificação | Critério mínimo | Como medir |
 |-------------|-----------------|------------|
-| Contagem de registros | `COUNT(*)` por tabela bate com o dump original (±0). | `hive -e "SELECT COUNT(*) FROM xpto.<tabela>"` |
-| Smoke query simples | `SELECT * FROM xpto.franquias LIMIT 5` retorna 5 linhas. | Cliente Hive ou Spark SQL. |
-| Smoke query com junção | `SELECT f.nome, s.nome FROM xpto.franquias f JOIN xpto.franquias__segmentos s ON f.segmento_id = s.id LIMIT 5` retorna linhas. | Cliente Hive ou Spark SQL. |
+| Contagem de registros | `COUNT(*)` por tabela bate com o dump original (±0). | `hive -e "SELECT COUNT(*) FROM xpto.<tbl_opaco>"` |
+| Smoke query simples | `SELECT * FROM xpto.tbl_b35a889b LIMIT 5` retorna 5 linhas. | Cliente Hive ou Spark SQL. |
+| Smoke query com junção | `SELECT f.col_571df720, s.col_571df720 FROM xpto.tbl_b35a889b f JOIN xpto.tbl_68086640 s ON f.col_65a24b80 = s.col_9b7089a7 LIMIT 5` retorna linhas. | Cliente Hive ou Spark SQL. |
 | Registro no Atlas | Entidade `hive_table` aparece para todas as tabelas selecionadas. | API Atlas: `GET /api/atlas/v2/search/dsl?query=hive_table`. |
 
 ### Diagrama de ingestão

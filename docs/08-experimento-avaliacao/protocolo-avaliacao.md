@@ -61,7 +61,7 @@ Cada execução da cadeia:
 - sobreajuste de prompt à massa congelada do XPTO;
 - variação temporal de comportamento da API de LLM;
 - simplificações do laboratório AWS frente a cenário corporativo real;
-- viés de domínio do XPTO (negócio de franquias/projetos) frente a outros domínios.
+- viés de domínio do XPTO (cobertura limitada dos domínios de negócio selecionados no subconjunto) frente a outros domínios.
 
 ### Evidência mínima por corrida
 

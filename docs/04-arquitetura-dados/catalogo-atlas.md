@@ -41,7 +41,7 @@ Decisão: o agente LLM consulta apenas o catálogo Atlas via servidor MCP. O dic
 | Entidade Atlas | Origem | Comentário |
 |----------------|--------|------------|
 | `hive_db` (`xpto`) | Hive Metastore | Database lógico do subconjunto. |
-| `hive_table` (`xpto.<tabela>`) | Hive Metastore | Uma por tabela do subconjunto. |
+| `hive_table` (`xpto.<tbl_opaco>`) | Hive Metastore | Uma por tabela do subconjunto. |
 | `hive_column` | Hive Metastore | Colunas como objetos auditáveis. |
 | Relacionamentos (FK lógica) | Registro manual via API Atlas (Hive não captura FKs) | Adiado: convenção final (atributo customizado vs tag) será fechada na etapa de implementação. |
 

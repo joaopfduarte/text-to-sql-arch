@@ -56,4 +56,5 @@ documentation/
 - Mudança de design relevante exige ADR em `docs/adr/` e atualização do diagrama em `docs/diagrams/`.
 - Evidência experimental: `runId`, `seed`, `modelVersion`, `commitHash`, `datasetVersion`, `contractsVersion`.
 - Contratos MCP: [`docs/07-contratos-mcp/contracts-v1.md`](docs/07-contratos-mcp/contracts-v1.md).
-- Detalhes de cluster, VDF e dicionário de dados completos: [`docs/monografia.md`](docs/monografia.md) (não expostos no site operacional).
+- Detalhes de cluster, VDF e dicionário de dados completos: [`docs/monografia.md`](docs/monografia.md) (PDF, acesso restrito).
+- Nomes físicos de tabelas/colunas do banco **não** são publicados no site; use identificadores opacos `tbl_*` / `col_*` (ver [`banco-xpto-dominio.md`](docs/04-arquitetura-dados/banco-xpto-dominio.md)).
