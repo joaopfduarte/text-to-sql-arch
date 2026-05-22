@@ -1,0 +1,27 @@
+flowchart LR
+    userClient[UserClient] --> edgeApi[OrchestratorApi]
+    subgraph netPublic [NetPublic]
+        edgeApi
+    end
+    subgraph netInternalApp [NetInternalApp]
+        appCore[ApplicationCore]
+        mcpServer[MCPServer]
+        atlasAdapter[AtlasAdapter]
+        sqlValidator[SQLValidatorExecutor]
+    end
+    subgraph netDataPlane [NetDataPlane]
+        atlasNode[ApacheAtlasNode]
+        testDb[TestRelationalDb]
+    end
+    subgraph netObservability [NetObservability]
+        runStore[RunEvidenceStore]
+        metricsSink[MetricsCollector]
+    end
+    edgeApi --> appCore
+    appCore --> mcpServer
+    mcpServer --> atlasAdapter
+    atlasAdapter --> atlasNode
+    appCore --> sqlValidator
+    sqlValidator --> testDb
+    appCore --> runStore
+    appCore --> metricsSink

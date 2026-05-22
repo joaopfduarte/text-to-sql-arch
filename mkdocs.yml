@@ -1,0 +1,21 @@
+site_name: Arquitetura e Engenharia do Produto
+theme:
+  name: material
+
+# Mapeamento de navegação (ajuste conforme suas pastas)
+nav:
+  - Início: index.md
+  - Leitura Rápida: 00-leitura-rapida.md
+  - Arquitetura de Aplicação:
+    - Visão Lógica: 03-arquitetura-aplicacao/visao-logica.md
+
+markdown_extensions:
+  # Habilita a injeção de arquivos externos (como seus .mmd)
+  - pymdownx.snippets:
+      base_path: .
+  # Configuração nativa do Material para renderizar Mermaid
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

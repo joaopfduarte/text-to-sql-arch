@@ -1,0 +1,24 @@
+flowchart TB
+    avaliador[ClienteAvaliador]
+    avaliador --> igw[InternetGateway]
+    subgraph vpc [VPCLaboratorio]
+        igw --> sgEdge[SGEdge]
+        subgraph subPub [SubnetPublica]
+            sgEdge --> bastion[SessionManagerOuBastion]
+        end
+        subgraph subPrivApp [SubnetPrivadaAplicacao]
+            sgApp[SGInternalApp]
+            appHost[InstanciaAplicacaoMCP]
+            sgApp --> appHost
+        end
+        subgraph subPrivDados [SubnetPrivadaDados]
+            sgData[SGDataPlane]
+            clusterMaster[InstanciaMaster]
+            clusterWorker[InstanciaWorker]
+            sgData --> clusterMaster
+            sgData --> clusterWorker
+        end
+    end
+    bastion --> sgApp
+    appHost --> sgData
+    sgData --> s3[BucketS3Evidence]

@@ -1,0 +1,44 @@
+flowchart TB
+    operador[Operador]
+    operador --> ssm[SessionManagerOuBastion]
+    subgraph vpc [VPCLaboratorio]
+        subgraph subPub [SubnetPublica]
+            ssm
+        end
+        subgraph subAppDados [SubnetPrivada]
+            appHost[InstanciaAplicacaoMCP]
+            masterNode[InstanciaMaster]
+            workerNode1[InstanciaWorker1]
+            workerNode2[InstanciaWorker2]
+            workerNode3[InstanciaWorker3]
+        end
+    end
+    operador --> appHost
+    appHost --> masterNode
+    masterNode --> zk[ZooKeeperServer]
+    masterNode --> nn[HDFSNameNode]
+    masterNode --> rm[YARNResourceManager]
+    masterNode --> ambari[AmbariServer]
+    masterNode --> atlas[ApacheAtlas]
+    masterNode --> hbaseMaster[HBaseMaster]
+    masterNode --> solr[InfraSolr]
+    workerNode1 --> dn1[HDFSDataNode]
+    workerNode2 --> dn2[HDFSDataNode]
+    workerNode3 --> dn3[HDFSDataNode]
+    workerNode1 --> nm1[YARNNodeManager]
+    workerNode2 --> nm2[YARNNodeManager]
+    workerNode3 --> nm3[YARNNodeManager]
+    workerNode1 --> hbaseRs1[HBaseRegionServer]
+    workerNode2 --> hbaseRs2[HBaseRegionServer]
+    workerNode3 --> hbaseRs3[HBaseRegionServer]
+    workerNode1 --> hiveMs[HiveMetastore]
+    workerNode1 --> hs2[HiveServer2]
+    workerNode2 --> kafka1[KafkaBroker]
+    workerNode3 --> kafka2[KafkaBroker]
+    appHost --> evidenceStore[BucketS3Evidence]
+    atlas --> hbaseMaster
+    atlas --> solr
+    atlas --> kafka
+    hs2 --> dn1
+    hiveMs --> dn1
+l
