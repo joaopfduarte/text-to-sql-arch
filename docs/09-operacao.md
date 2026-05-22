@@ -19,7 +19,7 @@ Pessoa que executa o ambiente e arquiva evidências.
 ### Ciclo de uma corrida
 
 1. Subir o cluster (ou validar que está estável).
-2. Validar Atlas: tools MCP retornam o subconjunto Putz esperado.
+2. Validar Atlas: tools MCP retornam o subconjunto XPTO esperado.
 3. Gerar `runId` no formato `run-YYYYMMDD-HHMM-<id-curto>` (ver runbook).
 4. Registrar `context.json` com metadados (`runId`, `seed`, `modelVersion`, `commitHash`, `datasetVersion`, `contractsVersion`).
 5. Executar a bateria de perguntas do harness.
@@ -37,7 +37,7 @@ evidence/
     summary.md
 ```
 
-Convenções e exigências mínimas estão em [`evidence/README.md`](../evidence/README.md) e [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md).
+Convenções e exigências mínimas estão em `evidence/README.md` (raiz do repositório) e [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md).
 
 ### Política de retenção
 
@@ -49,18 +49,18 @@ Convenções e exigências mínimas estão em [`evidence/README.md`](../evidence
 
 | Cenário | Template |
 |---------|----------|
-| Relatório de corrida | [`templates/run-report-template.md`](../templates/run-report-template.md) |
-| Incidente operacional | [`templates/incident-template.md`](../templates/incident-template.md) |
-| Revisão metodológica | [`templates/review-metodologico-template.md`](../templates/review-metodologico-template.md) |
-| ADR | [`templates/adr-template.md`](../templates/adr-template.md) |
+| Relatório de corrida | `templates/run-report-template.md` (raiz do repositório) |
+| Incidente operacional | `templates/incident-template.md` (raiz do repositório) |
+| Revisão metodológica | `templates/review-metodologico-template.md` (raiz do repositório) |
+| ADR | `templates/adr-template.md` (raiz do repositório) |
 
 ### Falhas comuns e recuperação
 
 | Sintoma | Causa provável | Ação |
 |---------|----------------|------|
 | Tool MCP retorna `catalog_unavailable` | Atlas indisponível ou reinicialização do cluster | Validar status do Atlas; aplicar retry conforme política do servidor MCP. |
-| Tool MCP retorna `not_found` para tabela do subconjunto | Registro Atlas incompleto após reingestão | Reexecutar carga (`carga-cluster-putz.md`) e reabrir corrida. |
-| SQL executa mas com `execution_error` recorrente | Hive Metastore inconsistente | Validar schema do Hive contra o subconjunto Putz. |
+| Tool MCP retorna `not_found` para tabela do subconjunto | Registro Atlas incompleto após reingestão | Reexecutar carga (`carga-cluster-xpto.md`) e reabrir corrida. |
+| SQL executa mas com `execution_error` recorrente | Hive Metastore inconsistente | Validar schema do Hive contra o subconjunto XPTO. |
 | `runId` duplicado | Erro humano no template | Abortar corrida e gerar novo `runId`. |
 
 ### Custos e desligamento

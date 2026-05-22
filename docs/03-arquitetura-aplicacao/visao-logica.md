@@ -26,7 +26,7 @@ Construir um pipeline `Text-to-SQL` reprodutível que consulte metadados por `MC
 | Edge/API | Recebe a pergunta, valida entrada e gera `runId`. |
 | Application | Executa os casos de uso `DiscoverMetadata`, `GenerateSql`, `ValidateAndExecute`, `RecordRun`. |
 | Domain | Aplica regras de aderência estrutural, orçamento de tool calls e critérios de rastreabilidade. |
-| Infrastructure | Adapters para `MCP`, `Atlas`, parser SQL, banco Putz e persistência de evidências. |
+| Infrastructure | Adapters para `MCP`, `Atlas`, parser SQL, banco XPTO e persistência de evidências. |
 | Observability | Trilhas JSONL, métricas essenciais e metadados de reprodutibilidade. |
 
 ### Casos de uso principais
@@ -42,10 +42,12 @@ Construir um pipeline `Text-to-SQL` reprodutível que consulte metadados por `MC
 2. Descoberta dirigida de metadados por tools MCP.
 3. Geração de SQL ancorada no contexto recuperado.
 4. Validação sintática e estrutural.
-5. Execução controlada no subconjunto Putz.
+5. Execução controlada no subconjunto XPTO.
 6. Registro de trilha e cálculo de métricas.
 
-Diagrama: [`../../diagrams/diagrama-mestre.mmd`](../../diagrams/diagrama-mestre.mmd).
+```mermaid
+--8<-- "diagrams/diagrama-mestre.mmd"
+```
 
 ### Zonas lógicas de rede
 
@@ -53,10 +55,14 @@ Diagrama: [`../../diagrams/diagrama-mestre.mmd`](../../diagrams/diagrama-mestre.
 |-------------|-------------|----------|
 | `NetPublic` | Entrada HTTP do orquestrador. | Único ponto de entrada externo. |
 | `NetInternalApp` | Aplicação, MCP, adaptadores. | Tráfego privado, `deny by default` para fora. |
-| `NetDataPlane` | Apache Atlas, banco Putz no cluster. | Acessível apenas pelo validador/executor e pelo adaptador Atlas. |
+| `NetDataPlane` | Apache Atlas, banco XPTO no cluster. | Acessível apenas pelo validador/executor e pelo adaptador Atlas. |
 | `NetObservability` | Armazenamento de evidências e métricas. | Escrita por `runId`, sem sobrescrita. |
 
-Diagrama lógico: [`../../diagrams/rede-implantacao.mmd`](../../diagrams/rede-implantacao.mmd). Para a tradução física para AWS, ver [`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md).
+```mermaid
+--8<-- "diagrams/rede-implantacao.mmd"
+```
+
+Para a tradução física para AWS, ver [`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md).
 
 ### Padrões de engenharia
 
@@ -64,7 +70,7 @@ Diagrama lógico: [`../../diagrams/rede-implantacao.mmd`](../../diagrams/rede-im
 - Contratos MCP versionados semanticamente.
 - Timeouts e retry com backoff para integrações externas.
 - Falhas classificadas em `syntax_error`, `structural_error`, `execution_error`.
-- Servidor MCP nunca acessa o banco Putz; apenas o validador/executor.
+- Servidor MCP nunca acessa o banco XPTO; apenas o validador/executor.
 
 ## Próximo passo
 

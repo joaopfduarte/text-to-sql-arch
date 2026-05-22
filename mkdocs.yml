@@ -1,21 +1,62 @@
-site_name: Arquitetura e Engenharia do Produto
+site_name: Arquitetura e Engenharia do Produto TCC
+site_description: Documentação operacional Text-to-SQL com MCP e Apache Atlas
+strict: true
+
 theme:
   name: material
+  language: pt
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
 
-# Mapeamento de navegação (ajuste conforme suas pastas)
+plugins:
+  - search
+
 nav:
   - Início: index.md
-  - Leitura Rápida: 00-leitura-rapida.md
-  - Arquitetura de Aplicação:
-    - Visão Lógica: 03-arquitetura-aplicacao/visao-logica.md
+  - Leitura rápida: 00-leitura-rapida.md
+  - Produto e escopo: 01-produto-e-escopo.md
+  - Arquitetura de negócio: 02-arquitetura-negocio.md
+  - Arquitetura de aplicação:
+    - Visão lógica: 03-arquitetura-aplicacao/visao-logica.md
+    - Camadas MCP: 03-arquitetura-aplicacao/camadas-mcp.md
+    - Modelo de domínio: 03-arquitetura-aplicacao/modelo-dominio.md
+  - Arquitetura de dados:
+    - Banco XPTO (domínio): 04-arquitetura-dados/banco-xpto-dominio.md
+    - Schema massa de teste: 04-arquitetura-dados/schema-massa-teste.md
+    - Catálogo Atlas: 04-arquitetura-dados/catalogo-atlas.md
+    - Carga no cluster: 04-arquitetura-dados/carga-cluster-xpto.md
+  - Infraestrutura:
+    - Visão AWS: 05-infraestrutura/visao-aws.md
+    - Cluster Hadoop: 05-infraestrutura/cluster-hadoop.md
+    - Delta OCI para AWS: 05-infraestrutura/delta-oci-para-aws.md
+    - VDF ODP x86: 05-infraestrutura/vdf-odp-x86.md
+  - Implementação Java:
+    - Módulos Spring: 06-implementacao-java/modulos-spring.md
+    - Ports e adapters: 06-implementacao-java/ports-adapters.md
+  - Contratos MCP: 07-contratos-mcp/contracts-v1.md
+  - Experimento e avaliação:
+    - Protocolo: 08-experimento-avaliacao/protocolo-avaliacao.md
+    - Runbook reprodutibilidade: 08-experimento-avaliacao/runbook-reprodutibilidade.md
+  - Operação: 09-operacao.md
+  - Rastreabilidade acadêmica: 10-rastreabilidade-academica.md
+  - Roadmap: roadmap-5a6-meses.md
+  - ADRs:
+    - Índice: adr/README.md
+    - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
+    - ADR-0002 Topologia AWS: adr/ADR-0002-topologia-aws-cluster-minimo.md
+  - Monografia: monografia.md
 
 markdown_extensions:
-  # Habilita a injeção de arquivos externos (como seus .mmd)
   - pymdownx.snippets:
-      base_path: .
-  # Configuração nativa do Material para renderizar Mermaid
+      base_path: docs
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html

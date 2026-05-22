@@ -13,7 +13,7 @@ Pessoa que opera ou valida o cluster.
 - [`visao-aws.md`](visao-aws.md)
 - [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
 - [`vdf-odp-x86.md`](vdf-odp-x86.md)
-- [`../../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+- [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
 
 ## Conteúdo
 
@@ -34,22 +34,22 @@ Com base no ADR aceito, a recomendação é **A2 (1 master + 3 workers)** em AWS
 | Master | `m6i.2xlarge` | 8 vCPU, 32 GiB | EBS gp3 >= 200 GiB |
 | Workers (3) | `m6i.4xlarge` | 16 vCPU, 64 GiB | EBS gp3 >= 200 GiB por nó |
 
-Justificativa: evita o subdimensionamento do legado OCI (1 OCPU/6 GiB), suporta massa `putz_teste` amplificada para ~50 GB com replicação HDFS 3 e mantém margem para Atlas + Hive + execução experimental.
+Justificativa: evita o subdimensionamento do legado OCI (1 OCPU/6 GiB), suporta massa `xpto_teste` amplificada para ~50 GB com replicação HDFS 3 e mantém margem para Atlas + Hive + execução experimental.
 
 ### Matriz de serviços (referência de legado para composição)
 
 | Serviço | Papel no alvo AWS | Fonte de referência |
 |---------|--------------------|---------------------|
-| ZooKeeper | Coordenação do cluster | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| HDFS (NN/DN) | Armazenamento da massa Putz amplificada | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| YARN (RM/NM) | Execução distribuída dos jobs | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| Hive Metastore + HiveServer2 | Tabelas consultáveis (`putz_teste`) | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| Atlas | Catálogo canônico para o MCP | [`../../../../assets/scripts/ODP-VDF.xml`](../../../../assets/scripts/ODP-VDF.xml) |
-| HBase/Solr/Kafka | Dependências operacionais do Atlas | [`../../../../assets/scripts/ODP-VDF.xml`](../../../../assets/scripts/ODP-VDF.xml) |
+| ZooKeeper | Coordenação do cluster | `legacy-infra/assets/blueprint.json` (raiz do repositório) |
+| HDFS (NN/DN) | Armazenamento da massa XPTO amplificada | `legacy-infra/assets/blueprint.json` (raiz do repositório) |
+| YARN (RM/NM) | Execução distribuída dos jobs | `legacy-infra/assets/blueprint.json` (raiz do repositório) |
+| Hive Metastore + HiveServer2 | Tabelas consultáveis (`xpto_teste`) | `legacy-infra/assets/blueprint.json` (raiz do repositório) |
+| Atlas | Catálogo canônico para o MCP | [Monografia](../monografia.md) |
+| HBase/Solr/Kafka | Dependências operacionais do Atlas | [Monografia](../monografia.md) |
 
 ### Matriz de portas AWS (pendente na criação do projeto)
 
-As portas abaixo **não** estão fechadas nesta documentação. Na criação do projeto AWS/Terraform, definir security groups com tráfego **intra-VPC** entre componentes. O arquivo [`../../legacy-infra/security-list.tf`](../../legacy-infra/security-list.tf) lista apenas exposições de operação no laboratório OCI e não deve ser tratado como lista final de portas AWS.
+As portas abaixo **não** estão fechadas nesta documentação. Na criação do projeto AWS/Terraform, definir security groups com tráfego **intra-VPC** entre componentes. O arquivo `legacy-infra/security-list.tf` (raiz do repositório) lista apenas exposições de operação no laboratório OCI e não deve ser tratado como lista final de portas AWS.
 
 | Serviço | Porta(s) típica(s) | Estado |
 |---------|---------------------|--------|
@@ -70,11 +70,13 @@ As portas abaixo **não** estão fechadas nesta documentação. Na criação do 
 4. Aplicar blueprint de cluster.
 5. Validar saúde do catálogo e do plano de dados.
 
-Referências de execução no legado: [`../../legacy-infra/cloud-init/master.yaml`](../../legacy-infra/cloud-init/master.yaml), [`../../legacy-infra/assets/site.yml`](../../legacy-infra/assets/site.yml), [`../../legacy-infra/assets/cluster_deploy.yml`](../../legacy-infra/assets/cluster_deploy.yml).
+Referências de execução no legado: `legacy-infra/cloud-init/master.yaml` (raiz do repositório), `legacy-infra/assets/site.yml` (raiz do repositório), `legacy-infra/assets/cluster_deploy.yml` (raiz do repositório).
 
-### Diagrama
+### Topologia do cluster
 
-Ver [`../../diagrams/cluster-topologia-aws.mmd`](../../diagrams/cluster-topologia-aws.mmd).
+```mermaid
+--8<-- "diagrams/cluster-topologia-aws.mmd"
+```
 
 ### Estado dos pontos críticos
 
@@ -84,4 +86,4 @@ Ver [`../../diagrams/cluster-topologia-aws.mmd`](../../diagrams/cluster-topologi
 
 ## Próximo passo
 
-[`../04-arquitetura-dados/carga-cluster-putz.md`](../04-arquitetura-dados/carga-cluster-putz.md)
+[`../04-arquitetura-dados/carga-cluster-xpto.md`](../04-arquitetura-dados/carga-cluster-xpto.md)

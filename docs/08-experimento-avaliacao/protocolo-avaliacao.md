@@ -11,7 +11,7 @@ Pessoa responsável por executar corridas e consolidar resultados.
 ## Pré-requisitos
 
 - [`../01-produto-e-escopo.md`](../01-produto-e-escopo.md) (definição de erro estrutural)
-- [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) (massa Putz congelada)
+- [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) (massa XPTO congelada)
 - [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
 
 ## Conteúdo
@@ -33,8 +33,8 @@ Cada execução da cadeia:
 2. Consultar metadados via tools MCP sob orçamento fixado (máximo de 6 chamadas).
 3. Gerar SQL candidato.
 4. Executar validação sintática (`parse`).
-5. Executar validação estrutural contra catálogo canônico (Atlas governa o subconjunto Putz registrado).
-6. Executar SQL no banco de testes (subconjunto congelado do Putz).
+5. Executar validação estrutural contra catálogo canônico (Atlas governa o subconjunto XPTO registrado).
+6. Executar SQL no banco de testes (subconjunto congelado do XPTO).
 7. Registrar trilha completa e métricas.
 
 ### Métricas essenciais
@@ -58,10 +58,10 @@ Cada execução da cadeia:
 
 ### Ameaças à validade
 
-- sobreajuste de prompt à massa congelada do Putz;
+- sobreajuste de prompt à massa congelada do XPTO;
 - variação temporal de comportamento da API de LLM;
 - simplificações do laboratório AWS frente a cenário corporativo real;
-- viés de domínio do Putz (negócio de franquias/projetos) frente a outros domínios.
+- viés de domínio do XPTO (negócio de franquias/projetos) frente a outros domínios.
 
 ### Evidência mínima por corrida
 

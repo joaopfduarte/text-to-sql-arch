@@ -1,0 +1,6 @@
+site/
+public/
+venv/
+.venv/
+__pycache__/
+*.pyc

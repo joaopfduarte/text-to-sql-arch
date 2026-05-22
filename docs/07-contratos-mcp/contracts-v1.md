@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Definir os contratos JSON estáveis das tools MCP da v1, com exemplos baseados em tabelas reais do banco Putz (massa congelada do TCC).
+Definir os contratos JSON estáveis das tools MCP da v1, com exemplos baseados em tabelas reais do banco XPTO (massa congelada do TCC).
 
 ## Leitor
 
@@ -24,8 +24,8 @@ Pessoa desenvolvedora Java que implementa o servidor MCP ou um cliente, e pessoa
 
 ### Convenção de schema do catálogo
 
-- `schema = "putz"`: subconjunto Putz registrado em Apache Atlas como database `hive_db` chamado `putz`.
-- Nomes de tabela e coluna seguem exatamente o export Putz (ex.: `franquias`, `franquias__segmentos`, `segmento_id`).
+- `schema = "xpto"`: subconjunto XPTO registrado em Apache Atlas como database `hive_db` chamado `xpto`.
+- Nomes de tabela e coluna seguem exatamente o export XPTO (ex.: `franquias`, `franquias__segmentos`, `segmento_id`).
 
 ### Envelope padrão de resposta
 
@@ -49,7 +49,7 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
+  "schema": "xpto",
   "limit": 50,
   "cursor": null
 }
@@ -85,12 +85,12 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
+  "schema": "xpto",
   "table": "franquias"
 }
 ```
 
-Saída (colunas observadas em [`putz_db.md` L1173–1215](../../db-reference/putz_db.md)):
+Saída (colunas observadas — ver [Monografia](../monografia.md)):
 
 ```json
 {
@@ -114,12 +114,12 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
+  "schema": "xpto",
   "table": "franquias"
 }
 ```
 
-Saída (FKs confirmadas em [`putz_db.md` L1199–1206](../../db-reference/putz_db.md)):
+Saída (FKs confirmadas — ver [Monografia](../monografia.md)):
 
 ```json
 {
@@ -162,7 +162,7 @@ Exemplo de resposta de erro:
   "data": null,
   "error": {
     "code": "not_found",
-    "message": "Tabela 'sales.orders' nao existe no catalogo 'putz'."
+    "message": "Tabela 'sales.orders' nao existe no catalogo 'xpto'."
   }
 }
 ```

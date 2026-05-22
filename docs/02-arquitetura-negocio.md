@@ -20,8 +20,8 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 |------|-------|
 | Pessoa avaliadora | Submete pergunta em linguagem natural, recebe SQL e desfecho da execução. |
 | Operadora de corrida | Configura `runId`, dataset e contratos versionados. |
-| Catálogo canônico (Apache Atlas) | Fonte de verdade dos metadados sobre o subconjunto Putz. |
-| Banco relacional Putz | Fonte dos dados consultáveis (subconjunto congelado). |
+| Catálogo canônico (Apache Atlas) | Fonte de verdade dos metadados sobre o subconjunto XPTO. |
+| Banco relacional XPTO | Fonte dos dados consultáveis (subconjunto congelado). |
 
 ### Blocos de negócio
 
@@ -31,8 +31,8 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 | Servidor MCP | Expõe tools com contratos estáveis, aplica validações de entrada e saída e centraliza a integração com o adaptador de catálogo. |
 | Tools MCP | Descoberta de tabelas, detalhamento de colunas e inspeção de relacionamentos. |
 | Adaptador de catálogo | Traduz respostas do Atlas para contrato interno canônico, desacoplando mudanças de API. |
-| Fonte canônica de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto Putz exposto. |
-| Banco relacional de avaliação | Subconjunto congelado do Putz, sem dados sensíveis, residente no cluster. |
+| Fonte canônica de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto XPTO exposto. |
+| Banco relacional de avaliação | Subconjunto congelado do XPTO, sem dados sensíveis, residente no cluster. |
 | Validador e executor SQL | Parse sintático, validação estrutural contra catálogo e execução controlada com classificação de erro. |
 | Harness experimental | Registra trilha completa por corrida, calcula métricas essenciais e consolida evidências em JSONL. |
 
@@ -47,7 +47,9 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 
 ### Diagrama lógico
 
-Ver [`../diagrams/diagrama-mestre.mmd`](../diagrams/diagrama-mestre.mmd).
+```mermaid
+--8<-- "diagrams/diagrama-mestre.mmd"
+```
 
 ### Fronteira deste documento
 

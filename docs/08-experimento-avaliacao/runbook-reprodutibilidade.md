@@ -50,7 +50,7 @@ Arquivos mínimos:
 
 1. Commit limpo e registrado.
 2. Versão do contrato MCP fixada.
-3. Dataset congelado e versionado (subconjunto Putz indicado em `schema-massa-teste.md`).
+3. Dataset congelado e versionado (subconjunto XPTO indicado em `schema-massa-teste.md`).
 4. Seed explícita.
 5. Modelo e parâmetros de inferência registrados.
 6. Política de tool budget registrada.

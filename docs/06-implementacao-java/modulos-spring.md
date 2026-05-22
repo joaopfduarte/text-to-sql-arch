@@ -53,7 +53,7 @@ Pessoa desenvolvedora Java júnior que vai criar ou estender módulos.
 | `app.mcp.tool-budget.default` | Orçamento padrão de chamadas de tool por sessão (valor de referência: **6**). |
 | `app.atlas.base-url` | Endpoint do Apache Atlas. |
 | `app.atlas.auth.user` / `.password` | Credenciais para Atlas. |
-| `app.jdbc.hive.url` | JDBC URL do HiveServer2 (ex.: `jdbc:hive2://master:10000/putz`). |
+| `app.jdbc.hive.url` | JDBC URL do HiveServer2 (ex.: `jdbc:hive2://master:10000/xpto`). |
 | `app.llm.provider` | Provedor ativo por corrida: `openai` ou `google`. |
 | `app.llm.openai.model-version` | Versão fixa do modelo OpenAI usada na corrida. |
 | `app.llm.google.model-version` | Versão fixa do modelo Google (Gemini) usada na corrida. |

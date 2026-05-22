@@ -1,10 +1,11 @@
-image: python:3.9-slim
+image: python:3.12-slim
 
 pages:
   stage: deploy
   script:
-    - pip install mkdocs-material
-    - mkdocs build --site-dir public
+    - pip install -r requirements.txt
+    - test -f docs/monografia.pdf || (echo "docs/monografia.pdf em falta — adicione o PDF da monografia" && exit 1)
+    - mkdocs build --strict --site-dir public
   artifacts:
     paths:
       - public
