@@ -1,4 +1,4 @@
-# Arquitetura e engenharia do produto TCC
+# Documentação de TCC
 
 Pacote operacional para a engenharia do artefato Text-to-SQL com MCP e Apache Atlas. A narrativa académica completa está na [monografia](docs/monografia.pdf); este repositório publica a documentação operacional via MkDocs.
 
@@ -9,13 +9,15 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Abrir `http://127.0.0.1:8000`. Build de produção (GitLab Pages):
+Abrir `http://127.0.0.1:8000`. Tema [mkdocs-simple-blog](https://github.com/FernandoCelmer/mkdocs-simple-blog) com navegação principal à esquerda (`overrides/modules/sidebar.html`) e estilos em [`docs/stylesheets/custom.css`](docs/stylesheets/custom.css).
+
+Build de produção (GitLab Pages):
 
 ```bash
 mkdocs build --strict --site-dir public
 ```
 
-**Pré-requisito:** colocar o PDF compilado em [`docs/monografia.pdf`](docs/monografia.pdf) antes do deploy.
+**PDF de referência:** [`docs/monografia.pdf`](docs/monografia.pdf). Atualizar com `cp monografia.pdf docs/monografia.pdf` quando recompilar a monografia.
 
 ## Por onde começar
 

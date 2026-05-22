@@ -2,15 +2,34 @@ site_name: Arquitetura e Engenharia do Produto TCC
 site_description: Documentação operacional Text-to-SQL com MCP e Apache Atlas
 strict: true
 
+extra_css:
+  - stylesheets/custom.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
+
 theme:
-  name: material
-  language: pt
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - content.code.copy
-    - search.suggest
+  name: simple-blog
+  custom_dir: overrides
+  sidebar: true
+  navigation_depth: 4
+  highlightjs: true
+  hljs_languages:
+    - json
+    - yaml
+    - java
+    - sql
+    - bash
+  components:
+    preview: false
+    menu: false
+    title: false
+  colors:
+    text: black
+    title: black
+    primary: black
+    background: white
 
 plugins:
   - search
@@ -60,3 +79,6 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list
   - md_in_html
+  - tables
+  - toc:
+      permalink: false
