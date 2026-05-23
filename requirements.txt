@@ -1,2 +1,5 @@
 mkdocs>=1.6
+mkdocs-material
+Pillow
+CairoSVG
 pymdown-extensions>=10.0

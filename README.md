@@ -9,7 +9,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Abrir `http://127.0.0.1:8000`. O site usa tema nativo `readthedocs` do MkDocs, sem overrides visuais locais.
+Abrir `http://127.0.0.1:8000`. O site usa [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) com perfil visual neutro e recursos avançados (navegação instantânea, tabs, busca aprimorada, cópia de código e social cards).
 
 Build de produção (GitLab Pages):
 
@@ -58,3 +58,4 @@ documentation/
 - Contratos MCP: [`docs/07-contratos-mcp/contracts-v1.md`](docs/07-contratos-mcp/contracts-v1.md).
 - Detalhes de cluster, VDF e dicionário de dados completos: [`docs/monografia.md`](docs/monografia.md) (PDF, acesso restrito).
 - Nomes físicos de tabelas/colunas do banco **não** são publicados no site; use identificadores opacos `tbl_*` / `col_*` (ver [`banco-xpto-dominio.md`](docs/04-arquitetura-dados/banco-xpto-dominio.md)).
+- Recursos visuais do Material (incluindo social cards) dependem de `mkdocs-material`, `Pillow` e `CairoSVG` em `requirements.txt`.

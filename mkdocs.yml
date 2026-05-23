@@ -1,5 +1,6 @@
 site_name: Arquitetura e Engenharia do Produto TCC
 site_description: Documentação operacional Text-to-SQL com MCP e Apache Atlas
+site_url: https://example.com/
 strict: true
 
 extra_javascript:
@@ -7,10 +8,33 @@ extra_javascript:
   - javascripts/mermaid-init.js
 
 theme:
-  name: readthedocs
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: blue grey
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
 
 plugins:
   - search
+  - social
 
 nav:
   - Início: index.md
@@ -48,6 +72,11 @@ nav:
   - Monografia: monografia.md
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: docs
   - pymdownx.superfences:
@@ -55,8 +84,13 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
   - tables
   - toc:
-      permalink: false
+      permalink: true
