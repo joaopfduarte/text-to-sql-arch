@@ -1,5 +1,6 @@
 site/
 public/
+.cache/
 venv/
 .venv/
 __pycache__/
