@@ -9,7 +9,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Abrir `http://127.0.0.1:8000`. Tema [mkdocs-simple-blog](https://github.com/FernandoCelmer/mkdocs-simple-blog) com navegação principal à esquerda (`overrides/modules/sidebar.html`) e estilos em [`docs/stylesheets/custom.css`](docs/stylesheets/custom.css).
+Abrir `http://127.0.0.1:8000`. O site usa tema nativo `readthedocs` do MkDocs, sem overrides visuais locais.
 
 Build de produção (GitLab Pages):
 
