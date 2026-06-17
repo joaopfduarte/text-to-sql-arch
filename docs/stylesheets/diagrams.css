@@ -3,10 +3,22 @@
   margin: 1.25rem auto;
   max-width: 100%;
   height: auto;
+  cursor: zoom-in;
 }
 
-.md-typeset .diagram-source {
-  font-size: 0.85em;
-  margin-top: -0.5rem;
-  margin-bottom: 1.25rem;
+.md-typeset .diagram-hint {
+  display: block;
+  margin: -0.75rem 0 1.25rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* SVG ampliado no lightbox: usa a resolução nativa do ficheiro */
+.glightbox-container .gslide-image img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }

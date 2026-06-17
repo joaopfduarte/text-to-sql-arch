@@ -1,5 +1,6 @@
 mkdocs>=1.6
 mkdocs-material
+mkdocs-glightbox>=0.4
 Pillow
 CairoSVG
 pymdown-extensions>=10.0
