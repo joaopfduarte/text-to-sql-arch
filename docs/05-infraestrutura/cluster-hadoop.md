@@ -74,7 +74,9 @@ Referências de execução no legado: [`../legacy-infra/cloud-init/master.yaml`]
 
 ### Diagrama
 
-Ver [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml).
+![Topologia do cluster AWS](../diagrams/cluster-topologia-aws.svg){ .uml-diagram width="100%" }
+
+Fonte: [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml)
 
 ### Estado dos pontos críticos
 

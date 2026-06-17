@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="136px" preserveAspectRatio="none" style="width:1308px;height:136px;" version="1.1" viewBox="0 0 1308 136" width="1308px" zoomAndPan="magnify"><defs><filter height="300%" id="f1ceqeq7n12yj1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[4eea9e561cff3d3abdfefda2fadd280b]
+entity cliente--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="97" x="6" y="50.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="16" y="75.8959">ClienteMCP</text><!--MD5=[387fbbdef0f3fc431481b6ac329077e0]
+entity servidor--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="151" x="163" y="50.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="131" x="173" y="75.8959">ServidorMCPSpring</text><!--MD5=[b4ee3f239a1c6414ed8fc91b0dafa920]
+entity validador--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="142" x="374" y="13.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="122" x="384" y="38.8959">ValidadorContrato</text><!--MD5=[31847346126c6f7a462f9872730e74b8]
+entity caseUso--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="171" x="576" y="13.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="151" x="586" y="38.8959">CasoDeUsoApplication</text><!--MD5=[4b0f91877d58e3587c1c7312e2ed473e]
+entity porta--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="92" x="832" y="12.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="72" x="842" y="37.8959">PortaSaida</text><!--MD5=[49ab8808973fd181ee12a515fabcfd46]
+entity adaptador--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="124" x="1009" y="12.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="104" x="1019" y="37.8959">AdaptadorAtlas</text><!--MD5=[03dc2075b18e5e30b29e9dcf0f796a11]
+entity atlas--><path d="M1193,18.43 C1193,8.43 1244.5,8.43 1244.5,8.43 C1244.5,8.43 1296,8.43 1296,18.43 L1296,46.4979 C1296,56.4979 1244.5,56.4979 1244.5,56.4979 C1244.5,56.4979 1193,56.4979 1193,46.4979 L1193,18.43 " fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M1193,18.43 C1193,28.43 1244.5,28.43 1244.5,28.43 C1244.5,28.43 1296,28.43 1296,18.43 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1203" y="47.3959">ApacheAtlas</text><!--MD5=[ff48ef364e25c21a375d72a0b4fb418a]
+entity envelope--><rect fill="#FEFECE" filter="url(#f1ceqeq7n12yj1)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="142" x="807" y="86.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="122" x="817" y="111.8959">EnvelopeResposta</text><!--MD5=[a53ef6192407daf0e97aeff8f1a18f7c]
+link cliente to servidor--><path d="M103.32,82.18 C119.59,83.33 138.27,83.78 156.41,83.52 " fill="none" id="cliente-&gt;servidor" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="161.02,83.44,151.9418,79.6208,156.021,83.54,152.1018,87.6192,161.02,83.44" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[4a267abeb4cb20cc9cd3ed809fbaecb7]
+link servidor to cliente--><path d="M162.54,57.52 C144.87,57.12 126.36,57.39 109.8,58.34 " fill="none" id="servidor-&gt;cliente" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="104.83,58.66,114.0632,62.0875,109.8202,58.3463,113.5613,54.1033,104.83,58.66" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[e9f32b25ad83389a9661411e3786222c]
+link servidor to validador--><path d="M314.49,56.9 C331.75,53.78 350.12,50.45 367.45,47.32 " fill="none" id="servidor-&gt;validador" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="372.29,46.44,362.7232,44.0998,367.3693,47.3269,364.1422,51.9729,372.29,46.44" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[015c00fbcd25c1a5c54e30a02003ad61]
+link validador to caseUso--><path d="M516.24,33.47 C533.1,33.47 551.36,33.47 569.04,33.47 " fill="none" id="validador-&gt;caseUso" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="574,33.47,565,29.47,569,33.47,565,37.47,574,33.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b1c537711755d998c466a81e736b6bf0]
+link caseUso to porta--><path d="M747.28,45.94 C773.61,46.43 801.83,45.82 825.21,44.13 " fill="none" id="caseUso-&gt;porta" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="830.16,43.74,820.8783,40.4461,825.1749,44.1257,821.4953,48.4223,830.16,43.74" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[05d9c0ed038b0cc45829373add063775]
+link porta to caseUso--><path d="M831.67,21.73 C808.97,20.03 780.66,19.48 753.72,20.05 " fill="none" id="porta-&gt;caseUso" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="748.79,20.17,757.8901,23.9367,753.7883,20.0411,757.6839,15.9393,748.79,20.17" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[15725365af72d167dcb983ccb5fe77fd]
+link porta to adaptador--><path d="M924.26,43.82 C947.65,45.64 976.66,46.06 1002.62,45.07 " fill="none" id="porta-&gt;adaptador" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1007.29,44.87,998.1265,41.2602,1002.2946,45.0847,998.4701,49.2528,1007.29,44.87" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[3c9ec0ce8eb1de7dafff8c3afd0df0a8]
+link adaptador to porta--><path d="M1008.8,20.12 C983.6,18.92 954.72,19.1 930.61,20.66 " fill="none" id="adaptador-&gt;porta" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="925.77,21,935.0328,24.3467,930.7572,20.6427,934.4612,16.3672,925.77,21" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c218fe8c4c32250150109f68255c3375]
+link adaptador to atlas--><path d="M1133.43,45.11 C1150.72,45.81 1169.45,45.75 1186.47,44.91 " fill="none" id="adaptador-&gt;atlas" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1191.15,44.66,1181.9365,41.18,1186.1581,44.9452,1182.3929,49.1669,1191.15,44.66" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b8f0d3bfb0adf40ebb6e1ef24783e026]
+link atlas to adaptador--><path d="M1192.66,20.36 C1176.11,19.34 1157.46,19.09 1139.86,19.6 " fill="none" id="atlas-&gt;adaptador" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1134.94,19.77,1144.0721,23.4584,1139.937,19.5982,1143.7972,15.4631,1134.94,19.77" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[fc849c3f47657364ae31b609ee826287]
+link caseUso to envelope--><path d="M721.11,53.41 C749.37,63.03 783.34,74.59 812.35,84.46 " fill="none" id="caseUso-&gt;envelope" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="817.02,86.05,809.795,79.3568,812.2881,84.4346,807.2103,86.9278,817.02,86.05" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[257297f0a124167cde902e73c8b177c2]
+link envelope to servidor--><path d="M806.58,102.49 C687.37,95.76 446.48,82.15 320.47,75.04 " fill="none" id="envelope-&gt;servidor" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="315.7,74.77,324.4571,79.2769,320.6919,75.0552,324.9135,71.29,315.7,74.77" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[8092915c4ec2afa076de7d20cf3810e2]
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle ClienteMCP as cliente
+rectangle ServidorMCPSpring as servidor
+rectangle ValidadorContrato as validador
+rectangle CasoDeUsoApplication as caseUso
+rectangle PortaSaida as porta
+rectangle AdaptadorAtlas as adaptador
+database ApacheAtlas as atlas
+rectangle EnvelopeResposta as envelope
+cliente - -> servidor
+servidor - -> validador
+validador - -> caseUso
+caseUso - -> porta
+porta - -> adaptador
+adaptador - -> atlas
+atlas - -> adaptador
+adaptador - -> porta
+porta - -> caseUso
+caseUso - -> envelope
+envelope - -> servidor
+servidor - -> cliente
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 07:22:07 GMT-03:00 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 25+36-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

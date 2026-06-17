@@ -80,7 +80,9 @@ Controles:
 
 ### Diagrama
 
-Ver [`../diagrams/ingestao-putz.puml`](../diagrams/ingestao-putz.puml).
+![Ingestão no cluster](../diagrams/ingestao-putz.svg){ .uml-diagram width="100%" }
+
+Fonte: [`../diagrams/ingestao-putz.puml`](../diagrams/ingestao-putz.puml)
 
 ### Estado dos pontos pendentes
 

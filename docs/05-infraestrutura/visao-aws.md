@@ -24,35 +24,19 @@ Pessoa que provisiona a infraestrutura AWS (mesmo sem escrever Terraform agora) 
 
 ### Topologia alvo (versão mínima)
 
-```plantuml
-@startuml
-top to bottom direction
-actor Internet as internet
-rectangle InternetGateway as igw
-frame VPCLaboratorio as vpc {
-  rectangle SubnetPublic as subnetPublic
-  rectangle SGEdge as sgEdge
-  rectangle InstanciaAplicacaoMCP as appHost
-  rectangle SGInternal as sgInternal
-  rectangle InstanciaMasterCluster as clusterMaster
-  rectangle InstanciaWorkerCluster as clusterWorker
-  rectangle SGDataPlane as sgDataPlane
-}
-rectangle BucketS3Evidence as evidenceStore
-internet --> igw
-igw --> subnetPublic
-subnetPublic --> sgEdge
-sgEdge --> appHost
-appHost --> sgInternal
-sgInternal --> clusterMaster
-sgInternal --> clusterWorker
-clusterMaster --> sgDataPlane
-clusterWorker --> sgDataPlane
-sgDataPlane --> evidenceStore
-@enduml
-```
+![Topologia AWS lógica](../diagrams/visao-aws-logica.svg){ .uml-diagram width="100%" }
 
-Diagrama em arquivo: [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml) e [`../diagrams/rede-aws.puml`](../diagrams/rede-aws.puml).
+Fonte: [`visao-aws-logica.puml`](../diagrams/visao-aws-logica.puml)
+
+### Diagramas de referência
+
+![Topologia do cluster](../diagrams/cluster-topologia-aws.svg){ .uml-diagram width="100%" }
+
+Fonte: [`cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml)
+
+![Rede AWS](../diagrams/rede-aws.svg){ .uml-diagram width="100%" }
+
+Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
 
 ### Mapeamento de zonas lógicas para AWS
 

@@ -18,31 +18,9 @@ Pessoa desenvolvedora Java que implementa, evolui ou testa o servidor MCP.
 
 ### Modelo de camadas para uma chamada MCP
 
-```plantuml
-@startuml
-left to right direction
-rectangle ClienteMCP as cliente
-rectangle ServidorMCPSpring as servidor
-rectangle ValidadorContrato as validador
-rectangle CasoDeUsoApplication as caseUso
-rectangle PortaSaida as porta
-rectangle AdaptadorAtlas as adaptador
-database ApacheAtlas as atlas
-rectangle EnvelopeResposta as envelope
-cliente --> servidor
-servidor --> validador
-validador --> caseUso
-caseUso --> porta
-porta --> adaptador
-adaptador --> atlas
-atlas --> adaptador
-adaptador --> porta
-porta --> caseUso
-caseUso --> envelope
-envelope --> servidor
-servidor --> cliente
-@enduml
-```
+![Camadas MCP](../diagrams/camadas-mcp.svg){ .uml-diagram width="100%" }
+
+Fonte: [`camadas-mcp.puml`](../diagrams/camadas-mcp.puml)
 
 ### Catálogo fechado v1
 

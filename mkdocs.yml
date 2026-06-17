@@ -3,6 +3,9 @@ site_description: Documentação operacional Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
 strict: true
 
+extra_css:
+  - stylesheets/diagrams.css
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - javascripts/mermaid-init.js

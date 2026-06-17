@@ -36,3 +36,5 @@ mkdocs serve
 ```
 
 Build de produção: `bash scripts/prepare-docs.sh && mkdocs build --strict --site-dir public`.
+
+Diagramas UML (PlantUML): fontes em `diagrams/*.puml`; SVG gerados por `scripts/render-diagrams.sh` (invocado automaticamente pelo `prepare-docs.sh`).

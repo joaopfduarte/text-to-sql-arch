@@ -1,0 +1,12 @@
+.md-typeset img.uml-diagram {
+  display: block;
+  margin: 1.25rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.md-typeset .diagram-source {
+  font-size: 0.85em;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+}

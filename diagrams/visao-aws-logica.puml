@@ -1,0 +1,27 @@
+@startuml
+top to bottom direction
+skinparam backgroundColor transparent
+
+actor Internet as internet
+rectangle InternetGateway as igw
+frame VPCLaboratorio as vpc {
+  rectangle SubnetPublic as subnetPublic
+  rectangle SGEdge as sgEdge
+  rectangle InstanciaAplicacaoMCP as appHost
+  rectangle SGInternal as sgInternal
+  rectangle InstanciaMasterCluster as clusterMaster
+  rectangle InstanciaWorkerCluster as clusterWorker
+  rectangle SGDataPlane as sgDataPlane
+}
+rectangle BucketS3Evidence as evidenceStore
+internet --> igw
+igw --> subnetPublic
+subnetPublic --> sgEdge
+sgEdge --> appHost
+appHost --> sgInternal
+sgInternal --> clusterMaster
+sgInternal --> clusterWorker
+clusterMaster --> sgDataPlane
+clusterWorker --> sgDataPlane
+sgDataPlane --> evidenceStore
+@enduml

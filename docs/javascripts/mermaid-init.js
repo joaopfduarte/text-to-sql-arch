@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initMermaid() {
   if (typeof mermaid === "undefined") {
     return;
   }
@@ -19,4 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   mermaid.run({ querySelector: ".mermaid" });
-});
+}
+
+document.addEventListener("DOMContentLoaded", initMermaid);
+
+if (typeof document$ !== "undefined") {
+  document$.subscribe(initMermaid);
+}

@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle ClienteMCP as cliente
+rectangle ServidorMCPSpring as servidor
+rectangle ValidadorContrato as validador
+rectangle CasoDeUsoApplication as caseUso
+rectangle PortaSaida as porta
+rectangle AdaptadorAtlas as adaptador
+database ApacheAtlas as atlas
+rectangle EnvelopeResposta as envelope
+cliente --> servidor
+servidor --> validador
+validador --> caseUso
+caseUso --> porta
+porta --> adaptador
+adaptador --> atlas
+atlas --> adaptador
+adaptador --> porta
+porta --> caseUso
+caseUso --> envelope
+envelope --> servidor
+servidor --> cliente
+@enduml

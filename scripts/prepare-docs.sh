@@ -16,6 +16,8 @@ link_dir "$ROOT/evidence" "$DOCS/evidence"
 link_dir "$ROOT/templates" "$DOCS/templates"
 link_dir "$ROOT/db-reference" "$DOCS/db-reference"
 
+bash "$ROOT/scripts/render-diagrams.sh"
+
 mkdir -p "$DOCS/diagrams"
 for f in "$ROOT/diagrams"/*.{puml,svg}; do
   [[ -e "$f" ]] || continue
