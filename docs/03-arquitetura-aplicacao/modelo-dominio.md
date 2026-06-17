@@ -18,9 +18,9 @@ Pessoa desenvolvedora Java júnior responsável pela implementação dos casos d
 ### DDD estratégico: bounded contexts
 
 - **QuestionIntakeContext**: normaliza pergunta e contexto de sessão.
-- **MetadataDiscoveryContext**: consulta catálogo via tools MCP.
+- **MetadataDiscoveryContext**: consulta a camada semântica e de metadados (catálogo canônico) via tools MCP.
 - **SqlSynthesisContext**: transforma contexto de metadados em SQL candidato.
-- **SqlValidationExecutionContext**: valida, executa e classifica desfecho.
+- **SqlValidationExecutionContext**: valida sintaxe via Apache Calcite (dialeto Hive), executa e classifica desfecho.
 - **ExperimentTrackingContext**: registra trilha da sessão e calcula métricas.
 
 ### Context map

@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle "UserClient" as userClient
+package "NetPublic" as netPublic {
+  rectangle "OrchestratorApi" as edgeApi
+}
+
+package "NetInternalApp" as netInternalApp {
+  rectangle "ApplicationCore" as appCore
+  rectangle "MCPServer" as mcpServer
+  rectangle "AtlasAdapter" as atlasAdapter
+  rectangle "SQLValidatorExecutor" as sqlValidator
+}
+
+package "NetDataPlane" as netDataPlane {
+  rectangle "ApacheAtlasNode" as atlasNode
+  database "TestRelationalDb" as testDb
+}
+
+package "NetObservability" as netObservability {
+  rectangle "RunEvidenceStore" as runStore
+  rectangle "MetricsCollector" as metricsSink
+}
+
+userClient --> edgeApi
+edgeApi --> appCore
+appCore --> mcpServer
+mcpServer --> atlasAdapter
+atlasAdapter --> atlasNode
+appCore --> sqlValidator
+sqlValidator --> testDb
+appCore --> runStore
+appCore --> metricsSink
+@enduml

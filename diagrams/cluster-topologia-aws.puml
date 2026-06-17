@@ -1,0 +1,69 @@
+@startuml
+top to bottom direction
+skinparam backgroundColor transparent
+
+actor Operador as operador
+
+package "VPCLaboratorio" as vpc {
+  frame "SubnetPublica" as subPub {
+    rectangle "SessionManagerOuBastion" as ssm
+  }
+  frame "SubnetPrivada" as subAppDados {
+    rectangle "InstanciaAplicacaoMCP" as appHost
+    rectangle "InstanciaMaster" as masterNode
+    rectangle "InstanciaWorker1" as workerNode1
+    rectangle "InstanciaWorker2" as workerNode2
+    rectangle "InstanciaWorker3" as workerNode3
+  }
+}
+
+rectangle "ZooKeeperServer" as zk
+rectangle "HDFSNameNode" as nn
+rectangle "YARNResourceManager" as rm
+rectangle "AmbariServer" as ambari
+rectangle "ApacheAtlas" as atlas
+rectangle "HBaseMaster" as hbaseMaster
+rectangle "InfraSolr" as solr
+rectangle "HDFSDataNode1" as dn1
+rectangle "HDFSDataNode2" as dn2
+rectangle "HDFSDataNode3" as dn3
+rectangle "YARNNodeManager1" as nm1
+rectangle "YARNNodeManager2" as nm2
+rectangle "YARNNodeManager3" as nm3
+rectangle "HBaseRegionServer1" as hbaseRs1
+rectangle "HBaseRegionServer2" as hbaseRs2
+rectangle "HBaseRegionServer3" as hbaseRs3
+rectangle "HiveMetastore" as hiveMs
+rectangle "HiveServer2" as hs2
+rectangle "KafkaBroker1" as kafka1
+rectangle "KafkaBroker2" as kafka2
+rectangle "BucketS3Evidence" as evidenceStore
+
+operador --> ssm
+operador --> appHost
+appHost --> masterNode
+masterNode --> zk
+masterNode --> nn
+masterNode --> rm
+masterNode --> ambari
+masterNode --> atlas
+masterNode --> hbaseMaster
+masterNode --> solr
+workerNode1 --> dn1
+workerNode2 --> dn2
+workerNode3 --> dn3
+workerNode1 --> nm1
+workerNode2 --> nm2
+workerNode3 --> nm3
+workerNode1 --> hbaseRs1
+workerNode2 --> hbaseRs2
+workerNode3 --> hbaseRs3
+workerNode1 --> hiveMs
+workerNode1 --> hs2
+workerNode2 --> kafka1
+workerNode3 --> kafka2
+appHost --> evidenceStore
+atlas --> hbaseMaster
+atlas --> solr
+atlas --> kafka1
+@enduml

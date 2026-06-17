@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="538px" preserveAspectRatio="none" style="width:3395px;height:538px;" version="1.1" viewBox="0 0 3395 538" width="3395px" zoomAndPan="magnify"><defs><filter height="300%" id="f14urdzhdevbju" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[33607ebfc4f246ac645613fc9f22170d]
+cluster vpc--><polygon fill="#FFFFFF" filter="url(#f14urdzhdevbju)" points="22,107.73,137,107.73,144,132.7979,1055,132.7979,1055,369.86,22,369.86,22,107.73" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="144" y1="132.7979" y2="132.7979"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="109" x="26" y="124.6959">VPCLaboratorio</text><!--MD5=[958e29f47e255613c1b20ef5b8b8e242]
+cluster subPub--><rect fill="#FFFFFF" filter="url(#f14urdzhdevbju)" height="93.07" style="stroke: #000000; stroke-width: 1.5;" width="234" x="46" y="153.73"/><path d="M155,154.73 L155,165.7979 L145,175.7979 L46,175.7979 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="49" y="169.6959">SubnetPublica</text><!--MD5=[65ab3f14b21967cba1cc89e6e82afd6c]
+cluster subAppDados--><rect fill="#FFFFFF" filter="url(#f14urdzhdevbju)" height="192.13" style="stroke: #000000; stroke-width: 1.5;" width="727" x="304" y="153.73"/><path d="M415,154.73 L415,165.7979 L405,175.7979 L304,175.7979 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="101" x="307" y="169.6959">SubnetPrivada</text><!--MD5=[f4528ec87230e0e089332dc353ab5e53]
+entity ssm--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="202" x="62" y="191.73"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="182" x="72" y="216.6959">SessionManagerOuBastion</text><!--MD5=[2f9a29111282a576c69a3d6548bf8838]
+entity appHost--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="176" x="320" y="191.73"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="156" x="330" y="216.6959">InstanciaAplicacaoMCP</text><!--MD5=[627195731a31970fcb11669299f238b6]
+entity masterNode--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="129" x="614.5" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="109" x="624.5" y="315.7659">InstanciaMaster</text><!--MD5=[9f487befb4e96a3beab041135dd39a1c]
+entity workerNode1--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="138" x="531" y="191.73"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="118" x="541" y="216.6959">InstanciaWorker1</text><!--MD5=[fc5b24cc1554613e4fd68302063ea51b]
+entity workerNode2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="138" x="704" y="191.73"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="118" x="714" y="216.6959">InstanciaWorker2</text><!--MD5=[83ae0072a52a147f1e6a5c1446545a7e]
+entity workerNode3--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="138" x="877" y="191.73"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="118" x="887" y="216.6959">InstanciaWorker3</text><!--MD5=[6ba49ba50ee7a1385cde1a4115448fdf]
+entity operador--><ellipse cx="285" cy="17.16" fill="#FEFECE" filter="url(#f14urdzhdevbju)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M285,25.16 L285,52.16 M272,33.16 L298,33.16 M285,52.16 L272,67.16 M285,52.16 L298,67.16 " fill="none" filter="url(#f14urdzhdevbju)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="252.5" y="87.6259">Operador</text><!--MD5=[132eb16378f741f93842dbce0dee0cc6]
+entity zk--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="135" x="527.5" y="389.86"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="115" x="537.5" y="414.8259">ZooKeeperServer</text><!--MD5=[defbd921a4842d1508ad36753a2e7750]
+entity nn--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="131" x="697.5" y="389.86"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="707.5" y="414.8259">HDFSNameNode</text><!--MD5=[aa7db9c1bd801e95ec55912fdad0d42a]
+entity rm--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="180" x="863" y="389.86"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="160" x="873" y="414.8259">YARNResourceManager</text><!--MD5=[b6a05d16083a78f11d7a455c5c4006c0]
+entity ambari--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="112" x="1078" y="389.86"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="92" x="1088" y="414.8259">AmbariServer</text><!--MD5=[03dc2075b18e5e30b29e9dcf0f796a11]
+entity atlas--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="103" x="389.5" y="389.86"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="399.5" y="414.8259">ApacheAtlas</text><!--MD5=[12d86f953fbd1c5d76b46f3977329130]
+entity hbaseMaster--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="109" x="825.5" y="488.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="835.5" y="513.8959">HBaseMaster</text><!--MD5=[0d15b2eb428f0c0027bf5ef6513f3386]
+entity solr--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="79" x="348.5" y="488.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="358.5" y="513.8959">InfraSolr</text><!--MD5=[c5a929a1f1c747957d02e7705b52a8f9]
+entity dn1--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="130" x="1381" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="1391" y="315.7659">HDFSDataNode1</text><!--MD5=[91b900be4c4e923696f7ca3aa8d22363]
+entity dn2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="130" x="2553" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="2563" y="315.7659">HDFSDataNode2</text><!--MD5=[a421dcfb9aa1f1dda01956ef54755e49]
+entity dn3--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="130" x="3057" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="3067" y="315.7659">HDFSDataNode3</text><!--MD5=[6140aec6d87db7a9fb42778de99c1a8f]
+entity nm1--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="162" x="1546" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="1556" y="315.7659">YARNNodeManager1</text><!--MD5=[a8d7b743f9d1c597c2544ea12d18ee5a]
+entity nm2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="162" x="2090" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="2100" y="315.7659">YARNNodeManager2</text><!--MD5=[bd3f2dc7dedd017dd287480fce295b2e]
+entity nm3--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="162" x="3222" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="3232" y="315.7659">YARNNodeManager3</text><!--MD5=[1fd09e98c2cd79477987c604777152ef]
+entity hbaseRs1--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="160" x="1743" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="140" x="1753" y="315.7659">HBaseRegionServer1</text><!--MD5=[50ff3402d86940679c8ae6f6e3721d82]
+entity hbaseRs2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="160" x="2287" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="140" x="2297" y="315.7659">HBaseRegionServer2</text><!--MD5=[5c3fd0f5e9aeba7f977f8c1bc21a7c0f]
+entity hbaseRs3--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="160" x="2718" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="140" x="2728" y="315.7659">HBaseRegionServer3</text><!--MD5=[d4f0ff5a6419a724903c57dd31a28659]
+entity hiveMs--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="117" x="1937.5" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="1947.5" y="315.7659">HiveMetastore</text><!--MD5=[eac2627629f03cf7d5e939f2274756e1]
+entity hs2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="100" x="1246" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="1256" y="315.7659">HiveServer2</text><!--MD5=[ac074a99013806f3054267ac3555943f]
+entity kafka1--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="109" x="1884.5" y="488.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="1894.5" y="513.8959">KafkaBroker1</text><!--MD5=[4466b90b8c646c6d813cd05640fd94e1]
+entity kafka2--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="109" x="2912.5" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="2922.5" y="315.7659">KafkaBroker2</text><!--MD5=[31e20ffc6f68abff4a32dcbbff2a6878]
+entity evidenceStore--><rect fill="#FEFECE" filter="url(#f14urdzhdevbju)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="141" x="1070.5" y="290.8"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="121" x="1080.5" y="315.7659">BucketS3Evidence</text><!--MD5=[c6caf43600809e2072656b061cc8725f]
+link operador to ssm--><path d="M253.26,92.2 C230.33,122.2 200.15,161.67 181.16,186.51 " fill="none" id="operador-&gt;ssm" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="178.21,190.37,186.8482,185.639,181.2419,186.3942,180.4868,180.7879,178.21,190.37" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[fcd27caf83989b53e83d8fbfacd5a3c5]
+link operador to appHost--><path d="M317,92.2 C340.12,122.2 370.54,161.67 389.69,186.51 " fill="none" id="operador-&gt;appHost" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="392.67,190.38,390.3548,180.8071,389.6221,186.4163,384.0129,185.6837,392.67,190.38" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[68c98452d9346abaf5c036b48081bbe6]
+link appHost to masterNode--><path d="M452.96,231.25 C471.45,238.86 493.15,247.52 513,254.8 C545.31,266.63 581.58,278.69 611.96,288.44 " fill="none" id="appHost-&gt;masterNode" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="616.51,289.9,609.1651,283.3385,611.7497,288.3704,606.7178,290.955,616.51,289.9" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1727bccf1422b992302fb9915e7f5e7e]
+link masterNode to zk--><path d="M662.8,330.05 C649.29,345.66 629.97,367.99 615.41,384.82 " fill="none" id="masterNode-&gt;zk" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="612.42,388.26,621.3311,384.0657,615.6892,384.4768,615.2781,378.835,612.42,388.26" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[7e7058705d10fc7def15efa816dce88c]
+link masterNode to nn--><path d="M695.2,330.05 C708.71,345.66 728.03,367.99 742.59,384.82 " fill="none" id="masterNode-&gt;nn" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="745.58,388.26,742.7219,378.835,742.3108,384.4768,736.6689,384.0657,745.58,388.26" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d2d313c7f4b6d2eae0029dcfbadd7a60]
+link masterNode to rm--><path d="M732.48,330.28 C778.78,346.68 845.66,370.37 893.61,387.36 " fill="none" id="masterNode-&gt;rm" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="898.23,388.99,891.0905,382.2056,893.519,387.3147,888.41,389.7432,898.23,388.99" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[7bdfb2ad57de6f3015ba91467c778c1d]
+link masterNode to ambari--><path d="M743.74,323.7 C819.88,338.47 949.97,364.37 1061,389.86 C1064.51,390.67 1068.11,391.52 1071.74,392.39 " fill="none" id="masterNode-&gt;ambari" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1076.4,393.51,1068.5887,387.5114,1071.5394,392.3377,1066.713,395.2884,1076.4,393.51" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[22c65376ef275cdf9cbe2bb2fd8ec0d6]
+link masterNode to atlas--><path d="M632.55,330.28 C592.58,346.58 534.95,370.08 493.35,387.05 " fill="none" id="masterNode-&gt;atlas" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="488.74,388.93,498.584,389.2387,493.3705,387.0435,495.5656,381.83,488.74,388.93" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c2ad0fa150def8ab8a8a096816eb7e00]
+link masterNode to hbaseMaster--><path d="M743.9,324.89 C818.25,339.95 943.91,363.97 1053,377.86 C1070.14,380.05 1196.27,377.19 1208,389.86 C1287.95,476.25 1056.89,499.25 941.4,505.32 " fill="none" id="masterNode-&gt;hbaseMaster" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="936.49,505.57,945.6735,509.1287,941.4841,505.3274,945.2853,501.1381,936.49,505.57" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[50bf9de10051181daa8ad1fb557c8d6f]
+link masterNode to solr--><path d="M614.07,318.66 C533.01,329.3 401.39,352 372,389.86 C351.32,416.5 363.61,457.13 375.18,482.98 " fill="none" id="masterNode-&gt;solr" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="377.14,487.21,376.9826,477.3624,375.0365,482.674,369.725,480.7279,377.14,487.21" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c131b2ad1d8e3105e9acc7bee00571ed]
+link workerNode1 to dn1--><path d="M630.65,231.23 C646.56,240.07 666.66,249.73 686,254.8 C977.91,331.26 1065.1,249.38 1364,290.8 C1367.43,291.27 1370.94,291.82 1374.46,292.42 " fill="none" id="workerNode1-&gt;dn1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1379.35,293.29,1371.1839,287.7841,1374.4264,292.4194,1369.791,295.6619,1379.35,293.29" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d216c0e98989a17985ad8f11eda965eb]
+link workerNode2 to dn2--><path d="M803.19,231.27 C819.14,240.23 839.43,250 859,254.8 C1038.94,298.91 2341.86,270.42 2526,290.8 C2532.7,291.54 2539.63,292.52 2546.55,293.65 " fill="none" id="workerNode2-&gt;dn2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2551.4,294.48,2543.2031,289.0201,2546.4715,293.6372,2541.8545,296.9057,2551.4,294.48" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[6755c2338dcfd58f36c5e59e3b34d3ec]
+link workerNode3 to dn3--><path d="M1015.41,213.17 C1331.22,217.54 2634.43,238.48 3039,290.8 C3042.66,291.27 3046.39,291.83 3050.15,292.45 " fill="none" id="workerNode3-&gt;dn3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="3055.01,293.29,3046.8285,287.8071,3050.0839,292.4333,3045.4577,295.6888,3055.01,293.29" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[18eefb8bd2ee9b2a0cb714fdb8c1af15]
+link workerNode1 to nm1--><path d="M630.24,231.1 C646.2,240.01 666.48,249.79 686,254.8 C867.63,301.37 1342.73,269.32 1529,290.8 C1532.39,291.19 1535.83,291.63 1539.31,292.11 " fill="none" id="workerNode1-&gt;nm1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1544.09,292.79,1535.7546,287.5439,1539.1414,292.0749,1534.6104,295.4617,1544.09,292.79" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[20b6dac9c1dc48b2f1ae0aec94d005e8]
+link workerNode2 to nm2--><path d="M803.21,231.2 C819.16,240.15 839.44,249.92 859,254.8 C1120.65,320.07 1803.88,261.9 2072,290.8 C2075.68,291.19 2079.42,291.65 2083.19,292.15 " fill="none" id="workerNode2-&gt;nm2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2088.07,292.84,2079.703,287.6445,2083.1172,292.1549,2078.6068,295.5691,2088.07,292.84" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[555bb3cdfb8a0b6cad1c2a9dc0c59fb3]
+link workerNode3 to nm3--><path d="M1015.28,213.25 C1345.86,218.17 2765.01,241.83 3205,290.8 C3208.39,291.17 3211.83,291.6 3215.31,292.07 " fill="none" id="workerNode3-&gt;nm3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="3220.09,292.75,3211.7398,287.5275,3215.1394,292.0489,3210.618,295.4485,3220.09,292.75" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2c899b9698dd4bfae3bcd07046e30d97]
+link workerNode1 to hbaseRs1--><path d="M630.22,231.16 C646.18,240.1 666.46,249.87 686,254.8 C910.23,311.33 1496.19,265.02 1726,290.8 C1729.41,291.18 1732.87,291.61 1736.37,292.09 " fill="none" id="workerNode1-&gt;hbaseRs1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1741.19,292.78,1732.8377,287.5609,1736.2391,292.0809,1731.7191,295.4823,1741.19,292.78" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[a3001c13f3900a95b173e95e201a9a84]
+link workerNode2 to hbaseRs2--><path d="M803.2,231.24 C819.15,240.19 839.43,249.96 859,254.8 C1163.49,330.09 1958.14,257.25 2270,290.8 C2273.41,291.16 2276.88,291.59 2280.38,292.05 " fill="none" id="workerNode2-&gt;hbaseRs2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2285.2,292.73,2276.8477,287.5109,2280.2491,292.0309,2275.7291,295.4323,2285.2,292.73" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ccfbbfadcfed10283eb43e52455591f9]
+link workerNode3 to hbaseRs3--><path d="M1015.27,211.79 C1251.75,210.92 2048.59,214.28 2701,290.8 C2704.41,291.2 2707.87,291.65 2711.37,292.14 " fill="none" id="workerNode3-&gt;hbaseRs3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2716.19,292.84,2707.8546,287.5939,2711.2414,292.1249,2706.7104,295.5117,2716.19,292.84" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d6820ddb3df4a787face1bb46ec84756]
+link workerNode1 to hiveMs--><path d="M630.21,231.21 C646.16,240.15 666.44,249.92 686,254.8 C952.2,321.14 1648.13,254.1 1920,290.8 C1923.62,291.29 1927.32,291.88 1931.04,292.54 " fill="none" id="workerNode1-&gt;hiveMs" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1935.83,293.45,1927.7292,287.8485,1930.9169,292.5217,1926.2438,295.7094,1935.83,293.45" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[abc7e6ec3b24dd5322f4ee6efa422797]
+link workerNode1 to hs2--><path d="M630.68,231.12 C646.59,239.93 666.7,249.6 686,254.8 C919.56,317.62 990.54,250.34 1229,290.8 C1232.42,291.38 1235.92,292.06 1239.43,292.82 " fill="none" id="workerNode1-&gt;hs2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1244.29,293.92,1236.4048,288.0189,1239.4152,292.8082,1234.6259,295.8186,1244.29,293.92" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b4c7ccd176aa80c24dcce35deaa7ee23]
+link workerNode2 to kafka1--><path d="M803.19,231.26 C819.14,240.22 839.43,249.99 859,254.8 C945.61,276.07 2401.64,227.03 2464,290.8 C2608.12,438.19 2166.72,489.34 2000.01,503.15 " fill="none" id="workerNode2-&gt;kafka1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1995.23,503.54,2004.5211,506.8074,2000.214,503.1401,2003.8813,498.8331,1995.23,503.54" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[585f86830c74cbbbc2a76c311f12529a]
+link workerNode3 to kafka2--><path d="M1015.42,213.09 C1317.76,217 2521.12,235.78 2895,290.8 C2898.6,291.33 2902.28,291.96 2905.98,292.68 " fill="none" id="workerNode3-&gt;kafka2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2910.73,293.65,2902.7116,287.9311,2905.831,292.6502,2901.1119,295.7696,2910.73,293.65" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b5144ca2388e7f22ec9409d3f72bdba0]
+link appHost to evidenceStore--><path d="M446.44,231.24 C465.9,239.96 490.2,249.53 513,254.8 C737.85,306.76 801.83,263.59 1031,290.8 C1041.61,292.06 1052.76,293.63 1063.71,295.33 " fill="none" id="appHost-&gt;evidenceStore" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1068.64,296.11,1060.3796,290.7467,1063.702,295.3251,1059.1236,298.6475,1068.64,296.11" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[7b2f207903f1b0c44c6daa1e76de903f]
+link atlas to hbaseMaster--><path d="M492.92,424.66 C498.67,426.15 504.45,427.6 510,428.93 C618.37,454.97 745.68,481 819.18,495.59 " fill="none" id="atlas-&gt;hbaseMaster" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="823.77,496.5,815.7197,490.8262,818.8655,495.5277,814.164,498.6734,823.77,496.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d610514cc94e68f3b1d6020081cc570a]
+link atlas to solr--><path d="M430.78,429.11 C422.4,444.46 410.48,466.29 401.35,483.02 " fill="none" id="atlas-&gt;solr" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="399.09,487.15,406.9113,481.1643,401.4843,482.7605,399.8881,477.3335,399.09,487.15" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b0fb9b988f461a70e2084fe344f20a66]
+link atlas to kafka1--><path d="M492.74,425.53 C498.53,426.85 504.37,428.03 510,428.93 C779.79,472.1 1640.67,499.06 1877.94,505.8 " fill="none" id="atlas-&gt;kafka1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1882.59,505.93,1873.7079,501.6746,1877.592,505.7872,1873.4794,509.6713,1882.59,505.93" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[015314cf39cf7e1c9dd61872cfb5b51d]
+@startuml
+top to bottom direction
+skinparam backgroundColor transparent
+
+actor Operador as operador
+
+package "VPCLaboratorio" as vpc {
+  frame "SubnetPublica" as subPub {
+    rectangle "SessionManagerOuBastion" as ssm
+  }
+  frame "SubnetPrivada" as subAppDados {
+    rectangle "InstanciaAplicacaoMCP" as appHost
+    rectangle "InstanciaMaster" as masterNode
+    rectangle "InstanciaWorker1" as workerNode1
+    rectangle "InstanciaWorker2" as workerNode2
+    rectangle "InstanciaWorker3" as workerNode3
+  }
+}
+
+rectangle "ZooKeeperServer" as zk
+rectangle "HDFSNameNode" as nn
+rectangle "YARNResourceManager" as rm
+rectangle "AmbariServer" as ambari
+rectangle "ApacheAtlas" as atlas
+rectangle "HBaseMaster" as hbaseMaster
+rectangle "InfraSolr" as solr
+rectangle "HDFSDataNode1" as dn1
+rectangle "HDFSDataNode2" as dn2
+rectangle "HDFSDataNode3" as dn3
+rectangle "YARNNodeManager1" as nm1
+rectangle "YARNNodeManager2" as nm2
+rectangle "YARNNodeManager3" as nm3
+rectangle "HBaseRegionServer1" as hbaseRs1
+rectangle "HBaseRegionServer2" as hbaseRs2
+rectangle "HBaseRegionServer3" as hbaseRs3
+rectangle "HiveMetastore" as hiveMs
+rectangle "HiveServer2" as hs2
+rectangle "KafkaBroker1" as kafka1
+rectangle "KafkaBroker2" as kafka2
+rectangle "BucketS3Evidence" as evidenceStore
+
+operador - -> ssm
+operador - -> appHost
+appHost - -> masterNode
+masterNode - -> zk
+masterNode - -> nn
+masterNode - -> rm
+masterNode - -> ambari
+masterNode - -> atlas
+masterNode - -> hbaseMaster
+masterNode - -> solr
+workerNode1 - -> dn1
+workerNode2 - -> dn2
+workerNode3 - -> dn3
+workerNode1 - -> nm1
+workerNode2 - -> nm2
+workerNode3 - -> nm3
+workerNode1 - -> hbaseRs1
+workerNode2 - -> hbaseRs2
+workerNode3 - -> hbaseRs3
+workerNode1 - -> hiveMs
+workerNode1 - -> hs2
+workerNode2 - -> kafka1
+workerNode3 - -> kafka2
+appHost - -> evidenceStore
+atlas - -> hbaseMaster
+atlas - -> solr
+atlas - -> kafka1
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 07:22:07 GMT-03:00 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 25+36-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

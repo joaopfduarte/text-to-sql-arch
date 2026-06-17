@@ -1,0 +1,27 @@
+{
+  "runId": "run-20260620-1015-c3d4",
+  "campaignId": "mcp",
+  "provider": "openai",
+  "modelVersion": "gpt-5.4-nano",
+  "seed": 42,
+  "commitHash": "e7abb87",
+  "datasetVersion": "putz-ps-v1-92tables",
+  "contractsVersion": "1.0.0",
+  "toolBudget": 10,
+  "promptVersion": "v1",
+  "inferenceConfigVersion": "v1",
+  "inferenceConfig": {
+    "temperature": null,
+    "temperatureSupported": false,
+    "topP": null,
+    "maxOutputTokens": 4096,
+    "maxInputTokens": null
+  },
+  "promptArtifacts": {
+    "systemShared": "artifact-docs/templates/prompts/system-shared-v1.md",
+    "systemMode": "artifact-docs/templates/prompts/system-mcp-v1.md",
+    "userTemplate": "artifact-docs/templates/prompts/user-template-v1.md"
+  },
+  "promptArtifactsHash": "b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de",
+  "questionId": "Q01"
+}

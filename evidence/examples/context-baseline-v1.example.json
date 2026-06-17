@@ -1,0 +1,27 @@
+{
+  "runId": "run-20260614-1430-a1b2",
+  "campaignId": "baseline-static",
+  "provider": "google",
+  "modelVersion": "gemini-3.5-flash",
+  "seed": 42,
+  "commitHash": "e7abb87",
+  "datasetVersion": "putz-ps-v1-92tables",
+  "contractsVersion": "n/a-baseline",
+  "toolBudget": 0,
+  "promptVersion": "v1",
+  "inferenceConfigVersion": "v1",
+  "inferenceConfig": {
+    "temperature": 0,
+    "temperatureSupported": true,
+    "topP": null,
+    "maxOutputTokens": 4096,
+    "maxInputTokens": null
+  },
+  "promptArtifacts": {
+    "systemShared": "artifact-docs/templates/prompts/system-shared-v1.md",
+    "systemMode": "artifact-docs/templates/prompts/system-baseline-v1.md",
+    "userTemplate": "artifact-docs/templates/prompts/user-template-v1.md"
+  },
+  "promptArtifactsHash": "b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de",
+  "questionId": "Q01"
+}

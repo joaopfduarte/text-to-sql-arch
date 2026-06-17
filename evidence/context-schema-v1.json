@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "artifact-docs/evidence/context-schema-v1.json",
+  "title": "context.json — metadados de reprodutibilidade por corrida (v1)",
+  "description": "Schema estendido para evidence/<runId>/context.json. Campos legados mantidos; v1 adiciona inferência LLM e versionamento de prompts.",
+  "type": "object",
+  "required": [
+    "runId",
+    "campaignId",
+    "provider",
+    "modelVersion",
+    "seed",
+    "commitHash",
+    "datasetVersion",
+    "contractsVersion",
+    "toolBudget",
+    "promptVersion",
+    "inferenceConfigVersion",
+    "inferenceConfig",
+    "promptArtifacts",
+    "promptArtifactsHash"
+  ],
+  "properties": {
+    "runId": {
+      "type": "string",
+      "pattern": "^run-[0-9]{8}-[0-9]{4}-[a-z0-9]+$",
+      "description": "Identificador único da corrida"
+    },
+    "campaignId": {
+      "type": "string",
+      "enum": ["mcp", "baseline-static"]
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["google", "openai"]
+    },
+    "modelVersion": {
+      "type": "string",
+      "description": "Versão fixa do modelo (ex.: gemini-3.5-flash, gpt-5.4-nano)"
+    },
+    "seed": {
+      "type": "integer",
+      "description": "Seed explícita da campanha"
+    },
+    "commitHash": {
+      "type": "string",
+      "minLength": 7,
+      "description": "Hash Git do repositório no congelamento da corrida"
+    },
+    "datasetVersion": {
+      "type": "string",
+      "description": "Versão da massa PS / DDL de referência"
+    },
+    "contractsVersion": {
+      "type": "string",
+      "description": "Versão semântica dos contratos MCP (modo mcp)"
+    },
+    "toolBudget": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Limite de tool calls por sessão (0 no baseline)"
+    },
+    "promptVersion": {
+      "type": "string",
+      "const": "v1"
+    },
+    "inferenceConfigVersion": {
+      "type": "string",
+      "const": "v1"
+    },
+    "inferenceConfig": {
+      "type": "object",
+      "required": [
+        "temperatureSupported",
+        "topP",
+        "maxOutputTokens"
+      ],
+      "properties": {
+        "temperature": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "0 quando suportado; null quando temperatureSupported=false"
+        },
+        "temperatureSupported": {
+          "type": "boolean"
+        },
+        "topP": {
+          "type": ["number", "null"],
+          "description": "Omitido (null) na política v1"
+        },
+        "maxOutputTokens": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Limite de tokens de saída por request"
+        },
+        "maxInputTokens": {
+          "type": ["integer", "null"],
+          "description": "Opcional; null se não fixado pelo harness"
+        }
+      },
+      "additionalProperties": false
+    },
+    "promptArtifacts": {
+      "type": "object",
+      "required": ["systemShared", "systemMode", "userTemplate"],
+      "properties": {
+        "systemShared": {
+          "type": "string",
+          "description": "Caminho repo-relative do bloco compartilhado"
+        },
+        "systemMode": {
+          "type": "string",
+          "description": "system-mcp-v1.md ou system-baseline-v1.md conforme campaignId"
+        },
+        "userTemplate": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "promptArtifactsHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 dos quatro ficheiros .md do manifesto v1"
+    },
+    "questionId": {
+      "type": "string",
+      "pattern": "^Q[0-9]{2}$",
+      "description": "Opcional: Q01–Q30 na bateria v1"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": { "campaignId": { "const": "baseline-static" } }
+      },
+      "then": {
+        "properties": {
+          "toolBudget": { "const": 0 },
+          "promptArtifacts": {
+            "properties": {
+              "systemMode": {
+                "const": "artifact-docs/templates/prompts/system-baseline-v1.md"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "campaignId": { "const": "mcp" } }
+      },
+      "then": {
+        "properties": {
+          "promptArtifacts": {
+            "properties": {
+              "systemMode": {
+                "const": "artifact-docs/templates/prompts/system-mcp-v1.md"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "inferenceConfig": {
+            "properties": { "temperatureSupported": { "const": true } }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "inferenceConfig": {
+            "required": ["temperature"],
+            "properties": {
+              "temperature": { "const": 0 }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

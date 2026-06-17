@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="396px" preserveAspectRatio="none" style="width:1099px;height:396px;" version="1.1" viewBox="0 0 1099 396" width="1099px" zoomAndPan="magnify"><defs><filter height="300%" id="fhsmo15b1s8va" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[d4ad9edfe0cb51f1fcd9dd3998d723f7]
+cluster netPublic--><polygon fill="#FFFFFF" filter="url(#fhsmo15b1s8va)" points="140,98,213,98,220,123.0679,300,123.0679,300,192,140,192,140,98" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="140" x2="220" y1="123.0679" y2="123.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="67" x="144" y="114.9659">NetPublic</text><!--MD5=[abce1a1962111922b8f4d3084af5bddb]
+cluster netInternalApp--><polygon fill="#FFFFFF" filter="url(#fhsmo15b1s8va)" points="328,24,442,24,449,49.0679,878,49.0679,878,192,328,192,328,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="328" x2="449" y1="49.0679" y2="49.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="332" y="40.9659">NetInternalApp</text><!--MD5=[de99aebf81f0f524025d76b313c04922]
+cluster netDataPlane--><polygon fill="#FFFFFF" filter="url(#fhsmo15b1s8va)" points="906,24,1007,24,1014,49.0679,1077,49.0679,1077,201,906,201,906,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="906" x2="1014" y1="49.0679" y2="49.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="910" y="40.9659">NetDataPlane</text><!--MD5=[cba6f315e6d5776dd042aeb2b399c9a6]
+cluster netObservability--><polygon fill="#FFFFFF" filter="url(#fhsmo15b1s8va)" points="526,216,649,216,656,241.0679,700,241.0679,700,384,526,384,526,216" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="526" x2="656" y1="241.0679" y2="241.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="117" x="530" y="232.9659">NetObservability</text><!--MD5=[e4109f92f209e245a0a12b6704c60ffd]
+entity edgeApi--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="128" x="156" y="136.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="166" y="161.4359">OrchestratorApi</text><!--MD5=[5215e0b06f26f8011844a257389828f2]
+entity appCore--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="127" x="344" y="136.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="354" y="161.4359">ApplicationCore</text><!--MD5=[2709927c1384f8d0576dc65e4b60bb37]
+entity mcpServer--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="93" x="566.5" y="62.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="73" x="576.5" y="87.4359">MCPServer</text><!--MD5=[130492d6659c342c7a97a7b580cac107]
+entity atlasAdapter--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="107" x="755" y="62.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="765" y="87.4359">AtlasAdapter</text><!--MD5=[2305a44b6f05b73b15593d0aea30d36e]
+entity sqlValidator--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="164" x="531" y="136.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="144" x="541" y="161.4359">SQLValidatorExecutor</text><!--MD5=[c4fc41b5c9576beb57d0e3e1313927e9]
+entity atlasNode--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="139" x="922" y="62.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="119" x="932" y="87.4359">ApacheAtlasNode</text><!--MD5=[71cba0630c4d945bb3cd7d01fe1db333]
+entity testDb--><path d="M924.5,146.97 C924.5,136.97 991.5,136.97 991.5,136.97 C991.5,136.97 1058.5,136.97 1058.5,146.97 L1058.5,175.0379 C1058.5,185.0379 991.5,185.0379 991.5,185.0379 C991.5,185.0379 924.5,185.0379 924.5,175.0379 L924.5,146.97 " fill="#FEFECE" filter="url(#fhsmo15b1s8va)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M924.5,146.97 C924.5,156.97 991.5,156.97 991.5,156.97 C991.5,156.97 1058.5,156.97 1058.5,146.97 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="114" x="934.5" y="175.9359">TestRelationalDb</text><!--MD5=[300f3bbb68636d51fb25b3f67e84679e]
+entity runStore--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="142" x="542" y="328.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="122" x="552" y="353.4359">RunEvidenceStore</text><!--MD5=[3bcb70242fd7c751f9378783295dc490]
+entity metricsSink--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="129" x="548.5" y="254.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="109" x="558.5" y="279.4359">MetricsCollector</text><!--MD5=[4295efe75ddcab72777beaa5a3ef0d40]
+entity userClient--><rect fill="#FEFECE" filter="url(#fhsmo15b1s8va)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="90" x="6" y="136.47"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="16" y="161.4359">UserClient</text><!--MD5=[64e41b5590a22e4bd4854cc91e7aff57]
+link userClient to edgeApi--><path d="M96.31,156 C112.64,156 131.54,156 149.55,156 " fill="none" id="userClient-&gt;edgeApi" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="154.1,156,145.1,152,149.1,156,145.1,160,154.1,156" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ec16bc557826dcfb4c5c97e0b0b19863]
+link edgeApi to appCore--><path d="M284.32,156 C301.43,156 320.02,156 337.43,156 " fill="none" id="edgeApi-&gt;appCore" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="342.27,156,333.27,152,337.27,156,333.27,160,342.27,156" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[22577079f2c89907b4dc790f754c2dbd]
+link appCore to mcpServer--><path d="M463.57,135.97 C493.7,125.02 530.79,111.53 560.36,100.78 " fill="none" id="appCore-&gt;mcpServer" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="564.75,99.18,554.9236,98.5157,560.0544,100.8979,557.6722,106.0287,564.75,99.18" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ba5ea741ac59ded2cc5f0475e4826900]
+link mcpServer to atlasAdapter--><path d="M659.86,82 C686.35,82 719.96,82 748.42,82 " fill="none" id="mcpServer-&gt;atlasAdapter" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="753.27,82,744.27,78,748.27,82,744.27,86,753.27,82" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[90aa50615aeb64c1027e223a5e1a4fb1]
+link atlasAdapter to atlasNode--><path d="M862.34,82 C878.88,82 897.47,82 915.24,82 " fill="none" id="atlasAdapter-&gt;atlasNode" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="920.24,82,911.24,78,915.24,82,911.24,86,920.24,82" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[324ec44aac1e9356b7b2a946a817e393]
+link appCore to sqlValidator--><path d="M471.5,156 C488.13,156 506.39,156 524.08,156 " fill="none" id="appCore-&gt;sqlValidator" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="529.05,156,520.05,152,524.05,156,520.05,160,529.05,156" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[9e90d65b998a258349df378966fcc5f1]
+link sqlValidator to testDb--><path d="M695.23,157.08 C761.38,157.96 853.92,159.19 917.69,160.03 " fill="none" id="sqlValidator-&gt;testDb" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="922.64,160.1,913.6863,155.9974,917.6403,160.0429,913.5949,163.9969,922.64,160.1" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d1ecac3d2ab4c96af4bbf210024dae8f]
+link appCore to runStore--><path d="M417.77,175.94 C433.83,208.49 469.79,273.17 518,311 C524.95,316.45 532.81,321.19 540.94,325.29 " fill="none" id="appCore-&gt;runStore" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="545.24,327.37,538.8727,319.8562,540.7369,325.1971,535.396,327.0612,545.24,327.37" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[37a4920060c7724e7eaa496a4a15c1f6]
+link appCore to metricsSink--><path d="M443.02,176.02 C478.8,196.76 534.64,229.14 572.24,250.94 " fill="none" id="appCore-&gt;metricsSink" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="576.34,253.32,570.547,245.355,572.0103,250.8193,566.5459,252.2826,576.34,253.32" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[689dd6d094e38d985e1b6ec7b6749590]
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle "UserClient" as userClient
+package "NetPublic" as netPublic {
+  rectangle "OrchestratorApi" as edgeApi
+}
+
+package "NetInternalApp" as netInternalApp {
+  rectangle "ApplicationCore" as appCore
+  rectangle "MCPServer" as mcpServer
+  rectangle "AtlasAdapter" as atlasAdapter
+  rectangle "SQLValidatorExecutor" as sqlValidator
+}
+
+package "NetDataPlane" as netDataPlane {
+  rectangle "ApacheAtlasNode" as atlasNode
+  database "TestRelationalDb" as testDb
+}
+
+package "NetObservability" as netObservability {
+  rectangle "RunEvidenceStore" as runStore
+  rectangle "MetricsCollector" as metricsSink
+}
+
+userClient - -> edgeApi
+edgeApi - -> appCore
+appCore - -> mcpServer
+mcpServer - -> atlasAdapter
+atlasAdapter - -> atlasNode
+appCore - -> sqlValidator
+sqlValidator - -> testDb
+appCore - -> runStore
+appCore - -> metricsSink
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 07:22:07 GMT-03:00 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 25+36-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

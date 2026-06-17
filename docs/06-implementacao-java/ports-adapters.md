@@ -37,22 +37,22 @@ Pessoa desenvolvedora Java que implementa um adaptador novo ou faz mock para tes
 | `MetadataLookupPort` | `AtlasMetadataAdapter` (`adapters.out.atlas`) | Apache Atlas via REST API. |
 | `RelationshipManifestPort` (opcional) | `JsonManifestAdapter` (`adapters.out.atlas`) | Manifesto local de FKs (quando o Atlas não tem). |
 | `LlmCompletionPort` | `SpringAiLlmAdapter` (`adapters.out.llm`) | Provedores LLM via Spring AI (`openai` e `google`). |
-| `SqlParsePort` | `JSqlParserAdapter` (`adapters.out.sqlparser`) | Biblioteca de parsing SQL. |
-| `SqlExecutionPort` | `HiveJdbcAdapter` (`adapters.out.jdbc`) | HiveServer2 (subconjunto XPTO). |
+| `SqlParsePort` | `CalciteSqlParseAdapter` (`adapters.out.calcite`) | Apache Calcite (dialeto Hive). |
+| `SqlExecutionPort` | `HiveJdbcAdapter` (`adapters.out.jdbc`) | HiveServer2 (subconjunto PS, 92 tabelas). |
 | `RunEvidencePort` | `FileSystemEvidenceAdapter` ou `S3EvidenceAdapter` (`adapters.out.evidence`) | Filesystem local ou S3. |
 | `MetricsSinkPort` | `JsonlMetricsAdapter` (`observability`) | Arquivo `metrics.json` por corrida. |
 
-O `SpringAiLlmAdapter` seleciona o provider por configuração (`app.llm.provider`) e exige versão explícita por corrida (`app.llm.openai.model-version` ou `app.llm.google.model-version`).
+O `SpringAiLlmAdapter` seleciona o provider por configuração (`app.llm.provider`) e exige versão explícita por corrida (`app.llm.openai.model-version` ou `app.llm.google.model-version`). Deve aplicar a política de inferência v1 (`temperature=0` no Google; omitir `temperature` em GPT-5 nano) e serializar `inferenceConfig`, `promptArtifacts` e `promptArtifactsHash` em `context.json` via `RunEvidencePort` (ver [`../08-experimento-avaliacao/llm-inferencia-e-prompts.md`](../08-experimento-avaliacao/llm-inferencia-e-prompts.md)).
 
 ### Decisões de implementação
 
 | Tópico | Decisão / direção |
 |--------|---------------------|
 | Estilo do servidor MCP | TBD (depende do componente Spring MCP escolhido). |
-| Parser SQL | JSqlParser ou Calcite. TBD com base no dialeto Hive. |
-| Driver JDBC | `hive-jdbc` oficial para o subconjunto XPTO no cluster. |
+| Parser SQL | **Apache Calcite** (dialeto Hive). Decisão fechada; ver Cap.~4 (Escolhas Arquiteturais). |
+| Driver JDBC | `hive-jdbc` oficial para o subconjunto PS (92 tabelas) no cluster. |
 | Evidências | Filesystem local no MVP; S3 quando habilitarmos. |
-| Manifesto de FKs | JSON estático, fonte única alinhada a [`../04-arquitetura-dados/banco-xpto-dominio.md`](../04-arquitetura-dados/banco-xpto-dominio.md). |
+| Manifesto de FKs | JSON estático, fonte única alinhada a [`../04-arquitetura-dados/banco-putz-dominio.md`](../04-arquitetura-dados/banco-putz-dominio.md). |
 
 ### Testabilidade
 

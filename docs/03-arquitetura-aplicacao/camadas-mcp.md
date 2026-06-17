@@ -18,29 +18,69 @@ Pessoa desenvolvedora Java que implementa, evolui ou testa o servidor MCP.
 
 ### Modelo de camadas para uma chamada MCP
 
-```mermaid
-flowchart LR
-    cliente[ClienteMCP] --> servidor[ServidorMCPSpring]
-    servidor --> validador[ValidadorContrato]
-    validador --> caseUso[CasoDeUsoApplication]
-    caseUso --> porta[PortaSaida]
-    porta --> adaptador[AdaptadorAtlas]
-    adaptador --> atlas[ApacheAtlas]
-    atlas --> adaptador
-    adaptador --> porta
-    porta --> caseUso
-    caseUso --> envelope[EnvelopeResposta]
-    envelope --> servidor
-    servidor --> cliente
+```plantuml
+@startuml
+left to right direction
+rectangle ClienteMCP as cliente
+rectangle ServidorMCPSpring as servidor
+rectangle ValidadorContrato as validador
+rectangle CasoDeUsoApplication as caseUso
+rectangle PortaSaida as porta
+rectangle AdaptadorAtlas as adaptador
+database ApacheAtlas as atlas
+rectangle EnvelopeResposta as envelope
+cliente --> servidor
+servidor --> validador
+validador --> caseUso
+caseUso --> porta
+porta --> adaptador
+adaptador --> atlas
+atlas --> adaptador
+adaptador --> porta
+porta --> caseUso
+caseUso --> envelope
+envelope --> servidor
+servidor --> cliente
+@enduml
 ```
+
+### Catálogo fechado v1
+
+O catálogo é **fechado em quinze tools** somente leitura: três basais (protocolo mínimo de avaliação) e doze
+complementares. As basais já têm porta e adapter definidos. Para as doze complementares, porta e adapter são
+**planejados** (desenho lógico, sem código Java nesta etapa), com referência cruzada ao endpoint Atlas. A seleção
+está em [`../../evidence/matriz-15-tools-mcp-v1.md`](../../evidence/matriz-15-tools-mcp-v1.md).
 
 ### Tabela `tool -> porta Java -> contrato JSON -> erro canônico`
 
-| Tool MCP | Caso de uso | Porta de saída | Adapter concreto | Contrato JSON | Erros canônicos possíveis |
-|----------|-------------|----------------|------------------|---------------|---------------------------|
-| `catalog.listTables` | `ListTablesUseCase` | `MetadataLookupPort.listTables(schema, limit, cursor)` | `AtlasMetadataAdapter` | Ver `catalog.listTables` em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md) | `invalid_input`, `catalog_unavailable`, `timeout`, `internal_error` |
-| `catalog.describeTable` | `DescribeTableUseCase` | `MetadataLookupPort.describeTable(schema, table)` | `AtlasMetadataAdapter` | Ver `catalog.describeTable` em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md) | `invalid_input`, `not_found`, `catalog_unavailable`, `timeout`, `internal_error` |
-| `catalog.listRelationships` | `ListRelationshipsUseCase` | `MetadataLookupPort.listRelationships(schema, table)` | `AtlasMetadataAdapter` (consulta manifesto de FKs quando o Atlas não tem relação modelada) | Ver `catalog.listRelationships` em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md) | `invalid_input`, `not_found`, `catalog_unavailable`, `timeout`, `internal_error` |
+Erros canônicos abreviados: `inv` = `invalid_input`, `nf` = `not_found`, `cu` = `catalog_unavailable`,
+`to` = `timeout`, `ie` = `internal_error`. Contrato JSON de cada tool em
+[`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
+
+#### Tools basais
+
+| Tool MCP | Caso de uso | Porta de saída | Adapter concreto | Endpoint Atlas | Erros |
+|----------|-------------|----------------|------------------|----------------|-------|
+| `catalog.listTables` | `ListTablesUseCase` | `MetadataLookupPort.listTables(schema, limit, cursor)` | `AtlasMetadataAdapter` | `GET /v2/search/dsl` | `inv`, `cu`, `to`, `ie` |
+| `catalog.describeTable` | `DescribeTableUseCase` | `MetadataLookupPort.describeTable(schema, table)` | `AtlasMetadataAdapter` | `GET /v2/entity/uniqueAttribute/type/{typeName}` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.listRelationships` | `ListRelationshipsUseCase` | `MetadataLookupPort.listRelationships(schema, table)` | `AtlasMetadataAdapter` (consulta manifesto de FKs quando o Atlas não tem relação modelada) | `GET /v2/types/relationshipdef/name/{name}` | `inv`, `nf`, `cu`, `to`, `ie` |
+
+#### Tools complementares (porta e adapter planejados)
+
+| Tool MCP | Caso de uso (planejado) | Porta de saída (planejada) | Adapter (planejado) | Endpoint Atlas | Erros |
+|----------|-------------------------|----------------------------|---------------------|----------------|-------|
+| `catalog.searchTables` | `SearchTablesUseCase` | `AtlasDiscoveryPort.searchByDsl(...)` | `AtlasDiscoveryAdapter` | `GET /v2/search/dsl` | `inv`, `cu`, `to`, `ie` |
+| `catalog.quickSearch` | `QuickSearchUseCase` | `AtlasDiscoveryPort.quickSearch(...)` | `AtlasDiscoveryAdapter` | `GET /v2/search/quick` | `inv`, `cu`, `to`, `ie` |
+| `catalog.searchByAttribute` | `SearchByAttributeUseCase` | `AtlasDiscoveryPort.searchByAttribute(...)` | `AtlasDiscoveryAdapter` | `GET /v2/search/attribute` | `inv`, `cu`, `to`, `ie` |
+| `catalog.fullTextSearch` | `FullTextSearchUseCase` | `AtlasDiscoveryPort.searchByFullText(...)` | `AtlasDiscoveryAdapter` | `GET /v2/search/fulltext` | `inv`, `cu`, `to`, `ie` |
+| `catalog.getEntityByGuid` | `GetEntityByGuidUseCase` | `MetadataLookupPort.getEntityByGuid(guid)` | `AtlasMetadataAdapter` | `GET /v2/entity/guid/{guid}` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getEntityByName` | `GetEntityByNameUseCase` | `MetadataLookupPort.getEntityByName(typeName, qualifiedName)` | `AtlasMetadataAdapter` | `GET /v2/entity/uniqueAttribute/type/{typeName}` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getEntityHeader` | `GetEntityHeaderUseCase` | `MetadataLookupPort.getEntityHeader(guid)` | `AtlasMetadataAdapter` | `GET /v2/entity/guid/{guid}/header` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getClassifications` | `GetClassificationsUseCase` | `MetadataLookupPort.getClassifications(guid)` | `AtlasMetadataAdapter` | `GET /v2/entity/guid/{guid}/classifications` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getEntityAudit` | `GetEntityAuditUseCase` | `MetadataLookupPort.getEntityAudit(guid, count, offset)` | `AtlasMetadataAdapter` | `GET /v2/entity/{guid}/audit` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getLineage` | `GetLineageUseCase` | `AtlasLineagePort.getLineage(guid, depth, direction)` | `AtlasLineageAdapter` | `GET /v2/lineage/{guid}` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getEntityTypeDef` | `GetEntityTypeDefUseCase` | `AtlasTypeDefPort.getEntityDef(name)` | `AtlasTypeDefAdapter` | `GET /v2/types/entitydef/name/{name}` | `inv`, `nf`, `cu`, `to`, `ie` |
+| `catalog.getRelationshipTypeDef` | `GetRelationshipTypeDefUseCase` | `AtlasTypeDefPort.getRelationshipDef(name)` | `AtlasTypeDefAdapter` | `GET /v2/types/relationshipdef/name/{name}` | `inv`, `nf`, `cu`, `to`, `ie` |
 
 ### Envelope padrão
 
@@ -49,7 +89,7 @@ Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` d
 ### Política de tool budget
 
 - Cada `QuerySession` carrega um `ToolBudget` (valor numérico configurado por corrida).
-- Orçamento padrão de referência: **6 chamadas por sessão** (uma sessão por pergunta), alinhado ao capítulo metodológico.
+- Orçamento padrão de referência: **10 chamadas por sessão** (uma sessão por pergunta), alinhado ao capítulo metodológico.
 - Cada chamada de tool decrementa o orçamento.
 - Atingir o orçamento encerra a sessão com `RunRecord` marcado como `budget_exceeded` (registrado no harness, não no envelope MCP).
 

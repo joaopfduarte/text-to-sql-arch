@@ -20,20 +20,20 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 |------|-------|
 | Pessoa avaliadora | Submete pergunta em linguagem natural, recebe SQL e desfecho da execução. |
 | Operadora de corrida | Configura `runId`, dataset e contratos versionados. |
-| Catálogo canônico (Apache Atlas) | Fonte de verdade dos metadados sobre o subconjunto XPTO. |
-| Banco relacional XPTO | Fonte dos dados consultáveis (subconjunto congelado). |
+| Camada semântica e de metadados (catálogo canônico) | Fonte de verdade dos metadados sobre o subconjunto PS (92 tabelas); implementada com Apache Atlas. |
+| Banco relacional PS | Fonte dos dados consultáveis (92 tabelas, subconjunto fixo). |
 
 ### Blocos de negócio
 
 | Bloco | Responsabilidade |
 |-------|------------------|
-| Agente/orquestrador LLM | Executa estratégia de tool-use, respeita orçamento de até 6 chamadas por sessão e produz SQL candidato a partir do contexto obtido por MCP. |
-| Servidor MCP | Expõe tools com contratos estáveis, aplica validações de entrada e saída e centraliza a integração com o adaptador de catálogo. |
+| Agente/orquestrador LLM | Executa estratégia de tool-use, respeita orçamento de até 10 chamadas por sessão e produz SQL candidato a partir do contexto obtido por MCP. |
+| Servidor MCP | Expõe tools com contratos estáveis, aplica validações de entrada e saída e centraliza a integração com o adaptador da camada semântica. |
 | Tools MCP | Descoberta de tabelas, detalhamento de colunas e inspeção de relacionamentos. |
-| Adaptador de catálogo | Traduz respostas do Atlas para contrato interno canônico, desacoplando mudanças de API. |
-| Fonte canônica de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto XPTO exposto. |
-| Banco relacional de avaliação | Subconjunto congelado do XPTO, sem dados sensíveis, residente no cluster. |
-| Validador e executor SQL | Parse sintático, validação estrutural contra catálogo e execução controlada com classificação de erro. |
+| Adaptador da camada semântica | Traduz respostas do catálogo canônico (Apache Atlas) para contrato interno, desacoplando mudanças de API. |
+| Catálogo canônico de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto PS (92 tabelas) exposto. |
+| Banco relacional de avaliação | Subconjunto estável do PS (92 tabelas), sem dados sensíveis, residente no cluster. |
+| Validador e executor SQL | Parse sintático via **Apache Calcite** (dialeto Hive), validação estrutural contra catálogo canônico e execução controlada em Hive com classificação de erro. |
 | Harness experimental | Registra trilha completa por corrida, calcula métricas essenciais e consolida evidências em JSONL. |
 
 ### Contratos macro entre blocos
@@ -47,9 +47,7 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 
 ### Diagrama lógico
 
-```mermaid
---8<-- "diagrams/diagrama-mestre.mmd"
-```
+Ver [`../diagrams/diagrama-mestre.puml`](../diagrams/diagrama-mestre.puml).
 
 ### Fronteira deste documento
 

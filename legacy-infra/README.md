@@ -1,6 +1,6 @@
 # CDP Infrastructure on OCI (Terraform + Ansible)
 
-> **Nota — Esta pasta é legado OCI e não o alvo do TCC.** O alvo do TCC é AWS x86 com VDF canônico em [`../../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/ODP-VDF.xml). Esta pasta preserva somente a referência de migração OCI (ODP 1.2.2.0, `centos9-aarch64`).
+> **Nota — Esta pasta é legado OCI e não o alvo do TCC.** O alvo do TCC é AWS x86 com VDF canônico em [`../../assets/scripts/ODP-VDF.xml`](../../assets/scripts/ODP-VDF.xml). Esta pasta preserva somente a referência de migração OCI (ODP 1.2.2.0, `centos9-aarch64`).
 
 **Documentação Principal:** [https://github.com/Ecosystem-CDP/docs/tree/main](https://github.com/Ecosystem-CDP/docs/tree/main)
 
@@ -16,29 +16,28 @@ Criar um framework de infraestrutura como código que permite a qualquer usuári
 
 O projeto combina **Terraform** para a infraestrutura física e de rede, com **Ansible** (executado via **Cloud-Init**) para a configuração de software e orquestração do cluster.
 
-```mermaid
-graph TD
-    User[Usuário]
-    
-    subgraph OCI [Oracle Cloud Infrastructure]
-        subgraph VCN [VCN 10.0.0.0/24]
-            IG[Internet Gateway]
-            SL[Security List]
-            
-            subgraph Subnet [Subnet Pública]
-                Master["Master Node<br/>(Ansible Controller)<br/>10.0.0.2"]
-                Node1["Worker Node 1<br/>10.0.0.3"]
-                Node2["Worker Node 2<br/>10.0.0.4"]
-                Node3["Worker Node 3<br/>10.0.0.5"]
-            end
-        end
-    end
-
-    User -->|Terraform Apply| OCI
-    User -->|Acesso Web / SSH| Master
-    Master -->|Ansible SSH| Node1
-    Master -->|Ansible SSH| Node2
-    Master -->|Ansible SSH| Node3
+```plantuml
+@startuml
+top to bottom direction
+actor Usuario as user
+frame "Oracle Cloud Infrastructure" as oci {
+  frame "VCN 10.0.0.0/24" as vcn {
+    rectangle "Internet Gateway" as ig
+    rectangle "Security List" as sl
+    frame "Subnet Publica" as subnet {
+      rectangle "Master Node\\n(Ansible Controller)\\n10.0.0.2" as master
+      rectangle "Worker Node 1\\n10.0.0.3" as node1
+      rectangle "Worker Node 2\\n10.0.0.4" as node2
+      rectangle "Worker Node 3\\n10.0.0.5" as node3
+    }
+  }
+}
+user --> oci : Terraform Apply
+user --> master : Acesso Web / SSH
+master --> node1 : Ansible SSH
+master --> node2 : Ansible SSH
+master --> node3 : Ansible SSH
+@enduml
 ```
 
 ### Componentes de Infraestrutura (Terraform)
@@ -51,32 +50,39 @@ graph TD
 
 ### Fluxo de Provisionamento
 
-```mermaid
-sequenceDiagram
-    participant User as Usuário
-    participant OCI as OCI (Terraform)
-    participant Master as Master Node
-    participant Cluster as Cluster (Workers)
+```plantuml
+@startuml
+actor Usuario as user
+participant "OCI (Terraform)" as oci
+participant "Master Node" as master
+participant "Cluster (Workers)" as cluster
 
-    User->>OCI: Terraform Apply
-    OCI-->>User: Criação de VCN e Instâncias
-    
-    opt Cloud-Init (Master)
-        Master->>Master: Instalação de Pkgs (Ansible/Git)
-        Master->>Master: Configuração de Chaves SSH
-        Master->>Cluster: Aguarda conectividade SSH
-    end
+user -> oci : Terraform Apply
+oci --> user : Criacao de VCN e Instancias
 
-    Note over Master: Início da Orquestração
+opt Cloud-Init (Master)
+  master -> master : Instalacao de Pkgs (Ansible/Git)
+  master -> master : Configuracao de Chaves SSH
+  master -> cluster : Aguarda conectividade SSH
+end
 
-    Master->>Cluster: Ansible Playbook (site.yml)
-    Note right of Cluster: Setup de SO, Kernel, Firewalls
-    
-    Master->>Cluster: Ansible Playbook (cluster_deploy.yml)
-    Note right of Cluster: Install Ambari Server/Agents
-    Note right of Cluster: Deploy Blueprint Hadoop
-    
-    Master-->>User: Cluster Pronto para Uso
+note over master
+Inicio da Orquestracao
+end note
+
+master -> cluster : Ansible Playbook (site.yml)
+note right of cluster
+Setup de SO, Kernel, Firewalls
+end note
+
+master -> cluster : Ansible Playbook (cluster_deploy.yml)
+note right of cluster
+Install Ambari Server/Agents
+Deploy Blueprint Hadoop
+end note
+
+master --> user : Cluster pronto para uso
+@enduml
 ```
 
 1.  **Terraform**:

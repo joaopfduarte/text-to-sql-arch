@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle "QuestionInput" as questionInput
+rectangle "QuestionIntakeUseCase" as intakeUseCase
+rectangle "DiscoverMetadataUseCase" as metadataUseCase
+rectangle "MCPToolGateway" as mcpToolGateway
+rectangle "AtlasCatalogAdapter" as atlasAdapter
+database "ApacheAtlasCanonical" as atlasSource
+rectangle "SqlSynthesisUseCase" as sqlSynthesisUseCase
+rectangle "SQLCandidate" as sqlCandidate
+rectangle "ValidateExecuteUseCase" as validationUseCase
+rectangle "CalciteSqlParseAdapter" as sqlParser
+database "TestRelationalDb" as testDb
+rectangle "TrackExperimentUseCase" as trackingUseCase
+rectangle "EssentialMetrics" as metrics
+rectangle "StructuredEvidenceJSONL" as evidence
+rectangle "RunMetadataSeedModelCommit" as reproducibility
+
+questionInput --> intakeUseCase
+intakeUseCase --> metadataUseCase
+metadataUseCase --> mcpToolGateway
+mcpToolGateway --> atlasAdapter
+atlasAdapter --> atlasSource
+metadataUseCase --> sqlSynthesisUseCase
+sqlSynthesisUseCase --> sqlCandidate
+sqlCandidate --> validationUseCase
+validationUseCase --> sqlParser
+validationUseCase --> testDb
+validationUseCase --> trackingUseCase
+trackingUseCase --> metrics
+trackingUseCase --> evidence
+trackingUseCase --> reproducibility
+@enduml

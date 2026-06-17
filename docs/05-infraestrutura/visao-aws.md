@@ -24,34 +24,35 @@ Pessoa que provisiona a infraestrutura AWS (mesmo sem escrever Terraform agora) 
 
 ### Topologia alvo (versão mínima)
 
-```mermaid
-flowchart TB
-    internet[Internet]
-    internet --> igw[InternetGateway]
-    subgraph vpc [VPCLaboratorio]
-        igw --> subnetPublic[SubnetPublic]
-        subnetPublic --> sgEdge[SGEdge]
-        sgEdge --> appHost[InstanciaAplicacaoMCP]
-        appHost --> sgInternal[SGInternal]
-        sgInternal --> clusterMaster[InstanciaMasterCluster]
-        sgInternal --> clusterWorker[InstanciaWorkerCluster]
-        clusterMaster --> sgDataPlane[SGDataPlane]
-        clusterWorker --> sgDataPlane
-        sgDataPlane --> evidenceStore[BucketS3Evidence]
-    end
+```plantuml
+@startuml
+top to bottom direction
+actor Internet as internet
+rectangle InternetGateway as igw
+frame VPCLaboratorio as vpc {
+  rectangle SubnetPublic as subnetPublic
+  rectangle SGEdge as sgEdge
+  rectangle InstanciaAplicacaoMCP as appHost
+  rectangle SGInternal as sgInternal
+  rectangle InstanciaMasterCluster as clusterMaster
+  rectangle InstanciaWorkerCluster as clusterWorker
+  rectangle SGDataPlane as sgDataPlane
+}
+rectangle BucketS3Evidence as evidenceStore
+internet --> igw
+igw --> subnetPublic
+subnetPublic --> sgEdge
+sgEdge --> appHost
+appHost --> sgInternal
+sgInternal --> clusterMaster
+sgInternal --> clusterWorker
+clusterMaster --> sgDataPlane
+clusterWorker --> sgDataPlane
+sgDataPlane --> evidenceStore
+@enduml
 ```
 
-### Topologia do cluster (detalhe)
-
-```mermaid
---8<-- "diagrams/cluster-topologia-aws.mmd"
-```
-
-### Rede AWS
-
-```mermaid
---8<-- "diagrams/rede-aws.mmd"
-```
+Diagrama em arquivo: [`../../diagrams/cluster-topologia-aws.puml`](../../diagrams/cluster-topologia-aws.puml) e [`../../diagrams/rede-aws.puml`](../../diagrams/rede-aws.puml).
 
 ### Mapeamento de zonas lógicas para AWS
 
@@ -59,7 +60,7 @@ flowchart TB
 |-------------------------------|-------------|--------|
 | `NetPublic` | Subnet pública + Security Group de entrada (porta 443/22 restrita por IP). | Recebe a pergunta no orquestrador. |
 | `NetInternalApp` | Subnet privada + SG de aplicação. | Hospeda a aplicação MCP. |
-| `NetDataPlane` | Subnet privada de dados + SG do cluster (acesso restrito ao master/worker). | Atlas, HDFS, Hive Metastore, banco XPTO. |
+| `NetDataPlane` | Subnet privada de dados + SG do cluster (acesso restrito ao master/worker). | Atlas, HDFS, Hive Metastore, banco PS. |
 | `NetObservability` | Bucket S3 dedicado + IAM role da aplicação. | Evidências por `runId`, retenção sem sobrescrita. |
 
 ### Recursos por categoria
@@ -69,9 +70,9 @@ flowchart TB
 | Rede | VPC `/24` | Equivalente ao `vcn-data-lake` (ver [`delta-oci-para-aws.md`](delta-oci-para-aws.md)). | Definir Terraform |
 | Rede | Subnets pública + privada | Mínimo 2 subnets em AZs diferentes para futuro HA. | Definir Terraform |
 | Computação | EC2 master (1 instância) | `m6i.2xlarge` (8 vCPU, 32 GiB), Atlas co-localizado. | Definido (ADR-0002) |
-| Computação | EC2 workers (3 instâncias) | `m6i.4xlarge` (16 vCPU, 64 GiB) para HDFS/YARN/Hive/HBase/Kafka. | Definido (ADR-0002) |
-| Computação | EC2 aplicação MCP | Pode iniciar co-localizada no master e evoluir para nó próprio conforme carga. | Definido para MVP |
-| Armazenamento | EBS por instância | gp3 >= 200 GiB por worker, com margem para replicação HDFS 3. | Definido |
+| Computação | EC2 workers (3 instâncias) | `m6i.2xlarge` (8 vCPU, 32 GiB) para HDFS/YARN/Hive/HBase/Kafka. | Definido (ADR-0002) |
+| Computação | EC2 aplicação MCP (1 instância) | `m6i.2xlarge` (8 vCPU, 32 GiB), nó dedicado na topologia alvo (`NetInternalApp`); co-localização no master apenas como contingência de MVP. | Definido (visão AWS) |
+| Armazenamento | EBS por instância | gp3 >= 100 GiB por nó do cluster (master e workers), com replicação HDFS 3. | Definido |
 | Armazenamento | Bucket S3 (evidências) | Versionamento ativado, retenção. | Definir |
 | Segurança | Security Groups (3+: edge, app, data). | `deny by default`. | Definir |
 | Segurança | IAM roles (EC2 -> S3) | Mínimo privilégio. | Definir |
@@ -79,7 +80,7 @@ flowchart TB
 
 ### Diferenças face ao laboratório OCI de referência
 
-O código em `legacy-infra/` na raiz do repositório contém o laboratório OCI de referência (ODP 1.2.2.0 em ARM). As principais diferenças para o alvo AWS x86 estão consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
+A pasta [`../../legacy-infra/`](../../legacy-infra/) contém o laboratório OCI de referência (ODP 1.2.2.0 em ARM). As principais diferenças para o alvo AWS x86 estão consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

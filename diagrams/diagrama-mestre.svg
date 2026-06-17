@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="294px" preserveAspectRatio="none" style="width:1864px;height:294px;" version="1.1" viewBox="0 0 1864 294" width="1864px" zoomAndPan="magnify"><defs><filter height="300%" id="f1bzbxh2hy3p8s" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[a7b5d2dd3e6419bfa9dd7f7ef5a7848e]
+entity questionInput--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="118" x="6" y="52.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="16" y="77.8959">QuestionInput</text><!--MD5=[279bea1d07eb6ed1e07b4cf88ad7b7ab]
+entity intakeUseCase--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="180" x="184" y="52.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="160" x="194" y="77.8959">QuestionIntakeUseCase</text><!--MD5=[7f0fe571746b5dd806f599307058655e]
+entity metadataUseCase--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="198" x="424" y="52.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="178" x="434" y="77.8959">DiscoverMetadataUseCase</text><!--MD5=[b62640cd6f94913ce379f28a287ebab5]
+entity mcpToolGateway--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="135" x="695.5" y="15.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="115" x="705.5" y="40.8959">MCPToolGateway</text><!--MD5=[130492d6659c342c7a97a7b580cac107]
+entity atlasAdapter--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="158" x="904" y="14.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="138" x="914" y="39.8959">AtlasCatalogAdapter</text><!--MD5=[cea94e9a66c815e4ac19357b57c158c9]
+entity atlasSource--><path d="M1129,18.43 C1129,8.43 1213.5,8.43 1213.5,8.43 C1213.5,8.43 1298,8.43 1298,18.43 L1298,46.4979 C1298,56.4979 1213.5,56.4979 1213.5,56.4979 C1213.5,56.4979 1129,56.4979 1129,46.4979 L1129,18.43 " fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M1129,18.43 C1129,28.43 1213.5,28.43 1213.5,28.43 C1213.5,28.43 1298,28.43 1298,18.43 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="149" x="1139" y="47.3959">ApacheAtlasCanonical</text><!--MD5=[226a9c41bc2f354263a7cf20f111607e]
+entity sqlSynthesisUseCase--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="162" x="682" y="89.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="692" y="114.8959">SqlSynthesisUseCase</text><!--MD5=[23ad1bdf0f1ebd8876dac491fb6c79f9]
+entity sqlCandidate--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="115" x="925.5" y="89.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="95" x="935.5" y="114.8959">SQLCandidate</text><!--MD5=[9b962294a9e89bbbe31bd3027fce472e]
+entity validationUseCase--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="183" x="1122" y="91.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="163" x="1132" y="116.8959">ValidateExecuteUseCase</text><!--MD5=[b7c4d5c9777f0bc4f517a11fb23cb006]
+entity sqlParser--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="177" x="1371.5" y="12.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="157" x="1381.5" y="37.8959">CalciteSqlParseAdapter</text><!--MD5=[71cba0630c4d945bb3cd7d01fe1db333]
+entity testDb--><path d="M1393,97.43 C1393,87.43 1460,87.43 1460,87.43 C1460,87.43 1527,87.43 1527,97.43 L1527,125.4979 C1527,135.4979 1460,135.4979 1460,135.4979 C1460,135.4979 1393,135.4979 1393,125.4979 L1393,97.43 " fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M1393,97.43 C1393,107.43 1460,107.43 1460,107.43 C1460,107.43 1527,107.43 1527,97.43 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="114" x="1403" y="126.3959">TestRelationalDb</text><!--MD5=[34c6cb662a34b97b792d0af95f0522e4]
+entity trackingUseCase--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="190" x="1365" y="170.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="170" x="1375" y="195.8959">TrackExperimentUseCase</text><!--MD5=[19d3c6b5579e3fd0554ee5b7b1f08606]
+entity metrics--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="130" x="1669" y="96.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="1679" y="121.8959">EssentialMetrics</text><!--MD5=[1120194d75029363054d7a3eff7d8bf0]
+entity evidence--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="193" x="1637.5" y="170.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="173" x="1647.5" y="195.8959">StructuredEvidenceJSONL</text><!--MD5=[87c6d040e45e9cb88d7bf99b8544c0aa]
+entity reproducibility--><rect fill="#FEFECE" filter="url(#f1bzbxh2hy3p8s)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="238" x="1615" y="244.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="218" x="1625" y="269.8959">RunMetadataSeedModelCommit</text><!--MD5=[0c90e354104fef95b5b987a78a33f5f9]
+link questionInput to intakeUseCase--><path d="M124.49,72.47 C141.03,72.47 159.48,72.47 177.59,72.47 " fill="none" id="questionInput-&gt;intakeUseCase" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="182.2,72.47,173.2,68.47,177.2,72.47,173.2,76.47,182.2,72.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1d6a19cfcc424219745b802859f881c8]
+link intakeUseCase to metadataUseCase--><path d="M364.17,72.47 C381.4,72.47 399.6,72.47 417.27,72.47 " fill="none" id="intakeUseCase-&gt;metadataUseCase" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="422.24,72.47,413.24,68.47,417.24,72.47,413.24,76.47,422.24,72.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[80210c3b3b6ec65fa79f5404ab763c3c]
+link metadataUseCase to mcpToolGateway--><path d="M622.18,57.2 C644.55,53.72 667.94,50.09 689.05,46.81 " fill="none" id="metadataUseCase-&gt;mcpToolGateway" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="693.73,46.08,684.2208,43.5157,688.7898,46.851,685.4545,51.42,693.73,46.08" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[7f24e2ce59986a8277192c0a966a2457]
+link mcpToolGateway to atlasAdapter--><path d="M830.89,35.16 C851.85,35.06 875.26,34.96 897.29,34.85 " fill="none" id="mcpToolGateway-&gt;atlasAdapter" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="902.25,34.83,893.2273,30.8815,897.2501,34.8586,893.273,38.8814,902.25,34.83" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1fa0dcab268052d89009c15097e939a3]
+link atlasAdapter to atlasSource--><path d="M1062.32,33.78 C1081.67,33.61 1102.55,33.43 1122.41,33.25 " fill="none" id="atlasAdapter-&gt;atlasSource" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1127.31,33.21,1118.276,29.2873,1122.3102,33.2529,1118.3446,37.287,1127.31,33.21" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[6082927adcceb49b44a4ce6f374d45dc]
+link metadataUseCase to sqlSynthesisUseCase--><path d="M622.18,87.73 C639.85,90.48 658.16,93.32 675.48,96.02 " fill="none" id="metadataUseCase-&gt;sqlSynthesisUseCase" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="680.31,96.77,672.0194,91.4534,675.3676,96.0129,670.8081,99.3612,680.31,96.77" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d4ac4f9b340b64bdf888ed15ff348b65]
+link sqlSynthesisUseCase to sqlCandidate--><path d="M844.25,109.47 C868.77,109.47 895.39,109.47 918.63,109.47 " fill="none" id="sqlSynthesisUseCase-&gt;sqlCandidate" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="923.57,109.47,914.57,105.47,918.57,109.47,914.57,113.47,923.57,109.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[8f9fd6bc12e9502f8a990adf986b7afd]
+link sqlCandidate to validationUseCase--><path d="M1040.78,109.96 C1063.32,110.16 1089.9,110.39 1115.32,110.62 " fill="none" id="sqlCandidate-&gt;validationUseCase" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1120.24,110.66,1111.2746,106.583,1115.2402,110.6171,1111.206,114.5827,1120.24,110.66" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[ab004a671ea8b2371c7b63f7af004c5f]
+link validationUseCase to sqlParser--><path d="M1276.2,91.53 C1311.24,80.21 1355.15,66.02 1391.16,54.39 " fill="none" id="validationUseCase-&gt;sqlParser" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1395.88,52.86,1386.0878,51.805,1391.1197,54.3896,1388.5351,59.4215,1395.88,52.86" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[5bb8b9936898df199ef29d8a4fce6da6]
+link validationUseCase to testDb--><path d="M1305.2,111.47 C1331.88,111.47 1360.72,111.47 1386.14,111.47 " fill="none" id="validationUseCase-&gt;testDb" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1391.01,111.47,1382.01,107.47,1386.01,111.47,1382.01,115.47,1391.01,111.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[5e364ea3661a3ffd2b63094a6b536729]
+link validationUseCase to trackingUseCase--><path d="M1276.2,131.4 C1311.24,142.72 1355.15,156.91 1391.16,168.55 " fill="none" id="validationUseCase-&gt;trackingUseCase" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1395.88,170.07,1388.5351,163.5085,1391.1197,168.5404,1386.0878,171.125,1395.88,170.07" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[72c2a7048257b0b59b30eda757d4792e]
+link trackingUseCase to metrics--><path d="M1534.61,170.44 C1574.33,159.63 1623.12,146.36 1662.38,135.68 " fill="none" id="trackingUseCase-&gt;metrics" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1667.14,134.38,1657.4054,132.8841,1662.3155,135.6932,1659.5065,140.6033,1667.14,134.38" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[65c180326329b8d6f63bb5a9f82110ac]
+link trackingUseCase to evidence--><path d="M1555.37,190.47 C1579.84,190.47 1606.3,190.47 1631.14,190.47 " fill="none" id="trackingUseCase-&gt;evidence" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1635.9,190.47,1626.9,186.47,1630.9,190.47,1626.9,194.47,1635.9,190.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[fe850e2caca0d1ed8014ff5e35741534]
+link trackingUseCase to reproducibility--><path d="M1534.61,210.49 C1571.49,220.53 1616.2,232.69 1653.83,242.93 " fill="none" id="trackingUseCase-&gt;reproducibility" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1658.35,244.16,1650.7165,237.9367,1653.5255,242.8468,1648.6154,245.6559,1658.35,244.16" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[4e3ab4e483a8346fe91c8f22c1f55ffe]
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle "QuestionInput" as questionInput
+rectangle "QuestionIntakeUseCase" as intakeUseCase
+rectangle "DiscoverMetadataUseCase" as metadataUseCase
+rectangle "MCPToolGateway" as mcpToolGateway
+rectangle "AtlasCatalogAdapter" as atlasAdapter
+database "ApacheAtlasCanonical" as atlasSource
+rectangle "SqlSynthesisUseCase" as sqlSynthesisUseCase
+rectangle "SQLCandidate" as sqlCandidate
+rectangle "ValidateExecuteUseCase" as validationUseCase
+rectangle "CalciteSqlParseAdapter" as sqlParser
+database "TestRelationalDb" as testDb
+rectangle "TrackExperimentUseCase" as trackingUseCase
+rectangle "EssentialMetrics" as metrics
+rectangle "StructuredEvidenceJSONL" as evidence
+rectangle "RunMetadataSeedModelCommit" as reproducibility
+
+questionInput - -> intakeUseCase
+intakeUseCase - -> metadataUseCase
+metadataUseCase - -> mcpToolGateway
+mcpToolGateway - -> atlasAdapter
+atlasAdapter - -> atlasSource
+metadataUseCase - -> sqlSynthesisUseCase
+sqlSynthesisUseCase - -> sqlCandidate
+sqlCandidate - -> validationUseCase
+validationUseCase - -> sqlParser
+validationUseCase - -> testDb
+validationUseCase - -> trackingUseCase
+trackingUseCase - -> metrics
+trackingUseCase - -> evidence
+trackingUseCase - -> reproducibility
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 07:22:07 GMT-03:00 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 25+36-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

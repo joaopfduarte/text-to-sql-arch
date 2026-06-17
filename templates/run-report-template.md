@@ -3,11 +3,18 @@
 ## Metadados
 
 - `runId`:
+- `campaignId`:
+- `provider`:
 - `modelVersion`:
 - `seed`:
+- `promptVersion`:
+- `inferenceConfig.temperature`:
+- `inferenceConfig.maxOutputTokens`:
+- `promptArtifactsHash`:
 - `commitHash`:
 - `datasetVersion`:
 - `contractsVersion`:
+- `toolBudget`:
 
 ## Entrada
 

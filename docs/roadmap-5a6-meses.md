@@ -11,7 +11,7 @@ Pessoa responsável pela condução do TCC e gestor de prazo.
 ## Pré-requisitos
 
 - [`01-produto-e-escopo.md`](01-produto-e-escopo.md)
-- [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)
+- [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
 
 ## Conteúdo
 
@@ -31,15 +31,15 @@ Pessoa responsável pela condução do TCC e gestor de prazo.
 ### Fase 2 (semanas 4-7): infra AWS e contratos
 
 - Provisionamento AWS: VPC, subnets, security groups, EC2 master+workers.
-- Contratos MCP `v1` reexemplificados com tabelas XPTO reais.
+- Contratos MCP `v1` reexemplificados com tabelas PS reais.
 - Especificação da política de tool budget.
 - VDF canônico fechado (x86_64 + Ubuntu 24.04 + ODP 1.3.1.0) registrado em ADR-0002.
 
-### Fase 3 (semanas 6-10): cluster e ingestão XPTO
+### Fase 3 (semanas 6-10): cluster e ingestão PS
 
 - Subset ODP estável (ZooKeeper, HDFS, YARN mínimo, Atlas) — paralelo a parte da Fase 2.
-- Ingestão XPTO para HDFS/Hive (carga única, congelada).
-- Registro do subconjunto XPTO em Apache Atlas.
+- Ingestão PS para HDFS/Hive (carga única, fixa).
+- Registro do subconjunto PS em Apache Atlas.
 - Smoke queries validando aderência do catálogo.
 
 ### Fase 4 (semanas 9-14): aplicação MCP e harness
@@ -48,20 +48,20 @@ Pessoa responsável pela condução do TCC e gestor de prazo.
 - Provedores LLM fixados: OpenAI e Google (Gemini), com `model-version` registrado por corrida.
 - Servidor MCP local com tools `catalog.*`.
 - Adapter Atlas → contrato canônico.
-- Validador e executor SQL.
+- Validador sintático Apache Calcite (dialeto Hive) e executor SQL em Hive.
 - Harness experimental com logs JSONL.
 
 ### Fase 5 (semanas 15-18): corridas e métricas
 
-- Execução de corridas planejadas sobre o subset XPTO congelado.
+- Execução de corridas planejadas sobre o subset PS fixo.
 - Coleta automatizada das métricas essenciais.
 - Consolidação de evidências em `evidence/<runId>/`.
 - Revisão das ameaças à validade.
 
 ### Fase 6 (semanas 17-22): redação da monografia
 
-- Capítulo de desenvolvimento (`[Monografia](monografia.md)`).
-- Capítulo de resultados (`[Monografia](monografia.md)`).
+- Capítulo de desenvolvimento (`content/cap6-desenvolvimento.tex`).
+- Capítulo de resultados (`content/cap7-resultados.tex`).
 - Revisão metodológica e ajustes nos capítulos prévios.
 
 ### Fase 7 (semanas 22-24): endurecimento e preparação
@@ -77,4 +77,4 @@ Caso a Fase 3 (cluster) ultrapasse a semana 12 sem ambiente estável, acionar co
 
 ## Próximo passo
 
-[`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)
+[`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)

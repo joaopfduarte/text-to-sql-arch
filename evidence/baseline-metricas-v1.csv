@@ -1,0 +1,31 @@
+run_id,question_id,model_version,provider,gabarito_match,notas_autor
+run-20260612-baseline-q01,Q01,gemini-3.5-flash,google,true,
+run-20260612-baseline-q02,Q02,gemini-3.5-flash,google,true,
+run-20260612-baseline-q03,Q03,gemini-3.5-flash,google,true,
+run-20260612-baseline-q04,Q04,gemini-3.5-flash,google,true,
+run-20260612-baseline-q05,Q05,gemini-3.5-flash,google,true,
+run-20260612-baseline-q06,Q06,gemini-3.5-flash,google,true,
+run-20260612-baseline-q07,Q07,gemini-3.5-flash,google,true,
+run-20260612-baseline-q08,Q08,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q09,Q09,gemini-3.5-flash,google,true,
+run-20260612-baseline-q10,Q10,gemini-3.5-flash,google,true,
+run-20260612-baseline-q11,Q11,gemini-3.5-flash,google,true,
+run-20260612-baseline-q12,Q12,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q13,Q13,gemini-3.5-flash,google,true,
+run-20260612-baseline-q14,Q14,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q15,Q15,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q16,Q16,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q17,Q17,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q18,Q18,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q19,Q19,gemini-3.5-flash,google,true,
+run-20260612-baseline-q20,Q20,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q21,Q21,gemini-3.5-flash,google,true,
+run-20260612-baseline-q22,Q22,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q23,Q23,gemini-3.5-flash,google,true,
+run-20260612-baseline-q24,Q24,gemini-3.5-flash,google,true,
+run-20260612-baseline-q25,Q25,gemini-3.5-flash,google,true,
+run-20260612-baseline-q26,Q26,gemini-3.5-flash,google,true,
+run-20260612-baseline-q27,Q27,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q28,Q28,gemini-3.5-flash,google,false,resposta agregada divergiu de G_i
+run-20260612-baseline-q29,Q29,gemini-3.5-flash,google,true,
+run-20260612-baseline-q30,Q30,gemini-3.5-flash,google,true,

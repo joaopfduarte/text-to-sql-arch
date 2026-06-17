@@ -1,0 +1,38 @@
+{
+  "$schema": "artifact-docs-prompts-manifest",
+  "version": "v1",
+  "inferenceConfigVersion": "v1",
+  "description": "Manifesto de templates de prompt para campanhas experimentais v1 (MCP e baseline-static).",
+  "campaignIds": ["mcp", "baseline-static"],
+  "artifacts": {
+    "systemShared": {
+      "path": "artifact-docs/templates/prompts/system-shared-v1.md",
+      "role": "Instruções anti-alucinação e formato comuns a ambos os modos"
+    },
+    "systemMcp": {
+      "path": "artifact-docs/templates/prompts/system-mcp-v1.md",
+      "role": "Instruções de descoberta via tools MCP",
+      "campaignIds": ["mcp"]
+    },
+    "systemBaseline": {
+      "path": "artifact-docs/templates/prompts/system-baseline-v1.md",
+      "role": "Instruções de uso do DDL estático anexo",
+      "campaignIds": ["baseline-static"]
+    },
+    "userTemplate": {
+      "path": "artifact-docs/templates/prompts/user-template-v1.md",
+      "role": "Estrutura da mensagem do usuário com placeholders"
+    }
+  },
+  "assembly": {
+    "mcp": {
+      "system": ["systemShared", "systemMcp"],
+      "user": ["userTemplate"]
+    },
+    "baseline-static": {
+      "system": ["systemShared", "systemBaseline"],
+      "user": ["userTemplate"]
+    }
+  },
+  "notes": "Calcular promptArtifactsHash como SHA-256 da concatenação ordenada dos ficheiros listados em artifacts (conteúdo bruto, LF normalizado). Valor v1 atual: b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de"
+}

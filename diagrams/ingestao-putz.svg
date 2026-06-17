@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="131px" preserveAspectRatio="none" style="width:1983px;height:131px;" version="1.1" viewBox="0 0 1983 131" width="1983px" zoomAndPan="magnify"><defs><filter height="300%" id="fhy2gpae5ntf8" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[26e17b15ab99648937a12df282613610]
+entity dump--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="145" x="6" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="125" x="16" y="70.8959">DumpPSExportado</text><!--MD5=[f049d2bba288a9304afb39f81cd10e37]
+entity extracao--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="162" x="211" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="221" y="70.8959">ExtracaoSubconjunto</text><!--MD5=[e4cb297f9b3b6be26bc1b8d7fca57844]
+entity mascarar--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="101" x="433" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="81" x="443" y="70.8959">MascararPII</text><!--MD5=[bd931e061b824d732c7ae762aee0f850]
+entity bronze--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="126" x="594" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="604" y="70.8959">ArquivosBronze</text><!--MD5=[b4c6c09d29f62c9596c3353595d38874]
+entity hdfsBronze--><path d="M780,51.43 C780,41.43 860,41.43 860,41.43 C860,41.43 940,41.43 940,51.43 L940,79.4979 C940,89.4979 860,89.4979 860,89.4979 C860,89.4979 780,89.4979 780,79.4979 L780,51.43 " fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M780,51.43 C780,61.43 860,61.43 860,61.43 C860,61.43 940,61.43 940,51.43 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="140" x="790" y="80.3959">HDFSDadosPSBronze</text><!--MD5=[28ccba292d002db2aacfc8b5b48a4c5e]
+entity hiveExt--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="159" x="1000" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="1010" y="70.8959">TabelasHiveExternas</text><!--MD5=[a6fbe74027de1d9694fc4952e8938a28]
+entity atlasReg--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="178" x="1219" y="8.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="158" x="1229" y="33.8959">RegistroNoApacheAtlas</text><!--MD5=[2046a64bbddb2b3fba7379e1ca2b97c1]
+entity mcpTools--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="136" x="1457" y="7.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="116" x="1467" y="32.8959">ToolsMCPCatalog</text><!--MD5=[81ab7f2c5b5bfabc0cebce5e66d0e3c8]
+entity jdbcExec--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="136" x="1457" y="81.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="116" x="1467" y="106.8959">ExecutorSQLJDBC</text><!--MD5=[3b276c35194a5241cefb1924ca12e5e7]
+entity harness--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="164" x="1808" y="45.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="144" x="1818" y="70.8959">HarnessExperimental</text><!--MD5=[9d385a4a8aa640ad1c4c89dc9be897fa]
+entity agente--><rect fill="#FEFECE" filter="url(#fhy2gpae5ntf8)" height="39.0679" style="stroke: #000000; stroke-width: 1.5;" width="95" x="1653" y="8.93"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="1663" y="33.8959">AgenteLLM</text><!--MD5=[2818244f968cd075d085e312eaa05b8b]
+link dump to extracao--><path d="M151.4,65.47 C168.36,65.47 186.61,65.47 204.15,65.47 " fill="none" id="dump-&gt;extracao" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="209.07,65.47,200.07,61.47,204.07,65.47,200.07,69.47,209.07,65.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2a39f0ef2ae276b8869ace5f7d979771]
+link extracao to mascarar--><path d="M373.37,65.47 C391.09,65.47 409.5,65.47 426.03,65.47 " fill="none" id="extracao-&gt;mascarar" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="431,65.47,422,61.47,426,65.47,422,69.47,431,65.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d65441b5996cf91dcd4ce35eeca9e610]
+link mascarar to bronze--><path d="M534.1,65.47 C550.67,65.47 569.44,65.47 587.19,65.47 " fill="none" id="mascarar-&gt;bronze" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="592.17,65.47,583.17,61.47,587.17,65.47,583.17,69.47,592.17,65.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[52ac3d4ad135cd6a0610fd3f8434b0fd]
+link bronze to hdfsBronze--><path d="M720.5,65.47 C737.23,65.47 755.6,65.47 773.35,65.47 " fill="none" id="bronze-&gt;hdfsBronze" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="778.34,65.47,769.34,61.47,773.34,65.47,769.34,69.47,778.34,65.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[9319c78bb6a0682b3ff8e6cadeec6d9f]
+link hdfsBronze to hiveExt--><path d="M940.45,65.47 C957.63,65.47 975.87,65.47 993.27,65.47 " fill="none" id="hdfsBronze-&gt;hiveExt" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="998.12,65.47,989.12,61.47,993.12,65.47,989.12,69.47,998.12,65.47" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2fa1bc7c79dfc59d541787f4432998e4]
+link hiveExt to atlasReg--><path d="M1159.4,52.58 C1176.61,49.77 1194.98,46.77 1212.72,43.87 " fill="none" id="hiveExt-&gt;atlasReg" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1217.21,43.13,1207.6795,40.6461,1212.2765,43.9427,1208.9799,48.5397,1217.21,43.13" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[6a6fc5688bb96f499a56bc5b89cc5009]
+link atlasReg to mcpTools--><path d="M1397.38,28.05 C1415.02,27.97 1433.37,27.89 1450.44,27.81 " fill="none" id="atlasReg-&gt;mcpTools" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1455.16,27.79,1446.1373,23.8415,1450.1601,27.8186,1446.183,31.8414,1455.16,27.79" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b1d590052df67af9875e1486681fa620]
+link hiveExt to jdbcExec--><path d="M1159.28,71.86 C1241.76,78.56 1370.25,88.99 1450.64,95.51 " fill="none" id="hiveExt-&gt;jdbcExec" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1455.32,95.89,1446.6821,91.1585,1450.3372,95.476,1446.0197,99.131,1455.32,95.89" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[d2b41998db85a55ec1144c2ec6e98753]
+link jdbcExec to harness--><path d="M1593.43,94.78 C1652.12,88.96 1737.58,80.48 1801.53,74.14 " fill="none" id="jdbcExec-&gt;harness" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1806.14,73.68,1796.7849,70.6007,1801.1651,74.1803,1797.5855,78.5606,1806.14,73.68" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1d616b90ba491a597439aed35a4c38cb]
+link mcpTools to agente--><path d="M1593.08,27.85 C1610.83,27.95 1629.74,28.06 1646.62,28.16 " fill="none" id="mcpTools-&gt;agente" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1651.23,28.19,1642.253,24.1386,1646.2301,28.1614,1642.2073,32.1385,1651.23,28.19" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[a1f19a0f8bfd2519afd2ab9104bfe4ee]
+link agente to harness--><path d="M1748.33,37.71 C1764.51,40.9 1783.2,44.59 1801.56,48.21 " fill="none" id="agente-&gt;harness" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1806.29,49.14,1798.2397,43.4662,1801.3855,48.1677,1796.684,51.3134,1806.29,49.14" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[4749714b69235e491c1e224e72022aa9]
+@startuml
+left to right direction
+skinparam backgroundColor transparent
+
+rectangle "DumpPSExportado" as dump
+rectangle "ExtracaoSubconjunto" as extracao
+rectangle "MascararPII" as mascarar
+rectangle "ArquivosBronze" as bronze
+database "HDFSDadosPSBronze" as hdfsBronze
+rectangle "TabelasHiveExternas" as hiveExt
+rectangle "RegistroNoApacheAtlas" as atlasReg
+rectangle "ToolsMCPCatalog" as mcpTools
+rectangle "ExecutorSQLJDBC" as jdbcExec
+rectangle "HarnessExperimental" as harness
+rectangle "AgenteLLM" as agente
+
+dump - -> extracao
+extracao - -> mascarar
+mascarar - -> bronze
+bronze - -> hdfsBronze
+hdfsBronze - -> hiveExt
+hiveExt - -> atlasReg
+atlasReg - -> mcpTools
+hiveExt - -> jdbcExec
+jdbcExec - -> harness
+mcpTools - -> agente
+agente - -> harness
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 07:22:07 GMT-03:00 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 25+36-LTS
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

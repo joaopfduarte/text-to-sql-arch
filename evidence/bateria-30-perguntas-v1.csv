@@ -1,0 +1,31 @@
+question_id,dificuldade,cenario,pergunta_nl,sql_esperados_max,gabarito_ref,notas_autor
+Q01,SIMPLES,Junção 1:N,"Para cada franquia, liste suas unidades com a cidade e o estado.",1,gabarito-bateria-v1.md#Q01,franquias franquias__unidades
+Q02,SIMPLES,Junção 1:N,"Liste cada produto ativo com o nome do seu tipo de produto.",1,gabarito-bateria-v1.md#Q02,product product_type
+Q03,SIMPLES,Junção 1:N,"Liste os pagamentos de cada projeto, com o projeto, o valor e a data.",1,gabarito-bateria-v1.md#Q03,project project_payment
+Q04,SIMPLES,Junção 1:N,"Quantas franquias estão associadas a cada rede de franquia?",1,gabarito-bateria-v1.md#Q04,franquias__redes_franquia franquias COUNT
+Q05,SIMPLES,Junção em cadeia,"Relacione cada franquia ao seu segmento e à sua rede correspondente.",1,gabarito-bateria-v1.md#Q05,franquias franquias__segmentos franquias__redes_franquia
+Q06,SIMPLES,Agregação,"Qual o valor total de pagamentos por projeto?",1,gabarito-bateria-v1.md#Q06,project project_payment SUM
+Q07,SIMPLES,Agregação,"Quantos projetos existem em cada status?",1,gabarito-bateria-v1.md#Q07,project agrupado por status
+Q08,SIMPLES,Filtro temporal,"Qual a soma do valor das transações com sucesso por mês em 2026?",1,gabarito-bateria-v1.md#Q08,transaction MONTH SUM
+Q09,SIMPLES,Junção geográfica,"Para cada unidade federativa, quais cidades estão cadastradas?",1,gabarito-bateria-v1.md#Q09,ibge__uf ibge__city
+Q10,SIMPLES,Junção geográfica,"Quantas cidades estão cadastradas por unidade federativa?",1,gabarito-bateria-v1.md#Q10,ibge__uf ibge__city COUNT
+Q11,MÉDIA,Junção em cadeia,"Para cada item de projeto, mostre o projeto, o produto e o freelancer responsável.",1,gabarito-bateria-v1.md#Q11,project_item project product person
+Q12,MÉDIA,Junção em cadeia,"Liste os eventos de timeline aprovados, com o projeto e a etapa correspondentes.",1,gabarito-bateria-v1.md#Q12,timeline_event project_step project enum APPROVED
+Q13,MÉDIA,Agregação,"Quais projetos têm total de pagamentos acima da média de pagamentos por projeto?",1,gabarito-bateria-v1.md#Q13,project project_payment subconsulta
+Q14,MÉDIA,Filtro temporal,"Quantas transações com sucesso ocorreram no primeiro e no segundo semestre de 2026?",2,gabarito-bateria-v1.md#Q14,transaction CASE semestre
+Q15,MÉDIA,Junção geográfica,"Qual o valor total de transações com sucesso por unidade federativa do cliente?",1,gabarito-bateria-v1.md#Q15,transaction person ibge__uf
+Q16,MÉDIA,Junção cross-domínio,"Para transações de sucesso ligadas a itens de projeto, mostre valor, projeto, produto e cliente.",1,gabarito-bateria-v1.md#Q16,transaction project_item project product person
+Q17,MÉDIA,Junção cross-domínio,"Para cada cupom usado em um projeto, mostre projeto, tipo e status do cupom, desconto e quem usou.",1,gabarito-bateria-v1.md#Q17,transaction_coupon project person enum USED
+Q18,MÉDIA,Junção cross-domínio,"Quais clientes realizaram transações com sucesso e qual o total movimentado por cliente?",1,gabarito-bateria-v1.md#Q18,transaction person agrupado
+Q19,MÉDIA,Junção cross-domínio,"Para cada tipo de produto, quantos itens de projeto existem e qual a soma do valor base?",2,gabarito-bateria-v1.md#Q19,project_item product product_type
+Q20,MÉDIA,Junção cross-domínio,"Liste as assinaturas ativas com o plano, a categoria do plano e o valor da transação de pagamento.",1,gabarito-bateria-v1.md#Q20,subscriptions subscription_plans transaction enum ACTIVE
+Q21,COMPLEXA,Junção em cadeia,"Para cada item de ativo ativo, mostre o nome do item, a sua categoria e a categoria-raiz correspondente.",1,gabarito-bateria-v1.md#Q21,asset_item asset_item__categories asset_category raiz-self-join
+Q22,COMPLEXA,Junção em cadeia,"Liste os itens de ativo do tipo IMAGE com categoria, categoria-raiz e tipo, apenas em categorias públicas.",1,gabarito-bateria-v1.md#Q22,asset_item asset_item__categories asset_category enum IMAGE is_public
+Q23,COMPLEXA,Agregação,"Quantos itens de ativo ativos existem em cada categoria-raiz pública, e qual a raiz com mais itens?",2,gabarito-bateria-v1.md#Q23,asset_category raiz asset_item__categories asset_item COUNT
+Q24,COMPLEXA,Agregação,"Para cada autoridade de permissão, quantos usuários a possuem, com a descrição da autoridade?",1,gabarito-bateria-v1.md#Q24,putz_authority putz_user_authority COUNT
+Q25,COMPLEXA,Junção cross-domínio,"Para cada categoria de ativo, quantos usuários têm acesso a ela, com a sua categoria-raiz?",1,gabarito-bateria-v1.md#Q25,asset_category asset_category__users raiz-self-join
+Q26,COMPLEXA,Junção cross-domínio,"Para cada autoridade, quantos usuários distintos têm acesso a categorias de ativo públicas?",1,gabarito-bateria-v1.md#Q26,putz_user_authority putz_user asset_category__users asset_category
+Q27,COMPLEXA,Junção cross-domínio,"Quantos itens de render há no painel para solicitações sem conta e com conta vinculada?",2,gabarito-bateria-v1.md#Q27,publications_user project_render_item project_render owner_id
+Q28,COMPLEXA,Junção cross-domínio,"Para solicitações com item de render e publicação, liste o status, o render e se há conta vinculada.",1,gabarito-bateria-v1.md#Q28,publications_user project_render_item project_render publications
+Q29,COMPLEXA,Filtro temporal,"Quantas solicitações de publicação foram criadas por mês em 2026, separando com e sem conta?",1,gabarito-bateria-v1.md#Q29,publications_user project_render_item project_render created_date
+Q30,COMPLEXA,Junção geográfica,"Quantos itens de render foram solicitados por clientes de cada unidade federativa, com a região?",1,gabarito-bateria-v1.md#Q30,project_render_item person ibge__uf project_render

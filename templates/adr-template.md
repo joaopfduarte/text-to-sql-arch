@@ -29,4 +29,4 @@
 ## Referências
 
 - <docs/arquivo.md>
-- <diagrams/arquivo.mmd>
+- <diagrams/arquivo.puml>

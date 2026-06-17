@@ -1,0 +1,38 @@
+@startuml
+top to bottom direction
+skinparam backgroundColor transparent
+
+actor ClienteAvaliador as avaliador
+rectangle "InternetGateway" as igw
+
+frame "VPCLaboratorio" as vpc {
+  rectangle "SGEdge" as sgEdge
+
+  frame "SubnetPublica" as subPub {
+    rectangle "SessionManagerOuBastion" as bastion
+  }
+
+  frame "SubnetPrivadaAplicacao" as subPrivApp {
+    rectangle "SGInternalApp" as sgApp
+    rectangle "InstanciaAplicacaoMCP" as appHost
+  }
+
+  frame "SubnetPrivadaDados" as subPrivDados {
+    rectangle "SGDataPlane" as sgData
+    rectangle "InstanciaMaster" as clusterMaster
+    rectangle "InstanciaWorker" as clusterWorker
+  }
+}
+
+rectangle "BucketS3Evidence" as s3
+
+avaliador --> igw
+igw --> sgEdge
+sgEdge --> bastion
+sgApp --> appHost
+sgData --> clusterMaster
+sgData --> clusterWorker
+bastion --> sgApp
+appHost --> sgData
+sgData --> s3
+@enduml
