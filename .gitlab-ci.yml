@@ -5,7 +5,7 @@ pages:
   stage: deploy
   before_script:
     - apt-get update -qq
-    - apt-get install -y -qq --no-install-recommends libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 shared-mime-info plantuml default-jre-headless
+    - apt-get install -y -qq --no-install-recommends libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 shared-mime-info plantuml graphviz default-jre-headless
     - rm -rf /var/lib/apt/lists/*
   script:
     - pip install -r requirements.txt
