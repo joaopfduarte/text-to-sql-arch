@@ -42,9 +42,9 @@ Antes das etapas do protocolo, fixar configuração conforme [`llm-inferencia-e-
 | `temperature` | **0** (`gemini-3.5-flash`, baseline); omitido em `gpt-5.4-nano` |
 | `maxOutputTokens` | **4096** |
 | `topP` | omitido (`null`) |
-| Prompts | Templates v1 em [`../../templates/prompts/`](../../templates/prompts/) |
+| Prompts | Templates v1 em [`../templates/prompts/`](../templates/prompts/) |
 | Paridade | Instruções anti-alucinação idênticas em `system-shared-v1.md` |
-| Registro | `context.json` conforme [`../../evidence/context-schema-v1.json`](../../evidence/context-schema-v1.json) |
+| Registro | `context.json` conforme [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json) |
 
 ### Etapas do protocolo
 
@@ -132,7 +132,7 @@ Fontes: docs em `guide-docs/external-documentation/`.
 - lista de SQLs (até 5) e desfechos por statement (MCP)
 - resultado de parse e execução
 - `metrics.json` conforme [`metricas-formulas.md`](metricas-formulas.md)
-- `context.json` conforme [`../../evidence/context-schema-v1.json`](../../evidence/context-schema-v1.json)
+- `context.json` conforme [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)
 - `seed`, `modelVersion`, `promptVersion`, `commitHash`
 
 ## Próximo passo

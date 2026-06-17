@@ -385,7 +385,7 @@ ON DELETE CASCADE
 
 # 8 asset_retail_product
 
-Table comments: Produtos de Varejo\n@author Aléssio Miranda Júnior
+Table comments: Produtos de Varejo\n@author [redacted]
 Creation: Apr 28, 2026 at 11:49 PM
 
 ```
@@ -561,7 +561,7 @@ varchar(64) Yes NULL
 
 # 12 asset_retail_unit
 
-Table comments: Unidades pra um Produto de Varejo\n@author Aléssio Miranda Júnior
+Table comments: Unidades pra um Produto de Varejo\n@author [redacted]
 Creation: Apr 28, 2026 at 11:47 PM
 Last update: Apr 28, 2026 at 11:47 PM
 
@@ -2968,7 +2968,7 @@ ON DELETE CASCADE
 
 # 52 project_calc
 
-Table comments: @author Aléssio Miranda Júnior
+Table comments: @author [redacted]
 Creation: Apr 28, 2026 at 11:49 PM
 
 ```
@@ -4041,7 +4041,7 @@ render_slug varchar(64) Yes NULL
 
 # 62 project_step
 
-Table comments: ProjectStep/Etapa\nRepresentação de uma única etapa de um projeto\n@author Aléssio Miranda Júnior
+Table comments: ProjectStep/Etapa\nRepresentação de uma única etapa de um projeto\n@author [redacted]
 Creation: Apr 28, 2026 at 11:50 PM
 
 ```
@@ -4789,7 +4789,7 @@ ON DELETE RESTRICT
 
 # 80 schedule
 
-Table comments: Schedule/Cronograma\nRepresentação de um modelo de cronograma com etapas\n@author Aléssio Miranda Júnior
+Table comments: Schedule/Cronograma\nRepresentação de um modelo de cronograma com etapas\n@author [redacted]
 Creation: Apr 28, 2026 at 11:49 PM
 Last update: Apr 28, 2026 at 11:49 PM
 
@@ -4823,7 +4823,7 @@ varchar(64) Yes NULL
 
 # 81 schedule_step
 
-Table comments: Step/ConfiguracaoEtapa\nEtapa de cronograma modelo\n@author Aléssio Miranda Júnior
+Table comments: Step/ConfiguracaoEtapa\nEtapa de cronograma modelo\n@author [redacted]
 Creation: Apr 28, 2026 at 11:50 PM
 
 ```

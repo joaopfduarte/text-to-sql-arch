@@ -52,7 +52,7 @@ sgDataPlane --> evidenceStore
 @enduml
 ```
 
-Diagrama em arquivo: [`../../diagrams/cluster-topologia-aws.puml`](../../diagrams/cluster-topologia-aws.puml) e [`../../diagrams/rede-aws.puml`](../../diagrams/rede-aws.puml).
+Diagrama em arquivo: [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml) e [`../diagrams/rede-aws.puml`](../diagrams/rede-aws.puml).
 
 ### Mapeamento de zonas lógicas para AWS
 
@@ -80,7 +80,7 @@ Diagrama em arquivo: [`../../diagrams/cluster-topologia-aws.puml`](../../diagram
 
 ### Diferenças face ao laboratório OCI de referência
 
-A pasta [`../../legacy-infra/`](../../legacy-infra/) contém o laboratório OCI de referência (ODP 1.2.2.0 em ARM). As principais diferenças para o alvo AWS x86 estão consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
+A pasta [`../legacy-infra/`](../legacy-infra/index.md) contém o laboratório OCI de referência (ODP 1.2.2.0 em ARM). As principais diferenças para o alvo AWS x86 estão consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

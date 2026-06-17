@@ -14,8 +14,8 @@ Pessoa que configura o orquestrador LLM, executa corridas ou implementa o adapta
 - [`protocolo-avaliacao.md`](protocolo-avaliacao.md)
 - [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
 - [`../06-implementacao-java/modulos-spring.md`](../06-implementacao-java/modulos-spring.md)
-- Templates: [`../../templates/prompts/prompts-manifest-v1.json`](../../templates/prompts/prompts-manifest-v1.json)
-- Schema: [`../../evidence/context-schema-v1.json`](../../evidence/context-schema-v1.json)
+- Templates: [`../templates/prompts/prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json)
+- Schema: [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)
 
 ## Conteúdo
 
@@ -43,8 +43,8 @@ Pessoa que configura o orquestrador LLM, executa corridas ou implementa o adapta
 4. **`seed`** permanece obrigatória, mas APIs comerciais **não garantem** determinismo total mesmo com
    `temperature=0` — documentar como variância residual (ver § Limitações).
 
-Referências de integração: [`../../../guide-docs/external-documentation/SpringAi-google.md`](../../../guide-docs/external-documentation/SpringAi-google.md),
-[`../../../guide-docs/external-documentation/SpringAi-openai.md`](../../../guide-docs/external-documentation/SpringAi-openai.md).
+Referências de integração: `../../../guide-docs/external-documentation/SpringAi-google.md`,
+`../../../guide-docs/external-documentation/SpringAi-openai.md`.
 
 ### Montagem do prompt
 
@@ -90,7 +90,7 @@ flowchart TB
 
 ### Regra de paridade (anti-confound)
 
-1. **Todo** texto anti-alucinação estrutural reside em [`system-shared-v1.md`](../../templates/prompts/system-shared-v1.md)
+1. **Todo** texto anti-alucinação estrutural reside em [`system-shared-v1.md`](../templates/prompts/system-shared-v1.md)
    e deve ser **idêntico** entre modos.
 2. Diferença material permitida:
    - **MCP:** instruções de descoberta via tools; sem DDL integral no prompt.
@@ -104,7 +104,7 @@ flowchart TB
 |-------|----------|
 | `promptVersion` | `"v1"` |
 | `inferenceConfigVersion` | `"v1"` |
-| Manifesto | [`prompts-manifest-v1.json`](../../templates/prompts/prompts-manifest-v1.json) |
+| Manifesto | [`prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json) |
 
 Antes de **qualquer** corrida da campanha:
 
@@ -115,12 +115,12 @@ Antes de **qualquer** corrida da campanha:
 
 ### Schema `context.json`
 
-Canónico: [`../../evidence/context-schema-v1.json`](../../evidence/context-schema-v1.json).
+Canónico: [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json).
 
 Exemplos:
 
-- Baseline: [`../../evidence/examples/context-baseline-v1.example.json`](../../evidence/examples/context-baseline-v1.example.json)
-- MCP: [`../../evidence/examples/context-mcp-v1.example.json`](../../evidence/examples/context-mcp-v1.example.json)
+- Baseline: [`../evidence/examples/context-baseline-v1.example.json`](../evidence/examples/context-baseline-v1.example.json)
+- MCP: [`../evidence/examples/context-mcp-v1.example.json`](../evidence/examples/context-mcp-v1.example.json)
 
 ### Mapeamento Spring AI
 
@@ -157,7 +157,7 @@ modelo.
 3. **Revisão humana:** o rascunho operacional v1 dos templates está sujeito à aprovação do autor antes do
    congelamento da campanha.
 
-Decisão formal: [`../../adr/ADR-0003-inferencia-llm-deterministica.md`](../../adr/ADR-0003-inferencia-llm-deterministica.md).
+Decisão formal: [`../adr/ADR-0003-inferencia-llm-deterministica.md`](../adr/ADR-0003-inferencia-llm-deterministica.md).
 
 ## Próximo passo
 

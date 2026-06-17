@@ -47,7 +47,7 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 
 ### Diagrama lógico
 
-Ver [`../diagrams/diagrama-mestre.puml`](../diagrams/diagrama-mestre.puml).
+Ver [`diagrams/diagrama-mestre.puml`](diagrams/diagrama-mestre.puml).
 
 ### Fronteira deste documento
 

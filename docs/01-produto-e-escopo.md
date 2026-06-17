@@ -39,7 +39,7 @@ Um SQL contém erro estrutural quando:
 
 ### Escopo MVP
 
-- Cluster AWS mínimo (subset ODP) com ZooKeeper, HDFS, YARN mínimo e Apache Atlas. Ver [`05-infraestrutura/cluster-hadoop.md`](05-infraestrutura/cluster-hadoop.md) e [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md).
+- Cluster AWS mínimo (subset ODP) com ZooKeeper, HDFS, YARN mínimo e Apache Atlas. Ver [`05-infraestrutura/cluster-hadoop.md`](05-infraestrutura/cluster-hadoop.md) e [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md).
 - Subconjunto fixo do banco PS (92 tabelas) como massa relacional de avaliação. Ver [`04-arquitetura-dados/banco-putz-dominio.md`](04-arquitetura-dados/banco-putz-dominio.md) e [`04-arquitetura-dados/schema-massa-teste.md`](04-arquitetura-dados/schema-massa-teste.md).
 - Aplicação Java 25 + Spring Boot + Spring AI com servidor MCP, adaptador Atlas, validador sintático Apache
   Calcite (dialeto Hive), executor SQL em Hive e harness com logs estruturados.
@@ -56,8 +56,8 @@ Um SQL contém erro estrutural quando:
 
 | Tema | Decisão | Documento |
 |------|---------|-----------|
-| Fundação arquitetural | Hexagonal por contexto, MCP versionado, evidência por `runId` | [`../adr/ADR-0001-fundacao-arquitetural.md`](../adr/ADR-0001-fundacao-arquitetural.md) |
-| Topologia AWS | Cluster ODP em AWS x86_64 com Ubuntu 24.04 (ODP 1.3.1.0), Atlas no cluster e sizing robusto (1 master + 3 workers). | [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md) |
+| Fundação arquitetural | Hexagonal por contexto, MCP versionado, evidência por `runId` | [`adr/ADR-0001-fundacao-arquitetural.md`](adr/ADR-0001-fundacao-arquitetural.md) |
+| Topologia AWS | Cluster ODP em AWS x86_64 com Ubuntu 24.04 (ODP 1.3.1.0), Atlas no cluster e sizing robusto (1 master + 3 workers). | [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md) |
 | Massa de teste | Subconjunto PS (92 tabelas) fixo substitui exemplos sintéticos | [`04-arquitetura-dados/schema-massa-teste.md`](04-arquitetura-dados/schema-massa-teste.md) |
 | Validador sintático SQL | Apache Calcite (dialeto Hive) | Cap.~4 + [`06-implementacao-java/ports-adapters.md`](06-implementacao-java/ports-adapters.md) |
 

@@ -11,7 +11,7 @@ Pessoa responsável pela condução do TCC e gestor de prazo.
 ## Pré-requisitos
 
 - [`01-produto-e-escopo.md`](01-produto-e-escopo.md)
-- [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+- [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)
 
 ## Conteúdo
 
@@ -77,4 +77,4 @@ Caso a Fase 3 (cluster) ultrapasse a semana 12 sem ambiente estável, acionar co
 
 ## Próximo passo
 
-[`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+[`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)

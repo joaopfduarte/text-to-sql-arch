@@ -19,8 +19,8 @@ Pessoa que opera a ingestão de dados ou prepara o ambiente para corridas.
 
 ### Origem
 
-- Dump do banco relacional PS (DDL em [`../../db-reference/putz_db.sql`](../../db-reference/putz_db.sql), export
-  legível em [`../../db-reference/putz_db.md`](../../db-reference/putz_db.md), gerado em Apr 28, 2026).
+- Dump do banco relacional PS (DDL em [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql), export
+  legível em [`../db-reference/putz_db.md`](../db-reference/putz_db.md), gerado em Apr 28, 2026).
 - Schema completo: **92 tabelas** listadas em [`schema-massa-teste.md`](schema-massa-teste.md).
 
 ### Pré-requisitos de formato
@@ -80,7 +80,7 @@ Controles:
 
 ### Diagrama
 
-Ver [`../../diagrams/ingestao-putz.puml`](../../diagrams/ingestao-putz.puml).
+Ver [`../diagrams/ingestao-putz.puml`](../diagrams/ingestao-putz.puml).
 
 ### Estado dos pontos pendentes
 

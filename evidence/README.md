@@ -20,7 +20,7 @@ Não sobrescreva corridas anteriores. Qualquer ajuste gera novo `runId`.
 ## Artefatos de decisão humana (T11 / T08)
 
 Estes ficheiros são **preenchidos pelo autor**, não inferidos por agentes de IA. Ver
-[`correcao-metodologia.md`](../../ai-interaction/correcao-metodologia.md) (secção «Decisões e execução
+`ai-interaction/correcao-metodologia.md` (repositório da monografia; secção «Decisões e execução
 exclusivas do autor»).
 
 | Ficheiro | Uso |
@@ -42,5 +42,5 @@ Artefatos derivados do Swagger do Apache Atlas que sustentam o catálogo fechado
 | [`matriz-15-tools-mcp-v1.md`](matriz-15-tools-mcp-v1.md) | Decisão final: 3 basais + 12 complementares, com mapeamento Atlas |
 
 Valores agregados ($A_{\mathrm{gab}}$) derivam do CSV baseline preenchido, conforme
-[`metricas-formulas.md`](../docs/08-experimento-avaliacao/metricas-formulas.md). A campanha v1 usa apenas
+[`metricas-formulas.md`](../08-experimento-avaliacao/metricas-formulas.md). A campanha v1 usa apenas
 `gemini-3.5-flash` ($N_{\mathrm{base}} = 30$); extensão a segundo provedor é opcional e não mistura com esta v1.

@@ -12,7 +12,7 @@
                     "javax.jdo.option.ConnectionURL": "jdbc:postgresql://master.cdp:5432/hive",
                     "javax.jdo.option.ConnectionDriverName": "org.postgresql.Driver",
                     "javax.jdo.option.ConnectionUserName": "hive",
-                    "javax.jdo.option.ConnectionPassword": "HiveUserMeta2025",
+                    "javax.jdo.option.ConnectionPassword": "__REDACTED_HIVE_DB_PASSWORD__",
                     "hive.metastore.db.type": "postgres",
                     "hive.server2.authentication": "NONE",
                     "hive.metastore.uris": "thrift://node1.cdp:9083",
@@ -31,7 +31,7 @@
                     "hive_database": "Existing PostgreSQL Database",
                     "hive_database_type": "postgres",
                     "hive_database_host": "master.cdp",
-                    "hive_database_password": "HiveUserMeta2025",
+                    "hive_database_password": "__REDACTED_HIVE_DB_PASSWORD__",
                     "hive_heapsize": "2048",
                     "hive_database_name": "hive",
                     "hive_ambari_database": "MySQL"
@@ -303,10 +303,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "{{stack_root}}/current/hadoop-client/conf/ranger-plugin-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "{{stack_root}}/current/hadoop-client/conf/ranger-plugin-truststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -342,12 +342,12 @@
             "ssl-server": {
                 "properties_attributes": {},
                 "properties": {
-                    "ssl.server.keystore.keypassword": "bigdata",
+                    "ssl.server.keystore.keypassword": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.keystore.location": "/etc/security/serverKeys/keystore.jks",
-                    "ssl.server.keystore.password": "bigdata",
+                    "ssl.server.keystore.password": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.keystore.type": "jks",
                     "ssl.server.truststore.location": "/etc/security/serverKeys/all.jks",
-                    "ssl.server.truststore.password": "bigdata",
+                    "ssl.server.truststore.password": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.truststore.reload.interval": "10000",
                     "ssl.server.truststore.type": "jks"
                 }
@@ -452,10 +452,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "{{stack_root}}/current/hadoop-client/conf/ranger-yarn-plugin-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "{{stack_root}}/current/hadoop-client/conf/ranger-yarn-plugin-truststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -1099,7 +1099,7 @@
                     "javax.jdo.option.ConnectionDriverName": "org.postgresql.Driver",
                     "javax.jdo.option.ConnectionURL": "jdbc:postgresql://master.cdp:5432/hive",
                     "javax.jdo.option.ConnectionUserName": "hive",
-                    "javax.jdo.option.ConnectionPassword": "HiveUserMeta2025",
+                    "javax.jdo.option.ConnectionPassword": "__REDACTED_HIVE_DB_PASSWORD__",
                     "hive.metastore.warehouse.dir": "/warehouse/tablespace/managed/hive",
                     "hive.server2.zookeeper.namespace": "hiveserver2",
                     "hive.zookeeper.quorum": "master.cdp:2181,node1.cdp:2181,node2.cdp:2181",
@@ -1123,7 +1123,7 @@
                 "properties": {
                     "is_solrCloud_enabled": "true",
                     "ranger-yarn-plugin-enabled": "false",
-                    "ranger_admin_password": "RangerAdminPassword2025",
+                    "ranger_admin_password": "__REDACTED_RANGER_ADMIN_PASSWORD__",
                     "ranger_admin_username": "admin",
                     "ranger_group": "ranger",
                     "ranger_user": "ranger",
@@ -1141,12 +1141,12 @@
                     "ranger.jpa.jdbc.driver": "org.postgresql.Driver",
                     "ranger.jpa.jdbc.url": "jdbc:postgresql://master.cdp:5432/ranger",
                     "ranger.jpa.jdbc.user": "rangeradmin",
-                    "ranger.jpa.jdbc.password": "RangerAdminPassword2025",
+                    "ranger.jpa.jdbc.password": "__REDACTED_RANGER_ADMIN_PASSWORD__",
                     "ranger.externalurl": "http://master.cdp:6080",
                     "ranger.service.http.enabled": "true",
                     "ranger.authentication.method": "NONE",
                     "ranger.solr.audit.user": "ranger",
-                    "ranger.solr.audit.user.password": "ranger"
+                    "ranger.solr.audit.user.password": "__REDACTED_RANGER_SOLR_PASSWORD__"
                 }
             }
         },
@@ -1261,10 +1261,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "/usr/odp/current/hive-server2/conf/ranger-plugin-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "/usr/odp/current/hive-server2/conf/ranger-plugin-truststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file{{credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -1390,7 +1390,7 @@
                     "infra_solr_kerberos_name_rules": "DEFAULT",
                     "infra_solr_kerberos_principal": "infra-solr",
                     "infra_solr_keystore_location": "/etc/security/serverKeys/infra.solr.keyStore.jks",
-                    "infra_solr_keystore_password": "bigdata",
+                    "infra_solr_keystore_password": "__REDACTED_SSL_PASSWORD__",
                     "infra_solr_keystore_type": "jks",
                     "infra_solr_log_dir": "/var/log/ambari-infra-solr",
                     "infra_solr_maxmem": "2048",
@@ -1399,7 +1399,7 @@
                     "infra_solr_port": "8886",
                     "infra_solr_ssl_enabled": "false",
                     "infra_solr_truststore_location": "/etc/security/serverKeys/infra.solr.trustStore.jks",
-                    "infra_solr_truststore_password": "bigdata",
+                    "infra_solr_truststore_password": "__REDACTED_SSL_PASSWORD__",
                     "infra_solr_truststore_type": "jks",
                     "infra_solr_user_nofile_limit": "128000",
                     "infra_solr_user_nproc_limit": "65536",
@@ -1626,10 +1626,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "/usr/odp/current/kafka-broker/config/ranger-plugin-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file/{{credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "/usr/odp/current/kafka-broker/config/ranger-plugin-truststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file/{{credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -1664,8 +1664,8 @@
                     "SQL_CONNECTOR_JAR": "{{driver_curl_target}}",
                     "db_host": "master.cdp",
                     "db_name": "ranger",
-                    "db_password": "Ambari1234",
-                    "db_root_password": "Ambari1234",
+                    "db_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "db_root_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "db_root_user": "rangeradmin",
                     "db_user": "rangeradmin",
                     "policymgr_external_url": "http://master.cdp:6080"
@@ -1678,10 +1678,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "/etc/security/serverKeys/atlas-tagsync-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file{{atlas_tagsync_credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "/etc/security/serverKeys/atlas-tagsync-mytruststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file{{atlas_tagsync_credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -1762,7 +1762,7 @@
                     "ranger.sso.publicKey": "",
                     "ranger.truststore.alias": "trustStoreAlias",
                     "ranger.truststore.file": "/etc/ranger/admin/conf/ranger-admin-keystore.jks",
-                    "ranger.truststore.password": "changeit",
+                    "ranger.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__",
                     "ranger.unixauth.remote.login.enabled": "true",
                     "ranger.unixauth.service.hostname": "{{ugsync_host}}",
                     "ranger.unixauth.service.port": "5151"
@@ -1773,7 +1773,7 @@
             "ranger-env": {
                 "properties_attributes": {},
                 "properties": {
-                    "admin_password": "Ambari1234",
+                    "admin_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "admin_username": "admin",
                     "content": "#!/bin/bash\n\n# Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor license agreements.  See the NOTICE file\n# distributed with this work for additional information\n# regarding copyright ownership.  The ASF licenses this file\n# to you under the Apache License, Version 2.0 (the\n# \"License\"); you may not use this file except in compliance\n# with the License.  You may obtain a copy of the License at\n#\n#  http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n\n# Set Ranger-specific environment variables here.\nexport JAVA_HOME={{java_home}}\n\n{% if is_ranger_admin_host  %}\n# Ranger Admin specific environment variables here.\nexport RANGER_ADMIN_LOG_DIR={{admin_log_dir}}\nexport RANGER_PID_DIR_PATH={{ranger_pid_dir}}\nexport RANGER_USER={{unix_user}}\n{% if security_enabled %}\nexport JAVA_OPTS=\" ${JAVA_OPTS} -Dzookeeper.sasl.client.username={{zookeeper_principal_primary}} \"\n{% endif %}\n{% endif %}\n\n{% if is_ranger_usersync_host  %}\n# Ranger Usersync specific environment variables here.\nexport USERSYNC_CONF_DIR={{ranger_ugsync_conf}}\nexport logdir={{usersync_log_dir}}\nexport USERSYNC_PID_DIR_PATH={{ranger_pid_dir}}\nexport UNIX_USERSYNC_USER={{unix_user}}\n{% endif %}\n\n{% if is_ranger_tagsync_host  %}\n# Ranger Tagsync specific environment variables here.\nexport RANGER_TAGSYNC_LOG_DIR={{tagsync_log_dir}}\nexport TAGSYNC_PID_DIR_PATH={{ranger_pid_dir}}\nexport UNIX_TAGSYNC_USER={{unix_user}}\n{% endif %}",
                     "create_db_dbuser": "true",
@@ -1781,7 +1781,7 @@
                     "is_external_solrCloud_kerberos": "false",
                     "is_nested_groupsync_enabled": "false",
                     "is_solrCloud_enabled": "true",
-                    "keyadmin_user_password": "Ambari1234",
+                    "keyadmin_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "ranger-atlas-plugin-enabled": "No",
                     "ranger-hbase-plugin-enabled": "No",
                     "ranger-hdfs-plugin-enabled": "Yes",
@@ -1792,7 +1792,7 @@
                     "ranger-ozone-plugin-enabled": "No",
                     "ranger-yarn-plugin-enabled": "Yes",
                     "ranger_admin_heap": "1024",
-                    "ranger_admin_password": "P1!qdZ5BalM0LDP2",
+                    "ranger_admin_password": "__REDACTED_RANGER_ADMIN_PASSWORD__",
                     "ranger_admin_username": "amb_ranger_admin",
                     "ranger_pid_dir": "/var/run/ranger",
                     "ranger_privelege_user_jdbc_url": "jdbc:postgresql://master.cdp:5432/postgres",
@@ -1800,9 +1800,9 @@
                     "ranger_solr_config_set": "ranger_audits",
                     "ranger_solr_replication_factor": "1",
                     "ranger_solr_shards": "1",
-                    "rangerlookup_password": "rangerLookup123",
-                    "rangertagsync_user_password": "Ambari1234",
-                    "rangerusersync_user_password": "Ambari1234",
+                    "rangerlookup_password": "__REDACTED_RANGER_LOOKUP_PASSWORD__",
+                    "rangertagsync_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "rangerusersync_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "xasecure.audit.destination.hdfs": "true",
                     "xasecure.audit.destination.hdfs.dir": "hdfs://master.cdp:8020/ranger/audit",
                     "xasecure.audit.destination.solr": "true",
@@ -1830,10 +1830,10 @@
                 "properties": {
                     "xasecure.policymgr.clientssl.keystore": "/etc/security/serverKeys/ranger-tagsync-keystore.jks",
                     "xasecure.policymgr.clientssl.keystore.credential.file": "jceks://file{{ranger_tagsync_credential_file}}",
-                    "xasecure.policymgr.clientssl.keystore.password": "myKeyFilePassword",
+                    "xasecure.policymgr.clientssl.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "xasecure.policymgr.clientssl.truststore": "/etc/security/serverKeys/ranger-tagsync-mytruststore.jks",
                     "xasecure.policymgr.clientssl.truststore.credential.file": "jceks://file{{ranger_tagsync_credential_file}}",
-                    "xasecure.policymgr.clientssl.truststore.password": "changeit"
+                    "xasecure.policymgr.clientssl.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__"
                 }
             }
         },
@@ -1884,7 +1884,7 @@
                     "ranger.usersync.kerberos.keytab": "",
                     "ranger.usersync.kerberos.principal": "",
                     "ranger.usersync.keystore.file": "/usr/odp/current/ranger-usersync/conf/unixauthservice.jks",
-                    "ranger.usersync.keystore.password": "UnIx529p",
+                    "ranger.usersync.keystore.password": "__REDACTED_KEYSTORE_PASSWORD__",
                     "ranger.usersync.ldap.bindalias": "testldapalias",
                     "ranger.usersync.ldap.binddn": "",
                     "ranger.usersync.ldap.bindkeystore": "",
@@ -1919,7 +1919,7 @@
                     "ranger.usersync.source.impl.class": "org.apache.ranger.unixusersync.process.UnixUserGroupBuilder",
                     "ranger.usersync.ssl": "true",
                     "ranger.usersync.truststore.file": "/usr/odp/current/ranger-usersync/conf/mytruststore.jks",
-                    "ranger.usersync.truststore.password": "changeit",
+                    "ranger.usersync.truststore.password": "__REDACTED_TRUSTSTORE_PASSWORD__",
                     "ranger.usersync.unix.group.file": "/etc/group",
                     "ranger.usersync.unix.minUserId": "500",
                     "ranger.usersync.unix.password.file": "/etc/passwd",

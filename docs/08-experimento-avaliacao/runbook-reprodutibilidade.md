@@ -27,7 +27,7 @@ Exemplo: `run-20260418-1540-7f3c`.
 
 ### Metadados obrigatórios por execução
 
-Registrados em `context.json` (schema: [`../../evidence/context-schema-v1.json`](../../evidence/context-schema-v1.json)):
+Registrados em `context.json` (schema: [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)):
 
 **Identificação e campanha**
 
@@ -51,8 +51,8 @@ Registrados em `context.json` (schema: [`../../evidence/context-schema-v1.json`]
 
 Detalhes e política (`temperature=0` no Gemini): [`llm-inferencia-e-prompts.md`](llm-inferencia-e-prompts.md).
 
-Exemplos: [`../../evidence/examples/context-baseline-v1.example.json`](../../evidence/examples/context-baseline-v1.example.json),
-[`../../evidence/examples/context-mcp-v1.example.json`](../../evidence/examples/context-mcp-v1.example.json).
+Exemplos: [`../evidence/examples/context-baseline-v1.example.json`](../evidence/examples/context-baseline-v1.example.json),
+[`../evidence/examples/context-mcp-v1.example.json`](../evidence/examples/context-mcp-v1.example.json).
 
 ### Estrutura de evidência
 
@@ -113,7 +113,7 @@ Cada linha ou bloco deve permitir reconstruir:
 3. Dataset fixo e versionado (massa PS de 92 tabelas; ver `schema-massa-teste.md`).
 4. Seed explícita.
 5. Modelo, `provider`, `promptVersion` e `inferenceConfig` registrados (`temperature=0` no Gemini).
-6. `promptArtifactsHash` calculado e conferido contra templates em [`../../templates/prompts/`](../../templates/prompts/).
+6. `promptArtifactsHash` calculado e conferido contra templates em [`../templates/prompts/`](../templates/prompts/).
 7. Política de tool budget registrada (`toolBudget`).
 8. `metrics.json` preenchido conforme modo (MCP ou baseline).
 9. Evidências salvas em pasta da corrida.
@@ -128,11 +128,11 @@ Cada linha ou bloco deve permitir reconstruir:
 Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha v1, **antes** do modo MCP. Sem tools MCP;
 esquema via DDL estático.
 
-**Esquema no prompt:** [`../../db-reference/putz_db.sql`](../../db-reference/putz_db.sql) (92 tabelas MySQL).
+**Esquema no prompt:** [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql) (92 tabelas MySQL).
 Registar `commitHash` do repositório e hash ou versão do ficheiro DDL em `datasetVersion` / notas da campanha.
 
-**Bateria:** [`../../evidence/bateria-30-perguntas-v1.csv`](../../evidence/bateria-30-perguntas-v1.csv) +
-[`../../evidence/gabarito-bateria-v1.md`](../../evidence/gabarito-bateria-v1.md) (`batteryVersion` v1, revisão
+**Bateria:** [`../evidence/bateria-30-perguntas-v1.csv`](../evidence/bateria-30-perguntas-v1.csv) +
+[`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md) (`batteryVersion` v1, revisão
 aprovada).
 
 #### Checklist pré-voo (`baseline-static`)
@@ -150,7 +150,7 @@ aprovada).
 
 #### Registro consolidado
 
-Preencher [`../../evidence/baseline-metricas-v1.csv`](../../evidence/baseline-metricas-v1.csv) — uma linha por
+Preencher [`../evidence/baseline-metricas-v1.csv`](../evidence/baseline-metricas-v1.csv) — uma linha por
 corrida:
 
 | Coluna | Descrição |

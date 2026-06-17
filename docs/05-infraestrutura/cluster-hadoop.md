@@ -13,7 +13,7 @@ Pessoa que opera ou valida o cluster.
 - [`visao-aws.md`](visao-aws.md)
 - [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
 - [`vdf-odp-x86.md`](vdf-odp-x86.md)
-- [`../../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+- [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
 
 ## Conteúdo
 
@@ -40,16 +40,16 @@ Justificativa: evita o subdimensionamento do legado OCI (1 OCPU/6 GiB), suporta 
 
 | Serviço | Papel no alvo AWS | Fonte de referência |
 |---------|--------------------|---------------------|
-| ZooKeeper | Coordenação do cluster | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| HDFS (NN/DN) | Armazenamento da massa PS estável (92 tabelas) | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| YARN (RM/NM) | Execução distribuída dos jobs | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| Hive Metastore + HiveServer2 | Tabelas consultáveis (`putz_teste`) | [`../../legacy-infra/assets/blueprint.json`](../../legacy-infra/assets/blueprint.json) |
-| Atlas | Catálogo canônico para o MCP | [`../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/ODP-VDF.xml) |
-| HBase/Solr/Kafka | Dependências operacionais do Atlas | [`../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/ODP-VDF.xml) |
+| ZooKeeper | Coordenação do cluster | [`../legacy-infra/assets/blueprint.json`](../legacy-infra/assets/blueprint.json) |
+| HDFS (NN/DN) | Armazenamento da massa PS estável (92 tabelas) | [`../legacy-infra/assets/blueprint.json`](../legacy-infra/assets/blueprint.json) |
+| YARN (RM/NM) | Execução distribuída dos jobs | [`../legacy-infra/assets/blueprint.json`](../legacy-infra/assets/blueprint.json) |
+| Hive Metastore + HiveServer2 | Tabelas consultáveis (`putz_teste`) | [`../legacy-infra/assets/blueprint.json`](../legacy-infra/assets/blueprint.json) |
+| Atlas | Catálogo canônico para o MCP | [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml) |
+| HBase/Solr/Kafka | Dependências operacionais do Atlas | [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml) |
 
 ### Matriz de portas AWS (pendente na criação do projeto)
 
-As portas abaixo **não** estão fechadas nesta documentação. Na criação do projeto AWS/Terraform, definir security groups com tráfego **intra-VPC** entre componentes. O arquivo [`../../legacy-infra/security-list.tf`](../../legacy-infra/security-list.tf) lista apenas exposições de operação no laboratório OCI e não deve ser tratado como lista final de portas AWS.
+As portas abaixo **não** estão fechadas nesta documentação. Na criação do projeto AWS/Terraform, definir security groups com tráfego **intra-VPC** entre componentes. O arquivo [`../legacy-infra/security-list.tf`](../legacy-infra/security-list.tf) lista apenas exposições de operação no laboratório OCI e não deve ser tratado como lista final de portas AWS.
 
 | Serviço | Porta(s) típica(s) | Estado |
 |---------|---------------------|--------|
@@ -70,11 +70,11 @@ As portas abaixo **não** estão fechadas nesta documentação. Na criação do 
 4. Aplicar blueprint de cluster.
 5. Validar saúde do catálogo e do plano de dados.
 
-Referências de execução no legado: [`../../legacy-infra/cloud-init/master.yaml`](../../legacy-infra/cloud-init/master.yaml), [`../../legacy-infra/assets/site.yml`](../../legacy-infra/assets/site.yml), [`../../legacy-infra/assets/cluster_deploy.yml`](../../legacy-infra/assets/cluster_deploy.yml).
+Referências de execução no legado: [`../legacy-infra/cloud-init/master.yaml`](../legacy-infra/cloud-init/master.yaml), [`../legacy-infra/assets/site.yml`](../legacy-infra/assets/site.yml), [`../legacy-infra/assets/cluster_deploy.yml`](../legacy-infra/assets/cluster_deploy.yml).
 
 ### Diagrama
 
-Ver [`../../diagrams/cluster-topologia-aws.puml`](../../diagrams/cluster-topologia-aws.puml).
+Ver [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml).
 
 ### Estado dos pontos críticos
 

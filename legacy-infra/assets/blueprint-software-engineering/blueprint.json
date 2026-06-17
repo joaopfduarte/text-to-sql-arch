@@ -12,7 +12,7 @@
                     "javax.jdo.option.ConnectionURL": "jdbc:postgresql://master.cdp:5432/hive",
                     "javax.jdo.option.ConnectionDriverName": "org.postgresql.Driver",
                     "javax.jdo.option.ConnectionUserName": "hive",
-                    "javax.jdo.option.ConnectionPassword": "HiveUserMeta2025",
+                    "javax.jdo.option.ConnectionPassword": "__REDACTED_HIVE_DB_PASSWORD__",
                     "hive.metastore.db.type": "postgres",
                     "hive.server2.authentication": "NONE",
                     "hive.metastore.uris": "thrift://node1.cdp:9083",
@@ -27,7 +27,7 @@
                     "hive_database": "Existing PostgreSQL Database",
                     "hive_database_type": "postgres",
                     "hive_database_host": "master.cdp",
-                    "hive_database_password": "HiveUserMeta2025",
+                    "hive_database_password": "__REDACTED_HIVE_DB_PASSWORD__",
                     "hive_heapsize": "2048",
                     "hive_database_name": "hive",
                     "hive_ambari_database": "MySQL"
@@ -290,12 +290,12 @@
             "ssl-server": {
                 "properties_attributes": {},
                 "properties": {
-                    "ssl.server.keystore.keypassword": "bigdata",
+                    "ssl.server.keystore.keypassword": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.keystore.location": "/etc/security/serverKeys/keystore.jks",
-                    "ssl.server.keystore.password": "bigdata",
+                    "ssl.server.keystore.password": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.keystore.type": "jks",
                     "ssl.server.truststore.location": "/etc/security/serverKeys/all.jks",
-                    "ssl.server.truststore.password": "bigdata",
+                    "ssl.server.truststore.password": "__REDACTED_SSL_PASSWORD__",
                     "ssl.server.truststore.reload.interval": "10000",
                     "ssl.server.truststore.type": "jks"
                 }
@@ -1130,9 +1130,9 @@
                     "nifi.node.protocol.port": "9088",
                     "nifi.node.ssl.port": "9091",
                     "nifi.provenance.repository.dir.default": "/var/lib/nifi/provenance_repository",
-                    "nifi.security.encrypt.configuration.password": "Pedrinho2002*",
+                    "nifi.security.encrypt.configuration.password": "__REDACTED_NIFI_SENSITIVE_KEY__",
                     "nifi.sensitive.props.additional.keys": "",
-                    "nifi.sensitive.props.key": "Pedrinho2002*",
+                    "nifi.sensitive.props.key": "__REDACTED_NIFI_SENSITIVE_KEY__",
                     "nifi.state.dir": "{nifi_internal_dir}/state/local",
                     "nifi.variable.registry.properties": ""
                 }
@@ -1338,7 +1338,7 @@
                     "nifi.security.user.authorizer": "{{nifi_authorizer}}",
                     "nifi.security.user.login.identity.provider": "",
                     "nifi.sensitive.props.algorithm": "PBEWITHMD5AND256BITAES-CBC-OPENSSL",
-                    "nifi.sensitive.props.key": "Pedrinho2002*",
+                    "nifi.sensitive.props.key": "__REDACTED_NIFI_SENSITIVE_KEY__",
                     "nifi.sensitive.props.provider": "BC",
                     "nifi.state.management.configuration.file": "{{nifi_config_dir}}/state-management.xml",
                     "nifi.state.management.embedded.zookeeper.properties": "{{nifi_config_dir}}/zookeeper.properties",

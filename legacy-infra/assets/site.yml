@@ -198,10 +198,10 @@
 
   - name: Create PostgreSQL Users
     ansible.builtin.shell: |
-      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='ambari') THEN CREATE ROLE ambari LOGIN PASSWORD 'Ambari123'; END IF; END \$\$;"
-      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='hive') THEN CREATE ROLE hive LOGIN PASSWORD 'HiveUserMeta2025'; ELSE ALTER ROLE hive WITH PASSWORD 'HiveUserMeta2025'; END IF; END \$\$;"
-      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='rangeradmin') THEN CREATE ROLE rangeradmin LOGIN PASSWORD 'Ambari1234'; ELSE ALTER ROLE rangeradmin WITH PASSWORD 'Ambari1234'; END IF; END \$\$;"
-      sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'Ambari1234';"
+      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='ambari') THEN CREATE ROLE ambari LOGIN PASSWORD '__REDACTED_AMBARI_DB_PASSWORD__'; END IF; END \$\$;"
+      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='hive') THEN CREATE ROLE hive LOGIN PASSWORD '__REDACTED_HIVE_DB_PASSWORD__'; ELSE ALTER ROLE hive WITH PASSWORD '__REDACTED_HIVE_DB_PASSWORD__'; END IF; END \$\$;"
+      sudo -u postgres psql -c "DO \$\$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='rangeradmin') THEN CREATE ROLE rangeradmin LOGIN PASSWORD '__REDACTED_AMBARI_ADMIN_PASSWORD__'; ELSE ALTER ROLE rangeradmin WITH PASSWORD '__REDACTED_AMBARI_ADMIN_PASSWORD__'; END IF; END \$\$;"
+      sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '__REDACTED_AMBARI_ADMIN_PASSWORD__';"
     args:
       executable: /bin/bash
 
@@ -216,7 +216,7 @@
 
   - name: Populate Ambari Database Schema
     ansible.builtin.shell: |
-      export PGPASSWORD='Ambari123'
+      export PGPASSWORD='__REDACTED_AMBARI_DB_PASSWORD__'
       psql -h localhost -p 5432 -U ambari -d ambari -f /var/lib/ambari-server/resources/Ambari-DDL-Postgres-CREATE.sql
     args:
       executable: /bin/bash
@@ -234,7 +234,7 @@
       - "--databaseport=5432"
       - "--databasename=ambari"
       - "--databaseusername=ambari"
-      - "--databasepassword=Ambari123"
+      - "--databasepassword=__REDACTED_AMBARI_DB_PASSWORD__"
       - "--jdbc-db=postgres"
       - "--jdbc-driver=/usr/share/java/postgresql-jdbc.jar"
       - "-j"
@@ -275,7 +275,7 @@
 
   - name: Ensure Ambari password file exists
     ansible.builtin.copy:
-      content: "Ambari123"
+      content: "__REDACTED_AMBARI_DB_PASSWORD__"
       dest: /etc/ambari-server/conf/password.dat
       owner: root
       group: root
@@ -293,8 +293,10 @@
       groups: wheel
       append: yes
       state: present
-  - name: Set console password
-    ansible.builtin.shell: echo 'console:1aB@2bC#' | chpasswd
+  - name: Set console password (definir `console_password` em vault; nunca commitar)
+    ansible.builtin.shell: echo "console:{{ console_password }}" | chpasswd
+    when: console_password is defined
+    no_log: true
 
   - name: Append environment variables to root .bashrc
     ansible.builtin.blockinfile:

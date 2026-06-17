@@ -5,12 +5,12 @@
 Registrar a decisão final do catálogo fechado de quinze tools MCP de descoberta sobre o Apache Atlas, com o
 mapeamento entre cada tool MCP, a operação Atlas correspondente e o benefício para o schema linking. Esta matriz é a
 evidência que sustenta a tabela do Capítulo 4 e os contratos em
-[`../docs/07-contratos-mcp/contracts-v1.md`](../docs/07-contratos-mcp/contracts-v1.md).
+[`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
 
 ## Fonte
 
 - Inventário: [`inventario-atlas-api-para-mcp.md`](inventario-atlas-api-para-mcp.md)
-- Swagger: [`../../assets/scripts/atlas-api-swagger.json`](../../assets/scripts/atlas-api-swagger.json)
+- Swagger: `assets/scripts/atlas-api-swagger.json` (repositório da monografia)
 
 ## Catálogo fechado (15 tools)
 
@@ -53,5 +53,5 @@ As três basais permanecem inalteradas e cobrem o percurso mínimo de schema lin
 ## Erros canônicos
 
 Todas as tools usam o envelope e a taxonomia de
-[`../docs/07-contratos-mcp/contracts-v1.md`](../docs/07-contratos-mcp/contracts-v1.md):
+[`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md):
 `invalid_input`, `not_found`, `catalog_unavailable`, `timeout`, `internal_error`.

@@ -1,6 +1,8 @@
 # CDP Infrastructure on OCI (Terraform + Ansible)
 
-> **Nota — Esta pasta é legado OCI e não o alvo do TCC.** O alvo do TCC é AWS x86 com VDF canônico em [`../../assets/scripts/ODP-VDF.xml`](../../assets/scripts/ODP-VDF.xml). Esta pasta preserva somente a referência de migração OCI (ODP 1.2.2.0, `centos9-aarch64`).
+> **Nota — Esta pasta é legado OCI e não o alvo do TCC.** O alvo do TCC é AWS x86 com VDF canônico em [`assets/ODP-VDF.xml`](assets/ODP-VDF.xml). Esta pasta preserva somente a referência de migração OCI (ODP 1.2.2.0, `centos9-aarch64`).
+
+> **Segredos:** este repositório **não** contém senhas reais. Valores sensíveis aparecem como `__REDACTED_*__` ou variáveis Ansible. Para deploy, copie [`group_vars/all.yml.example`](group_vars/all.yml.example) para `group_vars/all.yml` (ou use Vault) e **nunca** commite credenciais.
 
 **Documentação Principal:** [https://github.com/Ecosystem-CDP/docs/tree/main](https://github.com/Ecosystem-CDP/docs/tree/main)
 

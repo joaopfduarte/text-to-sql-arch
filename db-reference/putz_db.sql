@@ -127,7 +127,7 @@ CREATE TABLE `asset_retail_product` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Produtos de Varejo\\n@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Produtos de Varejo\\n@author [redacted]';
 
 -- --------------------------------------------------------
 
@@ -189,7 +189,7 @@ CREATE TABLE `asset_retail_unit` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Unidades pra um Produto de Varejo\\n@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Unidades pra um Produto de Varejo\\n@author [redacted]';
 
 -- --------------------------------------------------------
 
@@ -1158,7 +1158,7 @@ CREATE TABLE `project_calc` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='@author [redacted]';
 
 -- --------------------------------------------------------
 
@@ -1462,7 +1462,7 @@ CREATE TABLE `project_step` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ProjectStep/Etapa\\nRepresentação de uma única etapa de um projeto\\n@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='ProjectStep/Etapa\\nRepresentação de uma única etapa de um projeto\\n@author [redacted]';
 
 -- --------------------------------------------------------
 
@@ -1811,7 +1811,7 @@ CREATE TABLE `schedule` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Schedule/Cronograma\\nRepresentação de um modelo de cronograma com etapas\\n@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Schedule/Cronograma\\nRepresentação de um modelo de cronograma com etapas\\n@author [redacted]';
 
 -- --------------------------------------------------------
 
@@ -1834,7 +1834,7 @@ CREATE TABLE `schedule_step` (
   `last_modified_date` datetime(6) DEFAULT NULL,
   `created_by` varchar(64) DEFAULT NULL,
   `last_modified_by` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Step/ConfiguracaoEtapa\\nEtapa de cronograma modelo\\n@author Aléssio Miranda Júnior';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Step/ConfiguracaoEtapa\\nEtapa de cronograma modelo\\n@author [redacted]';
 
 -- --------------------------------------------------------
 

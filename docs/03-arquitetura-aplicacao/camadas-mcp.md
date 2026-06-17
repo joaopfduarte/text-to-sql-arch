@@ -49,7 +49,7 @@ servidor --> cliente
 O catálogo é **fechado em quinze tools** somente leitura: três basais (protocolo mínimo de avaliação) e doze
 complementares. As basais já têm porta e adapter definidos. Para as doze complementares, porta e adapter são
 **planejados** (desenho lógico, sem código Java nesta etapa), com referência cruzada ao endpoint Atlas. A seleção
-está em [`../../evidence/matriz-15-tools-mcp-v1.md`](../../evidence/matriz-15-tools-mcp-v1.md).
+está em [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
 
 ### Tabela `tool -> porta Java -> contrato JSON -> erro canônico`
 

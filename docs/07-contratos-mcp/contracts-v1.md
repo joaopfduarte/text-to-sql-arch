@@ -45,7 +45,7 @@ Em erro, `status = "error"`, `data = null` e `error = { "code": "<canonico>", "m
 
 O catálogo da v1 é **fechado em quinze tools** de descoberta somente leitura sobre o Apache Atlas (API REST v2):
 três basais (protocolo mínimo de avaliação) e doze complementares (mesmo contrato, mesmo orçamento de 10 chamadas por
-sessão). Evidência da seleção em [`../../evidence/matriz-15-tools-mcp-v1.md`](../../evidence/matriz-15-tools-mcp-v1.md).
+sessão). Evidência da seleção em [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
 
 | # | Tool MCP | Papel | Operação Atlas (v2) |
 |---|----------|-------|---------------------|
@@ -114,7 +114,7 @@ Entrada:
 }
 ```
 
-Saída (colunas observadas em [`putz_db.md` L1173–1215](../../db-reference/putz_db.md)):
+Saída (colunas observadas em [`putz_db.md` L1173–1215](../db-reference/putz_db.md)):
 
 ```json
 {
@@ -143,7 +143,7 @@ Entrada:
 }
 ```
 
-Saída (FKs confirmadas em [`putz_db.md` L1199–1206](../../db-reference/putz_db.md)):
+Saída (FKs confirmadas em [`putz_db.md` L1199–1206](../db-reference/putz_db.md)):
 
 ```json
 {

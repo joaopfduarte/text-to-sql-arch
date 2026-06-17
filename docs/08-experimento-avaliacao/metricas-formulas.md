@@ -13,9 +13,9 @@ Pessoa que executa corridas, consolida `metrics.json` e valida agregados de camp
 
 - [`protocolo-avaliacao.md`](protocolo-avaliacao.md)
 - [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
-- Gabarito: [`../../evidence/gabarito-bateria-v1.md`](../../evidence/gabarito-bateria-v1.md) (quando publicado)
-- Tarifas LLM: [`../../../guide-docs/external-documentation/GPT54NanoModelDocs.md`](../../../guide-docs/external-documentation/GPT54NanoModelDocs.md),
-  [`../../../guide-docs/external-documentation/Gemini35FlashModelDocs.md`](../../../guide-docs/external-documentation/Gemini35FlashModelDocs.md)
+- Gabarito: [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md) (quando publicado)
+- Tarifas LLM: `../../../guide-docs/external-documentation/GPT54NanoModelDocs.md`,
+  `../../../guide-docs/external-documentation/Gemini35FlashModelDocs.md`
 
 ## Unidade experimental
 

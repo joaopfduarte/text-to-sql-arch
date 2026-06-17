@@ -45,7 +45,7 @@ Construir um pipeline `Text-to-SQL` reprodutível que consulte metadados por `MC
 5. Execução controlada no subconjunto PS (92 tabelas).
 6. Registro de trilha e cálculo de métricas.
 
-Diagrama: [`../../diagrams/diagrama-mestre.puml`](../../diagrams/diagrama-mestre.puml).
+Diagrama: [`../diagrams/diagrama-mestre.puml`](../diagrams/diagrama-mestre.puml).
 
 ### Zonas lógicas de rede
 
@@ -56,7 +56,7 @@ Diagrama: [`../../diagrams/diagrama-mestre.puml`](../../diagrams/diagrama-mestre
 | `NetDataPlane` | Apache Atlas, banco PS no cluster. | Acessível apenas pelo validador/executor e pelo adaptador Atlas. |
 | `NetObservability` | Armazenamento de evidências e métricas. | Escrita por `runId`, sem sobrescrita. |
 
-Diagrama lógico: [`../../diagrams/rede-implantacao.puml`](../../diagrams/rede-implantacao.puml). Para a tradução física para AWS, ver [`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md).
+Diagrama lógico: [`../diagrams/rede-implantacao.puml`](../diagrams/rede-implantacao.puml). Para a tradução física para AWS, ver [`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md).
 
 ### Padrões de engenharia
 

@@ -7,8 +7,8 @@ v1. Serve de evidência para a seleção das doze tools complementares do catál
 
 ## Fonte
 
-- [`assets/scripts/atlas-api-swagger.json`](../../assets/scripts/atlas-api-swagger.json) (Swagger oficial do Atlas v2; fonte primária)
-- [`assets/scripts/Atlas REST API-documentation.html`](../../assets/scripts/Atlas%20REST%20API-documentation.html) (documentação humana complementar)
+- `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; repositório da monografia)
+- `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; repositório da monografia)
 
 ## Critérios de triagem
 

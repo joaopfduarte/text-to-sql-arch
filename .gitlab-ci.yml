@@ -10,6 +10,7 @@ pages:
   script:
     - pip install -r requirements.txt
     - test -f docs/monografia.pdf || (echo "docs/monografia.pdf em falta — adicione o PDF da monografia" && exit 1)
+    - bash scripts/prepare-docs.sh
     - mkdocs build --strict --site-dir public
   artifacts:
     paths:

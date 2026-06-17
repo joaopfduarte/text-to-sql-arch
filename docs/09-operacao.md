@@ -21,7 +21,7 @@ Pessoa que executa o ambiente e arquiva evidências.
 1. Subir o cluster (ou validar que está estável).
 2. Validar Atlas: tools MCP retornam o subconjunto PS (92 tabelas) esperado.
 3. Gerar `runId` no formato `run-YYYYMMDD-HHMM-<id-curto>` (ver runbook).
-4. Registrar `context.json` com metadados completos (ver [`evidence/context-schema-v1.json`](../evidence/context-schema-v1.json) e [`08-experimento-avaliacao/llm-inferencia-e-prompts.md`](08-experimento-avaliacao/llm-inferencia-e-prompts.md)): `runId`, `seed`, `modelVersion`, `provider`, `promptVersion`, `inferenceConfig`, `promptArtifactsHash`, `commitHash`, `datasetVersion`, `contractsVersion`.
+4. Registrar `context.json` com metadados completos (ver [`evidence/context-schema-v1.json`](evidence/context-schema-v1.json) e [`08-experimento-avaliacao/llm-inferencia-e-prompts.md`](08-experimento-avaliacao/llm-inferencia-e-prompts.md)): `runId`, `seed`, `modelVersion`, `provider`, `promptVersion`, `inferenceConfig`, `promptArtifactsHash`, `commitHash`, `datasetVersion`, `contractsVersion`.
 5. Executar a bateria de perguntas do harness.
 6. Coletar `session.jsonl`, `metrics.json` e `summary.md` em `evidence/<runId>/`.
 7. Encerrar/desligar recursos não necessários para reduzir custo.
@@ -37,7 +37,7 @@ evidence/
     summary.md
 ```
 
-Convenções e exigências mínimas estão em [`evidence/README.md`](../evidence/README.md) e [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md).
+Convenções e exigências mínimas estão em [`evidence/README.md`](evidence/README.md) e [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md).
 
 ### Política de retenção
 
@@ -49,11 +49,11 @@ Convenções e exigências mínimas estão em [`evidence/README.md`](../evidence
 
 | Cenário | Template |
 |---------|----------|
-| Relatório de corrida | [`templates/run-report-template.md`](../templates/run-report-template.md) |
-| Templates de prompt LLM | [`templates/prompts/prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json) |
-| Incidente operacional | [`templates/incident-template.md`](../templates/incident-template.md) |
-| Revisão metodológica | [`templates/review-metodologico-template.md`](../templates/review-metodologico-template.md) |
-| ADR | [`templates/adr-template.md`](../templates/adr-template.md) |
+| Relatório de corrida | [`templates/run-report-template.md`](templates/run-report-template.md) |
+| Templates de prompt LLM | [`templates/prompts/prompts-manifest-v1.json`](templates/prompts/prompts-manifest-v1.json) |
+| Incidente operacional | [`templates/incident-template.md`](templates/incident-template.md) |
+| Revisão metodológica | [`templates/review-metodologico-template.md`](templates/review-metodologico-template.md) |
+| ADR | [`templates/adr-template.md`](templates/adr-template.md) |
 
 ### Falhas comuns e recuperação
 

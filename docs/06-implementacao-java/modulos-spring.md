@@ -52,7 +52,7 @@ Pessoa desenvolvedora Java júnior que vai criar ou estender módulos.
 |----------|--------|
 | `app.mcp.tool-budget.default` | Orçamento padrão de chamadas de tool por sessão (valor de referência: **10**). |
 | `app.atlas.base-url` | Endpoint do Apache Atlas. |
-| `app.atlas.auth.user` / `.password` | Credenciais para Atlas. |
+| `app.atlas.auth.user` / `.password` | Credenciais Atlas via variáveis de ambiente ou vault (nunca em repositório). |
 | `app.jdbc.hive.url` | JDBC URL do HiveServer2 (ex.: `jdbc:hive2://master:10000/putz`). |
 | `app.calcite.dialect` | Dialeto SQL do Calcite (valor de referência: `hive`). |
 | `app.llm.provider` | Provedor ativo por corrida: `openai` ou `google`. |
@@ -62,7 +62,7 @@ Pessoa desenvolvedora Java júnior que vai criar ou estender módulos.
 | `app.llm.openai.max-output-tokens` | Limite de tokens de saída OpenAI (v1: **4096**). |
 | `app.llm.google.max-output-tokens` | Limite de tokens de saída Google (v1: **4096**). |
 | `app.llm.prompt.version` | Versão dos templates de prompt (`v1`). |
-| `app.llm.prompt.base-path` | Raiz dos templates ([`../../templates/prompts/`](../../templates/prompts/)). |
+| `app.llm.prompt.base-path` | Raiz dos templates ([`../templates/prompts/`](../templates/prompts/)). |
 | `app.evidence.base-path` | Caminho/bucket para `evidence/<runId>/`. |
 | `app.run-id.template` | Template para geração de `runId`. |
 

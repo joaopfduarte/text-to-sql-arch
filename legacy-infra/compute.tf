@@ -197,8 +197,6 @@ resource "tls_private_key" "compute_ssh_key" {
   rsa_bits  = 2048
 }
 
-
-
 resource "null_resource" "upload_assets" {
   depends_on = [oci_core_instance.Master]
 

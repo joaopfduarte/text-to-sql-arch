@@ -16,7 +16,5 @@ provider "oci" {
   region           = var.region
 
   #config_file_profile = "DEFAULT"
-  #ocid1.tenancy.oc1..aaaaaaaabgtanzwk3zzo4okqqxjezyzbadiuxvytlry3266ydglhpogeunwa
-  #sa-saopaulo-1
-  #ocid1.compartment.oc1..aaaaaaaargckss2cr5wf5a2pmxjt6deseafw2aujngch4hoynha54tvgykyq
+
 }

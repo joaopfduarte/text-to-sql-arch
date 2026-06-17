@@ -19,7 +19,7 @@ O mapa de migração completo está em
 ## Propósito
 
 Definir $G_i$ (gabarito) por pergunta para classificação de desfecho e para a métrica baseline
-$A_{\mathrm{gab}}$, conforme [`metricas-formulas.md`](../docs/08-experimento-avaliacao/metricas-formulas.md).
+$A_{\mathrm{gab}}$, conforme [`metricas-formulas.md`](../08-experimento-avaliacao/metricas-formulas.md).
 
 ## Convenção CSV (`dificuldade`)
 

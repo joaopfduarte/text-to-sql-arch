@@ -5,3 +5,18 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+
+# Symlinks gerados por scripts/prepare-docs.sh
+/docs/evidence
+/docs/templates
+/docs/db-reference
+/docs/assets/scripts
+/docs/diagrams/*.puml
+/docs/diagrams/*.svg
+/docs/legacy-infra/*.tf
+/docs/legacy-infra/schema.yaml
+/docs/legacy-infra/assets
+/docs/legacy-infra/cloud-init
+
+# Credenciais locais (nunca commitar)
+legacy-infra/group_vars/all.yml

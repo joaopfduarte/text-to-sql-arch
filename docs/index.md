@@ -31,7 +31,8 @@ Pacote operacional para a engenharia do artefato Text-to-SQL com MCP e Apache At
 
 ```bash
 pip install -r requirements.txt
+bash scripts/prepare-docs.sh
 mkdocs serve
 ```
 
-Build de produção: `mkdocs build --strict --site-dir public`.
+Build de produção: `bash scripts/prepare-docs.sh && mkdocs build --strict --site-dir public`.

@@ -71,7 +71,7 @@
         {
             "hive-site": {
                 "properties": {
-                    "javax.jdo.option.ConnectionPassword": "HiveUserMeta2025"
+                    "javax.jdo.option.ConnectionPassword": "__REDACTED_HIVE_DB_PASSWORD__"
                 }
             }
         },
@@ -146,7 +146,7 @@
                     "nifi.internal.dir": "/var/lib/nifi",
                     "nifi.max_mem": "512m",
                     "nifi.sensitive.props.additional.keys": "",
-                    "nifi.sensitive.props.key": "Ambari1234567",
+                    "nifi.sensitive.props.key": "__REDACTED_NIFI_SENSITIVE_KEY__",
                     "nifi.content.repository.dir.default": "/var/lib/nifi/content_repository",
                     "nifi.node.protocol.port": "9088",
                     "nifi.allow.explicit.keytab": "true",
@@ -168,7 +168,7 @@
             "nifi-properties": {
                 "properties": {
                     "nifi.sensitive.props.algorithm": "PBEWITHMD5AND256BITAES-CBC-OPENSSL",
-                    "nifi.sensitive.props.key": "Ambari1234567",
+                    "nifi.sensitive.props.key": "__REDACTED_NIFI_SENSITIVE_KEY__",
                     "nifi.sensitive.props.provider": "BC"
                 }
             }
@@ -684,11 +684,11 @@
                 "properties_attributes": {},
                 "properties": {
                     "ranger-hive-plugin-enabled": "Yes",
-                    "ranger_admin_password": "Ambari1234",
-                    "admin_password": "Ambari1234",
-                    "rangerusersync_user_password": "Ambari1234",
-                    "rangertagsync_user_password": "Ambari1234",
-                    "keyadmin_user_password": "Ambari1234",
+                    "ranger_admin_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "admin_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "rangerusersync_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "rangertagsync_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
+                    "keyadmin_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "admin_username": "admin",
                     "ranger-hbase-plugin-enabled": "No",
                     "ranger-hdfs-plugin-enabled": "No",
@@ -696,9 +696,9 @@
                     "xasecure.audit.destination.hdfs.dir": "hdfs://master.cdp:8020/ranger/audit",
                     "ranger_privelege_user_jdbc_url": "jdbc:postgresql://master.cdp:5432/postgres",
                     "ranger_privelege_user": "postgres",
-                    "ranger_privelege_user_password": "Ambari1234",
+                    "ranger_privelege_user_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "db_root_user": "postgres",
-                    "db_root_password": "Ambari1234",
+                    "db_root_password": "__REDACTED_AMBARI_ADMIN_PASSWORD__",
                     "ranger-kafka-plugin-enabled": "No",
                     "ranger-nifi-plugin-enabled": "Yes",
                     "content": "#!/bin/bash\n\n# Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor license agreements.  See the NOTICE file\n# distributed with this work for additional information\n# regarding copyright ownership.  The ASF licenses this file\n# to you under the Apache License, Version 2.0 (the\n# \"License\"); you may not use this file except in compliance\n# with the License.  You may obtain a copy of the License at\n#\n#  http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n\n# Set Ranger-specific environment variables here.\nexport JAVA_HOME={{java_home}}\n\n{% if is_ranger_admin_host  %}\n# Ranger Admin specific environment variables here.\nexport RANGER_ADMIN_LOG_DIR={{admin_log_dir}}\nexport RANGER_PID_DIR_PATH={{ranger_pid_dir}}\nexport RANGER_USER={{unix_user}}\n{% if security_enabled %}\nexport JAVA_OPTS=\" ${JAVA_OPTS} -Dzookeeper.sasl.client.username={{zookeeper_principal_primary}} \"\n{% endif %}\n{% endif %}\n\n{% if is_ranger_usersync_host  %}\n# Ranger Usersync specific environment variables here.\nexport USERSYNC_CONF_DIR={{ranger_ugsync_conf}}\nexport logdir={{usersync_log_dir}}\nexport USERSYNC_PID_DIR_PATH={{ranger_pid_dir}}\nexport UNIX_USERSYNC_USER={{unix_user}}\n{% endif %}\n\n{% if is_ranger_tagsync_host  %}\n# Ranger Tagsync specific environment variables here.\nexport RANGER_TAGSYNC_LOG_DIR={{tagsync_log_dir}}\nexport TAGSYNC_PID_DIR_PATH={{ranger_pid_dir}}\nexport UNIX_TAGSYNC_USER={{unix_user}}\n{% endif %}",

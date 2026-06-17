@@ -24,12 +24,12 @@ Um pipeline Text-to-SQL onde o agente LLM **consulta a camada semântica e de me
 |-------|-----------|-------|
 | 1 | [`01-produto-e-escopo.md`](01-produto-e-escopo.md) — o que é, o que está fora do escopo | 3 min |
 | 2 | [`02-arquitetura-negocio.md`](02-arquitetura-negocio.md) — blocos de negócio e contratos macro | 3 min |
-| 3 | [`../diagrams/diagrama-mestre.puml`](../diagrams/diagrama-mestre.puml) — fluxo lógico ponta a ponta | 2 min |
+| 3 | [`diagrams/diagrama-mestre.puml`](diagrams/diagrama-mestre.puml) — fluxo lógico ponta a ponta | 2 min |
 | 4 | [`03-arquitetura-aplicacao/visao-logica.md`](03-arquitetura-aplicacao/visao-logica.md) — camadas e fluxo operacional | 4 min |
 | 5 | [`03-arquitetura-aplicacao/camadas-mcp.md`](03-arquitetura-aplicacao/camadas-mcp.md) — tabela tool → porta → contrato → erro | 4 min |
 | 6 | [`04-arquitetura-dados/banco-putz-dominio.md`](04-arquitetura-dados/banco-putz-dominio.md) — onde estão os dados | 3 min |
 | 7 | [`05-infraestrutura/visao-aws.md`](05-infraestrutura/visao-aws.md) — topologia AWS | 3 min |
-| 8 | [`../diagrams/cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml) — diagrama de deployment | 3 min |
+| 8 | [`diagrams/cluster-topologia-aws.puml`](diagrams/cluster-topologia-aws.puml) — diagrama de deployment | 3 min |
 
 Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semântica e a massa.
 
@@ -41,7 +41,7 @@ Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semâ
 | Engenheiro de infra/dados | [`05-infraestrutura/cluster-hadoop.md`](05-infraestrutura/cluster-hadoop.md), [`05-infraestrutura/delta-oci-para-aws.md`](05-infraestrutura/delta-oci-para-aws.md), [`05-infraestrutura/vdf-odp-x86.md`](05-infraestrutura/vdf-odp-x86.md), [`04-arquitetura-dados/carga-cluster-putz.md`](04-arquitetura-dados/carga-cluster-putz.md) |
 | Operador de corridas | [`08-experimento-avaliacao/protocolo-avaliacao.md`](08-experimento-avaliacao/protocolo-avaliacao.md), [`08-experimento-avaliacao/llm-inferencia-e-prompts.md`](08-experimento-avaliacao/llm-inferencia-e-prompts.md), [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md), [`09-operacao.md`](09-operacao.md) |
 | Pessoa que escreve o TCC | [`10-rastreabilidade-academica.md`](10-rastreabilidade-academica.md) |
-| Pessoa que governa decisões | [`../adr/`](../adr/) (ADR-0001, ADR-0002 e ADR-0003) |
+| Pessoa que governa decisões | [`adr/README.md`](adr/README.md) (ADR-0001, ADR-0002 e ADR-0003) |
 
 ### Vocabulário mínimo
 

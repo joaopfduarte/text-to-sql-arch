@@ -15,7 +15,7 @@ AMBARI_PORT="8080"
 CLUSTER_NAME="cdp-cluster"
 AMBARI_URL="http://${AMBARI_HOST}:${AMBARI_PORT}/api/v1"
 NIFI_NODE="node1.cdp"
-NIFI_SENSITIVE_KEY="Ambari1234567"
+NIFI_SENSITIVE_KEY="__REDACTED_NIFI_SENSITIVE_KEY__"
 
 # Colors for output
 RED='\033[0;31m'
@@ -97,7 +97,7 @@ log_info "=========================================="
 log_info "Step 1: Configuring NiFi on ${NIFI_NODE}..."
 
 # Generate a consistent 256-bit hex key (64 hex chars = 32 bytes) using SHA-256
-NIFI_HEX_KEY=$(echo -n "Ambari1234567" | sha256sum | awk '{print $1}')
+NIFI_HEX_KEY=$(echo -n "__REDACTED_NIFI_SENSITIVE_KEY__" | sha256sum | awk '{print $1}')
 NIFI_ALGORITHM="NIFI_PBKDF2_AES_GCM_256"
 
 log_info "Using SHA-256 derived hex key for NiFi encryption..."

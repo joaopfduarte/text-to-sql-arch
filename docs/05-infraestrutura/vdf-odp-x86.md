@@ -12,13 +12,13 @@ Pessoa que valida stack/versões do cluster e prepara a implantação em AWS.
 
 - [`cluster-hadoop.md`](cluster-hadoop.md)
 - [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
-- [`../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/ODP-VDF.xml)
+- [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml)
 
 ## Conteúdo
 
 ### VDF canônico (alvo TCC)
 
-Fonte de verdade: [`../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/ODP-VDF.xml).
+Fonte de verdade: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
 
 | Campo | Valor |
 |-------|-------|
@@ -47,7 +47,7 @@ Fonte de verdade: [`../../assets/scripts/ODP-VDF.xml`](../../../assets/scripts/O
 
 ### VDF legado OCI (somente referência)
 
-Fonte: [`../../legacy-infra/assets/ODP-VDF.xml`](../../legacy-infra/assets/ODP-VDF.xml).
+Fonte: [`../legacy-infra/assets/ODP-VDF.xml`](../legacy-infra/assets/ODP-VDF.xml).
 
 | Campo | Valor |
 |-------|-------|
@@ -65,4 +65,4 @@ Fonte: [`../../legacy-infra/assets/ODP-VDF.xml`](../../legacy-infra/assets/ODP-V
 
 ## Próximo passo
 
-[`../../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+[`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)

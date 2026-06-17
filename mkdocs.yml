@@ -69,6 +69,7 @@ nav:
     - Índice: adr/README.md
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
     - ADR-0002 Topologia AWS: adr/ADR-0002-topologia-aws-cluster-minimo.md
+    - ADR-0003 Inferência LLM: adr/ADR-0003-inferencia-llm-deterministica.md
   - Monografia: monografia.md
 
 markdown_extensions:
