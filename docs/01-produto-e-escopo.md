@@ -1,18 +1,5 @@
 # Produto e escopo metodológico
 
-## Propósito
-
-Apresentar o artefato Text-to-SQL do TCC, congelar o recorte metodológico e tornar explícitas as decisões de ambiente que sustentam a reprodutibilidade.
-
-## Leitor
-
-Pessoa que precisa entender, em até 15 minutos, o que é o artefato, o que está dentro do escopo do TCC e o que ficou fora.
-
-## Pré-requisitos
-
-- Nenhum. Este é o primeiro documento operacional.
-
-## Conteúdo
 
 ### O produto em uma frase
 
@@ -61,6 +48,5 @@ Um SQL contém erro estrutural quando:
 | Massa de teste | Subconjunto subconjunto laboratorial (92 tabelas) fixo substitui exemplos sintéticos | [`04-arquitetura-dados/schema-massa-teste.md`](04-arquitetura-dados/schema-massa-teste.md) |
 | Validador sintático SQL | Apache Calcite (dialeto Hive) | Cap.~4 + [`06-implementacao-java/ports-adapters.md`](06-implementacao-java/ports-adapters.md) |
 
-## Próximo passo
-
-[`02-arquitetura-negocio.md`](02-arquitetura-negocio.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Arquitetura de negócio](02-arquitetura-negocio.md)** — atores, blocos e contratos macro.

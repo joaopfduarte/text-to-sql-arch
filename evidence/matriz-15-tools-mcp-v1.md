@@ -1,16 +1,10 @@
 # Matriz das quinze tools MCP v1
 
-## Propósito
-
-Registrar a decisão final do catálogo fechado de quinze tools MCP de descoberta sobre o Apache Atlas, com o
-mapeamento entre cada tool MCP, a operação Atlas correspondente e o benefício para o schema linking. Esta matriz é a
-evidência que sustenta a tabela do Capítulo 4 e os contratos em
-[`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
-
 ## Fonte
 
 - Inventário: [`inventario-atlas-api-para-mcp.md`](inventario-atlas-api-para-mcp.md)
 - Swagger: `assets/scripts/atlas-api-swagger.json` (pacote académico externo)
+
 
 ## Catálogo fechado (15 tools)
 
@@ -43,12 +37,14 @@ As três basais permanecem inalteradas e cobrem o percurso mínimo de schema lin
 | `catalog.getEntityTypeDef` | `getEntityDefByName` | `GET /v2/types/entitydef/name/{name}` | `name` | Recupera a definição de `hive_table` ou `hive_column`. |
 | `catalog.getRelationshipTypeDef` | `getRelationshipDefByName` | `GET /v2/types/relationshipdef/name/{name}` | `name` | Cardinalidade e pontas dos relacionamentos modelados. |
 
+
 ## Justificativa da contagem
 
 - Doze operações distintas e somente leitura, sem aliases das basais e sem operações de escrita.
 - Buscas limitadas a quatro modos não redundantes (DSL, quick, atributo, texto livre).
 - Leituras de entidade cobrem GUID, nome canônico, cabeçalho, classificações e auditoria.
 - Linhagem e definições de tipo completam o contexto estrutural sem repetir as basais.
+
 
 ## Erros canônicos
 

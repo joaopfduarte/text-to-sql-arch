@@ -1,22 +1,12 @@
 # Protocolo de avaliação experimental
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Produto e escopo](../01-produto-e-escopo.md)** — definição de erro estrutural.
+    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
+    - **[Inferência e prompts](llm-inferencia-e-prompts.md)** — configuração LLM e templates de prompt.
+    - **[Métricas e fórmulas](metricas-formulas.md)** — fórmulas e schema `metrics.json`.
 
-Definir o procedimento experimental de cada corrida e as métricas que sustentam as conclusões do TCC.
-
-## Leitor
-
-Pessoa responsável por executar corridas e consolidar resultados.
-
-## Pré-requisitos
-
-- [`../01-produto-e-escopo.md`](../01-produto-e-escopo.md) (definição de erro estrutural)
-- [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) (massa PS fixa (92 tabelas), 92 tabelas)
-- [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
-- [`llm-inferencia-e-prompts.md`](llm-inferencia-e-prompts.md) (configuração LLM e templates de prompt)
-- [`metricas-formulas.md`](metricas-formulas.md) (fórmulas e schema `metrics.json`)
-
-## Conteúdo
 
 ### Unidade de avaliação
 
@@ -135,6 +125,5 @@ Fontes: docs em `guide-docs/external-documentation/`.
 - `context.json` conforme [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)
 - `seed`, `modelVersion`, `promptVersion`, `commitHash`
 
-## Próximo passo
-
-[`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.

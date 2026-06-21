@@ -1,20 +1,10 @@
 # Visão de infraestrutura AWS
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Visão lógica](../03-arquitetura-aplicacao/visao-logica.md)** — zonas lógicas de rede.
+    - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
+    - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
 
-Descrever, em alto nível, como o ambiente laboratorial AWS hospeda o cluster, a aplicação MCP e os artefatos de observabilidade, mapeando as zonas lógicas de rede para VPC, subnets e security groups.
-
-## Leitor
-
-Pessoa que provisiona a infraestrutura AWS (mesmo sem escrever Terraform agora) ou que valida sua coerência com o desenho lógico.
-
-## Pré-requisitos
-
-- [`../03-arquitetura-aplicacao/visao-logica.md`](../03-arquitetura-aplicacao/visao-logica.md) (zonas lógicas de rede)
-- [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
-- [`cluster-hadoop.md`](cluster-hadoop.md)
-
-## Conteúdo
 
 ### Premissas
 
@@ -71,6 +61,5 @@ Um ambiente legado subdimensionado foi descartado deste repositório. Diferença
 - Estimativa de custo mensal fica para a fase operacional, após provisionamento real e medição de uso.
 - Premissa: ambiente de estudo, ligado sob demanda durante corridas, não 24/7.
 
-## Próximo passo
-
-[`cluster-hadoop.md`](cluster-hadoop.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.

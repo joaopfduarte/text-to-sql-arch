@@ -1,19 +1,9 @@
 # Contratos MCP v1
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Camadas MCP](../03-arquitetura-aplicacao/camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.
+    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
 
-Definir os contratos JSON estáveis das tools MCP da v1, com exemplos baseados em tabelas reais do subconjunto laboratorial (92 entidades).
-
-## Leitor
-
-Pessoa desenvolvedora Java que implementa o servidor MCP ou um cliente, e pessoa que escreve cenários do harness.
-
-## Pré-requisitos
-
-- [`../03-arquitetura-aplicacao/camadas-mcp.md`](../03-arquitetura-aplicacao/camadas-mcp.md)
-- [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)
-
-## Conteúdo
 
 ### Política de versionamento
 
@@ -528,6 +518,5 @@ Exemplo de resposta de erro:
 
 A taxonomia de erro do envelope MCP é distinta da classificação de desfecho do SQL (`structural_error`, `syntax_error`, `execution_error`, `success`) registrada pelo harness. Ver [`../08-experimento-avaliacao/protocolo-avaliacao.md`](../08-experimento-avaliacao/protocolo-avaliacao.md). Erros MCP indicam falha de descoberta; erros do SQL indicam falha do agente em produzir um SQL aderente ao catálogo.
 
-## Próximo passo
-
-[`../08-experimento-avaliacao/protocolo-avaliacao.md`](../08-experimento-avaliacao/protocolo-avaliacao.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Protocolo de avaliação](../08-experimento-avaliacao/protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.

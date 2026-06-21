@@ -1,21 +1,11 @@
 # Schema e massa de teste (laboratório)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Glossário de anonimização](../00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
+    - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
+    - **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
+    - **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.
 
-Fixar o subconjunto laboratorial (92 entidades) que compõe a massa fixa do harness e definir as regras de versionamento.
-
-## Leitor
-
-Pessoa que prepara a massa, monta o catálogo no Atlas e roda corridas.
-
-## Pré-requisitos
-
-- [`00-glossario-anonimizacao.md`](../00-glossario-anonimizacao.md)
-- [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md)
-- [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)
-- [`catalogo-atlas.md`](catalogo-atlas.md)
-
-## Conteúdo
 
 ### Decisão
 
@@ -269,6 +259,5 @@ Volume observado ~1388 MB (fixo, sem amplificação sintética no MVP).
 - Script de carga: [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md).
 - Bateria e gabarito em [`../evidence/`](../evidence/README.md).
 
-## Próximo passo
-
-[`catalogo-atlas.md`](catalogo-atlas.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.

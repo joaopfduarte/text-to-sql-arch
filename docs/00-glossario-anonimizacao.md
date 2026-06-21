@@ -1,14 +1,5 @@
 # Glossário de anonimização
 
-## Propósito
-
-Fixar o vocabulário genérico obrigatório deste repositório. Nenhum documento publicado deve expor nomes de pessoas, empresas, instituições identificáveis, domínios de negócio reais ou nomes físicos de bases de dados.
-
-## Leitor
-
-Qualquer pessoa que contribua para a documentação operacional ou para evidências experimentais.
-
-## Conteúdo
 
 ### Termos genéricos obrigatórios
 
@@ -62,6 +53,5 @@ Antes de commit ou merge em `main`:
 bash scripts/check-anonymization.sh
 ```
 
-## Próximo passo
-
-[`00-leitura-rapida.md`](00-leitura-rapida.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Leitura rápida](00-leitura-rapida.md)** — visão geral do sistema em até 30 minutos.

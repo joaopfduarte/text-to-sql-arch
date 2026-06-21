@@ -1,21 +1,11 @@
 # Cluster Hadoop (laboratório AWS)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Visão AWS](visao-aws.md)** — topologia de rede e componentes na nuvem.
+    - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
+    - **[VDF ODP x86](vdf-odp-x86.md)** — stack canónica ODP 1.3.1.0 para o cluster.
+    - **[ADR-0002 Topologia AWS](../adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.
 
-Descrever os serviços Hadoop/ODP necessários ao Apache Atlas e ao armazenamento consultável pelo TCC.
-
-## Leitor
-
-Pessoa que opera ou valida o cluster.
-
-## Pré-requisitos
-
-- [`visao-aws.md`](visao-aws.md)
-- [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
-- [`vdf-odp-x86.md`](vdf-odp-x86.md)
-- [`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
-
-## Conteúdo
 
 ### Topologia aceita (ADR-0002)
 
@@ -63,6 +53,5 @@ Definir security groups intra-VPC na fase de implementação.
 
 ![Topologia do cluster AWS](../diagrams/cluster-topologia-aws.svg){ .uml-diagram width="100%" }
 
-## Próximo passo
-
-[`../04-arquitetura-dados/carga-cluster-laboratorio.md`](../04-arquitetura-dados/carga-cluster-laboratorio.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Carga no cluster](../04-arquitetura-dados/carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.

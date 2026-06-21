@@ -1,19 +1,9 @@
 # Modelo de domínio (DDD + SOLID)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Visão lógica](visao-logica.md)** — camadas e fluxo.
+    - **[Arquitetura de negócio](../02-arquitetura-negocio.md)** — responsabilidades de bloco.
 
-Descrever o vocabulário tático e estratégico do artefato (bounded contexts, agregados, portas) que sustenta o pipeline Text-to-SQL e a aplicação de SOLID.
-
-## Leitor
-
-Pessoa desenvolvedora Java júnior responsável pela implementação dos casos de uso e adapters.
-
-## Pré-requisitos
-
-- [`visao-logica.md`](visao-logica.md) (camadas e fluxo)
-- [`../02-arquitetura-negocio.md`](../02-arquitetura-negocio.md) (responsabilidades de bloco)
-
-## Conteúdo
 
 ### DDD estratégico: bounded contexts
 
@@ -81,6 +71,5 @@ Pessoa desenvolvedora Java júnior responsável pela implementação dos casos d
 
 Detalhamento dos pacotes em [`../06-implementacao-java/modulos-spring.md`](../06-implementacao-java/modulos-spring.md) e das portas em [`../06-implementacao-java/ports-adapters.md`](../06-implementacao-java/ports-adapters.md).
 
-## Próximo passo
-
-[`camadas-mcp.md`](camadas-mcp.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Camadas MCP](camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.

@@ -1,10 +1,5 @@
 # Leitura rápida (até 30 min)
 
-## Pré-requisitos
-
-Nenhum. Este é o ponto de partida.
-
-## Conteúdo
 
 ### O que estamos fazendo (1 min)
 
@@ -48,6 +43,5 @@ Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semâ
 | Erro estrutural | SQL que cita tabela/coluna/junção ausente do catálogo canônico. |
 | Aderência estrutural | Proporção de SQLs gerados sem erro estrutural. |
 
-## Próximo passo
-
-[`01-produto-e-escopo.md`](01-produto-e-escopo.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.

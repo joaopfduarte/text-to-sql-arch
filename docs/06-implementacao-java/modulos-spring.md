@@ -1,20 +1,10 @@
 # Módulos Spring
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Modelo de domínio](../03-arquitetura-aplicacao/modelo-dominio.md)** — bounded contexts e agregados.
+    - **[Visão lógica](../03-arquitetura-aplicacao/visao-logica.md)** — camadas, fluxo operacional e zonas de rede.
+    - **[Ports e adapters](ports-adapters.md)** — portas hexagonais e adaptadores.
 
-Mapear os pacotes Java/Spring do artefato aos bounded contexts e camadas da aplicação.
-
-## Leitor
-
-Pessoa desenvolvedora Java júnior que vai criar ou estender módulos.
-
-## Pré-requisitos
-
-- [`../03-arquitetura-aplicacao/modelo-dominio.md`](../03-arquitetura-aplicacao/modelo-dominio.md)
-- [`../03-arquitetura-aplicacao/visao-logica.md`](../03-arquitetura-aplicacao/visao-logica.md)
-- [`ports-adapters.md`](ports-adapters.md)
-
-## Conteúdo
 
 ### Stack alvo
 
@@ -74,6 +64,5 @@ Pessoa desenvolvedora Java júnior que vai criar ou estender módulos.
 - A combinação `provider + model-version + datasetVersion + runId` deve ser gravada em `context.json` para reprodutibilidade.
 - Hiperparâmetros de inferência e `promptVersion` seguem [`../08-experimento-avaliacao/llm-inferencia-e-prompts.md`](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
 
-## Próximo passo
-
-[`ports-adapters.md`](ports-adapters.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Ports e adapters](ports-adapters.md)** — portas hexagonais e adaptadores.

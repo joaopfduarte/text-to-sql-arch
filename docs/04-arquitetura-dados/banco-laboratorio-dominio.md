@@ -1,19 +1,9 @@
 # Banco de domínio laboratorial
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Glossário de anonimização](../00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
+    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
 
-Resumo operacional do schema relacional anonimizado usado no TCC, com domínios genéricos, entidades-âncora e FKs relevantes.
-
-## Leitor
-
-Pessoa que implementa o adaptador MCP, monta o catálogo no Atlas ou prepara a carga no cluster.
-
-## Pré-requisitos
-
-- [`00-glossario-anonimizacao.md`](../00-glossario-anonimizacao.md)
-- [`schema-massa-teste.md`](schema-massa-teste.md)
-
-## Conteúdo
 
 ### Identificadores opacos
 
@@ -82,6 +72,5 @@ Pessoa que implementa o adaptador MCP, monta o catálogo no Atlas ou prepara a c
 - Não publicar nomes físicos de tabelas ou colunas.
 - Não incluir PII na massa publicada sem mascaramento.
 
-## Próximo passo
-
-[`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.

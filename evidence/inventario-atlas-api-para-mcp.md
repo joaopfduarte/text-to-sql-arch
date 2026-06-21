@@ -1,14 +1,10 @@
 # Inventário Atlas API para o catálogo MCP
 
-## Propósito
-
-Registrar o inventário das operações de leitura da API REST v2 do Apache Atlas avaliadas para compor o catálogo MCP
-v1. Serve de evidência para a seleção das doze tools complementares do catálogo fechado de quinze tools.
-
 ## Fonte
 
 - `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; pacote académico externo)
 - `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; pacote académico externo)
+
 
 ## Critérios de triagem
 
@@ -17,6 +13,7 @@ v1. Serve de evidência para a seleção das doze tools complementares do catál
 3. Payload mapeável para o envelope MCP com custo compatível com o orçamento de 10 chamadas por sessão.
 4. Não duplicar as três basais (`catalog.listTables`, `catalog.describeTable`, `catalog.listRelationships`).
 5. Tags fora de escopo: `GlossaryREST`, `NotificationREST`, `IndexRecoveryREST` e demais operações de escrita.
+
 
 ## Mapa por tbl_7933f344 REST
 
@@ -64,6 +61,7 @@ Utilidade Text-to-SQL avaliada de 1 (baixa) a 5 (alta). `L` indica leitura e `E`
 | `getRelationshipDefByName` | `GET /v2/types/relationshipdef/name/{name}` | L | 4 | Cardinalidade e pontas de relacionamento | Selecionada |
 | `getAllTypeDefs` | `GET /v2/types/typedefs` | L | 2 | Catálogo de tipos inteiro, payload grande | Descartada |
 | `getTypeDefByName` | `GET /v2/types/typedef/name/{name}` | L | 2 | Genérico; coberto por entitydef/relationshipdef | Descartada |
+
 
 ## Resultado
 

@@ -1,20 +1,10 @@
 # Catálogo Apache Atlas
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
+    - **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
+    - **[Camadas MCP](../03-arquitetura-aplicacao/camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.
 
-Definir o que o Apache Atlas governa neste TCC, a fronteira com o export offline e a ordem de operações entre ingestão, catálogo e corridas Text-to-SQL.
-
-## Leitor
-
-Pessoa que opera o catálogo, implementa o adaptador MCP ou define cenários de avaliação.
-
-## Pré-requisitos
-
-- [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md)
-- [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)
-- [`../03-arquitetura-aplicacao/camadas-mcp.md`](../03-arquitetura-aplicacao/camadas-mcp.md)
-
-## Conteúdo
 
 ### Camada semântica e catálogo canônico
 
@@ -60,6 +50,5 @@ Ver [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md)
 - Atlas no cluster ([`../05-infraestrutura/cluster-hadoop.md`](../05-infraestrutura/cluster-hadoop.md)).
 - ADR-0002: co-localizado no master ODP AWS x86_64.
 
-## Próximo passo
-
-[`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Visão AWS](../05-infraestrutura/visao-aws.md)** — topologia de rede e componentes na nuvem.

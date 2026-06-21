@@ -1,25 +1,16 @@
 # Especificação de métricas e fórmulas
 
-## Propósito
-
-Documento operacional canónico para cálculo de indicadores do experimento Text-to-SQL com MCP e do modo
-*baseline*. Complementa o Cap. 4 (versão publicada) e o [`protocolo-avaliacao.md`](protocolo-avaliacao.md).
-
-## Leitor
-
-Pessoa que executa corridas, consolida `metrics.json` e valida agregados de campanha.
-
-## Pré-requisitos
-
-- [`protocolo-avaliacao.md`](protocolo-avaliacao.md)
-- [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
-- Gabarito: [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md) (quando publicado)
-- Tarifas LLM: `../../../guide-docs/external-documentation/GPT54NanoModelDocs.md`,
-  `../../../guide-docs/external-documentation/Gemini35FlashModelDocs.md`
+!!! info "Recomendado para leitura prévia"
+    - **[Protocolo de avaliação](protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
+    - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
+    - **[Gabarito da bateria](../evidence/gabarito-bateria-v1.md)** — quando publicado.
+    - **Tarifas GPT-5.4 Nano** — referência de custo do provedor (documentação externa ao repositório).
+    - **Tarifas Gemini 3.5 Flash** — referência de custo do provedor (documentação externa ao repositório).
 
 ## Unidade experimental
 
 1 pergunta = 1 sessão = 1 corrida. FinOps **por sessão** = **por corrida** ($C_i$).
+
 
 ## Inventário de métricas
 
@@ -65,6 +56,7 @@ Pessoa que executa corridas, consolida `metrics.json` e valida agregados de camp
 
 **Não entra** em $C_i$. Latência, tokens e FinOps aplicam-se apenas ao modo MCP.
 
+
 ## Algoritmo de desfecho $o_i$
 
 Seja $S_i = \{s_{i,1},\ldots,s_{i,n_i}\}$ com $n_i \leq 5$ SQLs válidos e $G_i$ o gabarito da pergunta.
@@ -78,6 +70,7 @@ Ordem de precedência (primeira condição verdadeira define $o_i$):
 4. `execution_error` — falha Hive ou **nenhum** SQL bate gabarito
 5. `partial_success` — parte dos SQLs válidos bate gabarito, não todos
 6. `success` — pipeline OK e **todos** os SQLs exigidos batem gabarito
+
 
 ## Fórmulas — modo MCP
 
@@ -113,6 +106,7 @@ $$\bar{C} = \frac{1}{N}\sum_{i=1}^{N} C_i, \quad C_{\mathrm{total}} = \sum_{i=1}
 
 MVP: sem custo monetário de tool calls Atlas em FinOps; $k_i$ é métrica de controle.
 
+
 ## Fórmulas — modo baseline
 
 Sem MCP: $k_i = 0$; não calcular $A_{\mathrm{est}}$, $T$, $R_{\mathrm{budget}}$.
@@ -124,6 +118,7 @@ $$A_{\mathrm{gab}} = \frac{1}{N_{\mathrm{base}}}\sum_{i=1}^{N_{\mathrm{base}}} g
 Na campanha `baseline-static` v1, $N_{\mathrm{base}} = 30$ com um único `modelVersion` (`gemini-3.5-flash`).
 Extensão futura a segundo provedor é opcional e não se mistura com esta v1. A executabilidade das colas $G_i$
 no MySQL é pré-requisito documentado no gabarito e **não** entra em $A_{\mathrm{gab}}$.
+
 
 ## Schema `metrics.json`
 
@@ -172,6 +167,7 @@ Campos obrigatórios (modo baseline):
 
 Metadados de reprodutibilidade permanecem em `context.json` (ver runbook).
 
+
 ## Exemplo numérico
 
 Corrida $c_i$, `gpt-5.4-nano`: $n_{\mathrm{in}}=12\,000$, $n_{\mathrm{out}}=800$, $k_i=7$, $L_i=4{,}2\,\mathrm{s}$,
@@ -181,6 +177,5 @@ $$C_i = 12000 \times \frac{0{,}20}{10^6} + 800 \times \frac{1{,}25}{10^6} \appro
 
 Campanha $N=60$: agregar $A_{\mathrm{est}}$, $\bar{k}$, $L_{p50}$, $\bar{C}$ sobre o conjunto de corridas.
 
-## Próximo passo
-
-[`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.

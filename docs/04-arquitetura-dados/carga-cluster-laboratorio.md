@@ -1,20 +1,10 @@
 # Carga no cluster (massa laboratorial)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
+    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.
 
-Descrever a ingestão da massa relacional anonimizada no cluster Hadoop/Hive e o registro no Apache Atlas.
-
-## Leitor
-
-Pessoa responsável pela carga de dados e validação pós-ingestão.
-
-## Pré-requisitos
-
-- [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md)
-- [`schema-massa-teste.md`](schema-massa-teste.md)
-- [`catalogo-atlas.md`](catalogo-atlas.md)
-
-## Conteúdo
 
 ### Pipeline
 
@@ -35,6 +25,5 @@ Massa fixa ~1388 MB em `massa_teste_laboratorio` (sem amplificação sintética 
 | Simples | `SELECT * FROM tbl_162cf7be LIMIT 5` |
 | Junção | `SELECT a.col_2cd9416d, b.col_d7247819 FROM tbl_162cf7be a JOIN tbl_8991e9dc b ON a.col_2cd9416d = b.col_d7247819 LIMIT 5` |
 
-## Próximo passo
-
-[`catalogo-atlas.md`](catalogo-atlas.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.

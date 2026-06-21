@@ -1,20 +1,10 @@
 # Operação
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Runbook de reprodutibilidade](08-experimento-avaliacao/runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
+    - **[Protocolo de avaliação](08-experimento-avaliacao/protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
+    - **[Cluster Hadoop](05-infraestrutura/cluster-hadoop.md)** — serviços ODP, sizing e operação.
 
-Reunir, num único lugar, o ciclo operacional do TCC: como rodar uma corrida, onde guardar evidências, como recuperar de falhas comuns e qual a política de retenção.
-
-## Leitor
-
-Pessoa que executa o ambiente e arquiva evidências.
-
-## Pré-requisitos
-
-- [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md)
-- [`08-experimento-avaliacao/protocolo-avaliacao.md`](08-experimento-avaliacao/protocolo-avaliacao.md)
-- [`05-infraestrutura/cluster-hadoop.md`](05-infraestrutura/cluster-hadoop.md)
-
-## Conteúdo
 
 ### Ciclo de uma corrida
 
@@ -69,6 +59,5 @@ Convenções e exigências mínimas estão em [`evidence/README.md`](evidence/RE
 - Ambiente AWS de estudo: desligar instâncias EC2 fora das corridas.
 - TBD: definir orçamento mensal alvo no roadmap.
 
-## Próximo passo
-
-[`10-rastreabilidade-academica.md`](10-rastreabilidade-academica.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Rastreabilidade académica](10-rastreabilidade-academica.md)** — relação com a documentação académica externa.

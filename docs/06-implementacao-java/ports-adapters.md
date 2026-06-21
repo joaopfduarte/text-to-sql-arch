@@ -1,20 +1,10 @@
 # Portas e adaptadores (hexagonal)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Módulos Spring](modulos-spring.md)** — estrutura de projetos e dependências.
+    - **[Modelo de domínio](../03-arquitetura-aplicacao/modelo-dominio.md)** — bounded contexts e agregados.
+    - **[Camadas MCP](../03-arquitetura-aplicacao/camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.
 
-Listar as portas (interfaces) e os adaptadores concretos da aplicação, deixando explícita a fronteira entre o domínio e as integrações externas.
-
-## Leitor
-
-Pessoa desenvolvedora Java que implementa um adaptador novo ou faz mock para testes.
-
-## Pré-requisitos
-
-- [`modulos-spring.md`](modulos-spring.md)
-- [`../03-arquitetura-aplicacao/modelo-dominio.md`](../03-arquitetura-aplicacao/modelo-dominio.md)
-- [`../03-arquitetura-aplicacao/camadas-mcp.md`](../03-arquitetura-aplicacao/camadas-mcp.md)
-
-## Conteúdo
 
 ### Convenção
 
@@ -60,6 +50,5 @@ O `SpringAiLlmAdapter` seleciona o provider por configuração (`app.llm.provide
 - Testes de integração: usam Testcontainers (Atlas, Hive) ou mock local fiel (pós-MVP).
 - Testes de contrato MCP: validam payloads contra [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
 
-## Próximo passo
-
-[`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md)** — envelope JSON, tools e taxonomia de erro.

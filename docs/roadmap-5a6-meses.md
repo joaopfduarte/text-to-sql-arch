@@ -1,19 +1,9 @@
 # Roadmap de implantação (5 a 6 meses)
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.
+    - **[ADR-0002 Topologia AWS](adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.
 
-Marcos de execução do TCC até a apresentação no fim de novembro, com paralelismo entre infra, aplicação e redação.
-
-## Leitor
-
-Pessoa responsável pela condução do TCC e gestor de prazo.
-
-## Pré-requisitos
-
-- [`01-produto-e-escopo.md`](01-produto-e-escopo.md)
-- [`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)
-
-## Conteúdo
 
 ### Premissas de prazo
 
@@ -75,6 +65,5 @@ Pessoa responsável pela condução do TCC e gestor de prazo.
 
 Caso a Fase 3 (cluster) ultrapasse a semana 12 sem ambiente estável, acionar contingência do ADR-0002 com redução temporária de volume mantendo stack x86/Ubuntu/ODP 1.3.1.0.
 
-## Próximo passo
-
-[`adr/ADR-0002-topologia-aws-cluster-minimo.md`](adr/ADR-0002-topologia-aws-cluster-minimo.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[ADR-0002 Topologia AWS](adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.

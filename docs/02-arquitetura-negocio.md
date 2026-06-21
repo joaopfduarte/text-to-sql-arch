@@ -1,18 +1,8 @@
 # Arquitetura de negócio
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.
 
-Identificar os blocos de negócio do artefato Text-to-SQL, suas responsabilidades e os contratos macro entre eles.
-
-## Leitor
-
-Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas ou tecnologia).
-
-## Pré-requisitos
-
-- [`01-produto-e-escopo.md`](01-produto-e-escopo.md)
-
-## Conteúdo
 
 ### Atores
 
@@ -55,6 +45,5 @@ Fonte: [`diagrams/diagrama-mestre.puml`](diagrams/diagrama-mestre.puml)
 
 Este documento descreve o "o quê" do sistema. O "como" (camadas, padrões, tecnologia) está em [`03-arquitetura-aplicacao/visao-logica.md`](03-arquitetura-aplicacao/visao-logica.md) e o vocabulário de domínio em [`03-arquitetura-aplicacao/modelo-dominio.md`](03-arquitetura-aplicacao/modelo-dominio.md).
 
-## Próximo passo
-
-[`03-arquitetura-aplicacao/visao-logica.md`](03-arquitetura-aplicacao/visao-logica.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Visão lógica](03-arquitetura-aplicacao/visao-logica.md)** — camadas, fluxo operacional e zonas de rede.

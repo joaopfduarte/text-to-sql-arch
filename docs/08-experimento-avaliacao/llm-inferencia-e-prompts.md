@@ -1,23 +1,12 @@
 # Inferência LLM e prompts experimentais
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Protocolo de avaliação](protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
+    - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
+    - **[Módulos Spring](../06-implementacao-java/modulos-spring.md)** — estrutura de projetos e dependências.
+    - **[Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json)** — versões dos artefatos de prompt.
+    - **[Schema `context.json`](../evidence/context-schema-v1.json)** — campos obrigatórios por corrida.
 
-Fixar hiperparâmetros de decodificação, montagem de prompts (system e user) e registro em `context.json`
-para as campanhas `mcp` e `baseline-static`, eliminando confounds operacionais na comparação experimental.
-
-## Leitor
-
-Pessoa que configura o orquestrador LLM, executa corridas ou implementa o adaptador `SpringAiLlmAdapter`.
-
-## Pré-requisitos
-
-- [`protocolo-avaliacao.md`](protocolo-avaliacao.md)
-- [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
-- [`../06-implementacao-java/modulos-spring.md`](../06-implementacao-java/modulos-spring.md)
-- Templates: [`../templates/prompts/prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json)
-- Schema: [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)
-
-## Conteúdo
 
 ### Política de inferência v1
 
@@ -159,6 +148,5 @@ modelo.
 
 Decisão formal: [`../adr/ADR-0003-inferencia-llm-deterministica.md`](../adr/ADR-0003-inferencia-llm-deterministica.md).
 
-## Próximo passo
-
-[`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.

@@ -1,19 +1,9 @@
 # Visão lógica da aplicação
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Arquitetura de negócio](../02-arquitetura-negocio.md)** — atores, blocos e contratos macro.
+    - **[Modelo de domínio](modelo-dominio.md)** — bounded contexts e agregados.
 
-Descrever camadas, casos de uso, fluxo operacional e padrões de engenharia da aplicação Java que orquestra o pipeline Text-to-SQL.
-
-## Leitor
-
-Pessoa desenvolvedora Java júnior que irá implementar ou estender a aplicação.
-
-## Pré-requisitos
-
-- [`../02-arquitetura-negocio.md`](../02-arquitetura-negocio.md)
-- [`modelo-dominio.md`](modelo-dominio.md)
-
-## Conteúdo
 
 ### Objetivo arquitetural
 
@@ -74,6 +64,5 @@ Fonte: [`../diagrams/rede-implantacao.puml`](../diagrams/rede-implantacao.puml).
 - Falhas classificadas em `syntax_error`, `structural_error`, `execution_error`.
 - Servidor MCP nunca acessa o banco PS; apenas o validador/executor.
 
-## Próximo passo
-
-[`camadas-mcp.md`](camadas-mcp.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Camadas MCP](camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.

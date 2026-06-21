@@ -16,15 +16,12 @@ esperados dependem da massa e serão conferidos pelo autor na execução.
 O mapa de migração completo está em
 [`matriz-cobertura-bateria-v1.md`](matriz-cobertura-bateria-v1.md).
 
-## Propósito
-
-Definir $G_i$ (gabarito) por pergunta para classificação de desfecho e para a métrica baseline
-$A_{\mathrm{gab}}$, conforme [`metricas-formulas.md`](../08-experimento-avaliacao/metricas-formulas.md).
 
 ## Convenção CSV (`dificuldade`)
 
 Valores em [`bateria-30-perguntas-v1.csv`](bateria-30-perguntas-v1.csv): `SIMPLES`, `MÉDIA`, `COMPLEXA`
 (10 linhas cada).
+
 
 ## Convenções SGBD relacional da cola de referência
 
@@ -39,6 +36,7 @@ Valores em [`bateria-30-perguntas-v1.csv`](bateria-30-perguntas-v1.csv): `SIMPLE
 - A cola é uma referência válida, não a única forma correta. A validação estrutural lista as tabelas
   reais (subconjunto das 92) que uma resposta correta deve usar.
 
+
 ## Auditoria de executabilidade (pré-baseline)
 
 Antes da campanha `baseline-static`, as trinta colas $G_i$ foram executadas no SGBD relacional contra a massa
@@ -51,6 +49,7 @@ nos commits `b67e63e` e `41974c7`, as trinta colas passaram sem erro.
 | Defeito inicial nas colas | 11/30 (36,67%) |
 | Colas OK sem revisão | 19/30 (63,33%) |
 | Executabilidade final | 30/30 (100%) |
+
 
 ## Campanha baseline-static v1 (resultado)
 
@@ -65,6 +64,7 @@ Campanha inicial do comparativo simples, **apenas** com Google `gemini-3.5-flash
 | $A_{\mathrm{gab}}$ | 19/30 (63,33%) |
 
 Perguntas com `gabarito_match = false`: Q08, Q12, Q14, Q15, Q16, Q17, Q18, Q20, Q22, Q27, Q28.
+
 
 ## Entradas
 

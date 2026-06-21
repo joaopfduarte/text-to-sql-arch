@@ -1,19 +1,9 @@
 # Rastreabilidade académica
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Glossário de anonimização](00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
+    - **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.
 
-Indicar como a documentação operacional deste repositório se relaciona com a redação académica do TCC, mantida **fora** deste git.
-
-## Leitor
-
-Pesquisador responsável por alinhar execução técnica e narrativa científica.
-
-## Pré-requisitos
-
-- [`00-glossario-anonimizacao.md`](00-glossario-anonimizacao.md)
-- [`01-produto-e-escopo.md`](01-produto-e-escopo.md)
-
-## Conteúdo
 
 ### Princípio
 
@@ -38,6 +28,5 @@ Este repositório publica apenas documentação operacional **anonimizada**. A d
 - Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação académica externa.
 - Identificadores opacos publicados aqui **não** devem ser revertidos para nomes reais neste repositório.
 
-## Próximo passo
-
-[`adr/README.md`](adr/README.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Índice de ADRs](adr/README.md)** — decisões arquiteturais registradas.

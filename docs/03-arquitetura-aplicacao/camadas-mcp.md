@@ -1,20 +1,10 @@
 # Camadas do servidor MCP
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Visão lógica](visao-logica.md)** — camadas, fluxo operacional e zonas de rede.
+    - **[Modelo de domínio](modelo-dominio.md)** — bounded contexts e agregados.
+    - **[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md)** — envelope JSON, tools e taxonomia de erro.
 
-Mapear cada tool MCP da v1 à porta Java correspondente, ao contrato JSON canônico e ao erro padronizado, garantindo rastreabilidade entre desenho lógico, código e taxonomia experimental.
-
-## Leitor
-
-Pessoa desenvolvedora Java que implementa, evolui ou testa o servidor MCP.
-
-## Pré-requisitos
-
-- [`visao-logica.md`](visao-logica.md)
-- [`modelo-dominio.md`](modelo-dominio.md)
-- [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md)
-
-## Conteúdo
 
 ### Modelo de camadas para uma chamada MCP
 
@@ -83,6 +73,5 @@ Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` d
 - `toolVersion` segue o `vMAJOR.MINOR.PATCH` descrito em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
 - Quebra de contrato implica nova versão `MAJOR` e ADR específico.
 
-## Próximo passo
-
-[`../04-arquitetura-dados/catalogo-atlas.md`](../04-arquitetura-dados/catalogo-atlas.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Catálogo Atlas](../04-arquitetura-dados/catalogo-atlas.md)** — camada semântica e metadados no cluster.

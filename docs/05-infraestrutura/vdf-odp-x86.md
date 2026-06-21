@@ -1,20 +1,10 @@
 # VDF ODP em x86
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
+    - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
+    - **[VDF ODP x86](../assets/scripts/ODP-VDF.xml)** — definição canónica da stack alvo.
 
-Documentar o VDF canônico do alvo AWS do TCC e separar explicitamente a referência de legado OCI.
-
-## Leitor
-
-Pessoa que valida stack/versões do cluster e prepara a implantação em AWS.
-
-## Pré-requisitos
-
-- [`cluster-hadoop.md`](cluster-hadoop.md)
-- [`delta-oci-para-aws.md`](delta-oci-para-aws.md)
-- [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml)
-
-## Conteúdo
 
 ### VDF canônico (alvo TCC)
 
@@ -63,6 +53,5 @@ Fonte: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
 - O legado OCI permanece apenas como referência de migração e comparação.
 - Qualquer citação a Graviton como alvo foi removida do pacote.
 
-## Próximo passo
-
-[`../adr/ADR-0002-topologia-aws-cluster-minimo.md`](../adr/ADR-0002-topologia-aws-cluster-minimo.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[ADR-0002 Topologia AWS](../adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.

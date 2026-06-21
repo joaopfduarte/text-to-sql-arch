@@ -1,21 +1,11 @@
 # Runbook de operação e reprodutibilidade
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Protocolo de avaliação](protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
+    - **[Inferência e prompts](llm-inferencia-e-prompts.md)** — hiperparâmetros, prompts e schema `context.json`.
+    - **[Métricas e fórmulas](metricas-formulas.md)** — schema `metrics.json` e fórmulas.
+    - **[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md)** — versão de contrato MCP.
 
-Padronizar identificação, metadados e artefatos de cada corrida para garantir reprodutibilidade.
-
-## Leitor
-
-Pessoa que executa corridas e arquiva evidências em `evidence/`.
-
-## Pré-requisitos
-
-- [`protocolo-avaliacao.md`](protocolo-avaliacao.md)
-- [`llm-inferencia-e-prompts.md`](llm-inferencia-e-prompts.md) (hiperparâmetros, prompts e schema `context.json`)
-- [`metricas-formulas.md`](metricas-formulas.md) (schema `metrics.json` e fórmulas)
-- [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md) (versão de contrato MCP)
-
-## Conteúdo
 
 ### Convenção de identificador
 
@@ -170,6 +160,5 @@ incorporados ao Cap. 4 após a coleta.
 O DDL integral no prompt aumenta o contexto de entrada; declarar como ameaça à validade interna na
 metodologia (Cap. 4).
 
-## Próximo passo
-
-[`../09-operacao.md`](../09-operacao.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Operação](../09-operacao.md)** — ciclo de corrida, incidentes e governança.

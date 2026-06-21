@@ -1,20 +1,10 @@
 # Delta ambiente legado → AWS
 
-## Propósito
+!!! info "Recomendado para leitura prévia"
+    - **[Visão AWS](visao-aws.md)** — topologia de rede e componentes na nuvem.
+    - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
+    - **[VDF ODP x86](vdf-odp-x86.md)** — stack canónica ODP 1.3.1.0 para o cluster.
 
-Comparar, em termos genéricos, o ambiente legado subdimensionado (removido deste repositório) com o alvo AWS do TCC.
-
-## Leitor
-
-Pessoa que provisiona o cluster AWS.
-
-## Pré-requisitos
-
-- [`visao-aws.md`](visao-aws.md)
-- [`cluster-hadoop.md`](cluster-hadoop.md)
-- [`vdf-odp-x86.md`](vdf-odp-x86.md)
-
-## Conteúdo
 
 ### Síntese
 
@@ -39,6 +29,5 @@ O legado usava instâncias ARM pequenas, stack ODP 1.2.x e rede `/24` simples. O
 3. Carregar massa conforme [`../04-arquitetura-dados/carga-cluster-laboratorio.md`](../04-arquitetura-dados/carga-cluster-laboratorio.md).
 4. Registrar catálogo Atlas e validar tools MCP basais.
 
-## Próximo passo
-
-[`cluster-hadoop.md`](cluster-hadoop.md)
+!!! tip "Recomendado para leitura posterior"
+    Seguinte: **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
