@@ -22,3 +22,8 @@
   height: auto;
   object-fit: contain;
 }
+
+[data-md-color-scheme="slate"] .md-typeset .diagram-hint {
+  opacity: 0.9;
+  color: var(--md-default-fg-color--light);
+}

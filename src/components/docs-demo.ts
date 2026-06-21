@@ -49,7 +49,7 @@ export class DocsDemo extends LitElement {
           <button
             type="button"
             class="dc-rounded dc-px-3 dc-py-1.5 dc-text-sm dc-font-medium dc-text-white dc-border-0 dc-cursor-pointer hover:dc-opacity-90"
-            style="background-color: var(--md-primary-fg-color, #546e7a);"
+            style="background-color: var(--md-primary-fg-color);"
             @click=${this.increment}
           >
             Incrementar

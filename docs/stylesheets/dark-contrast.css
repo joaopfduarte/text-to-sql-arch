@@ -1,0 +1,42 @@
+/* Contraste reforçado — apenas modo escuro (scheme slate). Modo claro inalterado. */
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #90a4ae;
+  --md-accent-fg-color: #b0bec5;
+  --md-default-fg-color--light: #b0bac2;
+  --md-default-fg-color--lighter: #8a939b;
+  --md-typeset-a-color: #90a4ae;
+}
+
+/* Header: preserva superfície primária escura e texto claro legível */
+[data-md-color-scheme="slate"] .md-header {
+  --md-primary-fg-color: #455a64;
+  --md-primary-bg-color: #eceff1;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-header__title,
+[data-md-color-scheme="slate"] .md-header .md-header__button {
+  color: var(--md-primary-bg-color);
+}
+
+/* Restaura acentos claros no conteúdo após override do header */
+[data-md-color-scheme="slate"] .md-content,
+[data-md-color-scheme="slate"] .md-sidebar,
+[data-md-color-scheme="slate"] .dc-lp,
+[data-md-color-scheme="slate"] mcp-architecture-viewer {
+  --md-primary-fg-color: #90a4ae;
+  --md-accent-fg-color: #b0bec5;
+}
+
+/* Landing: bordas dos pilares e rodapé mais visíveis */
+[data-md-color-scheme="slate"] .dc-lp article {
+  border-color: color-mix(in srgb, var(--md-primary-fg-color) 38%, transparent);
+}
+
+[data-md-color-scheme="slate"] .dc-lp article:hover {
+  border-color: color-mix(in srgb, var(--md-primary-fg-color) 55%, transparent);
+}
+
+[data-md-color-scheme="slate"] .dc-lp footer {
+  border-top-color: color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
+}

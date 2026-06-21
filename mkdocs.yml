@@ -11,6 +11,7 @@ extra:
 
 extra_css:
   - stylesheets/diagrams.css
+  - stylesheets/dark-contrast.css
   - assets/css/style.css
 
 extra_javascript:
@@ -30,8 +31,8 @@ theme:
         icon: material/brightness-7
         name: Modo escuro
     - scheme: slate
-      primary: blue grey
-      accent: blue grey
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Modo claro

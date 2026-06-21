@@ -10,8 +10,8 @@ export default {
     extend: {
       colors: {
         md: {
-          primary: 'var(--md-primary-fg-color, #546e7a)',
-          accent: 'var(--md-accent-fg-color, #546e7a)',
+          primary: 'var(--md-primary-fg-color, #90a4ae)',
+          accent: 'var(--md-accent-fg-color, #b0bec5)',
           default: 'var(--md-default-fg-color, #212121)',
           muted: 'var(--md-default-fg-color--light, #757575)',
           surface: 'var(--md-default-bg-color, #ffffff)',

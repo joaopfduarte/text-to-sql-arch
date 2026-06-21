@@ -72,11 +72,23 @@ export class McpArchitectureViewer extends LitElement {
       }
 
       .step-icon-wrap.is-active {
-        color: var(--md-primary-fg-color, #546e7a);
+        color: var(--md-primary-fg-color);
       }
 
       .step-icon-wrap.is-past {
-        color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 70%, transparent);
+        color: color-mix(in srgb, var(--md-primary-fg-color) 70%, transparent);
+      }
+
+      :host-context([data-md-color-scheme="slate"]) .step-icon-wrap {
+        color: var(--md-default-fg-color--light);
+      }
+
+      :host-context([data-md-color-scheme="slate"]) .step-icon-wrap.is-past {
+        color: color-mix(in srgb, var(--md-primary-fg-color) 85%, transparent);
+      }
+
+      :host-context([data-md-color-scheme="slate"]) .flow-connector-idle {
+        background: color-mix(in srgb, var(--md-primary-fg-color) 35%, transparent);
       }
 
       @keyframes pulse-line {
@@ -92,10 +104,10 @@ export class McpArchitectureViewer extends LitElement {
       @keyframes pulse-node {
         0%,
         100% {
-          box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 0%, transparent);
+          box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-primary-fg-color) 0%, transparent);
         }
         50% {
-          box-shadow: 0 0 0 6px color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 25%, transparent);
+          box-shadow: 0 0 0 6px color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
         }
       }
 
@@ -199,7 +211,7 @@ export class McpArchitectureViewer extends LitElement {
                   ? html`
                       <div
                         class="dc-hidden md:dc-block dc-mx-1 dc-h-0.5 dc-w-6 lg:dc-w-10 dc-rounded
-                          ${isPast || isActive ? 'line-active dc-bg-md-primary' : 'dc-bg-md-primary/20'}"
+                          ${isPast || isActive ? 'line-active dc-bg-md-primary' : 'flow-connector-idle dc-bg-md-primary/20'}"
                         aria-hidden="true"
                       ></div>
                     `

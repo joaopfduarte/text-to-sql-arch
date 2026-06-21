@@ -63,7 +63,7 @@ tags:
 **Não entra** em $C_i$. Latência, tokens e FinOps aplicam-se apenas ao modo MCP.
 
 
-## Algoritmo de desfecho $o_i$
+## Algoritmo de desfecho
 
 Seja $S_i = \{s_{i,1},\ldots,s_{i,n_i}\}$ com $n_i \leq 5$ SQLs válidos e $G_i$ o gabarito da pergunta.
 Avaliar pipeline MCP (parse Calcite → estrutural → execução Hive) e match com $G_i$ na **resposta agregada**.
