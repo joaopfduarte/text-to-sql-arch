@@ -46,10 +46,10 @@ O DDL completo do subconjunto laboratorial (92 tabelas) segue abaixo. Use apenas
 DDL.
 
 ```sql
-{{SCHEMA_DDL_ANONIMIZADO}}
+{{SCHEMA_DDL_OFFLINE}}
 ```
 ```
 
-> **Nota operacional:** `{{SCHEMA_DDL_ANONIMIZADO}}` é o conteúdo literal do export relacional anonimizado offline
+> **Nota operacional:** `{{SCHEMA_DDL_OFFLINE}}` é o conteúdo literal do export relacional offline
 > (ver [Schema massa de teste](../../docs/04-arquitetura-dados/schema-massa-teste.md)) no `commitHash` registrado em
 > `context.json`.

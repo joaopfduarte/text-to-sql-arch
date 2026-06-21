@@ -8,7 +8,7 @@ tags:
 
 !!! info "Recomendado para leitura prévia"
     - **[Produto e escopo](../01-produto-e-escopo.md)** — definição de erro estrutural.
-    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades.
     - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
     - **[Inferência e prompts](llm-inferencia-e-prompts.md)** — configuração LLM e templates de prompt.
     - **[Métricas e fórmulas](metricas-formulas.md)** — fórmulas e schema `metrics.json`.

@@ -7,15 +7,13 @@ tags:
 # Banco de domínio laboratorial
 
 !!! info "Recomendado para leitura prévia"
-    - **[Glossário de anonimização](../00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
-    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades.
 
 
-### Identificadores opacos
+### Convenção de nomenclatura
 
 - Tabelas: `tbl_<8 hex>`
 - Colunas: `col_<8 hex>`
-- Algoritmo: `SHA-256("lab-doc" + nome_interno)[:8]` — nomes internos **não** são publicados.
 
 ### Estatísticas
 

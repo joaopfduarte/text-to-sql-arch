@@ -70,7 +70,6 @@ plugins:
 
 nav:
   - Início: index.md
-  - Glossário de anonimização: 00-glossario-anonimizacao.md
   - Leitura rápida: 00-leitura-rapida.md
   - Produto e escopo: 01-produto-e-escopo.md
   - Arquitetura de negócio: 02-arquitetura-negocio.md

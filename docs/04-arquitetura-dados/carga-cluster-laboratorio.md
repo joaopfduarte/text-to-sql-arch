@@ -9,14 +9,14 @@ tags:
 
 !!! info "Recomendado para leitura prévia"
     - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
-    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades.
     - **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.
 
 
 ### Pipeline
 
-1. Export relacional offline (92 entidades, anonimizado).
-2. Mascaramento de PII conforme glossário.
+1. Export relacional offline (92 entidades).
+2. Mascaramento de PII conforme [Banco laboratorial](banco-laboratorio-dominio.md).
 3. Carga HDFS (`/dados/laboratorio/bronze/`).
 4. Tabelas externas Hive em `massa_teste_laboratorio`.
 5. Registro no Apache Atlas (`schema_laboratorio`).

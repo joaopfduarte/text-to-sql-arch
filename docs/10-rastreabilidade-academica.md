@@ -1,7 +1,6 @@
 # Rastreabilidade académica
 
 !!! info "Recomendado para leitura prévia"
-    - **[Glossário de anonimização](00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
     - **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.
 
 
@@ -16,7 +15,7 @@ Os blocos operacionais abaixo alimentam a documentação académica (LaTeX/PDF),
 | [Produto e escopo](01-produto-e-escopo.md) | Introdução | Objetivo, escopo, erro estrutural |
 | [Arquitetura de negócio](02-arquitetura-negocio.md) | Introdução / metodologia | Blocos e contratos macro |
 | [Visão lógica](03-arquitetura-aplicacao/visao-logica.md) | Metodologia | Camadas, MCP, fluxo |
-| [Banco laboratorial](04-arquitetura-dados/banco-laboratorio-dominio.md) | Metodologia | Massa laboratorial anonimizada |
+| [Banco laboratorial](04-arquitetura-dados/banco-laboratorio-dominio.md) | Metodologia | Massa laboratorial |
 | [Visão AWS](05-infraestrutura/visao-aws.md) | Metodologia / desenvolvimento | Cluster AWS |
 | [Contratos MCP v1](07-contratos-mcp/contracts-v1.md) | Desenvolvimento | Contratos MCP v1 |
 | [Protocolo de avaliação](08-experimento-avaliacao/protocolo-avaliacao.md) | Metodologia / resultados | Protocolo e métricas |
@@ -26,7 +25,6 @@ Os blocos operacionais abaixo alimentam a documentação académica (LaTeX/PDF),
 
 - Não copiar texto integral da documentação académica para blocos operacionais.
 - Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação académica.
-- Identificadores opacos **não** devem ser revertidos para nomes reais na documentação operacional.
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Índice de ADRs](adr/README.md)** — decisões arquiteturais registradas.

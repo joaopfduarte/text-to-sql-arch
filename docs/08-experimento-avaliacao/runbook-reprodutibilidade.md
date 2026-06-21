@@ -136,7 +136,7 @@ aprovada).
 
 - [ ] Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registar em § Auditoria do mesmo ficheiro; só prosseguir se 30/30 OK.
 - [ ] Bateria e gabarito aprovados (`9985067`).
-- [ ] `DDL anonimizado offline` versionado e anexado ao prompt de cada corrida.
+- [ ] `DDL offline` versionado e anexado ao prompt de cada corrida.
 - [ ] `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).
 - [ ] `modelVersion` fixo `gemini-3.5-flash`; `provider`: `google`; `seed` explícita por campanha.
 - [ ] `inferenceConfig.temperature`: **0**; `maxOutputTokens`: **4096** (ver [Inferência e prompts](llm-inferencia-e-prompts.md)).

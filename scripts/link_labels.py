@@ -6,7 +6,6 @@ from pathlib import Path
 
 # título curto para [texto](url)
 PAGE_TITLES: dict[str, str] = {
-    "00-glossario-anonimizacao.md": "Glossário de anonimização",
     "00-leitura-rapida.md": "Leitura rápida",
     "01-produto-e-escopo.md": "Produto e escopo",
     "02-arquitetura-negocio.md": "Arquitetura de negócio",

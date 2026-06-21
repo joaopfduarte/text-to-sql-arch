@@ -1,5 +1,5 @@
 ---
-description: Inventário anonimizado das 92 entidades da massa de teste.
+description: Inventário das 92 entidades da massa de teste.
 tags:
   - dados
 ---
@@ -7,7 +7,6 @@ tags:
 # Schema e massa de teste (laboratório)
 
 !!! info "Recomendado para leitura prévia"
-    - **[Glossário de anonimização](../00-glossario-anonimizacao.md)** — vocabulário genérico obrigatório.
     - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
     - **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
     - **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.
@@ -15,7 +14,7 @@ tags:
 
 ### Decisão
 
-A massa de avaliação corresponde a **92 entidades** com identificadores opacos (`tbl_*`). O export relacional completo permanece **offline**, sob custódia do pesquisador.
+A massa de avaliação corresponde a **92 entidades** com identificadores `tbl_*`. O export relacional completo permanece **offline**, sob custódia do pesquisador.
 
 ### Regras da massa
 
@@ -261,7 +260,7 @@ Volume observado ~1388 MB (fixo, sem amplificação sintética no MVP).
 
 ### Artefatos esperados
 
-- Export relacional anonimizado (offline).
+- Export relacional offline.
 - Script de carga: [Carga no cluster](carga-cluster-laboratorio.md).
 - Bateria e gabarito em [Índice de ADRs](../evidence/README.md).
 

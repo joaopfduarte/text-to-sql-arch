@@ -8,7 +8,7 @@ tags:
 
 !!! info "Recomendado para leitura prévia"
     - **[Camadas MCP](../03-arquitetura-aplicacao/camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.
-    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades anonimizadas.
+    - **[Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)** — inventário das 92 entidades.
 
 
 ### Política de versionamento
@@ -21,7 +21,7 @@ tags:
 ### Convenção de schema do catálogo
 
 - `schema = "laboratorio"`: subconjunto laboratorial (92 entidades) registrado em Apache Atlas como database `hive_db` chamado `schema_laboratorio`.
-- Nomes de tabela e coluna usam identificadores opacos (`tbl_*`, `col_*`) conforme [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md).
+- Nomes de tabela e coluna usam identificadores `tbl_*` e `col_*` conforme [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md).
 
 ### Envelope padrão de resposta
 
