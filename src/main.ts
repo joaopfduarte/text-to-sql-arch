@@ -1,4 +1,4 @@
-import './components/docs-demo';
+import './components/mcp-viewer';
 import './styles/global.css';
 
 if (typeof document$ !== 'undefined') {
