@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "artifact-docs/evidence/context-schema-v1.json",
+  "$id": "evidence/context-schema-v1.json",
   "title": "context.json — metadados de reprodutibilidade por corrida (v1)",
   "description": "Schema estendido para evidence/<runId>/context.json. Campos legados mantidos; v1 adiciona inferência LLM e versionamento de prompts.",
   "type": "object",
@@ -45,7 +45,7 @@
     "commitHash": {
       "type": "string",
       "minLength": 7,
-      "description": "Hash Git do repositório no congelamento da corrida"
+      "description": "Hash Git do código-fonte do artefato no congelamento da corrida"
     },
     "datasetVersion": {
       "type": "string",
@@ -108,7 +108,7 @@
       "properties": {
         "systemShared": {
           "type": "string",
-          "description": "Caminho repo-relative do bloco compartilhado"
+          "description": "Caminho relativo à raiz do projeto do bloco compartilhado"
         },
         "systemMode": {
           "type": "string",
@@ -143,7 +143,7 @@
           "promptArtifacts": {
             "properties": {
               "systemMode": {
-                "const": "artifact-docs/templates/prompts/system-baseline-v1.md"
+                "const": "templates/prompts/system-baseline-v1.md"
               }
             }
           }
@@ -159,7 +159,7 @@
           "promptArtifacts": {
             "properties": {
               "systemMode": {
-                "const": "artifact-docs/templates/prompts/system-mcp-v1.md"
+                "const": "templates/prompts/system-mcp-v1.md"
               }
             }
           }

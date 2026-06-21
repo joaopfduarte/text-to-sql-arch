@@ -7,7 +7,7 @@
 
 ### Princípio
 
-Este repositório publica apenas documentação operacional **anonimizada**. A documentação académica externa LaTeX/PDF, evidências identificáveis e o export relacional completo permanecem offline, sob custódia do pesquisador na instituição federal de ensino superior.
+Os blocos operacionais abaixo alimentam a documentação académica (LaTeX/PDF), mantida offline pelo pesquisador na instituição federal de ensino superior. Evidências identificáveis e o export relacional completo permanecem sob custódia do pesquisador.
 
 ### Mapa doc → capítulo (referência genérica)
 
@@ -24,9 +24,9 @@ Este repositório publica apenas documentação operacional **anonimizada**. A d
 
 ### Regras
 
-- Não copiar texto da documentação académica externa para este site.
-- Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação académica externa.
-- Identificadores opacos publicados aqui **não** devem ser revertidos para nomes reais neste repositório.
+- Não copiar texto integral da documentação académica para blocos operacionais.
+- Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação académica.
+- Identificadores opacos **não** devem ser revertidos para nomes reais na documentação operacional.
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Índice de ADRs](adr/README.md)** — decisões arquiteturais registradas.

@@ -9,8 +9,8 @@ tags:
 
 ## Fonte
 
-- `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; pacote académico externo)
-- `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; pacote académico externo)
+- `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; documentação académica offline)
+- `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; documentação académica offline)
 
 
 ## Critérios de triagem

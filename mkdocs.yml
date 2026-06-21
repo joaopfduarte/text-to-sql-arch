@@ -1,5 +1,5 @@
 site_name: Arquitetura e Engenharia do Produto TCC
-site_description: Documentação operacional anonimizada Text-to-SQL com MCP e Apache Atlas
+site_description: Arquitetura e engenharia do artefato Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
 repo_url: https://gitlab.com/joaopedrofduarte-studien/back-end-practice/tcc/documentation
 repo_name: GitLab
@@ -106,8 +106,6 @@ nav:
     - Matriz de cobertura: evidence/matriz-cobertura-bateria-v1.md
     - Matriz 15 tools MCP: evidence/matriz-15-tools-mcp-v1.md
     - Inventário Atlas API: evidence/inventario-atlas-api-para-mcp.md
-  - Referência técnica:
-    - Migração diagramas: 11-migracao-diagramas-tikz-plantuml.md
   - ADRs:
     - Índice: adr/README.md
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md

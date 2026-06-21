@@ -1,5 +1,5 @@
 ---
-description: Vocabulário genérico obrigatório para contribuições anonimizadas.
+description: Vocabulário genérico obrigatório do artefato.
 tags:
   - glossario
   - onboarding
@@ -54,21 +54,13 @@ tags:
 - Colunas: `col_<8 caracteres hex minúsculos>`
 - Algoritmo interno (convenção do TCC): `SHA-256("lab-doc" + nome_interno)[:8]` — **nomes internos não são publicados**.
 
-### Artefatos fora deste repositório
+### Artefatos offline
 
-O pesquisador mantém offline (fora do git):
+O pesquisador mantém offline:
 
 - Export DDL completo anonimizado ou original usado na carga
-- Documentação académica (documentação académica externa LaTeX/PDF)
+- Documentação académica (LaTeX/PDF)
 - Mapeamento opaco ↔ físico, se necessário para operação local
-
-### Validação
-
-Antes de commit ou merge em `main`:
-
-```bash
-bash scripts/check-anonymization.sh
-```
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Leitura rápida](00-leitura-rapida.md)** — visão geral do sistema em até 30 minutos.

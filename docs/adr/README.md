@@ -11,7 +11,7 @@ Toda mudança arquitetural relevante deve ser registrada como ADR.
 
 ## Fluxo
 
-1. Copiar template em `templates/adr-template.md` (raiz do repositório, fora do site).
+1. Copiar [Template de ADR](../templates/adr-template.md).
 2. Nomear como `ADR-XXXX-titulo-curto.md`.
 3. Descrever contexto, decisão, impactos e alternativas.
 4. Referenciar diagrama e documentos alterados.

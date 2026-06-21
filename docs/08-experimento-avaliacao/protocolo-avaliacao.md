@@ -120,7 +120,7 @@ Ordem de precedência:
 | `gpt-5.4-nano` | 0,20 | 1,25 |
 | `gemini-3.5-flash` | 1,50 | 9,00 |
 
-Fontes: docs em `guide-docs/external-documentation/`.
+Fontes: documentação Spring AI para integração OpenAI e Google (Gemini).
 
 ### Ameaças à validade
 

@@ -13,7 +13,7 @@
 
 ### Fase 1 (semanas 1-3): governança e fundação documental
 
-- Bootstrap documental do repositório (concluído).
+- Fundação documental do artefato (concluído).
 - ADR-0001 fundação arquitetural (concluído).
 - ADR-0002 topologia AWS mínima (novo).
 - Diagramas mestre, rede lógica e topologia AWS.
@@ -50,8 +50,8 @@
 
 ### Fase 6 (semanas 17-22): redação da documentação académica externa
 
-- Capítulo de desenvolvimento (`documentacao-academica-externa/cap6-desenvolvimento.tex`).
-- Capítulo de resultados (`documentacao-academica-externa/cap7-resultados.tex`).
+- Capítulo de desenvolvimento (documentação académica).
+- Capítulo de resultados (documentação académica).
 - Revisão metodológica e ajustes nos capítulos prévios.
 
 ### Fase 7 (semanas 22-24): endurecimento e preparação

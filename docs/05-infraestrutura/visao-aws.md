@@ -60,7 +60,7 @@ Fonte: [Diagrama de rede AWS](../diagrams/rede-aws.svg)
 
 ### Ambiente legado
 
-Um ambiente legado subdimensionado foi descartado deste repositório. Diferenças consolidadas em [Delta legado para AWS](delta-oci-para-aws.md).
+Um ambiente legado subdimensionado foi descartado do escopo operacional atual. Diferenças consolidadas em [Delta legado para AWS](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

@@ -15,7 +15,7 @@ tags:
 
 ### Decisão
 
-A massa de avaliação corresponde a **92 entidades** com identificadores opacos (`tbl_*`). O export relacional completo permanece **offline**, fora deste repositório.
+A massa de avaliação corresponde a **92 entidades** com identificadores opacos (`tbl_*`). O export relacional completo permanece **offline**, sob custódia do pesquisador.
 
 ### Regras da massa
 

@@ -42,7 +42,7 @@
 |----------|--------|
 | `app.mcp.tool-budget.default` | Orçamento padrão de chamadas de tool por sessão (valor de referência: **10**). |
 | `app.atlas.base-url` | Endpoint do Apache Atlas. |
-| `app.atlas.auth.user` / `.password` | Credenciais Atlas via variáveis de ambiente ou vault (nunca em repositório). |
+| `app.atlas.auth.user` / `.password` | Credenciais Atlas via variáveis de ambiente ou vault (nunca versionadas no código-fonte). |
 | `app.jdbc.hive.url` | JDBC URL do HiveServer2 (ex.: `jdbc:hive2://master:10000/laboratorio`). |
 | `app.calcite.dialect` | Dialeto SQL do Calcite (valor de referência: `hive`). |
 | `app.llm.provider` | Provedor ativo por corrida: `openai` ou `google`. |

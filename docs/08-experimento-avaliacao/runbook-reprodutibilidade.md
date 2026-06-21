@@ -126,7 +126,7 @@ Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha v1, **ante
 esquema via DDL estático.
 
 **Esquema no prompt:** [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md) (92 tabelas MySQL).
-Registar `commitHash` do repositório e hash ou versão do ficheiro DDL em `datasetVersion` / notas da campanha.
+Registar `commitHash` do código-fonte do artefato e hash ou versão do ficheiro DDL em `datasetVersion` / notas da campanha.
 
 **Bateria:** [Bateria de 30 perguntas](../evidence/bateria-30-perguntas-v1.csv) +
 [Gabarito da bateria](../evidence/gabarito-bateria-v1.md) (`batteryVersion` v1, revisão

@@ -10,8 +10,8 @@ tags:
     - **[Protocolo de avaliação](protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
     - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
     - **[Gabarito da bateria](../evidence/gabarito-bateria-v1.md)** — quando publicado.
-    - **Tarifas GPT-5.4 Nano** — referência de custo do provedor (documentação externa ao repositório).
-    - **Tarifas Gemini 3.5 Flash** — referência de custo do provedor (documentação externa ao repositório).
+    - **Tarifas GPT-5.4 Nano** — referência de custo do provedor (documentação oficial do provedor).
+    - **Tarifas Gemini 3.5 Flash** — referência de custo do provedor (documentação oficial do provedor).
 
 ## Unidade experimental
 

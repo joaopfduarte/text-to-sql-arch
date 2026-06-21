@@ -39,8 +39,7 @@ tags:
 4. **`seed`** permanece obrigatória, mas APIs comerciais **não garantem** determinismo total mesmo com
    `temperature=0` — documentar como variância residual (ver § Limitações).
 
-Referências de integração: `../../../guide-docs/external-documentation/SpringAi-google.md`,
-`../../../guide-docs/external-documentation/SpringAi-openai.md`.
+Referências de integração: documentação Spring AI para Google (Gemini) e OpenAI.
 
 ### Montagem do prompt
 

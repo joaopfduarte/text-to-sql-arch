@@ -18,9 +18,9 @@
     "maxInputTokens": null
   },
   "promptArtifacts": {
-    "systemShared": "artifact-docs/templates/prompts/system-shared-v1.md",
-    "systemMode": "artifact-docs/templates/prompts/system-mcp-v1.md",
-    "userTemplate": "artifact-docs/templates/prompts/user-template-v1.md"
+    "systemShared": "templates/prompts/system-shared-v1.md",
+    "systemMode": "templates/prompts/system-mcp-v1.md",
+    "userTemplate": "templates/prompts/user-template-v1.md"
   },
   "promptArtifactsHash": "b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de",
   "questionId": "Q01"

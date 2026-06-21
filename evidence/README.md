@@ -27,7 +27,7 @@ Não sobrescreva corridas anteriores. Qualquer ajuste gera novo `runId`.
 ## Artefatos de decisão humana (T11 / T08)
 
 Estes ficheiros são **preenchidos pelo autor**, não inferidos por agentes de IA. Ver
-`ai-interaction/correcao-metodologia.md` (pacote académico externo; secção «Decisões e execução
+`ai-interaction/correcao-metodologia.md` (documentação académica offline; secção «Decisões e execução
 exclusivas do autor»).
 
 | Ficheiro | Uso |

@@ -21,7 +21,7 @@ A stack alvo está fechada no VDF canônico [VDF ODP x86](../assets/scripts/ODP-
 - Ubuntu 24.04
 - arquitetura x86_64
 
-Um ambiente legado subdimensionado (ARM/OCI) foi descartado deste repositório; ver comparativo em [Delta legado para AWS](../05-infraestrutura/delta-oci-para-aws.md).
+Um ambiente legado subdimensionado (ARM/OCI) foi descartado do escopo operacional atual; ver comparativo em [Delta legado para AWS](../05-infraestrutura/delta-oci-para-aws.md).
 
 ## Decisão
 
@@ -50,7 +50,7 @@ Adotar **cluster ODP em AWS x86_64 (Ubuntu 24.04, ODP 1.3.1.0)** com topologia e
 
 - **Graviton ARM:** fora do escopo do VDF canônico.
 - **Atlas standalone:** contingência apenas; não solução principal.
-- **Replica integral do legado OCI:** stack ODP 1.2.2.0 em `aarch64`, removido deste repositório.
+- **Replica integral do legado OCI:** stack ODP 1.2.2.0 em `aarch64`, removida do escopo operacional atual.
 
 ## Referências
 

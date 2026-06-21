@@ -24,7 +24,7 @@ A **camada semântica e de metadados** expõe ao agente inventário estruturado 
 | Entidades técnicas (`hive_table`, `hive_column`, `hive_db`) | Apache Atlas no cluster | Atlas (fonte canônica) |
 | Lineage entre tabelas Hive e arquivos HDFS | Apache Atlas | Atlas |
 | Classificações (PII, sensível) | Apache Atlas | Operador do catálogo |
-| Export relacional completo (92 entidades) | Offline (fora do git) | Pesquisador |
+| Export relacional completo (92 entidades) | Offline (pesquisador) | Pesquisador |
 | Schema exposto ao agente LLM | Apache Atlas | [Schema massa de teste](schema-massa-teste.md) |
 
 Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offline serve à carga, não à corrida.
