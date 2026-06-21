@@ -1,3 +1,10 @@
+---
+description: Triagem das operações de leitura da API REST v2 do Apache Atlas.
+tags:
+  - mcp
+  - evidencia
+---
+
 # Inventário Atlas API para o catálogo MCP
 
 ## Fonte

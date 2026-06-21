@@ -1,14 +1,13 @@
 site_name: Arquitetura e Engenharia do Produto TCC
 site_description: Documentação operacional anonimizada Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
+repo_url: https://gitlab.com/joaopedrofduarte-studien/back-end-practice/tcc/documentation
+repo_name: GitLab
+edit_uri: edit/main/docs/
 strict: true
 
 extra_css:
   - stylesheets/diagrams.css
-
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
-  - javascripts/mermaid-init.js
 
 theme:
   name: material
@@ -17,6 +16,15 @@ theme:
     - scheme: default
       primary: blue grey
       accent: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: blue grey
+      accent: blue grey
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
   font:
     text: Inter
     code: JetBrains Mono
@@ -28,16 +36,24 @@ theme:
     - navigation.expand
     - navigation.indexes
     - navigation.top
+    - navigation.path
+    - navigation.footer
     - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
+    - content.code.select
+    - content.code.annotate
     - content.tabs.link
+    - content.tooltips
+    - content.action.view
 
 plugins:
   - search
   - social
+  - tags
   - glightbox:
       touchNavigation: true
       loop: false
@@ -84,6 +100,14 @@ nav:
   - Operação: 09-operacao.md
   - Rastreabilidade acadêmica: 10-rastreabilidade-academica.md
   - Roadmap: roadmap-5a6-meses.md
+  - Evidências experimentais:
+    - Índice: evidence/README.md
+    - Gabarito da bateria: evidence/gabarito-bateria-v1.md
+    - Matriz de cobertura: evidence/matriz-cobertura-bateria-v1.md
+    - Matriz 15 tools MCP: evidence/matriz-15-tools-mcp-v1.md
+    - Inventário Atlas API: evidence/inventario-atlas-api-para-mcp.md
+  - Referência técnica:
+    - Migração diagramas: 11-migracao-diagramas-tikz-plantuml.md
   - ADRs:
     - Índice: adr/README.md
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
@@ -91,6 +115,8 @@ nav:
     - ADR-0003 Inferência LLM: adr/ADR-0003-inferencia-llm-deterministica.md
 
 markdown_extensions:
+  - meta
+  - abbr
   - admonition
   - pymdownx.details
   - pymdownx.highlight:
@@ -105,6 +131,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

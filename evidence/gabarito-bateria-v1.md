@@ -1,3 +1,10 @@
+---
+description: Colas SQL de referência e gabarito Gi por pergunta da bateria v1.
+tags:
+  - experimento
+  - evidencia
+---
+
 # Gabarito da bateria de avaliação (v1)
 
 ## Status

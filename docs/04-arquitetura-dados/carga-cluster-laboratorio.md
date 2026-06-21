@@ -1,3 +1,10 @@
+---
+description: Pipeline de ingestão da massa massa_teste_laboratorio no cluster.
+tags:
+  - dados
+  - infra
+---
+
 # Carga no cluster (massa laboratorial)
 
 !!! info "Recomendado para leitura prévia"

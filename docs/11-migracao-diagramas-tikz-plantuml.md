@@ -1,3 +1,9 @@
+---
+description: Inventário de diagramas LaTeX e PlantUML e convenções de migração.
+tags:
+  - referencia
+---
+
 # Inventário de diagramas (LaTeX + artifact-docs)
 
 ## Escopo LaTeX (`assets/figures/`)

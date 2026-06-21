@@ -1,3 +1,10 @@
+---
+description: Mapeamento tool MCP → porta → contrato → erro.
+tags:
+  - mcp
+  - arquitetura
+---
+
 # Camadas do servidor MCP
 
 !!! info "Recomendado para leitura prévia"

@@ -1,3 +1,9 @@
+---
+description: Inventário anonimizado das 92 entidades da massa de teste.
+tags:
+  - dados
+---
+
 # Schema e massa de teste (laboratório)
 
 !!! info "Recomendado para leitura prévia"

@@ -1,3 +1,9 @@
+---
+description: Envelope JSON, quinze tools MCP e taxonomia de erro v1.
+tags:
+  - mcp
+---
+
 # Contratos MCP v1
 
 !!! info "Recomendado para leitura prévia"

@@ -1,3 +1,12 @@
+---
+description: Inferência determinística, seeds e paridade de prompts entre modos.
+status: Aceito
+tags:
+  - adr
+  - experimento
+  - mcp
+---
+
 # ADR-0003: Inferência LLM determinística e paridade de prompts
 
 - **Status:** Aceito

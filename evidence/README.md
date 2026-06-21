@@ -1,3 +1,10 @@
+---
+description: Convenções de corridas, bateria e artefatos experimentais versionados.
+tags:
+  - experimento
+  - evidencia
+---
+
 # Evidências experimentais
 
 ## Corridas MCP (`evidence/run-.../`)

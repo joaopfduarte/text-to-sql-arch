@@ -1,3 +1,9 @@
+---
+description: Serviços ODP, sizing e operação do cluster Hadoop mínimo.
+tags:
+  - infra
+---
+
 # Cluster Hadoop (laboratório AWS)
 
 !!! info "Recomendado para leitura prévia"

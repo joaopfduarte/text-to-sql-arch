@@ -1,3 +1,10 @@
+---
+description: Passos operacionais para repetir uma corrida com evidências completas.
+tags:
+  - experimento
+  - operacao
+---
+
 # Runbook de operação e reprodutibilidade
 
 !!! info "Recomendado para leitura prévia"
@@ -98,15 +105,15 @@ Cada linha ou bloco deve permitir reconstruir:
 
 ### Checklist de reprodutibilidade
 
-1. Commit limpo e registrado (`commitHash`).
-2. Versão do contrato MCP fixada (`contractsVersion`).
-3. Dataset fixo e versionado (massa PS de 92 tabelas; ver `schema-massa-teste.md`).
-4. Seed explícita.
-5. Modelo, `provider`, `promptVersion` e `inferenceConfig` registrados (`temperature=0` no Gemini).
-6. `promptArtifactsHash` calculado e conferido contra templates em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json).
-7. Política de tool budget registrada (`toolBudget`).
-8. `metrics.json` preenchido conforme modo (MCP ou baseline).
-9. Evidências salvas em pasta da corrida.
+- [ ] Commit limpo e registrado (`commitHash`).
+- [ ] Versão do contrato MCP fixada (`contractsVersion`).
+- [ ] Dataset fixo e versionado (massa PS de 92 tabelas; ver `schema-massa-teste.md`).
+- [ ] Seed explícita.
+- [ ] Modelo, `provider`, `promptVersion` e `inferenceConfig` registrados (`temperature=0` no Gemini).
+- [ ] `promptArtifactsHash` calculado e conferido contra templates em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json).
+- [ ] Política de tool budget registrada (`toolBudget`).
+- [ ] `metrics.json` preenchido conforme modo (MCP ou baseline).
+- [ ] Evidências salvas em pasta da corrida.
 
 ### Política de retenção
 
@@ -127,16 +134,15 @@ aprovada).
 
 #### Checklist pré-voo (`baseline-static`)
 
-0. Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registar
-   em § Auditoria do mesmo ficheiro; só prosseguir se 30/30 OK.
-1. Bateria e gabarito aprovados (`9985067`).
-2. `DDL anonimizado offline` versionado e anexado ao prompt de cada corrida.
-3. `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).
-4. `modelVersion` fixo `gemini-3.5-flash`; `provider`: `google`; `seed` explícita por campanha.
-5. `inferenceConfig.temperature`: **0**; `maxOutputTokens`: **4096** (ver [Inferência e prompts](llm-inferencia-e-prompts.md)).
-6. Templates de prompt v1 congelados; `promptArtifactsHash` registrado em cada `context.json`.
-7. 30 perguntas = 30 corridas na campanha v1 (Gemini-only).
-8. Gabarito $G_i$ disponível para classificar `gabaritoMatch`.
+- [ ] Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registar em § Auditoria do mesmo ficheiro; só prosseguir se 30/30 OK.
+- [ ] Bateria e gabarito aprovados (`9985067`).
+- [ ] `DDL anonimizado offline` versionado e anexado ao prompt de cada corrida.
+- [ ] `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).
+- [ ] `modelVersion` fixo `gemini-3.5-flash`; `provider`: `google`; `seed` explícita por campanha.
+- [ ] `inferenceConfig.temperature`: **0**; `maxOutputTokens`: **4096** (ver [Inferência e prompts](llm-inferencia-e-prompts.md)).
+- [ ] Templates de prompt v1 congelados; `promptArtifactsHash` registrado em cada `context.json`.
+- [ ] 30 perguntas = 30 corridas na campanha v1 (Gemini-only).
+- [ ] Gabarito $G_i$ disponível para classificar `gabaritoMatch`.
 
 #### Registro consolidado
 

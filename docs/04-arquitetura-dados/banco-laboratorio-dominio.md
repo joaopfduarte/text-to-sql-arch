@@ -1,3 +1,9 @@
+---
+description: Domínios genéricos, entidades-âncora e FKs do schema laboratorial.
+tags:
+  - dados
+---
+
 # Banco de domínio laboratorial
 
 !!! info "Recomendado para leitura prévia"

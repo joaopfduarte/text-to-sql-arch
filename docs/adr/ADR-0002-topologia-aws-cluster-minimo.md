@@ -1,3 +1,11 @@
+---
+description: Cluster ODP mínimo em AWS x86, sizing e massa fixa de teste.
+status: Aceito
+tags:
+  - adr
+  - infra
+---
+
 # ADR-0002: Topologia AWS de cluster mínimo
 
 - **Status:** Aceito

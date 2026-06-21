@@ -1,3 +1,10 @@
+---
+description: Cobertura cenário × dificuldade × tabelas da bateria v1.
+tags:
+  - experimento
+  - evidencia
+---
+
 # Matriz de cobertura da bateria (v1)
 
 ## Status

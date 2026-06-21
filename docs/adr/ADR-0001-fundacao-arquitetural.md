@@ -1,3 +1,12 @@
+---
+description: Fundação hexagonal, MCP versionado e evidência por runId.
+status: Aceito
+tags:
+  - adr
+  - arquitetura
+  - mcp
+---
+
 # ADR-0001: Fundação arquitetural do artefato
 
 - **Status:** Aceito

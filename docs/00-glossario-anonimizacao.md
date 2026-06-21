@@ -1,4 +1,21 @@
+---
+description: Vocabulário genérico obrigatório para contribuições anonimizadas.
+tags:
+  - glossario
+  - onboarding
+---
+
 # Glossário de anonimização
+
+*[MCP]: Model Context Protocol
+*[ODP]: Open Data Platform (stack Hadoop/Hive do cluster)
+*[Atlas]: Apache Atlas — catálogo canônico de metadados
+*[ADR]: Architecture Decision Record
+*[TCC]: Trabalho de Conclusão de Curso
+*[PII]: Personally Identifiable Information — dados identificáveis de pessoa
+*[FK]: Foreign Key — chave estrangeira
+*[DDL]: Data Definition Language
+*[HiveQL]: Dialeto SQL do Apache Hive
 
 
 ### Termos genéricos obrigatórios

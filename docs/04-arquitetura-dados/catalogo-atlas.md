@@ -1,3 +1,10 @@
+---
+description: Camada semântica e catálogo canônico Apache Atlas no cluster.
+tags:
+  - dados
+  - mcp
+---
+
 # Catálogo Apache Atlas
 
 !!! info "Recomendado para leitura prévia"

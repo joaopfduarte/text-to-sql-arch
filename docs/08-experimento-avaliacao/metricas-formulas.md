@@ -1,3 +1,9 @@
+---
+description: Indicadores, fórmulas e schema metrics.json do experimento.
+tags:
+  - experimento
+---
+
 # Especificação de métricas e fórmulas
 
 !!! info "Recomendado para leitura prévia"

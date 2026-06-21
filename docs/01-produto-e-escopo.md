@@ -1,3 +1,10 @@
+---
+description: Artefato Text-to-SQL, recorte metodológico e decisões de ambiente.
+tags:
+  - produto
+  - onboarding
+---
+
 # Produto e escopo metodológico
 
 

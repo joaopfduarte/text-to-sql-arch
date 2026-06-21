@@ -1,3 +1,10 @@
+---
+description: Hiperparâmetros LLM, templates de prompt e schema context.json.
+tags:
+  - experimento
+  - mcp
+---
+
 # Inferência LLM e prompts experimentais
 
 !!! info "Recomendado para leitura prévia"

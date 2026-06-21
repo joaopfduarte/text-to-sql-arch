@@ -1,3 +1,10 @@
+---
+description: Seleção das quinze tools do catálogo MCP fechado.
+tags:
+  - mcp
+  - evidencia
+---
+
 # Matriz das quinze tools MCP v1
 
 ## Fonte

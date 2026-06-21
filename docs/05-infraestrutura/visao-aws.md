@@ -1,3 +1,9 @@
+---
+description: Topologia de rede e componentes AWS do ambiente de avaliação.
+tags:
+  - infra
+---
+
 # Visão de infraestrutura AWS
 
 !!! info "Recomendado para leitura prévia"

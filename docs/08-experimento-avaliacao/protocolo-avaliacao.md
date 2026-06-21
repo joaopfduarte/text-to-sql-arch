@@ -1,3 +1,9 @@
+---
+description: Desenho experimental, bateria de 30 perguntas e critérios de desfecho.
+tags:
+  - experimento
+---
+
 # Protocolo de avaliação experimental
 
 !!! info "Recomendado para leitura prévia"
@@ -35,6 +41,16 @@ Antes das etapas do protocolo, fixar configuração conforme [Inferência e prom
 | Prompts | Templates v1 em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) |
 | Paridade | Instruções anti-alucinação idênticas em `system-shared-v1.md` |
 | Registro | `context.json` conforme [Schema context.json v1](../evidence/context-schema-v1.json) |
+
+### Checklist por corrida (modo MCP)
+
+- [ ] Receber pergunta e inicializar `runId`.
+- [ ] Consultar metadados via tools MCP (máximo 10 chamadas).
+- [ ] Gerar até cinco SQLs candidatos por pergunta.
+- [ ] Validar sintaxe (Calcite/Hive) de cada statement.
+- [ ] Validar aderência estrutural contra catálogo canônico.
+- [ ] Executar SQLs aprovados no cluster controlado.
+- [ ] Registrar trilha (`session.jsonl`), métricas (`metrics.json`) e contexto (`context.json`).
 
 ### Etapas do protocolo
 

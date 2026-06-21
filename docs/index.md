@@ -1,3 +1,9 @@
+---
+description: Ponto de entrada da documentação operacional anonimizada do TCC.
+tags:
+  - onboarding
+---
+
 # Arquitetura e engenharia do produto TCC
 
 Pacote operacional **anonimizado** para a engenharia do artefato Text-to-SQL com MCP e Apache Atlas. A documentação académica completa permanece fora deste repositório.
