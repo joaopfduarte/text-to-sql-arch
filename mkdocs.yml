@@ -12,6 +12,10 @@ extra:
 extra_css:
   - stylesheets/diagrams.css
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
 theme:
   name: material
   custom_dir: overrides
@@ -120,6 +124,8 @@ markdown_extensions:
   - abbr
   - admonition
   - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
