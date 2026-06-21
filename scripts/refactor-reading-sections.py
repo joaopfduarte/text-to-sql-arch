@@ -39,7 +39,7 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
         "Delta legado para AWS",
         "comparativo ambiente subdimensionado vs alvo x86",
     ),
-    "05-infraestrutura/vdf-odp-x86.md": ("VDF ODP x86", "stack canónica ODP 1.3.1.0 para o cluster"),
+    "05-infraestrutura/vdf-odp-x86.md": ("VDF ODP x86", "stack canônica ODP 1.3.1.0 para o cluster"),
     "06-implementacao-java/modulos-spring.md": ("Módulos Spring", "estrutura de projetos e dependências"),
     "06-implementacao-java/ports-adapters.md": ("Ports e adapters", "portas hexagonais e adaptadores"),
     "07-contratos-mcp/contracts-v1.md": ("Contratos MCP v1", "envelope JSON, tools e taxonomia de erro"),
@@ -61,8 +61,8 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
     ),
     "09-operacao.md": ("Operação", "ciclo de corrida, incidentes e governança"),
     "10-rastreabilidade-academica.md": (
-        "Rastreabilidade académica",
-        "relação com a documentação académica externa",
+        "Rastreabilidade acadêmica",
+        "relação com a documentação acadêmica externa",
     ),
     "roadmap-5a6-meses.md": ("Roadmap", "marcos até a apresentação em novembro de 2026"),
     "adr/README.md": ("Índice de ADRs", "decisões arquiteturais registradas"),
@@ -99,7 +99,7 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
         "Manifesto de prompts v1",
         "versões dos artefatos de prompt",
     ),
-    "assets/scripts/ODP-VDF.xml": ("VDF ODP x86", "definição canónica da stack alvo"),
+    "assets/scripts/ODP-VDF.xml": ("VDF ODP x86", "definição canônica da stack alvo"),
 }
 
 # Atalhos por basename (links relativos na mesma pasta)

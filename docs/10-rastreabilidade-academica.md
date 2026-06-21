@@ -1,4 +1,4 @@
-# Rastreabilidade académica
+# Rastreabilidade acadêmica
 
 !!! info "Recomendado para leitura prévia"
     - **[Produto e escopo](01-produto-e-escopo.md)** — artefato, recorte metodológico e decisões de ambiente.
@@ -6,11 +6,11 @@
 
 ### Princípio
 
-Os blocos operacionais abaixo alimentam a documentação académica (LaTeX/PDF), mantida offline pelo pesquisador na instituição federal de ensino superior. Evidências identificáveis e o export relacional completo permanecem sob custódia do pesquisador.
+Os blocos operacionais abaixo alimentam a documentação acadêmica (LaTeX/PDF), mantida offline pelo pesquisador na instituição federal de ensino superior. Evidências identificáveis e o export relacional completo permanecem sob custódia do pesquisador.
 
 ### Mapa doc → capítulo (referência genérica)
 
-| Bloco operacional | Capítulo académico (externo) | Conteúdo |
+| Bloco operacional | Capítulo acadêmico (externo) | Conteúdo |
 |-------------------|------------------------------|----------|
 | [Produto e escopo](01-produto-e-escopo.md) | Introdução | Objetivo, escopo, erro estrutural |
 | [Arquitetura de negócio](02-arquitetura-negocio.md) | Introdução / metodologia | Blocos e contratos macro |
@@ -23,8 +23,8 @@ Os blocos operacionais abaixo alimentam a documentação académica (LaTeX/PDF),
 
 ### Regras
 
-- Não copiar texto integral da documentação académica para blocos operacionais.
-- Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação académica.
+- Não copiar texto integral da documentação acadêmica para blocos operacionais.
+- Alterações operacionais relevantes exigem ADR e, quando aplicável, atualização da documentação acadêmica.
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Índice de ADRs](adr/README.md)** — decisões arquiteturais registradas.

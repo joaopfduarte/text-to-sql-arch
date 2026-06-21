@@ -44,7 +44,7 @@ Registrados em `context.json` (schema: [Schema context.json v1](../evidence/cont
 - `inferenceConfigVersion` (`v1`)
 - `inferenceConfig` — objeto com `temperature`, `temperatureSupported`, `topP`, `maxOutputTokens`
 - `promptArtifacts` — caminhos repo-relative dos templates usados
-- `promptArtifactsHash` — SHA-256 dos quatro ficheiros `.md` do manifesto v1
+- `promptArtifactsHash` — SHA-256 dos quatro arquivos `.md` do manifesto v1
 
 Detalhes e política (`temperature=0` no Gemini): [Inferência e prompts](llm-inferencia-e-prompts.md).
 
@@ -126,7 +126,7 @@ Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha v1, **ante
 esquema via DDL estático.
 
 **Esquema no prompt:** [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md) (92 tabelas MySQL).
-Registar `commitHash` do código-fonte do artefato e hash ou versão do ficheiro DDL em `datasetVersion` / notas da campanha.
+Registrar `commitHash` do código-fonte do artefato e hash ou versão do arquivo DDL em `datasetVersion` / notas da campanha.
 
 **Bateria:** [Bateria de 30 perguntas](../evidence/bateria-30-perguntas-v1.csv) +
 [Gabarito da bateria](../evidence/gabarito-bateria-v1.md) (`batteryVersion` v1, revisão
@@ -134,7 +134,7 @@ aprovada).
 
 #### Checklist pré-voo (`baseline-static`)
 
-- [ ] Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registar em § Auditoria do mesmo ficheiro; só prosseguir se 30/30 OK.
+- [ ] Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registrar em § Auditoria do mesmo arquivo; só prosseguir se 30/30 OK.
 - [ ] Bateria e gabarito aprovados (`9985067`).
 - [ ] `DDL offline` versionado e anexado ao prompt de cada corrida.
 - [ ] `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).

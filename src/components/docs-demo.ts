@@ -4,7 +4,7 @@ import tailwindStyles from '../styles/tailwind.css?inline';
 
 @customElement('docs-demo')
 export class DocsDemo extends LitElement {
-  @property({ type: String }) title = 'Componentes interactivos';
+  @property({ type: String }) title = 'Componentes interativos';
 
   @property({ type: String }) variant: 'default' | 'accent' = 'default';
 
@@ -43,7 +43,7 @@ export class DocsDemo extends LitElement {
         </h3>
         <p class="dc-m-0 dc-mb-3 dc-text-sm dc-text-slate-600 dark:dc-text-slate-300">
           Web Component Lit + Tailwind integrado ao MkDocs Material. Clique para validar
-          interactividade.
+          interatividade.
         </p>
         <div class="dc-flex dc-items-center dc-gap-3">
           <button

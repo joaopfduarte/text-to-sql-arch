@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Gera SVG a partir das fontes PlantUML canónicas em diagrams/.
+# Gera SVG a partir das fontes PlantUML canônicas em diagrams/.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -20,7 +20,7 @@ DOT_BIN="$(command -v dot)"
 shopt -s nullglob
 puml_files=("$DIAGRAMS"/*.puml)
 if ((${#puml_files[@]} == 0)); then
-  echo "Nenhum ficheiro .puml em $DIAGRAMS" >&2
+  echo "Nenhum arquivo .puml em $DIAGRAMS" >&2
   exit 1
 fi
 

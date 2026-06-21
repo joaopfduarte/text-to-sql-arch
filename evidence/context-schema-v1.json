@@ -123,7 +123,7 @@
     "promptArtifactsHash": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$",
-      "description": "SHA-256 dos quatro ficheiros .md do manifesto v1"
+      "description": "SHA-256 dos quatro arquivos .md do manifesto v1"
     },
     "questionId": {
       "type": "string",

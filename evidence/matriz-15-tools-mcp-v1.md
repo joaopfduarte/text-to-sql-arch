@@ -10,7 +10,7 @@ tags:
 ## Fonte
 
 - Inventário: [Inventário Atlas API](inventario-atlas-api-para-mcp.md)
-- Swagger: `assets/scripts/atlas-api-swagger.json` (documentação académica offline)
+- Swagger: `assets/scripts/atlas-api-swagger.json` (documentação acadêmica offline)
 
 
 ## Catálogo fechado (15 tools)

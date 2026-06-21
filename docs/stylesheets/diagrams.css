@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-/* SVG ampliado no lightbox: usa a resolução nativa do ficheiro */
+/* SVG ampliado no lightbox: usa a resolução nativa do arquivo */
 .glightbox-container .gslide-image img {
   max-width: 95vw;
   max-height: 90vh;

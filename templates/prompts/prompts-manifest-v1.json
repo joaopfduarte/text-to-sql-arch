@@ -34,5 +34,5 @@
       "user": ["userTemplate"]
     }
   },
-  "notes": "Calcular promptArtifactsHash como SHA-256 da concatenação ordenada dos ficheiros listados em artifacts (conteúdo bruto, LF normalizado). Valor v1 atual: b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de"
+  "notes": "Calcular promptArtifactsHash como SHA-256 da concatenação ordenada dos arquivos listados em artifacts (conteúdo bruto, LF normalizado). Valor v1 atual: b95a272a118fa288452c5a72dfda07d31feb30ec1b56b58f52aa335d6cb910de"
 }

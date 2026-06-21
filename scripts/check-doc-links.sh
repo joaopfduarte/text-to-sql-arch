@@ -16,7 +16,7 @@ if [[ -n "$backtick" ]]; then
   FAIL=1
 fi
 
-# Rótulo contém extensão de ficheiro interno
+# Rótulo contém extensão de arquivo interno
 ext_links="$(python3 <<'PY'
 import re
 from pathlib import Path

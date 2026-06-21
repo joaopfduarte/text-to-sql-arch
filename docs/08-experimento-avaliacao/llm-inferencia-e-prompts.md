@@ -104,13 +104,13 @@ flowchart TB
 Antes de **qualquer** corrida da campanha:
 
 1. Congelar templates + properties + lista de tools em um `commitHash`.
-2. Calcular `promptArtifactsHash` (SHA-256 da concatenação ordenada dos quatro ficheiros `.md` do manifesto).
+2. Calcular `promptArtifactsHash` (SHA-256 da concatenação ordenada dos quatro arquivos `.md` do manifesto).
 3. Gravar `commitHash`, `promptVersion`, `inferenceConfigVersion`, `promptArtifactsHash` e `inferenceConfig` em
    `context.json` de **cada** corrida.
 
 ### Schema `context.json`
 
-Canónico: [Schema context.json v1](../evidence/context-schema-v1.json).
+Canônico: [Schema context.json v1](../evidence/context-schema-v1.json).
 
 Exemplos:
 

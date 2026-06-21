@@ -1,0 +1,46 @@
+---
+description: Exige português brasileiro (PT-BR) em toda redação do repositório
+alwaysApply: true
+---
+
+# Português brasileiro (PT-BR)
+
+Todo texto editorial deste repositório — documentação MkDocs, comentários, strings de UI, mensagens de script e mensagens de commit — deve ser redigido em **português brasileiro**.
+
+## Grafias proibidas (PT-PT → PT-BR)
+
+| PT-PT | PT-BR |
+|-------|-------|
+| arquitectura, arquitectural | arquitetura, arquitetural |
+| interactivo, interactiva, interactividade | interativo, interativa, interatividade |
+| canónico, canónica, canónicas | canônico, canônica, canônicas |
+| ficheiro, ficheiros | arquivo, arquivos |
+| secção | seção |
+| registar | registrar |
+| académica, académico | acadêmica, acadêmico |
+
+Respeite maiúsculas: `Canónico` → `Canônico`, `Ficheiro` → `Arquivo`.
+
+## Exemplos
+
+```markdown
+<!-- ❌ PT-PT -->
+Documentação canónica; estes ficheiros; secção baseline; registar commitHash.
+
+<!-- ✅ PT-BR -->
+Documentação canônica; estes arquivos; seção baseline; registrar commitHash.
+```
+
+## O que não alterar
+
+- Termos técnicos em inglês: `pipeline`, `baseline`, `tool calls`, identificadores de código.
+- Nomes de paths e slugs existentes (ex.: `10-rastreabilidade-academica.md`).
+- Política de anonimização e zero PII — ver regras de privacidade do projeto.
+
+## Validação
+
+Antes de concluir alterações de texto, execute:
+
+```bash
+bash scripts/check-pt-br.sh
+```

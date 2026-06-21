@@ -30,7 +30,7 @@ na comparação MCP vs baseline.
    `promptArtifactsHash` (schema [Schema context.json v1](../evidence/context-schema-v1.json)).
 6. Para `gpt-5.4-nano` (MCP): registrar `temperatureSupported: false` e omitir `temperature` no request,
    conforme limitação dos modelos GPT-5 de raciocínio.
-7. Documentação canónica: [Inferência e prompts](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
+7. Documentação canônica: [Inferência e prompts](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
 
 ## Consequências
 

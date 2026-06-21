@@ -58,7 +58,7 @@ for pat in "${PATTERNS[@]}"; do
 done
 
 while IFS= read -r f; do
-  echo "== ficheiro banido: $f =="
+  echo "== arquivo banido: $f =="
   FAIL=1
 done < <(find . -type f \
   ! -path './.git/*' \

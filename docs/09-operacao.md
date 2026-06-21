@@ -60,4 +60,4 @@ Convenções e exigências mínimas estão em [Evidências experimentais](eviden
 - TBD: definir orçamento mensal alvo no roadmap.
 
 !!! tip "Recomendado para leitura posterior"
-    Seguinte: **[Rastreabilidade académica](10-rastreabilidade-academica.md)** — relação com a documentação académica externa.
+    Seguinte: **[Rastreabilidade acadêmica](10-rastreabilidade-academica.md)** — relação com a documentação acadêmica externa.

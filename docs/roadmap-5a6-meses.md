@@ -48,10 +48,10 @@
 - Consolidação de evidências em `evidence/<runId>/`.
 - Revisão das ameaças à validade.
 
-### Fase 6 (semanas 17-22): redação da documentação académica externa
+### Fase 6 (semanas 17-22): redação da documentação acadêmica externa
 
-- Capítulo de desenvolvimento (documentação académica).
-- Capítulo de resultados (documentação académica).
+- Capítulo de desenvolvimento (documentação acadêmica).
+- Capítulo de resultados (documentação acadêmica).
 - Revisão metodológica e ajustes nos capítulos prévios.
 
 ### Fase 7 (semanas 22-24): endurecimento e preparação

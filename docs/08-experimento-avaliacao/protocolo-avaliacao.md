@@ -95,7 +95,7 @@ se aplica** ao baseline. Latência, tokens e FinOps **não** são métricas do m
 3. Comparar resposta agregada final com $G_i$ em [Gabarito da bateria](../evidence/gabarito-bateria-v1.md).
 4. Registrar métricas em [Métricas baseline v1](../evidence/baseline-metricas-v1.csv) (30 corridas).
 
-Detalhes operacionais: [Runbook de reprodutibilidade](runbook-reprodutibilidade.md) (secção `baseline-static`).
+Detalhes operacionais: [Runbook de reprodutibilidade](runbook-reprodutibilidade.md) (seção `baseline-static`).
 
 ### Infraestrutura (separada)
 

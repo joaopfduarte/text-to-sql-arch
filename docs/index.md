@@ -27,7 +27,7 @@ tags:
     class="dc-mx-auto dc-mb-8 dc-max-w-2xl dc-text-base md:dc-text-lg dc-leading-relaxed"
     style="color: var(--md-default-fg-color--light, var(--md-default-fg-color));"
   >
-    Arquitectura em que um agente LLM consulta metadados governados por catálogo canónico,
+    Arquitetura em que um agente LLM consulta metadados governados por catálogo canônico,
     invoca tools via Model Context Protocol, valida SQL estruturalmente e executa consultas
     sob ambiente controlado — com trilha completa por corrida.
   </p>
@@ -106,7 +106,7 @@ tags:
         class="dc-m-0 dc-text-sm dc-leading-relaxed"
         style="color: var(--md-default-fg-color--light, var(--md-default-fg-color));"
       >
-        Apache Atlas como fonte canónica de metadados; HDFS e Hive como substrato de dados
+        Apache Atlas como fonte canônica de metadados; HDFS e Hive como substrato de dados
         massivos do ambiente laboratorial.
       </p>
     </article>
@@ -137,7 +137,7 @@ tags:
     class="dc-m-0 dc-mb-6 dc-text-center dc-text-xl dc-font-semibold"
     style="color: var(--md-default-fg-color);"
   >
-    Demonstração interactiva
+    Demonstração interativa
   </h2>
   <mcp-architecture-viewer heading="Pipeline Text-to-SQL orientado a metadados"></mcp-architecture-viewer>
 </section>

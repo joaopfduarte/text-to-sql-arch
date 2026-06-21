@@ -1,55 +1,46 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
-import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import { customElement, property, state } from 'lit/decorators.js';
-import { FLOW_ICONS, lucideIconSvg, type FlowIconId } from '../icons/flow-icons';
 import tailwindStyles from '../styles/tailwind.css?inline';
 
 interface FlowStep {
-  id: FlowIconId;
   label: string;
   detail: string;
 }
 
 const FLOW: FlowStep[] = [
   {
-    id: 'query',
     label: 'Consulta NL',
     detail: 'Pergunta em linguagem natural sobre o domínio laboratorial.',
   },
   {
-    id: 'llm',
     label: 'Agente LLM',
     detail: 'Planeja tool calls e gera SQL sob orçamento de chamadas.',
   },
   {
-    id: 'mcp',
     label: 'Servidor MCP',
     detail: 'Expõe tools tipadas: catálogo, schema, validação e execução.',
   },
   {
-    id: 'atlas',
     label: 'Apache Atlas',
-    detail: 'Catálogo canónico governa entidades, linhagem e metadados.',
+    detail: 'Catálogo canônico governa entidades, linhagem e metadados.',
   },
   {
-    id: 'validate',
     label: 'Validação SQL',
     detail: 'Parse Calcite, aderência estrutural e execução Hive controlada.',
   },
   {
-    id: 'storage',
     label: 'Hive / HDFS',
     detail: 'Dados massivos consultados sob ambiente laboratorial.',
   },
 ];
 
+const STEP_INTERVAL_MS = 5000;
+
 @customElement('mcp-architecture-viewer')
 export class McpArchitectureViewer extends LitElement {
-  @property({ type: String }) heading = 'Fluxo arquitectural interactivo';
+  @property({ type: String }) heading = 'Fluxo arquitetural interativo';
 
   @state() private activeIndex = 0;
-
-  @state() private autoPlay = false;
 
   private timer: ReturnType<typeof setInterval> | undefined;
 
@@ -63,20 +54,38 @@ export class McpArchitectureViewer extends LitElement {
         font-family: var(--md-text-font, system-ui, sans-serif);
       }
 
-      .step-icon-wrap {
+      .step-number {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+        border: 2px solid color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 25%, transparent);
         color: var(--md-default-fg-color--light, #757575);
-        transition: color 0.2s ease;
+        background: color-mix(in srgb, var(--md-default-fg-color, #333) 4%, transparent);
+        transition:
+          color 0.25s ease,
+          border-color 0.25s ease,
+          background 0.25s ease,
+          box-shadow 0.25s ease;
       }
 
-      .step-icon-wrap.is-active {
+      .step-number.is-active {
+        color: var(--md-primary-bg-color, #fff);
+        border-color: var(--md-primary-fg-color, #546e7a);
+        background: var(--md-primary-fg-color, #546e7a);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 20%, transparent);
+      }
+
+      .step-number.is-past {
         color: var(--md-primary-fg-color, #546e7a);
-      }
-
-      .step-icon-wrap.is-past {
-        color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 70%, transparent);
+        border-color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 55%, transparent);
+        background: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 12%, transparent);
       }
 
       @keyframes pulse-line {
@@ -111,29 +120,22 @@ export class McpArchitectureViewer extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.startAutoPlay();
+    this.startAutoAdvance();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.stopAutoPlay();
+    this.stopAutoAdvance();
   }
 
-  updated(changed: Map<string, unknown>) {
-    if (changed.has('autoPlay')) {
-      this.autoPlay ? this.startAutoPlay() : this.stopAutoPlay();
-    }
-  }
-
-  private startAutoPlay() {
-    this.stopAutoPlay();
-    if (!this.autoPlay) return;
+  private startAutoAdvance() {
+    this.stopAutoAdvance();
     this.timer = setInterval(() => {
       this.activeIndex = (this.activeIndex + 1) % FLOW.length;
-    }, 2200);
+    }, STEP_INTERVAL_MS);
   }
 
-  private stopAutoPlay() {
+  private stopAutoAdvance() {
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = undefined;
@@ -142,16 +144,12 @@ export class McpArchitectureViewer extends LitElement {
 
   private selectStep(index: number) {
     this.activeIndex = index;
-    if (this.autoPlay) this.startAutoPlay();
+    this.startAutoAdvance();
   }
 
-  private toggleAutoPlay() {
-    this.autoPlay = !this.autoPlay;
-  }
-
-  private renderStepIcon(stepId: FlowIconId, isActive: boolean, isPast: boolean) {
-    const iconClass = [
-      'step-icon-wrap',
+  private renderStepNumber(stepNumber: number, isActive: boolean, isPast: boolean) {
+    const numberClass = [
+      'step-number',
       isActive ? 'is-active' : '',
       isPast ? 'is-past' : '',
     ]
@@ -159,9 +157,7 @@ export class McpArchitectureViewer extends LitElement {
       .join(' ');
 
     return html`
-      <span class=${iconClass}>
-        ${unsafeSVG(lucideIconSvg(FLOW_ICONS[stepId]).outerHTML)}
-      </span>
+      <span class=${numberClass} aria-hidden="true">${stepNumber}</span>
     `;
   }
 
@@ -173,28 +169,12 @@ export class McpArchitectureViewer extends LitElement {
         class="dc-rounded-xl dc-border dc-border-md-primary/20 dc-bg-md-surface dc-p-6"
         aria-label=${this.heading}
       >
-        <div
-          class="dc-mb-6 dc-flex dc-flex-wrap dc-items-center dc-justify-between dc-gap-3"
+        <h2
+          class="dc-m-0 dc-mb-6 dc-text-lg dc-font-semibold"
+          style="color: var(--md-default-fg-color);"
         >
-          <h2
-            class="dc-m-0 dc-text-lg dc-font-semibold"
-            style="color: var(--md-default-fg-color);"
-          >
-            ${this.heading}
-          </h2>
-          <button
-            type="button"
-            class="dc-rounded dc-border dc-border-md-primary/30 dc-px-3 dc-py-1.5 dc-text-xs dc-font-medium dc-cursor-pointer dc-transition hover:dc-opacity-80"
-            style="
-              background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
-              color: var(--md-primary-fg-color);
-            "
-            @click=${this.toggleAutoPlay}
-            aria-pressed=${this.autoPlay}
-          >
-            ${this.autoPlay ? 'Pausar animação' : 'Reproduzir fluxo'}
-          </button>
-        </div>
+          ${this.heading}
+        </h2>
 
         <div
           class="dc-mb-6 dc-flex dc-flex-wrap dc-items-stretch dc-justify-center dc-gap-1 md:dc-gap-0"
@@ -217,7 +197,7 @@ export class McpArchitectureViewer extends LitElement {
                   style="color: var(--md-default-fg-color);"
                   @click=${() => this.selectStep(index)}
                 >
-                  ${this.renderStepIcon(step.id, isActive, isPast)}
+                  ${this.renderStepNumber(index + 1, isActive, isPast)}
                   <span class="dc-text-[0.65rem] dc-font-semibold dc-leading-tight dc-uppercase dc-tracking-wide">
                     ${step.label}
                   </span>
@@ -266,8 +246,7 @@ export class McpArchitectureViewer extends LitElement {
           class="dc-mt-4 dc-mb-0 dc-text-center dc-text-xs"
           style="color: var(--md-default-fg-color--light, #757575);"
         >
-          Selecione uma etapa ou reproduza o fluxo para percorrer o pipeline Text-to-SQL orientado
-          a metadados.
+          O fluxo avança automaticamente a cada 5 segundos. Selecione uma etapa para focar nela.
         </p>
       </section>
     `;

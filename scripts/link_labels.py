@@ -1,4 +1,4 @@
-"""Mapa canónico de rótulos para links internos da documentação."""
+"""Mapa canônico de rótulos para links internos da documentação."""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ PAGE_TITLES: dict[str, str] = {
     "08-experimento-avaliacao/metricas-formulas.md": "Métricas e fórmulas",
     "08-experimento-avaliacao/runbook-reprodutibilidade.md": "Runbook de reprodutibilidade",
     "09-operacao.md": "Operação",
-    "10-rastreabilidade-academica.md": "Rastreabilidade académica",
+    "10-rastreabilidade-academica.md": "Rastreabilidade acadêmica",
     "11-migracao-diagramas-tikz-plantuml.md": "Migração de diagramas TikZ/PlantUML",
     "roadmap-5a6-meses.md": "Roadmap",
     "adr/README.md": "Índice de ADRs",

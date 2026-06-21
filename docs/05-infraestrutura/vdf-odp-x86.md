@@ -3,7 +3,7 @@
 !!! info "Recomendado para leitura prévia"
     - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
     - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
-    - **[VDF ODP x86](../assets/scripts/ODP-VDF.xml)** — definição canónica da stack alvo.
+    - **[VDF ODP x86](../assets/scripts/ODP-VDF.xml)** — definição canônica da stack alvo.
 
 
 ### VDF canônico (alvo da pesquisa)

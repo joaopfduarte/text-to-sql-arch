@@ -9,7 +9,7 @@ tags:
 !!! info "Recomendado para leitura prévia"
     - **[Visão AWS](visao-aws.md)** — topologia de rede e componentes na nuvem.
     - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
-    - **[VDF ODP x86](vdf-odp-x86.md)** — stack canónica ODP 1.3.1.0 para o cluster.
+    - **[VDF ODP x86](vdf-odp-x86.md)** — stack canônica ODP 1.3.1.0 para o cluster.
     - **[ADR-0002 Topologia AWS](../adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.
 
 
