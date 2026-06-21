@@ -6,11 +6,15 @@ repo_name: GitLab
 edit_uri: edit/main/docs/
 strict: true
 
+extra:
+  nav_title: Home
+
 extra_css:
   - stylesheets/diagrams.css
 
 theme:
   name: material
+  custom_dir: overrides
   language: pt-BR
   palette:
     - scheme: default
