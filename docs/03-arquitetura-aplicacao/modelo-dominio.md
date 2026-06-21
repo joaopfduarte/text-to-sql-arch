@@ -69,7 +69,7 @@
 - `com.tcc.text2sql.config`
 - `com.tcc.text2sql.observability`
 
-Detalhamento dos pacotes em [`../06-implementacao-java/modulos-spring.md`](../06-implementacao-java/modulos-spring.md) e das portas em [`../06-implementacao-java/ports-adapters.md`](../06-implementacao-java/ports-adapters.md).
+Detalhamento dos pacotes em [Módulos Spring](../06-implementacao-java/modulos-spring.md) e das portas em [Ports e adapters](../06-implementacao-java/ports-adapters.md).
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Camadas MCP](camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.

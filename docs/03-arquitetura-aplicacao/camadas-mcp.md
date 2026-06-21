@@ -10,20 +10,20 @@
 
 ![Camadas MCP](../diagrams/camadas-mcp.svg){ .uml-diagram width="100%" }
 
-Fonte: [`camadas-mcp.puml`](../diagrams/camadas-mcp.puml)
+Fonte: [Diagrama de camadas MCP](../diagrams/camadas-mcp.svg)
 
 ### Catálogo fechado v1
 
 O catálogo é **fechado em quinze tools** somente leitura: três basais (protocolo mínimo de avaliação) e doze
 complementares. As basais já têm porta e adapter definidos. Para as doze complementares, porta e adapter são
 **planejados** (desenho lógico, sem código Java nesta etapa), com referência cruzada ao endpoint Atlas. A seleção
-está em [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
+está em [Matriz de 15 tools MCP](../evidence/matriz-15-tools-mcp-v1.md).
 
 ### Tabela `tool -> porta Java -> contrato JSON -> erro canônico`
 
 Erros canônicos abreviados: `inv` = `invalid_input`, `nf` = `not_found`, `cu` = `catalog_unavailable`,
 `to` = `timeout`, `ie` = `internal_error`. Contrato JSON de cada tool em
-[`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
+[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md).
 
 #### Tools basais
 
@@ -52,7 +52,7 @@ Erros canônicos abreviados: `inv` = `invalid_input`, `nf` = `not_found`, `cu` =
 
 ### Envelope padrão
 
-Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` definido em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md). Em caso de erro, `status = "error"`, `data = null`, `error` preenchido com código canônico e mensagem.
+Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` definido em [Contratos MCP v1](../07-contratos-mcp/contracts-v1.md). Em caso de erro, `status = "error"`, `data = null`, `error` preenchido com código canônico e mensagem.
 
 ### Política de tool budget
 
@@ -63,14 +63,14 @@ Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` d
 
 ### Convenções de implementação
 
-- Pacote: `com.tcc.text2sql.adapters.in.mcp` (servidor) e `com.tcc.text2sql.adapters.out.atlas` (adapter). Ver [`../06-implementacao-java/modulos-spring.md`](../06-implementacao-java/modulos-spring.md).
+- Pacote: `com.tcc.text2sql.adapters.in.mcp` (servidor) e `com.tcc.text2sql.adapters.out.atlas` (adapter). Ver [Módulos Spring](../06-implementacao-java/modulos-spring.md).
 - Validação de entrada com Bean Validation (`jakarta.validation`).
 - Timeout por chamada: configurável; default sugerido 5 s para Atlas.
 - Retry com backoff exponencial limitado a 2 tentativas para `catalog_unavailable` ou `timeout`.
 
 ### Versionamento
 
-- `toolVersion` segue o `vMAJOR.MINOR.PATCH` descrito em [`contracts-v1.md`](../07-contratos-mcp/contracts-v1.md).
+- `toolVersion` segue o `vMAJOR.MINOR.PATCH` descrito em [Contratos MCP v1](../07-contratos-mcp/contracts-v1.md).
 - Quebra de contrato implica nova versão `MAJOR` e ADR específico.
 
 !!! tip "Recomendado para leitura posterior"

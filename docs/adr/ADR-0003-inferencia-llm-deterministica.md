@@ -15,13 +15,13 @@ na comparação MCP vs baseline.
 1. Fixar **`temperature = 0`** na campanha v1 com `gemini-3.5-flash` (baseline e MCP quando aplicável).
 2. **Não definir `topP`** quando `temperature` estiver fixada (política Spring AI).
 3. Fixar **`maxOutputTokens = 4096`** por request na v1.
-4. Publicar templates versionados em [`../templates/prompts/`](../templates/prompts/) com bloco
+4. Publicar templates versionados em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) com bloco
    **`system-shared-v1.md` idêntico** entre modos (regra de paridade anti-alucinação).
 5. Estender `context.json` com `promptVersion`, `inferenceConfig`, `promptArtifacts` e
-   `promptArtifactsHash` (schema [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)).
+   `promptArtifactsHash` (schema [Schema context.json v1](../evidence/context-schema-v1.json)).
 6. Para `gpt-5.4-nano` (MCP): registrar `temperatureSupported: false` e omitir `temperature` no request,
    conforme limitação dos modelos GPT-5 de raciocínio.
-7. Documentação canónica: [`../08-experimento-avaliacao/llm-inferencia-e-prompts.md`](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
+7. Documentação canónica: [Inferência e prompts](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
 
 ## Consequências
 
@@ -47,6 +47,6 @@ na comparação MCP vs baseline.
 
 ## Referências
 
-- [`llm-inferencia-e-prompts.md`](../08-experimento-avaliacao/llm-inferencia-e-prompts.md)
-- [`prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json)
-- [`context-schema-v1.json`](../evidence/context-schema-v1.json)
+- [Inferência e prompts](../08-experimento-avaliacao/llm-inferencia-e-prompts.md)
+- [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json)
+- [Schema context.json v1](../evidence/context-schema-v1.json)

@@ -18,13 +18,13 @@ A **camada semântica e de metadados** expõe ao agente inventário estruturado 
 | Lineage entre tabelas Hive e arquivos HDFS | Apache Atlas | Atlas |
 | Classificações (PII, sensível) | Apache Atlas | Operador do catálogo |
 | Export relacional completo (92 entidades) | Offline (fora do git) | Pesquisador |
-| Schema exposto ao agente LLM | Apache Atlas | [`schema-massa-teste.md`](schema-massa-teste.md) |
+| Schema exposto ao agente LLM | Apache Atlas | [Schema massa de teste](schema-massa-teste.md) |
 
 Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offline serve à carga, não à corrida.
 
 ### Ordem operacional
 
-1. Pré-processamento: extrair 92 entidades e mascarar PII ([`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)).
+1. Pré-processamento: extrair 92 entidades e mascarar PII ([Carga no cluster](carga-cluster-laboratorio.md)).
 2. Carga: HDFS + tabelas Hive externas em `massa_teste_laboratorio`.
 3. Catálogo: entidades visíveis no Atlas.
 4. Validação: tools basais MCP retornam o schema esperado.
@@ -39,15 +39,15 @@ Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offli
 | `hive_column` | Hive Metastore | Colunas auditáveis (`col_*`). |
 | Relacionamentos (FK lógica) | Manifesto + API Atlas | Hive não preserva FKs originais. |
 
-Restrição: o adaptador Atlas traduz relacionamentos a partir do manifesto documentado em [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md).
+Restrição: o adaptador Atlas traduz relacionamentos a partir do manifesto documentado em [Banco laboratorial](banco-laboratorio-dominio.md).
 
 ### Contratos expostos
 
-Ver [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md). Catálogo fechado de quinze tools: [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
+Ver [Contratos MCP v1](../07-contratos-mcp/contracts-v1.md). Catálogo fechado de quinze tools: [Matriz de 15 tools MCP](../evidence/matriz-15-tools-mcp-v1.md).
 
 ### Disponibilidade
 
-- Atlas no cluster ([`../05-infraestrutura/cluster-hadoop.md`](../05-infraestrutura/cluster-hadoop.md)).
+- Atlas no cluster ([Cluster Hadoop](../05-infraestrutura/cluster-hadoop.md)).
 - ADR-0002: co-localizado no master ODP AWS x86_64.
 
 !!! tip "Recomendado para leitura posterior"

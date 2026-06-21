@@ -79,7 +79,7 @@ flowchart TB
 
 ### Regra de paridade (anti-confound)
 
-1. **Todo** texto anti-alucinação estrutural reside em [`system-shared-v1.md`](../templates/prompts/system-shared-v1.md)
+1. **Todo** texto anti-alucinação estrutural reside em [System prompt compartilhado v1](../templates/prompts/system-shared-v1.md)
    e deve ser **idêntico** entre modos.
 2. Diferença material permitida:
    - **MCP:** instruções de descoberta via tools; sem DDL integral no prompt.
@@ -93,7 +93,7 @@ flowchart TB
 |-------|----------|
 | `promptVersion` | `"v1"` |
 | `inferenceConfigVersion` | `"v1"` |
-| Manifesto | [`prompts-manifest-v1.json`](../templates/prompts/prompts-manifest-v1.json) |
+| Manifesto | [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) |
 
 Antes de **qualquer** corrida da campanha:
 
@@ -104,12 +104,12 @@ Antes de **qualquer** corrida da campanha:
 
 ### Schema `context.json`
 
-Canónico: [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json).
+Canónico: [Schema context.json v1](../evidence/context-schema-v1.json).
 
 Exemplos:
 
-- Baseline: [`../evidence/examples/context-baseline-v1.example.json`](../evidence/examples/context-baseline-v1.example.json)
-- MCP: [`../evidence/examples/context-mcp-v1.example.json`](../evidence/examples/context-mcp-v1.example.json)
+- Baseline: [Exemplo context baseline v1](../evidence/examples/context-baseline-v1.example.json)
+- MCP: [Exemplo context MCP v1](../evidence/examples/context-mcp-v1.example.json)
 
 ### Mapeamento Spring AI
 
@@ -125,7 +125,7 @@ Exemplos:
 | `app.llm.prompt.base-path` | `promptArtifacts.*` | raiz dos templates |
 
 O adaptador `SpringAiLlmAdapter` deve serializar a configuração efetiva do request e o hash dos templates
-em `context.json` via `RunEvidencePort` (ver [`../06-implementacao-java/ports-adapters.md`](../06-implementacao-java/ports-adapters.md)).
+em `context.json` via `RunEvidencePort` (ver [Ports e adapters](../06-implementacao-java/ports-adapters.md)).
 
 Equivalentes Spring AI (Google):
 
@@ -142,11 +142,11 @@ modelo.
 1. **Determinismo imperfeito:** `temperature=0` e `seed` reduzem variância, mas provedores comerciais podem
    produzir SQL distinto entre corridas.
 2. **D12 (baseline):** DDL integral no prompt aumenta contexto de entrada e constitui ameaça à validade
-   interna do comparativo — ver [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md) § Limitação D12.
+   interna do comparativo — ver [Runbook de reprodutibilidade](runbook-reprodutibilidade.md) § Limitação D12.
 3. **Revisão humana:** o rascunho operacional v1 dos templates está sujeito à aprovação do autor antes do
    congelamento da campanha.
 
-Decisão formal: [`../adr/ADR-0003-inferencia-llm-deterministica.md`](../adr/ADR-0003-inferencia-llm-deterministica.md).
+Decisão formal: [ADR-0003 Inferência LLM](../adr/ADR-0003-inferencia-llm-deterministica.md).
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.

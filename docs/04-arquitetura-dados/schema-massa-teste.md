@@ -15,7 +15,7 @@ A massa de avaliação corresponde a **92 entidades** com identificadores opacos
 
 - O schema é fixado antes das corridas finais e versionado em `datasetVersion`.
 - Alteração do schema exposto exige nova versão e ADR.
-- Dados sensíveis são mascarados na carga conforme [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md).
+- Dados sensíveis são mascarados na carga conforme [Carga no cluster](carga-cluster-laboratorio.md).
 
 ### Inventário completo (92 entidades)
 
@@ -256,8 +256,8 @@ Volume observado ~1388 MB (fixo, sem amplificação sintética no MVP).
 ### Artefatos esperados
 
 - Export relacional anonimizado (offline).
-- Script de carga: [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md).
-- Bateria e gabarito em [`../evidence/`](../evidence/README.md).
+- Script de carga: [Carga no cluster](carga-cluster-laboratorio.md).
+- Bateria e gabarito em [Índice de ADRs](../evidence/README.md).
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Catálogo Atlas](catalogo-atlas.md)** — camada semântica e metadados no cluster.

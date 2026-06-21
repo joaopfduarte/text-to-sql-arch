@@ -29,7 +29,7 @@ Justificativa: suporta `massa_teste_laboratorio` (~1,4 GB) com replicação HDFS
 | Apache Atlas | Catálogo MCP |
 | HBase / Solr / Kafka | Dependências do Atlas |
 
-Referência de versões: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
+Referência de versões: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 
 ### Portas (pendente Terraform)
 

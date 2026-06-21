@@ -9,17 +9,17 @@
 - **baselineStaticV1:** `gemini-3.5-flash`, 30 corridas (12/06/2026) — ver § Campanha baseline-static v1
 
 Fundamentado no DDL canônico das 92 tabelas
-([`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)). Cada entrada traz a cola SQL de
+([Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)). Cada entrada traz a cola SQL de
 referência em SGBD relacional, pronta para rodar contra a massa fixa `massa_teste_laboratorio`. Os valores numéricos
 esperados dependem da massa e serão conferidos pelo autor na execução.
 
 O mapa de migração completo está em
-[`matriz-cobertura-bateria-v1.md`](matriz-cobertura-bateria-v1.md).
+[Matriz de cobertura da bateria](matriz-cobertura-bateria-v1.md).
 
 
 ## Convenção CSV (`dificuldade`)
 
-Valores em [`bateria-30-perguntas-v1.csv`](bateria-30-perguntas-v1.csv): `SIMPLES`, `MÉDIA`, `COMPLEXA`
+Valores em [Bateria de 30 perguntas](bateria-30-perguntas-v1.csv): `SIMPLES`, `MÉDIA`, `COMPLEXA`
 (10 linhas cada).
 
 
@@ -55,7 +55,7 @@ nos commits `b67e63e` e `41974c7`, as trinta colas passaram sem erro.
 
 Campanha inicial do comparativo simples, **apenas** com Google `gemini-3.5-flash` (`campaignId`:
 `baseline-static`). Registro linha a linha em
-[`baseline-metricas-v1.csv`](baseline-metricas-v1.csv).
+[Métricas baseline v1](baseline-metricas-v1.csv).
 
 | Indicador | Valor |
 |-----------|-------|

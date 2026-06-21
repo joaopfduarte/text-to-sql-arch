@@ -52,7 +52,7 @@
 | `app.llm.openai.max-output-tokens` | Limite de tokens de saída OpenAI (v1: **4096**). |
 | `app.llm.google.max-output-tokens` | Limite de tokens de saída Google (v1: **4096**). |
 | `app.llm.prompt.version` | Versão dos templates de prompt (`v1`). |
-| `app.llm.prompt.base-path` | Raiz dos templates ([`../templates/prompts/`](../templates/prompts/)). |
+| `app.llm.prompt.base-path` | Raiz dos templates ([Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json)). |
 | `app.evidence.base-path` | Caminho/bucket para `evidence/<runId>/`. |
 | `app.run-id.template` | Template para geração de `runId`. |
 
@@ -62,7 +62,7 @@
 - Casos de uso são pequenos e orquestram portas; regras ficam em serviços de domínio.
 - Logs estruturados (JSONL) emitidos por `observability` com base em eventos do harness.
 - A combinação `provider + model-version + datasetVersion + runId` deve ser gravada em `context.json` para reprodutibilidade.
-- Hiperparâmetros de inferência e `promptVersion` seguem [`../08-experimento-avaliacao/llm-inferencia-e-prompts.md`](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
+- Hiperparâmetros de inferência e `promptVersion` seguem [Inferência e prompts](../08-experimento-avaliacao/llm-inferencia-e-prompts.md).
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Ports e adapters](ports-adapters.md)** — portas hexagonais e adaptadores.

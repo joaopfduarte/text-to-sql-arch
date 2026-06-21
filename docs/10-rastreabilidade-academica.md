@@ -13,14 +13,14 @@ Este repositório publica apenas documentação operacional **anonimizada**. A d
 
 | Bloco operacional | Capítulo académico (externo) | Conteúdo |
 |-------------------|------------------------------|----------|
-| [`01-produto-e-escopo.md`](01-produto-e-escopo.md) | Introdução | Objetivo, escopo, erro estrutural |
-| [`02-arquitetura-negocio.md`](02-arquitetura-negocio.md) | Introdução / metodologia | Blocos e contratos macro |
-| [`03-arquitetura-aplicacao/`](03-arquitetura-aplicacao/visao-logica.md) | Metodologia | Camadas, MCP, fluxo |
-| [`04-arquitetura-dados/`](04-arquitetura-dados/banco-laboratorio-dominio.md) | Metodologia | Massa laboratorial anonimizada |
-| [`05-infraestrutura/`](05-infraestrutura/visao-aws.md) | Metodologia / desenvolvimento | Cluster AWS |
-| [`07-contratos-mcp/`](07-contratos-mcp/contracts-v1.md) | Desenvolvimento | Contratos MCP v1 |
-| [`08-experimento-avaliacao/`](08-experimento-avaliacao/protocolo-avaliacao.md) | Metodologia / resultados | Protocolo e métricas |
-| [`evidence/`](evidence/README.md) | Resultados | Corridas e bateria |
+| [Produto e escopo](01-produto-e-escopo.md) | Introdução | Objetivo, escopo, erro estrutural |
+| [Arquitetura de negócio](02-arquitetura-negocio.md) | Introdução / metodologia | Blocos e contratos macro |
+| [Visão lógica](03-arquitetura-aplicacao/visao-logica.md) | Metodologia | Camadas, MCP, fluxo |
+| [Banco laboratorial](04-arquitetura-dados/banco-laboratorio-dominio.md) | Metodologia | Massa laboratorial anonimizada |
+| [Visão AWS](05-infraestrutura/visao-aws.md) | Metodologia / desenvolvimento | Cluster AWS |
+| [Contratos MCP v1](07-contratos-mcp/contracts-v1.md) | Desenvolvimento | Contratos MCP v1 |
+| [Protocolo de avaliação](08-experimento-avaliacao/protocolo-avaliacao.md) | Metodologia / resultados | Protocolo e métricas |
+| [Evidências experimentais](evidence/README.md) | Resultados | Corridas e bateria |
 
 ### Regras
 

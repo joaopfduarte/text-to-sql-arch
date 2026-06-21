@@ -15,7 +15,7 @@
 ### Convenção de schema do catálogo
 
 - `schema = "laboratorio"`: subconjunto laboratorial (92 entidades) registrado em Apache Atlas como database `hive_db` chamado `schema_laboratorio`.
-- Nomes de tabela e coluna usam identificadores opacos (`tbl_*`, `col_*`) conforme [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md).
+- Nomes de tabela e coluna usam identificadores opacos (`tbl_*`, `col_*`) conforme [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md).
 
 ### Envelope padrão de resposta
 
@@ -35,7 +35,7 @@ Em erro, `status = "error"`, `data = null` e `error = { "code": "<canonico>", "m
 
 O catálogo da v1 é **fechado em quinze tools** de descoberta somente leitura sobre o Apache Atlas (API REST v2):
 três basais (protocolo mínimo de avaliação) e doze complementares (mesmo contrato, mesmo orçamento de 10 chamadas por
-sessão). Evidência da seleção em [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
+sessão). Evidência da seleção em [Matriz de 15 tools MCP](../evidence/matriz-15-tools-mcp-v1.md).
 
 | # | Tool MCP | Papel | Operação Atlas (v2) |
 |---|----------|-------|---------------------|
@@ -104,7 +104,7 @@ Entrada:
 }
 ```
 
-Saída (colunas observadas em [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)):
+Saída (colunas observadas em [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)):
 
 ```json
 {
@@ -133,7 +133,7 @@ Entrada:
 }
 ```
 
-Saída (FKs confirmadas em [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)):
+Saída (FKs confirmadas em [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)):
 
 ```json
 {
@@ -516,7 +516,7 @@ Exemplo de resposta de erro:
 
 ### Mapeamento para validação estrutural
 
-A taxonomia de erro do envelope MCP é distinta da classificação de desfecho do SQL (`structural_error`, `syntax_error`, `execution_error`, `success`) registrada pelo harness. Ver [`../08-experimento-avaliacao/protocolo-avaliacao.md`](../08-experimento-avaliacao/protocolo-avaliacao.md). Erros MCP indicam falha de descoberta; erros do SQL indicam falha do agente em produzir um SQL aderente ao catálogo.
+A taxonomia de erro do envelope MCP é distinta da classificação de desfecho do SQL (`structural_error`, `syntax_error`, `execution_error`, `success`) registrada pelo harness. Ver [Protocolo de avaliação](../08-experimento-avaliacao/protocolo-avaliacao.md). Erros MCP indicam falha de descoberta; erros do SQL indicam falha do agente em produzir um SQL aderente ao catálogo.
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Protocolo de avaliação](../08-experimento-avaliacao/protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.

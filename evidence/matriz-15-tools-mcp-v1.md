@@ -2,7 +2,7 @@
 
 ## Fonte
 
-- Inventário: [`inventario-atlas-api-para-mcp.md`](inventario-atlas-api-para-mcp.md)
+- Inventário: [Inventário Atlas API](inventario-atlas-api-para-mcp.md)
 - Swagger: `assets/scripts/atlas-api-swagger.json` (pacote académico externo)
 
 
@@ -49,5 +49,5 @@ As três basais permanecem inalteradas e cobrem o percurso mínimo de schema lin
 ## Erros canônicos
 
 Todas as tools usam o envelope e a taxonomia de
-[`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md):
+[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md):
 `invalid_input`, `not_found`, `catalog_unavailable`, `timeout`, `internal_error`.

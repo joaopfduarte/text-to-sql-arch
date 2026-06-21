@@ -3,7 +3,7 @@
 ## Escopo LaTeX (`assets/figures/`)
 
 Convenção: `cap-x-<conteudo>.pdf` na raiz; fontes em `code/{tikz,mmd,drawio}/`.
-Dicionário completo: [`assets/figures/README.md`](assets/figures/README.md).
+Dicionário completo: [Inventário de figuras LaTeX](assets/figures/README.md).
 
 | Figura final (`assets/figures/*.pdf`) | Fonte canônica | Usado em |
 |---|---|---|

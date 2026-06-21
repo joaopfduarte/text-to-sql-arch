@@ -39,11 +39,11 @@
 
 ![Diagrama mestre](diagrams/diagrama-mestre.svg){ .uml-diagram width="100%" }
 
-Fonte: [`diagrams/diagrama-mestre.puml`](diagrams/diagrama-mestre.puml)
+Fonte: [Diagrama mestre — fluxo lógico](diagrams/diagrama-mestre.svg)
 
 ### Fronteira deste documento
 
-Este documento descreve o "o quê" do sistema. O "como" (camadas, padrões, tecnologia) está em [`03-arquitetura-aplicacao/visao-logica.md`](03-arquitetura-aplicacao/visao-logica.md) e o vocabulário de domínio em [`03-arquitetura-aplicacao/modelo-dominio.md`](03-arquitetura-aplicacao/modelo-dominio.md).
+Este documento descreve o "o quê" do sistema. O "como" (camadas, padrões, tecnologia) está em [Visão lógica](03-arquitetura-aplicacao/visao-logica.md) e o vocabulário de domínio em [Modelo de domínio](03-arquitetura-aplicacao/modelo-dominio.md).
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[Visão lógica](03-arquitetura-aplicacao/visao-logica.md)** — camadas, fluxo operacional e zonas de rede.

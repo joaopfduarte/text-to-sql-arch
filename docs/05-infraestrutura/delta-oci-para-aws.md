@@ -26,7 +26,7 @@ O legado usava instâncias ARM pequenas, stack ODP 1.2.x e rede `/24` simples. O
 
 1. Provisionar VPC/subnets/security groups AWS.
 2. Instalar ODP 1.3.1.0 via VDF canônico.
-3. Carregar massa conforme [`../04-arquitetura-dados/carga-cluster-laboratorio.md`](../04-arquitetura-dados/carga-cluster-laboratorio.md).
+3. Carregar massa conforme [Carga no cluster](../04-arquitetura-dados/carga-cluster-laboratorio.md).
 4. Registrar catálogo Atlas e validar tools MCP basais.
 
 !!! tip "Recomendado para leitura posterior"

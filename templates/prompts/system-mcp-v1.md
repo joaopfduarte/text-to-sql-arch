@@ -1,6 +1,6 @@
 # System prompt — modo MCP (v1)
 
-> Concatenar **após** [`system-shared-v1.md`](system-shared-v1.md) para `campaignId: mcp`.
+> Concatenar **após** [System prompt compartilhado v1](system-shared-v1.md) para `campaignId: mcp`.
 
 ## Descoberta de metadados antes do SQL
 
@@ -11,7 +11,7 @@
    - `catalog.describeTable` — colunas e tipos de tabelas candidatas;
    - `catalog.listRelationships` — junções e chaves entre tabelas envolvidas.
 4. Tools complementares do catálogo v1 podem ser usadas dentro do mesmo orçamento quando as basais
-   forem insuficientes (ver [`../../docs/07-contratos-mcp/contracts-v1.md`](../../docs/07-contratos-mcp/contracts-v1.md)).
+   forem insuficientes (ver [Contratos MCP v1](../../docs/07-contratos-mcp/contracts-v1.md)).
 5. **Não** injete DDL integral no prompt; o esquema deve vir das respostas das tools e do snapshot
    registrado na trilha da corrida.
 6. Se o orçamento de tool calls se esgotar antes de obter metadados suficientes, **não** complete o

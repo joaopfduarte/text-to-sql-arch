@@ -9,14 +9,14 @@ Um pipeline Text-to-SQL onde o agente LLM **consulta a camada semântica e de me
 
 | Etapa | Documento | Tempo |
 |-------|-----------|-------|
-| 1 | [`01-produto-e-escopo.md`](01-produto-e-escopo.md) — o que é, o que está fora do escopo | 3 min |
-| 2 | [`02-arquitetura-negocio.md`](02-arquitetura-negocio.md) — blocos de negócio e contratos macro | 3 min |
-| 3 | [`diagrams/diagrama-mestre.puml`](diagrams/diagrama-mestre.puml) — fluxo lógico ponta a ponta | 2 min |
-| 4 | [`03-arquitetura-aplicacao/visao-logica.md`](03-arquitetura-aplicacao/visao-logica.md) — camadas e fluxo operacional | 4 min |
-| 5 | [`03-arquitetura-aplicacao/camadas-mcp.md`](03-arquitetura-aplicacao/camadas-mcp.md) — tabela tool → porta → contrato → erro | 4 min |
-| 6 | [`04-arquitetura-dados/banco-laboratorio-dominio.md`](04-arquitetura-dados/banco-laboratorio-dominio.md) — onde estão os dados | 3 min |
-| 7 | [`05-infraestrutura/visao-aws.md`](05-infraestrutura/visao-aws.md) — topologia AWS | 3 min |
-| 8 | [`diagrams/cluster-topologia-aws.puml`](diagrams/cluster-topologia-aws.puml) — diagrama de deployment | 3 min |
+| 1 | [Produto e escopo](01-produto-e-escopo.md) — o que é, o que está fora do escopo | 3 min |
+| 2 | [Arquitetura de negócio](02-arquitetura-negocio.md) — blocos de negócio e contratos macro | 3 min |
+| 3 | [Diagrama mestre — fluxo lógico](diagrams/diagrama-mestre.svg) — fluxo lógico ponta a ponta | 2 min |
+| 4 | [Visão lógica](03-arquitetura-aplicacao/visao-logica.md) — camadas e fluxo operacional | 4 min |
+| 5 | [Camadas MCP](03-arquitetura-aplicacao/camadas-mcp.md) — tabela tool → porta → contrato → erro | 4 min |
+| 6 | [Banco laboratorial](04-arquitetura-dados/banco-laboratorio-dominio.md) — onde estão os dados | 3 min |
+| 7 | [Visão AWS](05-infraestrutura/visao-aws.md) — topologia AWS | 3 min |
+| 8 | [Topologia do cluster AWS](diagrams/cluster-topologia-aws.svg) — diagrama de deployment | 3 min |
 
 Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semântica e a massa.
 
@@ -24,11 +24,11 @@ Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semâ
 
 | Papel | Leitura seguinte |
 |-------|------------------|
-| Dev Java | [`06-implementacao-java/modulos-spring.md`](06-implementacao-java/modulos-spring.md), [`06-implementacao-java/ports-adapters.md`](06-implementacao-java/ports-adapters.md), [`07-contratos-mcp/contracts-v1.md`](07-contratos-mcp/contracts-v1.md) |
-| Engenheiro de infra/dados | [`05-infraestrutura/cluster-hadoop.md`](05-infraestrutura/cluster-hadoop.md), [`05-infraestrutura/delta-oci-para-aws.md`](05-infraestrutura/delta-oci-para-aws.md), [`05-infraestrutura/vdf-odp-x86.md`](05-infraestrutura/vdf-odp-x86.md), [`04-arquitetura-dados/carga-cluster-laboratorio.md`](04-arquitetura-dados/carga-cluster-laboratorio.md) |
-| Operador de corridas | [`08-experimento-avaliacao/protocolo-avaliacao.md`](08-experimento-avaliacao/protocolo-avaliacao.md), [`08-experimento-avaliacao/llm-inferencia-e-prompts.md`](08-experimento-avaliacao/llm-inferencia-e-prompts.md), [`08-experimento-avaliacao/runbook-reprodutibilidade.md`](08-experimento-avaliacao/runbook-reprodutibilidade.md), [`09-operacao.md`](09-operacao.md) |
-| Pessoa que escreve o TCC | [`10-rastreabilidade-academica.md`](10-rastreabilidade-academica.md) |
-| Pessoa que governa decisões | [`adr/README.md`](adr/README.md) (ADR-0001, ADR-0002 e ADR-0003) |
+| Dev Java | [Módulos Spring](06-implementacao-java/modulos-spring.md), [Ports e adapters](06-implementacao-java/ports-adapters.md), [Contratos MCP v1](07-contratos-mcp/contracts-v1.md) |
+| Engenheiro de infra/dados | [Cluster Hadoop](05-infraestrutura/cluster-hadoop.md), [Delta legado para AWS](05-infraestrutura/delta-oci-para-aws.md), [VDF ODP x86](05-infraestrutura/vdf-odp-x86.md), [Carga no cluster](04-arquitetura-dados/carga-cluster-laboratorio.md) |
+| Operador de corridas | [Protocolo de avaliação](08-experimento-avaliacao/protocolo-avaliacao.md), [Inferência e prompts](08-experimento-avaliacao/llm-inferencia-e-prompts.md), [Runbook de reprodutibilidade](08-experimento-avaliacao/runbook-reprodutibilidade.md), [Operação](09-operacao.md) |
+| Pessoa que escreve o TCC | [Rastreabilidade académica](10-rastreabilidade-academica.md) |
+| Pessoa que governa decisões | [Índice de ADRs](adr/README.md) (ADR-0001, ADR-0002 e ADR-0003) |
 
 ### Vocabulário mínimo
 

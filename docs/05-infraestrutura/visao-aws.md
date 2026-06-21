@@ -16,17 +16,17 @@
 
 ![Topologia AWS lógica](../diagrams/visao-aws-logica.svg){ .uml-diagram width="100%" }
 
-Fonte: [`visao-aws-logica.puml`](../diagrams/visao-aws-logica.puml)
+Fonte: [Diagrama lógico AWS](../diagrams/visao-aws-logica.svg)
 
 ### Diagramas de referência
 
 ![Topologia do cluster](../diagrams/cluster-topologia-aws.svg){ .uml-diagram width="100%" }
 
-Fonte: [`cluster-topologia-aws.puml`](../diagrams/cluster-topologia-aws.puml)
+Fonte: [Topologia do cluster AWS](../diagrams/cluster-topologia-aws.svg)
 
 ![Rede AWS](../diagrams/rede-aws.svg){ .uml-diagram width="100%" }
 
-Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
+Fonte: [Diagrama de rede AWS](../diagrams/rede-aws.svg)
 
 ### Mapeamento de zonas lógicas para AWS
 
@@ -41,7 +41,7 @@ Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
 
 | Categoria | Recurso AWS | Tamanho/nota | Estado |
 |-----------|-------------|--------------|--------|
-| Rede | VPC `/24` | Equivalente ao `vcn-data-lake` (ver [`delta-oci-para-aws.md`](delta-oci-para-aws.md)). | Definir Terraform |
+| Rede | VPC `/24` | Equivalente ao `vcn-data-lake` (ver [Delta legado para AWS](delta-oci-para-aws.md)). | Definir Terraform |
 | Rede | Subnets pública + privada | Mínimo 2 subnets em AZs diferentes para futuro HA. | Definir Terraform |
 | Computação | EC2 master (1 instância) | `m6i.2xlarge` (8 vCPU, 32 GiB), Atlas co-localizado. | Definido (ADR-0002) |
 | Computação | EC2 workers (3 instâncias) | `m6i.2xlarge` (8 vCPU, 32 GiB) para HDFS/YARN/Hive/HBase/Kafka. | Definido (ADR-0002) |
@@ -54,7 +54,7 @@ Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
 
 ### Ambiente legado
 
-Um ambiente legado subdimensionado foi descartado deste repositório. Diferenças consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
+Um ambiente legado subdimensionado foi descartado deste repositório. Diferenças consolidadas em [Delta legado para AWS](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

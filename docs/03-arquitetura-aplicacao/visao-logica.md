@@ -39,7 +39,7 @@ Diagrama:
 
 ![Diagrama mestre](../diagrams/diagrama-mestre.svg){ .uml-diagram width="100%" }
 
-Fonte: [`../diagrams/diagrama-mestre.puml`](../diagrams/diagrama-mestre.puml)
+Fonte: [Diagrama mestre — fluxo lógico](../diagrams/diagrama-mestre.svg)
 
 ### Zonas lógicas de rede
 
@@ -54,7 +54,7 @@ Diagrama lógico:
 
 ![Rede de implantação](../diagrams/rede-implantacao.svg){ .uml-diagram width="100%" }
 
-Fonte: [`../diagrams/rede-implantacao.puml`](../diagrams/rede-implantacao.puml). Para a tradução física para AWS, ver [`../05-infraestrutura/visao-aws.md`](../05-infraestrutura/visao-aws.md).
+Fonte: [Diagrama de rede lógica](../diagrams/rede-implantacao.svg). Para a tradução física para AWS, ver [Visão AWS](../05-infraestrutura/visao-aws.md).
 
 ### Padrões de engenharia
 

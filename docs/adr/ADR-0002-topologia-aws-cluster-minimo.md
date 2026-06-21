@@ -7,13 +7,13 @@
 
 O TCC precisa de um ambiente laboratorial reprodutível para executar o pipeline Text-to-SQL com catálogo Apache Atlas e massa anonimizada (`massa_teste_laboratorio`, 92 entidades).
 
-A stack alvo está fechada no VDF canônico [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml):
+A stack alvo está fechada no VDF canônico [VDF ODP x86](../assets/scripts/ODP-VDF.xml):
 
 - ODP 1.3.1.0 (build 294)
 - Ubuntu 24.04
 - arquitetura x86_64
 
-Um ambiente legado subdimensionado (ARM/OCI) foi descartado deste repositório; ver comparativo em [`../05-infraestrutura/delta-oci-para-aws.md`](../05-infraestrutura/delta-oci-para-aws.md).
+Um ambiente legado subdimensionado (ARM/OCI) foi descartado deste repositório; ver comparativo em [Delta legado para AWS](../05-infraestrutura/delta-oci-para-aws.md).
 
 ## Decisão
 

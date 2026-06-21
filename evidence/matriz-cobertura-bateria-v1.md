@@ -6,9 +6,9 @@
 - **Commit de referência:** `9985067` (rebalanceamento MÉDIA/COMPLEXA e 6 cenários)
 - **Revisão humana:** aprovada (11/06/2026)
 
-Fontes: [`bateria-30-perguntas-v1.csv`](bateria-30-perguntas-v1.csv) e
-[`gabarito-bateria-v1.md`](gabarito-bateria-v1.md). Tabelas conforme o DDL das 92
-([`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)).
+Fontes: [Bateria de 30 perguntas](bateria-30-perguntas-v1.csv) e
+[Gabarito da bateria](gabarito-bateria-v1.md). Tabelas conforme o DDL das 92
+([Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)).
 
 A bateria adopta **6 cenários** (remove `Listagem simples` e `Filtro por enum` da taxonomia anterior de 8).
 Sincronizada com `documentacao-academica-externa/cap4-metodologia.tex` (Onda 2, T11).

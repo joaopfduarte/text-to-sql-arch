@@ -10,6 +10,7 @@ pages:
   script:
     - pip install -r requirements.txt
     - bash scripts/check-anonymization.sh
+    - bash scripts/check-doc-links.sh
     - bash scripts/prepare-docs.sh
     - mkdocs build --strict --site-dir public
   artifacts:

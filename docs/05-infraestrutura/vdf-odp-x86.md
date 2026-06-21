@@ -8,7 +8,7 @@
 
 ### VDF canônico (alvo TCC)
 
-Fonte de verdade: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
+Fonte de verdade: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 
 | Campo | Valor |
 |-------|-------|
@@ -37,7 +37,7 @@ Fonte de verdade: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xm
 
 ### VDF legado OCI (somente referência)
 
-Fonte: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
+Fonte: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 
 | Campo | Valor |
 |-------|-------|

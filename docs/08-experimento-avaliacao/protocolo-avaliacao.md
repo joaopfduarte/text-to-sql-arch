@@ -21,20 +21,20 @@ Cada execução da cadeia:
 - Limite máximo fixado: **10 chamadas por sessão** (equivalente a 10 por pergunta).
 - O consumo efetivo é registrado em `metrics.json` (`toolCalls`) e na trilha `session.jsonl`.
 - Exceder o limite classifica a corrida como `budget_exceeded`.
-- O catálogo MCP expõe **quinze tools** de descoberta (ver [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md)). A avaliação MVP prioriza as três basais (`catalog.listTables`, `catalog.describeTable`, `catalog.listRelationships`); as doze complementares ficam disponíveis sob o mesmo orçamento.
+- O catálogo MCP expõe **quinze tools** de descoberta (ver [Contratos MCP v1](../07-contratos-mcp/contracts-v1.md)). A avaliação MVP prioriza as três basais (`catalog.listTables`, `catalog.describeTable`, `catalog.listRelationships`); as doze complementares ficam disponíveis sob o mesmo orçamento.
 
 ### Configuração LLM (pré-requisito de cada corrida)
 
-Antes das etapas do protocolo, fixar configuração conforme [`llm-inferencia-e-prompts.md`](llm-inferencia-e-prompts.md):
+Antes das etapas do protocolo, fixar configuração conforme [Inferência e prompts](llm-inferencia-e-prompts.md):
 
 | Item | Política v1 |
 |------|-------------|
 | `temperature` | **0** (`gemini-3.5-flash`, baseline); omitido em `gpt-5.4-nano` |
 | `maxOutputTokens` | **4096** |
 | `topP` | omitido (`null`) |
-| Prompts | Templates v1 em [`../templates/prompts/`](../templates/prompts/) |
+| Prompts | Templates v1 em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) |
 | Paridade | Instruções anti-alucinação idênticas em `system-shared-v1.md` |
-| Registro | `context.json` conforme [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json) |
+| Registro | `context.json` conforme [Schema context.json v1](../evidence/context-schema-v1.json) |
 
 ### Etapas do protocolo
 
@@ -72,14 +72,14 @@ se aplica** ao baseline. Latência, tokens e FinOps **não** são métricas do m
 ### Protocolo do comparativo simples (`baseline-static`)
 
 0. Auditar executabilidade das colas $G_i$ (§ Auditoria em
-   [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md)).
-1. Anexar [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) ao prompt (injecção estática; 0 tool calls).
-2. Submeter cada pergunta de [`../evidence/bateria-30-perguntas-v1.csv`](../evidence/bateria-30-perguntas-v1.csv)
+   [Gabarito da bateria](../evidence/gabarito-bateria-v1.md)).
+1. Anexar [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md) ao prompt (injecção estática; 0 tool calls).
+2. Submeter cada pergunta de [Bateria de 30 perguntas](../evidence/bateria-30-perguntas-v1.csv)
    com `modelVersion` `gemini-3.5-flash` (campanha v1, um único provedor).
-3. Comparar resposta agregada final com $G_i$ em [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md).
-4. Registrar métricas em [`../evidence/baseline-metricas-v1.csv`](../evidence/baseline-metricas-v1.csv) (30 corridas).
+3. Comparar resposta agregada final com $G_i$ em [Gabarito da bateria](../evidence/gabarito-bateria-v1.md).
+4. Registrar métricas em [Métricas baseline v1](../evidence/baseline-metricas-v1.csv) (30 corridas).
 
-Detalhes operacionais: [`runbook-reprodutibilidade.md`](runbook-reprodutibilidade.md) (secção `baseline-static`).
+Detalhes operacionais: [Runbook de reprodutibilidade](runbook-reprodutibilidade.md) (secção `baseline-static`).
 
 ### Infraestrutura (separada)
 
@@ -121,8 +121,8 @@ Fontes: docs em `guide-docs/external-documentation/`.
 - snapshot de metadados usados (MCP)
 - lista de SQLs (até 5) e desfechos por statement (MCP)
 - resultado de parse e execução
-- `metrics.json` conforme [`metricas-formulas.md`](metricas-formulas.md)
-- `context.json` conforme [`../evidence/context-schema-v1.json`](../evidence/context-schema-v1.json)
+- `metrics.json` conforme [Métricas e fórmulas](metricas-formulas.md)
+- `context.json` conforme [Schema context.json v1](../evidence/context-schema-v1.json)
 - `seed`, `modelVersion`, `promptVersion`, `commitHash`
 
 !!! tip "Recomendado para leitura posterior"
