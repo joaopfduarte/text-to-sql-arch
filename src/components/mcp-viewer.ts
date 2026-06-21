@@ -246,13 +246,6 @@ export class McpArchitectureViewer extends LitElement {
             ${active.detail}
           </p>
         </div>
-
-        <p
-          class="dc-mt-4 dc-mb-0 dc-text-center dc-text-xs"
-          style="color: var(--md-default-fg-color--light, #757575);"
-        >
-          O fluxo avança automaticamente a cada 5 segundos. Selecione uma etapa para focar nela.
-        </p>
       </section>
     `;
   }
