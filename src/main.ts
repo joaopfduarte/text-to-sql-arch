@@ -1,8 +1,11 @@
 import './components/mcp-viewer';
 import './styles/global.css';
+import { renderAccessMonthYear } from './access-date';
+
+renderAccessMonthYear();
 
 if (typeof document$ !== 'undefined') {
   document$.subscribe(() => {
-    // Lit re-conecta automaticamente; hook reservado para componentes com canvas/WebGL.
+    renderAccessMonthYear();
   });
 }

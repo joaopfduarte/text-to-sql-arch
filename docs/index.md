@@ -151,7 +151,7 @@ tags:
     · Documentação v1.0
   </p>
   <p class="dc-m-0">
-    Conteúdo técnico da pesquisa — sem dados pessoais ou institucionais.
+    Conteúdo técnico da pesquisa — <span data-access-month-year></span>.
   </p>
 </footer>
 
