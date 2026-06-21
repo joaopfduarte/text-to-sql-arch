@@ -7,7 +7,7 @@ function syncDocsAssets(): Plugin {
   return {
     name: 'sync-docs-assets',
     writeBundle() {
-      execSync('bash scripts/sync-vite-assets.sh', {
+      execSync('node scripts/sync-vite-assets.mjs', {
         cwd: resolve(__dirname),
         stdio: 'inherit',
       });
