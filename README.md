@@ -31,8 +31,8 @@ documentation/
       mcp-architecture-viewer/
         index.ts           # import side-effect
         ui/                # <mcp-architecture-viewer>
-  assets/scripts/ODP-VDF.xml
   docs/                    # site MkDocs (anonimizado), por domínio
+    assets/scripts/ODP-VDF.xml
     index.md
     guias/                 # leitura-rapida, glossario-anonimizacao
     produto/               # escopo
@@ -112,7 +112,7 @@ A camada interativa segue Feature-Sliced Design em `src/`, com aliases `@shared/
    import '@features/<nome>';
    ```
 
-4. Gere o bundle: `npm run build` (produz `docs/assets/js/bundle.js` e `docs/assets/css/style.css`, ambos gitignored).
+4. Gere o bundle: `npm run build` (Vite grava em `.vite-out/`; o sync copia para `docs/assets/js/bundle.js` e `docs/assets/css/style.css`, ambos gitignored).
 
 5. Use no Markdown, isolando do parser do MkDocs:
 

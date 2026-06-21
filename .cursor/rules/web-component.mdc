@@ -12,7 +12,7 @@ Cada componente interativo vive em `src/features/<nome>/` e é um elemento Lit r
 1. `src/features/<nome>/ui/<tag>.ts` com `@customElement('<tag>')` estendendo `LitElement`.
 2. `src/features/<nome>/index.ts` com `import './ui/<tag>';` (side-effect).
 3. Registrar em `src/main.ts`: `import '@features/<nome>';`.
-4. `npm run build` gera `docs/assets/js/bundle.js` e `docs/assets/css/style.css`.
+4. `npm run build` grava em `.vite-out/` e sincroniza para `docs/assets/js/bundle.js` e `docs/assets/css/style.css`.
 
 ## Usar no Markdown
 

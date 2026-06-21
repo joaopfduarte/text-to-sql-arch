@@ -34,7 +34,7 @@ for f in "$ROOT/diagrams"/*.{puml,svg}; do
   link_dir "$ROOT/diagrams/$base" "$DOCS/diagrams/$base"
 done
 
-mkdir -p "$DOCS/assets/scripts"
-if [[ -f "$ROOT/assets/scripts/ODP-VDF.xml" ]]; then
-  link_dir "$ROOT/assets/scripts/ODP-VDF.xml" "$DOCS/assets/scripts/ODP-VDF.xml"
+if [[ ! -f "$ASSETS/scripts/ODP-VDF.xml" ]]; then
+  echo "prepare-docs: ausente $ASSETS/scripts/ODP-VDF.xml" >&2
+  exit 1
 fi

@@ -9,13 +9,15 @@ A camada Node (Vite/Lit/Tailwind) e a camada Python (MkDocs/Material) se comunic
 
 ## Único ponto de contato
 
-- Vite produz `docs/assets/js/bundle.js` e `docs/assets/css/style.css` (IIFE, lib mode).
+- Vite produz `.vite-out/js/bundle.js` e `.vite-out/css/style.css` (IIFE, lib mode).
+- O plugin `sync-docs-assets` em `vite.config.ts` copia esses artefatos para `docs/assets/js/` e `docs/assets/css/` via `scripts/sync-vite-assets.sh`.
 - MkDocs consome via `extra_javascript` / `extra_css` em `mkdocs.yml`.
-- Ambos os artefatos são **gitignored**.
+- `.vite-out/` e os bundles em `docs/assets/` são **gitignored**.
 
 ## Regras
 
-- `vite.config.ts` deve manter `emptyOutDir: false` (preserva symlinks de `docs/assets/scripts/`).
+- `vite.config.ts` deve manter `outDir: .vite-out` — **nunca** `docs/assets` (escrever dentro de `docs/` dispara rebuild acidental do MkDocs nessa pasta).
+- `scripts/sync-vite-assets.sh` limpa lixo de MkDocs em `docs/assets/` antes de copiar js/css.
 - Build de produção: `mkdocs build --strict --site-dir public`. **Nunca** `--site-dir docs/assets` (ver regra `mkdocs-output`).
 - `docs/assets/` é fonte versionada: apenas `js/`, `css/`, `scripts/`. Validar com `bash scripts/check-docs-assets.sh`.
-- `evidence/`, `templates/`, `diagrams/` e `assets/scripts/` permanecem na raiz e são expostos a `docs/` via symlinks por `scripts/prepare-docs.sh`. Não os mova para `src/` nem para `docs/`.
+- `evidence/`, `templates/` e `diagrams/` permanecem na raiz e são expostos a `docs/` via symlinks por `scripts/prepare-docs.sh`. `docs/assets/scripts/ODP-VDF.xml` é versionado em `docs/assets/`.

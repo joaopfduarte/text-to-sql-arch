@@ -28,10 +28,16 @@ mkdocs build --site-dir docs/assets
 docs/assets/
   js/          → .gitkeep + bundle.js (gerado por npm run build)
   css/         → .gitkeep + style.css (gerado por npm run build)
-  scripts/     → symlink para assets/scripts/ (prepare-docs.sh)
+  scripts/     → ODP-VDF.xml (VDF canônico, versionado)
 ```
 
 Qualquer outro arquivo ou pasta em `docs/assets/` (ex.: `index.html`, `diagrams/`, `assets/assets/`, capítulos `01-*`) é **lixo de build** e deve ser removido.
+
+## Por que isso acontece
+
+`docs/assets/` fica **dentro** de `docs/` (docs_dir do MkDocs). Se o Vite ou o MkDocs escreverem aí, watchers locais podem disparar `mkdocs build --site-dir docs/assets` e replicar o site inteiro na pasta de fonte.
+
+**Prevenção:** o Vite grava em `.vite-out/` (fora de `docs/`); `scripts/sync-vite-assets.sh` copia só `bundle.js` e `style.css` para `docs/assets/` e remove lixo residual.
 
 ## Antes de concluir alterações
 
@@ -41,4 +47,4 @@ Se rodou MkDocs ou serviu localmente, verifique:
 bash scripts/check-docs-assets.sh
 ```
 
-Se o check falhar, apague o conteúdo indevido e regenere apenas `npm run build` + `bash scripts/prepare-docs.sh`.
+Se o check falhar, rode `bash scripts/clean-docs-assets.sh` ou `npm run build` (o sync limpa e recopia).

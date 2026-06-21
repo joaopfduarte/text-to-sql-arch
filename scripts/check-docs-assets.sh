@@ -40,6 +40,14 @@ if [[ -d "$ASSETS/assets" ]]; then
   report "docs/assets/assets/ presente (output MkDocs aninhado)"
 fi
 
+if [[ ! -f "$ASSETS/scripts/ODP-VDF.xml" ]]; then
+  report "ausente docs/assets/scripts/ODP-VDF.xml (VDF canônico)"
+fi
+
+while IFS= read -r extra; do
+  report "arquivo extra em docs/assets/scripts/: $(basename "$extra")"
+done < <(find "$ASSETS/scripts" -mindepth 1 ! -name ODP-VDF.xml 2>/dev/null)
+
 if [[ "$FAILED" -eq 1 ]]; then
   echo "Remova o lixo de build e use: mkdocs build --strict --site-dir public" >&2
   exit 1

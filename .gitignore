@@ -1,5 +1,7 @@
 site/
 public/
+.vite-out/
+dist/
 .cache/
 venv/
 .venv/
@@ -18,11 +20,12 @@ docs/assets/js/*
 !docs/assets/js/.gitkeep
 docs/assets/css/*
 !docs/assets/css/.gitkeep
+docs/assets/scripts/*
+!docs/assets/scripts/ODP-VDF.xml
 
 # Symlinks gerados por scripts/prepare-docs.sh
 /docs/evidence
 /docs/templates
-/docs/assets/scripts
 /docs/diagrams/*.puml
 /docs/diagrams/*.svg
 

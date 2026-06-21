@@ -55,7 +55,6 @@ PAGE_TITLES: dict[str, str] = {
     "templates/review-metodologico-template.md": "Template de revisão metodológica",
     "templates/adr-template.md": "Template de ADR",
     "assets/scripts/ODP-VDF.xml": "VDF ODP x86",
-    "assets/figures/README.md": "Inventário de figuras LaTeX",
 }
 
 DIAGRAM_TITLES: dict[str, str] = {
