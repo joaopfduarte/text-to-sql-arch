@@ -32,10 +32,10 @@ tags:
     sob ambiente controlado — com trilha completa por corrida.
   </p>
   <div class="dc-flex dc-flex-wrap dc-items-center dc-justify-center dc-gap-3">
-    <a href="00-leitura-rapida/" class="md-button md-button--primary">
+    <a href="guias/leitura-rapida/" class="md-button md-button--primary">
       Ler a Documentação
     </a>
-    <a href="03-arquitetura-aplicacao/visao-logica/" class="md-button">
+    <a href="arquitetura/aplicacao/visao-logica/" class="md-button">
       Explorar Arquitetura
     </a>
   </div>

@@ -5,8 +5,14 @@ stages:
 build:components:
   stage: build
   image: node:22-alpine
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
   script:
-    - npm ci
+    - npm ci --cache .npm --prefer-offline
     - npm run typecheck
     - npm run build
   artifacts:

@@ -1,0 +1,21 @@
+---
+description: Contrato de integração entre Vite (Node) e MkDocs (Python)
+alwaysApply: true
+---
+
+# Contrato Vite ↔ MkDocs
+
+A camada Node (Vite/Lit/Tailwind) e a camada Python (MkDocs/Material) se comunicam por **um único ponto de contato**.
+
+## Único ponto de contato
+
+- Vite produz `docs/assets/js/bundle.js` e `docs/assets/css/style.css` (IIFE, lib mode).
+- MkDocs consome via `extra_javascript` / `extra_css` em `mkdocs.yml`.
+- Ambos os artefatos são **gitignored**.
+
+## Regras
+
+- `vite.config.ts` deve manter `emptyOutDir: false` (preserva symlinks de `docs/assets/scripts/`).
+- Build de produção: `mkdocs build --strict --site-dir public`. **Nunca** `--site-dir docs/assets` (ver regra `mkdocs-output`).
+- `docs/assets/` é fonte versionada: apenas `js/`, `css/`, `scripts/`. Validar com `bash scripts/check-docs-assets.sh`.
+- `evidence/`, `templates/`, `diagrams/` e `assets/scripts/` permanecem na raiz e são expostos a `docs/` via symlinks por `scripts/prepare-docs.sh`. Não os mova para `src/` nem para `docs/`.

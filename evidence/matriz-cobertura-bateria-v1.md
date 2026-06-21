@@ -15,7 +15,7 @@ tags:
 
 Fontes: [Bateria de 30 perguntas](bateria-30-perguntas-v1.csv) e
 [Gabarito da bateria](gabarito-bateria-v1.md). Tabelas conforme o DDL das 92
-([Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)).
+([Schema massa de teste](../arquitetura/dados/schema-massa-teste.md)).
 
 A bateria adopta **6 cenários** (remove `Listagem simples` e `Filtro por enum` da taxonomia anterior de 8).
 Sincronizada com `documentacao-academica-externa/cap4-metodologia.tex` (Onda 2, T11).

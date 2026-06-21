@@ -56,5 +56,5 @@ As três basais permanecem inalteradas e cobrem o percurso mínimo de schema lin
 ## Erros canônicos
 
 Todas as tools usam o envelope e a taxonomia de
-[Contratos MCP v1](../07-contratos-mcp/contracts-v1.md):
+[Contratos MCP v1](../arquitetura/contratos-mcp/contracts-v1.md):
 `invalid_input`, `not_found`, `catalog_unavailable`, `timeout`, `internal_error`.

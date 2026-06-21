@@ -1,9 +1,6 @@
 site_name: Arquitetura MCP para Text-to-SQL Orientado a Metadados
 site_description: Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
-repo_url: https://gitlab.com/joaopedrofduarte-studien/back-end-practice/tcc/documentation
-repo_name: GitLab
-edit_uri: edit/main/docs/
 strict: true
 
 extra:
@@ -42,6 +39,7 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
+    - navigation.instant.prefetch
     - navigation.tracking
     - navigation.sections
     - navigation.expand
@@ -59,12 +57,40 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
+    - content.footnote.tooltips
     - content.action.view
 
 plugins:
   - search
   - social
   - tags
+  - redirects:
+      redirect_maps:
+        '00-leitura-rapida.md': 'guias/leitura-rapida.md'
+        '00-glossario-anonimizacao.md': 'guias/glossario-anonimizacao.md'
+        '01-produto-e-escopo.md': 'produto/escopo.md'
+        '02-arquitetura-negocio.md': 'arquitetura/negocio.md'
+        '03-arquitetura-aplicacao/visao-logica.md': 'arquitetura/aplicacao/visao-logica.md'
+        '03-arquitetura-aplicacao/camadas-mcp.md': 'arquitetura/aplicacao/camadas-mcp.md'
+        '03-arquitetura-aplicacao/modelo-dominio.md': 'arquitetura/aplicacao/modelo-dominio.md'
+        '04-arquitetura-dados/banco-laboratorio-dominio.md': 'arquitetura/dados/banco-laboratorio-dominio.md'
+        '04-arquitetura-dados/schema-massa-teste.md': 'arquitetura/dados/schema-massa-teste.md'
+        '04-arquitetura-dados/catalogo-atlas.md': 'arquitetura/dados/catalogo-atlas.md'
+        '04-arquitetura-dados/carga-cluster-laboratorio.md': 'arquitetura/dados/carga-cluster-laboratorio.md'
+        '05-infraestrutura/visao-aws.md': 'infraestrutura/visao-aws.md'
+        '05-infraestrutura/cluster-hadoop.md': 'infraestrutura/cluster-hadoop.md'
+        '05-infraestrutura/delta-oci-para-aws.md': 'infraestrutura/delta-oci-para-aws.md'
+        '05-infraestrutura/vdf-odp-x86.md': 'infraestrutura/vdf-odp-x86.md'
+        '06-implementacao-java/modulos-spring.md': 'implementacao/modulos-spring.md'
+        '06-implementacao-java/ports-adapters.md': 'implementacao/ports-adapters.md'
+        '07-contratos-mcp/contracts-v1.md': 'arquitetura/contratos-mcp/contracts-v1.md'
+        '08-experimento-avaliacao/protocolo-avaliacao.md': 'experimento/protocolo-avaliacao.md'
+        '08-experimento-avaliacao/llm-inferencia-e-prompts.md': 'experimento/llm-inferencia-e-prompts.md'
+        '08-experimento-avaliacao/metricas-formulas.md': 'experimento/metricas-formulas.md'
+        '08-experimento-avaliacao/runbook-reprodutibilidade.md': 'experimento/runbook-reprodutibilidade.md'
+        '09-operacao.md': 'operacao/index.md'
+        '10-rastreabilidade-academica.md': 'pesquisa/rastreabilidade-academica.md'
+        'roadmap-5a6-meses.md': 'pesquisa/roadmap.md'
   - glightbox:
       touchNavigation: true
       loop: false
@@ -81,35 +107,39 @@ plugins:
 
 nav:
   - Início: index.md
-  - Leitura rápida: 00-leitura-rapida.md
-  - Produto e escopo: 01-produto-e-escopo.md
-  - Arquitetura de negócio: 02-arquitetura-negocio.md
-  - Arquitetura de aplicação:
-    - Visão lógica: 03-arquitetura-aplicacao/visao-logica.md
-    - Camadas MCP: 03-arquitetura-aplicacao/camadas-mcp.md
-    - Modelo de domínio: 03-arquitetura-aplicacao/modelo-dominio.md
-  - Arquitetura de dados:
-    - Banco laboratorial: 04-arquitetura-dados/banco-laboratorio-dominio.md
-    - Schema massa de teste: 04-arquitetura-dados/schema-massa-teste.md
-    - Catálogo Atlas: 04-arquitetura-dados/catalogo-atlas.md
-    - Carga no cluster: 04-arquitetura-dados/carga-cluster-laboratorio.md
+  - Guias:
+    - Glossário de anonimização: guias/glossario-anonimizacao.md
+    - Leitura rápida: guias/leitura-rapida.md
+  - Produto e escopo: produto/escopo.md
+  - Arquitetura:
+    - Arquitetura de negócio: arquitetura/negocio.md
+    - Aplicação:
+      - Visão lógica: arquitetura/aplicacao/visao-logica.md
+      - Camadas MCP: arquitetura/aplicacao/camadas-mcp.md
+      - Modelo de domínio: arquitetura/aplicacao/modelo-dominio.md
+    - Dados:
+      - Banco laboratorial: arquitetura/dados/banco-laboratorio-dominio.md
+      - Schema massa de teste: arquitetura/dados/schema-massa-teste.md
+      - Catálogo Atlas: arquitetura/dados/catalogo-atlas.md
+      - Carga no cluster: arquitetura/dados/carga-cluster-laboratorio.md
+    - Contratos MCP: arquitetura/contratos-mcp/contracts-v1.md
   - Infraestrutura:
-    - Visão AWS: 05-infraestrutura/visao-aws.md
-    - Cluster Hadoop: 05-infraestrutura/cluster-hadoop.md
-    - Delta legado para AWS: 05-infraestrutura/delta-oci-para-aws.md
-    - VDF ODP x86: 05-infraestrutura/vdf-odp-x86.md
+    - Visão AWS: infraestrutura/visao-aws.md
+    - Cluster Hadoop: infraestrutura/cluster-hadoop.md
+    - Delta legado para AWS: infraestrutura/delta-oci-para-aws.md
+    - VDF ODP x86: infraestrutura/vdf-odp-x86.md
   - Implementação Java:
-    - Módulos Spring: 06-implementacao-java/modulos-spring.md
-    - Ports e adapters: 06-implementacao-java/ports-adapters.md
-  - Contratos MCP: 07-contratos-mcp/contracts-v1.md
+    - Módulos Spring: implementacao/modulos-spring.md
+    - Ports e adapters: implementacao/ports-adapters.md
   - Experimento e avaliação:
-    - Protocolo: 08-experimento-avaliacao/protocolo-avaliacao.md
-    - Inferência e prompts: 08-experimento-avaliacao/llm-inferencia-e-prompts.md
-    - Métricas e fórmulas: 08-experimento-avaliacao/metricas-formulas.md
-    - Runbook reprodutibilidade: 08-experimento-avaliacao/runbook-reprodutibilidade.md
-  - Operação: 09-operacao.md
-  - Rastreabilidade acadêmica: 10-rastreabilidade-academica.md
-  - Roadmap: roadmap-5a6-meses.md
+    - Protocolo: experimento/protocolo-avaliacao.md
+    - Inferência e prompts: experimento/llm-inferencia-e-prompts.md
+    - Métricas e fórmulas: experimento/metricas-formulas.md
+    - Runbook reprodutibilidade: experimento/runbook-reprodutibilidade.md
+  - Operação: operacao/index.md
+  - Pesquisa:
+    - Rastreabilidade acadêmica: pesquisa/rastreabilidade-academica.md
+    - Roadmap: pesquisa/roadmap.md
   - Evidências experimentais:
     - Índice: evidence/README.md
     - Gabarito da bateria: evidence/gabarito-bateria-v1.md
@@ -125,6 +155,7 @@ nav:
 markdown_extensions:
   - meta
   - abbr
+  - footnotes
   - admonition
   - pymdownx.details
   - pymdownx.arithmatex:
@@ -132,6 +163,7 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
+  - pymdownx.keys
   - pymdownx.snippets:
       base_path: docs
   - pymdownx.superfences:

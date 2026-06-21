@@ -11,60 +11,61 @@ DOCS = ROOT / "docs"
 
 # (título curto, descrição para o leitor)
 PAGE_BLURBS: dict[str, tuple[str, str]] = {
-    "00-leitura-rapida.md": ("Leitura rápida", "visão geral do sistema em até 30 minutos"),
-    "01-produto-e-escopo.md": ("Produto e escopo", "artefato, recorte metodológico e decisões de ambiente"),
-    "02-arquitetura-negocio.md": ("Arquitetura de negócio", "atores, blocos e contratos macro"),
-    "03-arquitetura-aplicacao/visao-logica.md": ("Visão lógica", "camadas, fluxo operacional e zonas de rede"),
-    "03-arquitetura-aplicacao/camadas-mcp.md": ("Camadas MCP", "mapeamento tool → porta → contrato → erro"),
-    "03-arquitetura-aplicacao/modelo-dominio.md": ("Modelo de domínio", "bounded contexts e agregados"),
-    "04-arquitetura-dados/banco-laboratorio-dominio.md": (
+    "guias/leitura-rapida.md": ("Leitura rápida", "visão geral do sistema em até 30 minutos"),
+    "guias/glossario-anonimizacao.md": ("Glossário de anonimização", "vocabulário genérico obrigatório do artefato"),
+    "produto/escopo.md": ("Produto e escopo", "artefato, recorte metodológico e decisões de ambiente"),
+    "arquitetura/negocio.md": ("Arquitetura de negócio", "atores, blocos e contratos macro"),
+    "arquitetura/aplicacao/visao-logica.md": ("Visão lógica", "camadas, fluxo operacional e zonas de rede"),
+    "arquitetura/aplicacao/camadas-mcp.md": ("Camadas MCP", "mapeamento tool → porta → contrato → erro"),
+    "arquitetura/aplicacao/modelo-dominio.md": ("Modelo de domínio", "bounded contexts e agregados"),
+    "arquitetura/dados/banco-laboratorio-dominio.md": (
         "Banco laboratorial",
         "domínios genéricos, entidades-âncora e FKs",
     ),
-    "04-arquitetura-dados/schema-massa-teste.md": (
+    "arquitetura/dados/schema-massa-teste.md": (
         "Schema massa de teste",
         "inventário das 92 entidades",
     ),
-    "04-arquitetura-dados/catalogo-atlas.md": (
+    "arquitetura/dados/catalogo-atlas.md": (
         "Catálogo Atlas",
         "camada semântica e metadados no cluster",
     ),
-    "04-arquitetura-dados/carga-cluster-laboratorio.md": (
+    "arquitetura/dados/carga-cluster-laboratorio.md": (
         "Carga no cluster",
         "pipeline de ingestão da massa `massa_teste_laboratorio`",
     ),
-    "05-infraestrutura/visao-aws.md": ("Visão AWS", "topologia de rede e componentes na nuvem"),
-    "05-infraestrutura/cluster-hadoop.md": ("Cluster Hadoop", "serviços ODP, sizing e operação"),
-    "05-infraestrutura/delta-oci-para-aws.md": (
+    "infraestrutura/visao-aws.md": ("Visão AWS", "topologia de rede e componentes na nuvem"),
+    "infraestrutura/cluster-hadoop.md": ("Cluster Hadoop", "serviços ODP, sizing e operação"),
+    "infraestrutura/delta-oci-para-aws.md": (
         "Delta legado para AWS",
         "comparativo ambiente subdimensionado vs alvo x86",
     ),
-    "05-infraestrutura/vdf-odp-x86.md": ("VDF ODP x86", "stack canônica ODP 1.3.1.0 para o cluster"),
-    "06-implementacao-java/modulos-spring.md": ("Módulos Spring", "estrutura de projetos e dependências"),
-    "06-implementacao-java/ports-adapters.md": ("Ports e adapters", "portas hexagonais e adaptadores"),
-    "07-contratos-mcp/contracts-v1.md": ("Contratos MCP v1", "envelope JSON, tools e taxonomia de erro"),
-    "08-experimento-avaliacao/protocolo-avaliacao.md": (
+    "infraestrutura/vdf-odp-x86.md": ("VDF ODP x86", "stack canônica ODP 1.3.1.0 para o cluster"),
+    "implementacao/modulos-spring.md": ("Módulos Spring", "estrutura de projetos e dependências"),
+    "implementacao/ports-adapters.md": ("Ports e adapters", "portas hexagonais e adaptadores"),
+    "arquitetura/contratos-mcp/contracts-v1.md": ("Contratos MCP v1", "envelope JSON, tools e taxonomia de erro"),
+    "experimento/protocolo-avaliacao.md": (
         "Protocolo de avaliação",
         "desenho experimental, bateria e critérios de desfecho",
     ),
-    "08-experimento-avaliacao/llm-inferencia-e-prompts.md": (
+    "experimento/llm-inferencia-e-prompts.md": (
         "Inferência e prompts",
         "hiperparâmetros, templates e schema `context.json`",
     ),
-    "08-experimento-avaliacao/metricas-formulas.md": (
+    "experimento/metricas-formulas.md": (
         "Métricas e fórmulas",
         "indicadores, fórmulas e schema `metrics.json`",
     ),
-    "08-experimento-avaliacao/runbook-reprodutibilidade.md": (
+    "experimento/runbook-reprodutibilidade.md": (
         "Runbook de reprodutibilidade",
         "passos para repetir uma corrida com evidências",
     ),
-    "09-operacao.md": ("Operação", "ciclo de corrida, incidentes e governança"),
-    "10-rastreabilidade-academica.md": (
+    "operacao/index.md": ("Operação", "ciclo de corrida, incidentes e governança"),
+    "pesquisa/rastreabilidade-academica.md": (
         "Rastreabilidade acadêmica",
         "relação com a documentação acadêmica externa",
     ),
-    "roadmap-5a6-meses.md": ("Roadmap", "marcos até a apresentação em novembro de 2026"),
+    "pesquisa/roadmap.md": ("Roadmap", "marcos até a apresentação em novembro de 2026"),
     "adr/README.md": ("Índice de ADRs", "decisões arquiteturais registradas"),
     "adr/ADR-0001-fundacao-arquitetural.md": (
         "ADR-0001 Fundação arquitetural",

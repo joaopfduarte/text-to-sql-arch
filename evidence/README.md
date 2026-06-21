@@ -37,7 +37,7 @@ exclusivas do autor»).
 | [Matriz de cobertura da bateria](matriz-cobertura-bateria-v1.md) | Cobertura cenário × dificuldade × tabelas |
 | [Métricas baseline v1](baseline-metricas-v1.csv) | Métricas da campanha `baseline-static` v1 (Gemini-only, 30 corridas; `gabarito_match` por pergunta) |
 
-Esquema estático do comparativo simples: [Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md).
+Esquema estático do comparativo simples: [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md).
 
 ## Inventário e catálogo de tools MCP (T06)
 
@@ -49,5 +49,5 @@ Artefatos derivados do Swagger do Apache Atlas que sustentam o catálogo fechado
 | [Matriz de 15 tools MCP](matriz-15-tools-mcp-v1.md) | Decisão final: 3 basais + 12 complementares, com mapeamento Atlas |
 
 Valores agregados ($A_{\mathrm{gab}}$) derivam do CSV baseline preenchido, conforme
-[Métricas e fórmulas](../08-experimento-avaliacao/metricas-formulas.md). A campanha v1 usa apenas
+[Métricas e fórmulas](../experimento/metricas-formulas.md). A campanha v1 usa apenas
 `gemini-3.5-flash` ($N_{\mathrm{base}} = 30$); extensão a segundo provedor é opcional e não mistura com esta v1.

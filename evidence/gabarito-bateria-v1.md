@@ -16,7 +16,7 @@ tags:
 - **baselineStaticV1:** `gemini-3.5-flash`, 30 corridas (12/06/2026) — ver § Campanha baseline-static v1
 
 Fundamentado no DDL canônico das 92 tabelas
-([Schema massa de teste](../04-arquitetura-dados/schema-massa-teste.md)). Cada entrada traz a cola SQL de
+([Schema massa de teste](../arquitetura/dados/schema-massa-teste.md)). Cada entrada traz a cola SQL de
 referência em SGBD relacional, pronta para rodar contra a massa fixa `massa_teste_laboratorio`. Os valores numéricos
 esperados dependem da massa e serão conferidos pelo autor na execução.
 

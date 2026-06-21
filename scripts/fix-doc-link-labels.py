@@ -164,7 +164,7 @@ def context_for(path: Path) -> Path:
     if path.is_relative_to(DOCS):
         return path
     if path.is_relative_to(ROOT / "templates"):
-        return DOCS / "08-experimento-avaliacao/llm-inferencia-e-prompts.md"
+        return DOCS / "experimento/llm-inferencia-e-prompts.md"
     return DOCS / "index.md"
 
 

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{ts,html,css}', './docs/index.md'],
+  content: ['./src/**/*.{ts,html,css}', './docs/**/*.md'],
   prefix: 'dc-',
   darkMode: ['selector', '[data-md-color-scheme="slate"]'],
   corePlugins: {
