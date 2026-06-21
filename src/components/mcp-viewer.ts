@@ -1,34 +1,43 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import { customElement, property, state } from 'lit/decorators.js';
+import { FLOW_ICONS, lucideIconSvg, type FlowIconId } from '../icons/flow-icons';
 import tailwindStyles from '../styles/tailwind.css?inline';
 
 interface FlowStep {
+  id: FlowIconId;
   label: string;
   detail: string;
 }
 
 const FLOW: FlowStep[] = [
   {
+    id: 'query',
     label: 'Consulta NL',
     detail: 'Pergunta em linguagem natural sobre o domínio laboratorial.',
   },
   {
+    id: 'llm',
     label: 'Agente LLM',
     detail: 'Planeja tool calls e gera SQL sob orçamento de chamadas.',
   },
   {
+    id: 'mcp',
     label: 'Servidor MCP',
     detail: 'Expõe tools tipadas: catálogo, schema, validação e execução.',
   },
   {
+    id: 'atlas',
     label: 'Apache Atlas',
     detail: 'Catálogo canônico governa entidades, linhagem e metadados.',
   },
   {
+    id: 'validate',
     label: 'Validação SQL',
     detail: 'Parse Calcite, aderência estrutural e execução Hive controlada.',
   },
   {
+    id: 'storage',
     label: 'Hive / HDFS',
     detail: 'Dados massivos consultados sob ambiente laboratorial.',
   },
@@ -54,38 +63,20 @@ export class McpArchitectureViewer extends LitElement {
         font-family: var(--md-text-font, system-ui, sans-serif);
       }
 
-      .step-number {
+      .step-icon-wrap {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
-        line-height: 1;
-        border: 2px solid color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 25%, transparent);
         color: var(--md-default-fg-color--light, #757575);
-        background: color-mix(in srgb, var(--md-default-fg-color, #333) 4%, transparent);
-        transition:
-          color 0.25s ease,
-          border-color 0.25s ease,
-          background 0.25s ease,
-          box-shadow 0.25s ease;
+        transition: color 0.2s ease;
       }
 
-      .step-number.is-active {
-        color: var(--md-primary-bg-color, #fff);
-        border-color: var(--md-primary-fg-color, #546e7a);
-        background: var(--md-primary-fg-color, #546e7a);
-        box-shadow: 0 0 0 4px color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 20%, transparent);
-      }
-
-      .step-number.is-past {
+      .step-icon-wrap.is-active {
         color: var(--md-primary-fg-color, #546e7a);
-        border-color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 55%, transparent);
-        background: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 12%, transparent);
+      }
+
+      .step-icon-wrap.is-past {
+        color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 70%, transparent);
       }
 
       @keyframes pulse-line {
@@ -147,9 +138,9 @@ export class McpArchitectureViewer extends LitElement {
     this.startAutoAdvance();
   }
 
-  private renderStepNumber(stepNumber: number, isActive: boolean, isPast: boolean) {
-    const numberClass = [
-      'step-number',
+  private renderStepIcon(stepId: FlowIconId, isActive: boolean, isPast: boolean) {
+    const iconClass = [
+      'step-icon-wrap',
       isActive ? 'is-active' : '',
       isPast ? 'is-past' : '',
     ]
@@ -157,7 +148,9 @@ export class McpArchitectureViewer extends LitElement {
       .join(' ');
 
     return html`
-      <span class=${numberClass} aria-hidden="true">${stepNumber}</span>
+      <span class=${iconClass}>
+        ${unsafeSVG(lucideIconSvg(FLOW_ICONS[stepId]).outerHTML)}
+      </span>
     `;
   }
 
@@ -197,7 +190,7 @@ export class McpArchitectureViewer extends LitElement {
                   style="color: var(--md-default-fg-color);"
                   @click=${() => this.selectStep(index)}
                 >
-                  ${this.renderStepNumber(index + 1, isActive, isPast)}
+                  ${this.renderStepIcon(step.id, isActive, isPast)}
                   <span class="dc-text-[0.65rem] dc-font-semibold dc-leading-tight dc-uppercase dc-tracking-wide">
                     ${step.label}
                   </span>
