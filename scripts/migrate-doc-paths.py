@@ -24,7 +24,7 @@ DOCS = ROOT / "docs"
 
 # Arquivos na raiz de docs/ que mudam de path.
 ROOT_FILE_MAP: dict[str, str] = {
-    "00-glossario-anonimizacao.md": "guias/glossario-anonimizacao.md",
+    "00-glossario-anonimizacao.md": "guias/leitura-rapida.md",
     "00-leitura-rapida.md": "guias/leitura-rapida.md",
     "01-produto-e-escopo.md": "produto/escopo.md",
     "02-arquitetura-negocio.md": "arquitetura/negocio.md",

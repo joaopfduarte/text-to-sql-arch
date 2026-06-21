@@ -12,7 +12,6 @@ DOCS = ROOT / "docs"
 # (título curto, descrição para o leitor)
 PAGE_BLURBS: dict[str, tuple[str, str]] = {
     "guias/leitura-rapida.md": ("Leitura rápida", "visão geral do sistema em até 30 minutos"),
-    "guias/glossario-anonimizacao.md": ("Glossário de anonimização", "vocabulário genérico obrigatório do artefato"),
     "produto/escopo.md": ("Produto e escopo", "artefato, recorte metodológico e decisões de ambiente"),
     "arquitetura/negocio.md": ("Arquitetura de negócio", "atores, blocos e contratos macro"),
     "arquitetura/aplicacao/visao-logica.md": ("Visão lógica", "camadas, fluxo operacional e zonas de rede"),

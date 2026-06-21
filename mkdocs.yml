@@ -67,7 +67,7 @@ plugins:
   - redirects:
       redirect_maps:
         '00-leitura-rapida.md': 'guias/leitura-rapida.md'
-        '00-glossario-anonimizacao.md': 'guias/glossario-anonimizacao.md'
+        '00-glossario-anonimizacao.md': 'guias/leitura-rapida.md'
         '01-produto-e-escopo.md': 'produto/escopo.md'
         '02-arquitetura-negocio.md': 'arquitetura/negocio.md'
         '03-arquitetura-aplicacao/visao-logica.md': 'arquitetura/aplicacao/visao-logica.md'
@@ -108,7 +108,6 @@ plugins:
 nav:
   - Início: index.md
   - Guias:
-    - Glossário de anonimização: guias/glossario-anonimizacao.md
     - Leitura rápida: guias/leitura-rapida.md
   - Produto e escopo: produto/escopo.md
   - Arquitetura:

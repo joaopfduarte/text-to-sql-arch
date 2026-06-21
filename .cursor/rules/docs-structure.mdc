@@ -12,7 +12,7 @@ A documentação é organizada por domínio semântico. **Não** use prefixos nu
 ```
 docs/
   index.md
-  guias/                  # leitura-rapida, glossario-anonimizacao
+  guias/                  # leitura-rapida
   produto/                # escopo
   arquitetura/            # negocio + aplicacao/ + dados/ + contratos-mcp/
   infraestrutura/

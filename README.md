@@ -8,7 +8,7 @@ Documentação da pesquisa sobre engenharia do artefato Text-to-SQL com MCP, cam
 
 | Papel | Leitura inicial |
 |-------|-----------------|
-| Qualquer pessoa nova | [Glossário de anonimização](docs/guias/glossario-anonimizacao.md) → [Leitura rápida](docs/guias/leitura-rapida.md) |
+| Qualquer pessoa nova | [Leitura rápida](docs/guias/leitura-rapida.md) |
 | Dev Java | [Visão lógica](docs/arquitetura/aplicacao/visao-logica.md) → [Módulos Spring](docs/implementacao/modulos-spring.md) → [Contratos MCP v1](docs/arquitetura/contratos-mcp/contracts-v1.md) |
 | Engenheiro de infra/dados | [Visão AWS](docs/infraestrutura/visao-aws.md) → [Cluster Hadoop](docs/infraestrutura/cluster-hadoop.md) → [Carga no cluster](docs/arquitetura/dados/carga-cluster-laboratorio.md) |
 | Operador de corridas | [Runbook de reprodutibilidade](docs/experimento/runbook-reprodutibilidade.md) → [Operação](docs/operacao/index.md) |
@@ -34,7 +34,7 @@ documentation/
   docs/                    # site MkDocs (anonimizado), por domínio
     assets/scripts/ODP-VDF.xml
     index.md
-    guias/                 # leitura-rapida, glossario-anonimizacao
+    guias/                 # leitura-rapida
     produto/               # escopo
     arquitetura/           # negocio, aplicacao/, dados/, contratos-mcp/
     infraestrutura/
@@ -64,7 +64,6 @@ Abrir `http://127.0.0.1:8000`.
 
 ## Política de anonimização
 
-- Vocabulário canônico: [Glossário de anonimização](docs/guias/glossario-anonimizacao.md)
 - Validação: `bash scripts/check-anonymization.sh`
 - **Não versionar:** export relacional completo, documentação acadêmica externa PDF, infra legada identificável
 
