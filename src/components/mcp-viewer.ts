@@ -1,12 +1,13 @@
 import { css, html, LitElement, unsafeCSS } from 'lit';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import { customElement, property, state } from 'lit/decorators.js';
+import { FLOW_ICONS, lucideIconSvg, type FlowIconId } from '../icons/flow-icons';
 import tailwindStyles from '../styles/tailwind.css?inline';
 
 interface FlowStep {
-  id: string;
+  id: FlowIconId;
   label: string;
   detail: string;
-  icon: string;
 }
 
 const FLOW: FlowStep[] = [
@@ -14,37 +15,31 @@ const FLOW: FlowStep[] = [
     id: 'query',
     label: 'Consulta NL',
     detail: 'Pergunta em linguagem natural sobre o domínio laboratorial.',
-    icon: '💬',
   },
   {
     id: 'llm',
     label: 'Agente LLM',
     detail: 'Planeja tool calls e gera SQL sob orçamento de chamadas.',
-    icon: '🤖',
   },
   {
     id: 'mcp',
     label: 'Servidor MCP',
     detail: 'Expõe tools tipadas: catálogo, schema, validação e execução.',
-    icon: '🔌',
   },
   {
     id: 'atlas',
     label: 'Apache Atlas',
     detail: 'Catálogo canónico governa entidades, linhagem e metadados.',
-    icon: '🗂️',
   },
   {
     id: 'validate',
     label: 'Validação SQL',
     detail: 'Parse Calcite, aderência estrutural e execução Hive controlada.',
-    icon: '✓',
   },
   {
     id: 'storage',
     label: 'Hive / HDFS',
     detail: 'Dados massivos consultados sob ambiente laboratorial.',
-    icon: '🗄️',
   },
 ];
 
@@ -66,6 +61,22 @@ export class McpArchitectureViewer extends LitElement {
       :host {
         display: block;
         font-family: var(--md-text-font, system-ui, sans-serif);
+      }
+
+      .step-icon-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--md-default-fg-color--light, #757575);
+        transition: color 0.2s ease;
+      }
+
+      .step-icon-wrap.is-active {
+        color: var(--md-primary-fg-color, #546e7a);
+      }
+
+      .step-icon-wrap.is-past {
+        color: color-mix(in srgb, var(--md-primary-fg-color, #546e7a) 70%, transparent);
       }
 
       @keyframes pulse-line {
@@ -138,6 +149,22 @@ export class McpArchitectureViewer extends LitElement {
     this.autoPlay = !this.autoPlay;
   }
 
+  private renderStepIcon(stepId: FlowIconId, isActive: boolean, isPast: boolean) {
+    const iconClass = [
+      'step-icon-wrap',
+      isActive ? 'is-active' : '',
+      isPast ? 'is-past' : '',
+    ]
+      .filter(Boolean)
+      .join(' ');
+
+    return html`
+      <span class=${iconClass}>
+        ${unsafeSVG(lucideIconSvg(FLOW_ICONS[stepId]).outerHTML)}
+      </span>
+    `;
+  }
+
   render() {
     const active = FLOW[this.activeIndex];
 
@@ -184,13 +211,13 @@ export class McpArchitectureViewer extends LitElement {
                   role="tab"
                   aria-selected=${isActive}
                   aria-controls="mcp-step-panel"
-                  class="dc-flex dc-min-w-[5.5rem] dc-flex-col dc-items-center dc-gap-1 dc-rounded-lg dc-border dc-p-3 dc-text-center dc-transition dc-cursor-pointer
+                  class="dc-flex dc-min-w-[5.5rem] dc-flex-col dc-items-center dc-gap-1.5 dc-rounded-lg dc-border dc-p-3 dc-text-center dc-transition dc-cursor-pointer
                     ${isActive ? 'node-active dc-border-md-primary dc-bg-md-primary/10' : ''}
                     ${!isActive ? 'dc-border-md-primary/20 hover:dc-border-md-primary/40' : ''}"
                   style="color: var(--md-default-fg-color);"
                   @click=${() => this.selectStep(index)}
                 >
-                  <span class="dc-text-xl" aria-hidden="true">${step.icon}</span>
+                  ${this.renderStepIcon(step.id, isActive, isPast)}
                   <span class="dc-text-[0.65rem] dc-font-semibold dc-leading-tight dc-uppercase dc-tracking-wide">
                     ${step.label}
                   </span>
