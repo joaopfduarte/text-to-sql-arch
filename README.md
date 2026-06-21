@@ -1,6 +1,8 @@
-# Documentação operacional do artefato TCC
+# Arquitetura MCP para Text-to-SQL Orientado a Metadados
 
-Pacote operacional **anonimizado** para a engenharia do artefato Text-to-SQL com MCP, camada semântica e catálogo canônico (Apache Atlas). A documentação académica completa permanece **fora** deste repositório.
+**Interfaces Conversacionais Confiáveis**
+
+Documentação da pesquisa sobre engenharia do artefato Text-to-SQL com MCP, camada semântica e catálogo canônico (Apache Atlas). A documentação académica completa permanece **fora** deste repositório.
 
 ## Por onde começar
 
@@ -10,7 +12,7 @@ Pacote operacional **anonimizado** para a engenharia do artefato Text-to-SQL com
 | Dev Java | [Visão lógica](docs/03-arquitetura-aplicacao/visao-logica.md) → [Módulos Spring](docs/06-implementacao-java/modulos-spring.md) → [Contratos MCP v1](docs/07-contratos-mcp/contracts-v1.md) |
 | Engenheiro de infra/dados | [Visão AWS](docs/05-infraestrutura/visao-aws.md) → [Cluster Hadoop](docs/05-infraestrutura/cluster-hadoop.md) → [Carga no cluster](docs/04-arquitetura-dados/carga-cluster-laboratorio.md) |
 | Operador de corridas | [Runbook de reprodutibilidade](docs/08-experimento-avaliacao/runbook-reprodutibilidade.md) → [Operação](docs/09-operacao.md) |
-| Pesquisador (TCC) | [Rastreabilidade académica](docs/10-rastreabilidade-academica.md) |
+| Pesquisador | [Rastreabilidade académica](docs/10-rastreabilidade-academica.md) |
 
 ## Mapa do repositório
 

@@ -13,7 +13,7 @@ tags:
 
 ## Contexto
 
-O TCC precisa de um ambiente laboratorial reprodutível para executar o pipeline Text-to-SQL com catálogo Apache Atlas e massa de teste laboratorial (`massa_teste_laboratorio`, 92 entidades).
+A pesquisa precisa de um ambiente laboratorial reprodutível para executar o pipeline Text-to-SQL com catálogo Apache Atlas e massa de teste laboratorial (`massa_teste_laboratorio`, 92 entidades).
 
 A stack alvo está fechada no VDF canônico [VDF ODP x86](../assets/scripts/ODP-VDF.xml):
 
@@ -39,7 +39,7 @@ Adotar **cluster ODP em AWS x86_64 (Ubuntu 24.04, ODP 1.3.1.0)** com topologia e
 
 - Alinhamento com o VDF canônico.
 - Folga suficiente para massa laboratorial fixa e execução experimental.
-- Atlas no cluster distribuído conforme objetivo do TCC.
+- Atlas no cluster distribuído conforme objetivo da pesquisa.
 
 ### Negativas
 

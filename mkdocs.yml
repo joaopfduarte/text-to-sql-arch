@@ -1,5 +1,5 @@
-site_name: Arquitetura e Engenharia do Produto TCC
-site_description: Arquitetura e engenharia do artefato Text-to-SQL com MCP e Apache Atlas
+site_name: Arquitetura MCP para Text-to-SQL Orientado a Metadados
+site_description: Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
 repo_url: https://gitlab.com/joaopedrofduarte-studien/back-end-practice/tcc/documentation
 repo_name: GitLab

@@ -16,7 +16,7 @@ tags:
 
 - Conta AWS de estudo, sem dependência de tenant corporativo.
 - Região única (a definir; sugestão: `sa-east-1` ou `us-east-1` por custo).
-- Infraestrutura provisionada por Terraform (o código não faz parte do escopo deste TCC; documenta-se apenas a topologia alvo).
+- Infraestrutura provisionada por Terraform (o código não faz parte do escopo desta pesquisa; documenta-se apenas a topologia alvo).
 
 ### Topologia alvo (versão mínima)
 

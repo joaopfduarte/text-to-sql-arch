@@ -24,7 +24,7 @@ tags:
 
 ### Domínios identificados
 
-| Domínio genérico | Entidades representativas | Uso no TCC |
+| Domínio genérico | Entidades representativas | Uso na pesquisa |
 |------------------|-------------------------|------------|
 | apoio operacional | `tbl_5e464b14`, `tbl_cef676c5`, `tbl_bb1c74b7`, `tbl_a63ac3ee`, `tbl_bd19ace7`, `tbl_0b894724`, … | Fora do MVP ou ruído |
 | controle de migração | `tbl_d1cb73f6`, `tbl_b7dfbbcb` | Fora do MVP ou ruído |

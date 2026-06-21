@@ -14,7 +14,7 @@ tags:
 
 ## Contexto
 
-O TCC define um artefato único `Text-to-SQL` com consulta de metadados por `MCP` antes da geração de SQL.
+A pesquisa define um artefato único `Text-to-SQL` com consulta de metadados por `MCP` antes da geração de SQL.
 Era necessário estabelecer uma fundação arquitetural que favorecesse evolução incremental, reprodutibilidade
 experimental e baixo acoplamento entre aplicação e integrações externas.
 

@@ -8,11 +8,11 @@
 
 ### Síntese
 
-O legado usava instâncias ARM pequenas, stack ODP 1.2.x e rede `/24` simples. O alvo do TCC é AWS x86_64, Ubuntu 24.04, ODP 1.3.1.0, com subnets segmentadas e sizing robusto (ADR-0002).
+O legado usava instâncias ARM pequenas, stack ODP 1.2.x e rede `/24` simples. O alvo da pesquisa é AWS x86_64, Ubuntu 24.04, ODP 1.3.1.0, com subnets segmentadas e sizing robusto (ADR-0002).
 
 ### Tabela delta
 
-| Item | Legado (referência removida) | AWS (alvo TCC) |
+| Item | Legado (referência removida) | AWS (alvo da pesquisa) |
 |------|------------------------------|----------------|
 | Provedor | Nuvem alternativa ARM | AWS |
 | Arquitetura | `aarch64` | `x86_64` |

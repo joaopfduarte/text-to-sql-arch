@@ -6,7 +6,7 @@
     - **[VDF ODP x86](../assets/scripts/ODP-VDF.xml)** — definição canónica da stack alvo.
 
 
-### VDF canônico (alvo TCC)
+### VDF canônico (alvo da pesquisa)
 
 Fonte de verdade: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 
@@ -49,7 +49,7 @@ Fonte: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 
 ### Implicação prática para a documentação
 
-- O alvo do TCC está fechado em x86 + Ubuntu 24.04 com ODP 1.3.1.0.
+- O alvo da pesquisa está fechado em x86 + Ubuntu 24.04 com ODP 1.3.1.0.
 - O legado OCI permanece apenas como referência de migração e comparação.
 - Qualquer citação a Graviton como alvo foi removida do pacote.
 
