@@ -1,0 +1,5 @@
+/* Layout global para custom elements dentro de .md-typeset */
+docs-demo {
+  display: block;
+  margin: 1.5rem 0;
+}

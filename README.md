@@ -20,6 +20,8 @@ Documentação da pesquisa sobre engenharia do artefato Text-to-SQL com MCP, cam
 documentation/
   README.md
   mkdocs.yml
+  package.json           # toolchain Web Components (Lit + Vite + Tailwind)
+  src/components/        # Web Components TypeScript
   assets/scripts/ODP-VDF.xml
   docs/                    # site MkDocs (anonimizado)
   evidence/                # bateria, gabarito, schemas JSON
@@ -31,6 +33,7 @@ documentation/
 ## Desenvolvimento local
 
 ```bash
+npm ci && npm run build
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -53,6 +56,7 @@ Commits anteriores podem conter dados sensíveis. Para repositório público, co
 ## Build de produção
 
 ```bash
+npm ci && npm run build
 bash scripts/prepare-docs.sh
 mkdocs build --strict --site-dir public
 ```

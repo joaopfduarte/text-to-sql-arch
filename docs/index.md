@@ -10,6 +10,8 @@ tags:
 
 Um pipeline Text-to-SQL em que um agente LLM consulta a camada semântica e de metadados via servidor MCP antes de gerar SQL, valida a aderência estrutural contra o catálogo canônico e executa o SQL sob ambiente controlado, registrando trilha completa por corrida.
 
+<docs-demo title="Componentes interactivos"></docs-demo>
+
 ## Por onde começar
 
 | Papel | Leitura inicial |

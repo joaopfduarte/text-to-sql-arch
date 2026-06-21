@@ -11,8 +11,10 @@ extra:
 
 extra_css:
   - stylesheets/diagrams.css
+  - assets/css/style.css
 
 extra_javascript:
+  - assets/js/bundle.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 

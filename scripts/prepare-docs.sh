@@ -4,6 +4,11 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DOCS="$ROOT/docs"
+BUNDLE="$DOCS/assets/js/bundle.js"
+
+if [[ ! -f "$BUNDLE" ]] && [[ -f "$ROOT/package.json" ]] && command -v npm &>/dev/null; then
+  (cd "$ROOT" && npm run build)
+fi
 
 link_dir() {
   local target="$1"

@@ -1,0 +1,21 @@
+{
+  "name": "documentation-components",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
+  }
+}

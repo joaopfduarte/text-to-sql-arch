@@ -5,6 +5,9 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+node_modules/
+docs/assets/js/bundle.js
+docs/assets/css/style.css
 
 # Symlinks gerados por scripts/prepare-docs.sh
 /docs/evidence
