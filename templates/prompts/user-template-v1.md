@@ -42,14 +42,14 @@ Substituir `{{MODE_SPECIFIC_BLOCK}}` por:
 ```text
 ## Esquema relacional (DDL anexo)
 
-O DDL completo do subconjunto PS (92 tabelas) segue abaixo. Use apenas objetos definidos neste
+O DDL completo do subconjunto laboratorial (92 tabelas) segue abaixo. Use apenas objetos definidos neste
 DDL.
 
 ```sql
-{{PUTZ_DB_SQL_CONTENTS}}
+{{SCHEMA_DDL_ANONIMIZADO}}
 ```
 ```
 
-> **Nota operacional:** `{{PUTZ_DB_SQL_CONTENTS}}` é o conteúdo literal de
-> [`../../db-reference/putz_db.sql`](../../db-reference/putz_db.sql) no `commitHash` registrado em
+> **Nota operacional:** `{{SCHEMA_DDL_ANONIMIZADO}}` é o conteúdo literal do export relacional anonimizado offline
+> (ver [`schema-massa-teste.md`](../../docs/04-arquitetura-dados/schema-massa-teste.md)) no `commitHash` registrado em
 > `context.json`.

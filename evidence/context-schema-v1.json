@@ -49,7 +49,7 @@
     },
     "datasetVersion": {
       "type": "string",
-      "description": "Versão da massa PS / DDL de referência"
+      "description": "Versão da massa laboratorial / DDL de referência"
     },
     "contractsVersion": {
       "type": "string",

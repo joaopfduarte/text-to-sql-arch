@@ -19,7 +19,7 @@ Pessoa que executa o ambiente e arquiva evidências.
 ### Ciclo de uma corrida
 
 1. Subir o cluster (ou validar que está estável).
-2. Validar Atlas: tools MCP retornam o subconjunto PS (92 tabelas) esperado.
+2. Validar Atlas: tools MCP retornam o subconjunto laboratorial (92 tabelas) esperado.
 3. Gerar `runId` no formato `run-YYYYMMDD-HHMM-<id-curto>` (ver runbook).
 4. Registrar `context.json` com metadados completos (ver [`evidence/context-schema-v1.json`](evidence/context-schema-v1.json) e [`08-experimento-avaliacao/llm-inferencia-e-prompts.md`](08-experimento-avaliacao/llm-inferencia-e-prompts.md)): `runId`, `seed`, `modelVersion`, `provider`, `promptVersion`, `inferenceConfig`, `promptArtifactsHash`, `commitHash`, `datasetVersion`, `contractsVersion`.
 5. Executar a bateria de perguntas do harness.
@@ -60,8 +60,8 @@ Convenções e exigências mínimas estão em [`evidence/README.md`](evidence/RE
 | Sintoma | Causa provável | Ação |
 |---------|----------------|------|
 | Tool MCP retorna `catalog_unavailable` | Atlas indisponível ou reinicialização do cluster | Validar status do Atlas; aplicar retry conforme política do servidor MCP. |
-| Tool MCP retorna `not_found` para tabela do subconjunto | Registro Atlas incompleto após reingestão | Reexecutar carga (`carga-cluster-putz.md`) e reabrir corrida. |
-| SQL executa mas com `execution_error` recorrente | Hive Metastore inconsistente | Validar schema do Hive contra o subconjunto PS (92 tabelas). |
+| Tool MCP retorna `not_found` para tabela do subconjunto | Registro Atlas incompleto após reingestão | Reexecutar carga (`carga-cluster-laboratorio.md`) e reabrir corrida. |
+| SQL executa mas com `execution_error` recorrente | Hive Metastore inconsistente | Validar schema do Hive contra o subconjunto laboratorial (92 tabelas). |
 | `runId` duplicado | Erro humano no template | Abortar corrida e gerar novo `runId`. |
 
 ### Custos e desligamento

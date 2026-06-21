@@ -10,11 +10,11 @@ evidência que sustenta a tabela do Capítulo 4 e os contratos em
 ## Fonte
 
 - Inventário: [`inventario-atlas-api-para-mcp.md`](inventario-atlas-api-para-mcp.md)
-- Swagger: `assets/scripts/atlas-api-swagger.json` (repositório da monografia)
+- Swagger: `assets/scripts/atlas-api-swagger.json` (pacote académico externo)
 
 ## Catálogo fechado (15 tools)
 
-`schema = "putz"`; `typeName` relevante: `hive_table`, `hive_column`, `hive_db`.
+`schema = "laboratorio"`; `typeName` relevante: `hive_table`, `hive_column`, `hive_db`.
 
 ### Tools basais (protocolo mínimo de avaliação)
 

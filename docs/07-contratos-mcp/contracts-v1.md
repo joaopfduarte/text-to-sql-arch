@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Definir os contratos JSON estáveis das tools MCP da v1, com exemplos baseados em tabelas reais do banco PS (92 tabelas; massa fixa do TCC).
+Definir os contratos JSON estáveis das tools MCP da v1, com exemplos baseados em tabelas reais do subconjunto laboratorial (92 entidades).
 
 ## Leitor
 
@@ -24,8 +24,8 @@ Pessoa desenvolvedora Java que implementa o servidor MCP ou um cliente, e pessoa
 
 ### Convenção de schema do catálogo
 
-- `schema = "putz"`: subconjunto PS (92 tabelas) registrado em Apache Atlas como database `hive_db` chamado `putz`.
-- Nomes de tabela e coluna seguem exatamente o export PS (ex.: `franquias`, `franquias__segmentos`, `segmento_id`).
+- `schema = "laboratorio"`: subconjunto laboratorial (92 entidades) registrado em Apache Atlas como database `hive_db` chamado `schema_laboratorio`.
+- Nomes de tabela e coluna usam identificadores opacos (`tbl_*`, `col_*`) conforme [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md).
 
 ### Envelope padrão de resposta
 
@@ -73,7 +73,7 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
+  "schema": "laboratorio",
   "limit": 50,
   "cursor": null
 }
@@ -84,20 +84,20 @@ Saída:
 ```json
 {
   "tables": [
-    { "name": "franquias", "type": "TABLE" },
-    { "name": "franquias__segmentos", "type": "TABLE" },
-    { "name": "franquias__redes_franquia", "type": "TABLE" },
-    { "name": "franquias__unidades", "type": "TABLE" },
-    { "name": "project", "type": "TABLE" },
-    { "name": "project_item", "type": "TABLE" },
-    { "name": "project_payment", "type": "TABLE" },
-    { "name": "person", "type": "TABLE" },
-    { "name": "product", "type": "TABLE" },
-    { "name": "product_type", "type": "TABLE" },
-    { "name": "transaction", "type": "TABLE" },
-    { "name": "transaction_coupon", "type": "TABLE" },
-    { "name": "ibge__city", "type": "TABLE" },
-    { "name": "ibge__uf", "type": "TABLE" }
+    { "name": "tbl_162cf7be", "type": "TABLE" },
+    { "name": "tbl_8991e9dc", "type": "TABLE" },
+    { "name": "tbl_4c8d7ae5", "type": "TABLE" },
+    { "name": "tbl_973ec6fa", "type": "TABLE" },
+    { "name": "tbl_363ae7e9", "type": "TABLE" },
+    { "name": "tbl_3a2c56ff", "type": "TABLE" },
+    { "name": "tbl_6696932f", "type": "TABLE" },
+    { "name": "tbl_f193a446", "type": "TABLE" },
+    { "name": "tbl_891b1fc9", "type": "TABLE" },
+    { "name": "tbl_ed8b2873", "type": "TABLE" },
+    { "name": "tbl_c066178a", "type": "TABLE" },
+    { "name": "tbl_6b881dfd", "type": "TABLE" },
+    { "name": "tbl_2c1fc4f7", "type": "TABLE" },
+    { "name": "tbl_c78eb7ee", "type": "TABLE" }
   ],
   "nextCursor": null
 }
@@ -109,25 +109,25 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
-  "table": "franquias"
+  "schema": "laboratorio",
+  "table": "tbl_162cf7be"
 }
 ```
 
-Saída (colunas observadas em [`putz_db.md` L1173–1215](../db-reference/putz_db.md)):
+Saída (colunas observadas em [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)):
 
 ```json
 {
-  "table": "franquias",
+  "table": "tbl_162cf7be",
   "columns": [
-    { "name": "id", "dataType": "INT", "nullable": false },
-    { "name": "nome", "dataType": "VARCHAR(255)", "nullable": false },
-    { "name": "nome_fantasia", "dataType": "VARCHAR(255)", "nullable": true },
-    { "name": "razao_social", "dataType": "VARCHAR(255)", "nullable": true },
-    { "name": "segmento_id", "dataType": "INT", "nullable": true },
-    { "name": "rede_id", "dataType": "INT", "nullable": true },
-    { "name": "data_coleta", "dataType": "DATETIME", "nullable": true },
-    { "name": "ultima_atualizacao", "dataType": "DATETIME", "nullable": true }
+    { "name": "col_d7247819", "dataType": "INT", "nullable": false },
+    { "name": "col_c0d85479", "dataType": "VARCHAR(255)", "nullable": false },
+    { "name": "col_632ad9d4", "dataType": "VARCHAR(255)", "nullable": true },
+    { "name": "col_6e8c4b2c", "dataType": "VARCHAR(255)", "nullable": true },
+    { "name": "col_2cd9416d", "dataType": "INT", "nullable": true },
+    { "name": "col_1d3e13bf", "dataType": "INT", "nullable": true },
+    { "name": "col_ee3dab3a", "dataType": "DATETIME", "nullable": true },
+    { "name": "col_acadb37c", "dataType": "DATETIME", "nullable": true }
   ]
 }
 ```
@@ -138,28 +138,28 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
-  "table": "franquias"
+  "schema": "laboratorio",
+  "table": "tbl_162cf7be"
 }
 ```
 
-Saída (FKs confirmadas em [`putz_db.md` L1199–1206](../db-reference/putz_db.md)):
+Saída (FKs confirmadas em [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)):
 
 ```json
 {
   "relationships": [
     {
-      "fromTable": "franquias",
-      "fromColumn": "segmento_id",
-      "toTable": "franquias__segmentos",
-      "toColumn": "id",
+      "fromTable": "tbl_162cf7be",
+      "fromColumn": "col_2cd9416d",
+      "toTable": "tbl_8991e9dc",
+      "toColumn": "col_d7247819",
       "relationshipType": "FK"
     },
     {
-      "fromTable": "franquias",
-      "fromColumn": "rede_id",
-      "toTable": "franquias__redes_franquia",
-      "toColumn": "id",
+      "fromTable": "tbl_162cf7be",
+      "fromColumn": "col_1d3e13bf",
+      "toTable": "tbl_4c8d7ae5",
+      "toColumn": "col_d7247819",
       "relationshipType": "FK"
     }
   ]
@@ -169,7 +169,7 @@ Saída (FKs confirmadas em [`putz_db.md` L1199–1206](../db-reference/putz_db.m
 ### Tools complementares do catálogo v1
 
 As doze tools abaixo compartilham o envelope, a taxonomia de erro e o versionamento das basais. Todas são somente
-leitura sobre o Apache Atlas. Os exemplos usam entidades reais da massa PS (`putz.franquias`, `putz.project`).
+leitura sobre o Apache Atlas. Os exemplos usam entidades reais da massa laboratorial (`laboratorio.tbl_162cf7be`, `laboratorio.tbl_363ae7e9`).
 
 #### 4) `catalog.searchTables`
 
@@ -179,8 +179,8 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
-  "query": "franquia",
+  "schema": "laboratorio",
+  "query": "tbl_162cf7be",
   "typeName": "hive_table",
   "limit": 25,
   "offset": 0
@@ -193,8 +193,8 @@ Saída:
 {
   "approximateCount": 4,
   "entities": [
-    { "guid": "a1b2-...", "name": "franquias", "typeName": "hive_table", "qualifiedName": "putz.franquias@cluster" },
-    { "guid": "c3d4-...", "name": "franquias__segmentos", "typeName": "hive_table", "qualifiedName": "putz.franquias__segmentos@cluster" }
+    { "guid": "a1b2-...", "name": "tbl_162cf7be", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" },
+    { "guid": "c3d4-...", "name": "tbl_8991e9dc", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_8991e9dc@cluster" }
   ]
 }
 ```
@@ -207,8 +207,8 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
-  "query": "project",
+  "schema": "laboratorio",
+  "query": "tbl_363ae7e9",
   "typeName": "hive_table",
   "excludeDeletedEntities": true,
   "limit": 25,
@@ -222,8 +222,8 @@ Saída:
 {
   "approximateCount": 3,
   "entities": [
-    { "guid": "e5f6-...", "name": "project", "typeName": "hive_table", "qualifiedName": "putz.project@cluster" },
-    { "guid": "g7h8-...", "name": "project_item", "typeName": "hive_table", "qualifiedName": "putz.project_item@cluster" }
+    { "guid": "e5f6-...", "name": "tbl_363ae7e9", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_363ae7e9@cluster" },
+    { "guid": "g7h8-...", "name": "tbl_3a2c56ff", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_3a2c56ff@cluster" }
   ],
   "aggregationMetrics": { "typeName": [ { "name": "hive_table", "count": 3 } ] }
 }
@@ -237,10 +237,10 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
+  "schema": "laboratorio",
   "typeName": "hive_table",
   "attrName": "name",
-  "attrValuePrefix": "transaction",
+  "attrValuePrefix": "tbl_c066178a",
   "limit": 25,
   "offset": 0
 }
@@ -252,8 +252,8 @@ Saída:
 {
   "approximateCount": 2,
   "entities": [
-    { "guid": "i9j0-...", "name": "transaction", "typeName": "hive_table", "qualifiedName": "putz.transaction@cluster" },
-    { "guid": "k1l2-...", "name": "transaction_coupon", "typeName": "hive_table", "qualifiedName": "putz.transaction_coupon@cluster" }
+    { "guid": "i9j0-...", "name": "tbl_c066178a", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_c066178a@cluster" },
+    { "guid": "k1l2-...", "name": "tbl_6b881dfd", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_6b881dfd@cluster" }
   ]
 }
 ```
@@ -266,8 +266,8 @@ Entrada:
 
 ```json
 {
-  "schema": "putz",
-  "query": "segmento",
+  "schema": "laboratorio",
+  "query": "tbl_8991e9dc",
   "excludeDeletedEntities": true,
   "limit": 25,
   "offset": 0
@@ -280,7 +280,7 @@ Saída:
 {
   "approximateCount": 2,
   "entities": [
-    { "guid": "m3n4-...", "name": "franquias__segmentos", "typeName": "hive_table", "qualifiedName": "putz.franquias__segmentos@cluster" }
+    { "guid": "m3n4-...", "name": "tbl_8991e9dc", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_8991e9dc@cluster" }
   ]
 }
 ```
@@ -306,7 +306,7 @@ Saída:
     "guid": "a1b2-...",
     "typeName": "hive_table",
     "status": "ACTIVE",
-    "attributes": { "name": "franquias", "qualifiedName": "putz.franquias@cluster" },
+    "attributes": { "name": "tbl_162cf7be", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" },
     "classificationNames": []
   }
 }
@@ -322,7 +322,7 @@ Entrada:
 ```json
 {
   "typeName": "hive_table",
-  "qualifiedName": "putz.franquias@cluster",
+  "qualifiedName": "laboratorio.tbl_162cf7be@cluster",
   "minExtInfo": true
 }
 ```
@@ -335,7 +335,7 @@ Saída:
     "guid": "a1b2-...",
     "typeName": "hive_table",
     "status": "ACTIVE",
-    "attributes": { "name": "franquias", "qualifiedName": "putz.franquias@cluster" }
+    "attributes": { "name": "tbl_162cf7be", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" }
   }
 }
 ```
@@ -359,7 +359,7 @@ Saída:
   "guid": "e5f6-...",
   "typeName": "hive_table",
   "status": "ACTIVE",
-  "displayText": "project",
+  "displayText": "tbl_363ae7e9",
   "classificationNames": []
 }
 ```
@@ -436,7 +436,7 @@ Saída:
     { "fromEntityId": "src-...", "toEntityId": "a1b2-...", "relationshipId": "rel-..." }
   ],
   "guidEntityMap": {
-    "a1b2-...": { "typeName": "hive_table", "displayText": "franquias" }
+    "a1b2-...": { "typeName": "hive_table", "displayText": "tbl_162cf7be" }
   }
 }
 ```
@@ -513,7 +513,7 @@ Exemplo de resposta de erro:
   "data": null,
   "error": {
     "code": "not_found",
-    "message": "Tabela 'sales.orders' nao existe no catalogo 'putz'."
+    "message": "Tabela 'tbl_inexistente' nao existe no catalogo 'laboratorio'."
   }
 }
 ```

@@ -7,18 +7,18 @@ v1. Serve de evidência para a seleção das doze tools complementares do catál
 
 ## Fonte
 
-- `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; repositório da monografia)
-- `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; repositório da monografia)
+- `assets/scripts/atlas-api-swagger.json` (Swagger oficial do Atlas v2; fonte primária; pacote académico externo)
+- `assets/scripts/Atlas REST API-documentation.html` (documentação humana complementar; pacote académico externo)
 
 ## Critérios de triagem
 
 1. Somente leitura: `GET` ou busca sem efeito colateral. Excluídas `create*`, `update*`, `delete*`, `import*`.
-2. Aderência ao schema linking sobre entidades `hive_table` / `hive_column` / `hive_db` do schema `putz`.
+2. Aderência ao schema linking sobre entidades `hive_table` / `hive_column` / `hive_db` do schema `laboratorio`.
 3. Payload mapeável para o envelope MCP com custo compatível com o orçamento de 10 chamadas por sessão.
 4. Não duplicar as três basais (`catalog.listTables`, `catalog.describeTable`, `catalog.listRelationships`).
 5. Tags fora de escopo: `GlossaryREST`, `NotificationREST`, `IndexRecoveryREST` e demais operações de escrita.
 
-## Mapa por tag REST
+## Mapa por tbl_7933f344 REST
 
 Utilidade Text-to-SQL avaliada de 1 (baixa) a 5 (alta). `L` indica leitura e `E` escrita.
 

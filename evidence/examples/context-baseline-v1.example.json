@@ -5,7 +5,7 @@
   "modelVersion": "gemini-3.5-flash",
   "seed": 42,
   "commitHash": "e7abb87",
-  "datasetVersion": "putz-ps-v1-92tables",
+  "datasetVersion": "lab-v1-92tables",
   "contractsVersion": "n/a-baseline",
   "toolBudget": 0,
   "promptVersion": "v1",

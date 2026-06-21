@@ -5,11 +5,11 @@ pages:
   stage: deploy
   before_script:
     - apt-get update -qq
-    - apt-get install -y -qq --no-install-recommends libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 shared-mime-info plantuml graphviz default-jre-headless
+    - apt-get install -y -qq --no-install-recommends libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 shared-mime-info plantuml graphviz default-jre-headless ripgrep
     - rm -rf /var/lib/apt/lists/*
   script:
     - pip install -r requirements.txt
-    - test -f docs/monografia.pdf || (echo "docs/monografia.pdf em falta — adicione o PDF da monografia" && exit 1)
+    - bash scripts/check-anonymization.sh
     - bash scripts/prepare-docs.sh
     - mkdocs build --strict --site-dir public
   artifacts:

@@ -5,7 +5,7 @@
   "modelVersion": "gpt-5.4-nano",
   "seed": 42,
   "commitHash": "e7abb87",
-  "datasetVersion": "putz-ps-v1-92tables",
+  "datasetVersion": "lab-v1-92tables",
   "contractsVersion": "1.0.0",
   "toolBudget": 10,
   "promptVersion": "v1",

@@ -128,7 +128,7 @@ Cada linha ou bloco deve permitir reconstruir:
 Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha v1, **antes** do modo MCP. Sem tools MCP;
 esquema via DDL estático.
 
-**Esquema no prompt:** [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql) (92 tabelas MySQL).
+**Esquema no prompt:** [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) (92 tabelas MySQL).
 Registar `commitHash` do repositório e hash ou versão do ficheiro DDL em `datasetVersion` / notas da campanha.
 
 **Bateria:** [`../evidence/bateria-30-perguntas-v1.csv`](../evidence/bateria-30-perguntas-v1.csv) +
@@ -137,10 +137,10 @@ aprovada).
 
 #### Checklist pré-voo (`baseline-static`)
 
-0. Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `putz_teste`; registar
+0. Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registar
    em § Auditoria do mesmo ficheiro; só prosseguir se 30/30 OK.
 1. Bateria e gabarito aprovados (`9985067`).
-2. `putz_db.sql` versionado e anexado ao prompt de cada corrida.
+2. `DDL anonimizado offline` versionado e anexado ao prompt de cada corrida.
 3. `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).
 4. `modelVersion` fixo `gemini-3.5-flash`; `provider`: `google`; `seed` explícita por campanha.
 5. `inferenceConfig.temperature`: **0**; `maxOutputTokens`: **4096** (ver [`llm-inferencia-e-prompts.md`](llm-inferencia-e-prompts.md)).

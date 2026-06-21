@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Definir o que o Apache Atlas governa neste TCC, o que permanece apenas no dicionário físico do PS, e a ordem de operações entre ingestão, catálogo e corridas Text-to-SQL.
+Definir o que o Apache Atlas governa neste TCC, a fronteira com o export offline e a ordem de operações entre ingestão, catálogo e corridas Text-to-SQL.
 
 ## Leitor
 
@@ -10,65 +10,55 @@ Pessoa que opera o catálogo, implementa o adaptador MCP ou define cenários de 
 
 ## Pré-requisitos
 
-- [`banco-putz-dominio.md`](banco-putz-dominio.md)
-- [`carga-cluster-putz.md`](carga-cluster-putz.md)
+- [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md)
+- [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)
 - [`../03-arquitetura-aplicacao/camadas-mcp.md`](../03-arquitetura-aplicacao/camadas-mcp.md)
 
 ## Conteúdo
 
 ### Camada semântica e catálogo canônico
 
-Na monografia, a **camada semântica e de metadados** designa a componente que expõe ao agente inventário
-estruturado de esquema via MCP. No recorte experimental deste TCC, essa camada materializa-se como
-**catálogo canônico de metadados**. A escolha de **Apache Atlas** como produto concreto é de
-engenharia para o ambiente laboratorial (integração ODP/Hive, linhagem); ver também
-[`../../../content/cap4-metodologia.tex`](../monografia.md) (escolhas arquiteturais).
+A **camada semântica e de metadados** expõe ao agente inventário estruturado de esquema via MCP. No recorte experimental, materializa-se como **catálogo canônico** implementado com Apache Atlas no cluster laboratorial.
 
 ### Fronteira de governança
 
 | Elemento | Onde reside | Quem governa |
 |----------|-------------|--------------|
-| Entidades técnicas (`hive_table`, `hive_column`, `hive_db`) | Apache Atlas no cluster | Atlas (fonte canônica para o pipeline) |
-| Lineage entre tabelas Hive e arquivos HDFS | Apache Atlas | Atlas (hooks ou registro manual) |
+| Entidades técnicas (`hive_table`, `hive_column`, `hive_db`) | Apache Atlas no cluster | Atlas (fonte canônica) |
+| Lineage entre tabelas Hive e arquivos HDFS | Apache Atlas | Atlas |
 | Classificações (PII, sensível) | Apache Atlas | Operador do catálogo |
-| Dicionário físico exaustivo (todas as 92 tabelas do export) | [`../db-reference/putz_db.md`](../db-reference/putz_db.md) | Documento fonte (referência humana) |
-| Schema exposto ao agente LLM (92 tabelas) | Apache Atlas | Definição em [`schema-massa-teste.md`](schema-massa-teste.md) |
+| Export relacional completo (92 entidades) | Offline (fora do git) | Pesquisador |
+| Schema exposto ao agente LLM | Apache Atlas | [`schema-massa-teste.md`](schema-massa-teste.md) |
 
-Decisão: o agente LLM consulta apenas o catálogo canônico (Apache Atlas) via servidor MCP. O dicionário físico do PS é referência para construção da massa, não para o pipeline em corrida.
+Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offline serve à carga, não à corrida.
 
 ### Ordem operacional
 
-1. Pré-processamento: extrair as 92 tabelas PS e mascarar PII (ver [`carga-cluster-putz.md`](carga-cluster-putz.md)).
-2. Carga: subir para HDFS e registrar como tabelas Hive externas.
-3. Catálogo: garantir que as entidades aparecem no Atlas (hook nativo ou registro manual via API).
-4. Validação: tools MCP `catalog.listTables` / `describeTable` / `listRelationships` retornam o schema esperado (92
-   tabelas).
-5. Corrida: agente LLM consulta tools MCP, gera SQL e executa contra o cluster.
+1. Pré-processamento: extrair 92 entidades e mascarar PII ([`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)).
+2. Carga: HDFS + tabelas Hive externas em `massa_teste_laboratorio`.
+3. Catálogo: entidades visíveis no Atlas.
+4. Validação: tools basais MCP retornam o schema esperado.
+5. Corrida: agente gera SQL e executa no cluster.
 
 ### Entidades Atlas envolvidas
 
 | Entidade Atlas | Origem | Comentário |
 |----------------|--------|------------|
-| `hive_db` (`putz`) | Hive Metastore | Database lógico do schema fixo. |
-| `hive_table` (`putz.<tabela>`) | Hive Metastore | Uma por tabela do schema (92 entidades). |
-| `hive_column` | Hive Metastore | Colunas como objetos auditáveis. |
-| Relacionamentos (FK lógica) | Registro manual via API Atlas (Hive não captura FKs) | Adiado: convenção final (atributo customizado vs tag) será fechada na etapa de implementação. |
+| `hive_db` (`schema_laboratorio`) | Hive Metastore | Database lógico fixo. |
+| `hive_table` (`schema_laboratorio.tbl_*`) | Hive Metastore | Uma por entidade (92). |
+| `hive_column` | Hive Metastore | Colunas auditáveis (`col_*`). |
+| Relacionamentos (FK lógica) | Manifesto + API Atlas | Hive não preserva FKs originais. |
 
-Restrição: o Hive não preserva FKs do MySQL/MariaDB original; o adaptador Atlas precisa traduzir relacionamentos a partir de uma fonte adicional (ex.: arquivo de manifesto com as FKs documentadas em [`banco-putz-dominio.md`](banco-putz-dominio.md)).
+Restrição: o adaptador Atlas traduz relacionamentos a partir do manifesto documentado em [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md).
 
-### Contratos canônicos expostos
+### Contratos expostos
 
-O adaptador Atlas traduz respostas em um contrato canônico (ver [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md)). Mudanças na API do Atlas são absorvidas pelo adaptador, preservando a estabilidade do contrato MCP.
+Ver [`../07-contratos-mcp/contracts-v1.md`](../07-contratos-mcp/contracts-v1.md). Catálogo fechado de quinze tools: [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
 
-O catálogo MCP v1 é **fechado em quinze tools** de descoberta somente leitura sobre a API REST v2 do Atlas: três
-basais (`catalog.listTables`, `catalog.describeTable`, `catalog.listRelationships`) e doze complementares. A validação
-do passo 4 usa as três basais; as complementares apoiam o schema linking sob o mesmo orçamento de chamadas. Seleção e
-mapeamento em [`../evidence/matriz-15-tools-mcp-v1.md`](../evidence/matriz-15-tools-mcp-v1.md).
+### Disponibilidade
 
-### Disponibilidade do Atlas
-
-- Atlas roda no cluster (ver [`../05-infraestrutura/cluster-hadoop.md`](../05-infraestrutura/cluster-hadoop.md)).
-- Decisão vigente no ADR-0002: Atlas no cluster ODP em AWS x86_64 (não standalone como solução principal).
+- Atlas no cluster ([`../05-infraestrutura/cluster-hadoop.md`](../05-infraestrutura/cluster-hadoop.md)).
+- ADR-0002: co-localizado no master ODP AWS x86_64.
 
 ## Próximo passo
 

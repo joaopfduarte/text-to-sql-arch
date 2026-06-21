@@ -47,7 +47,7 @@ Fonte de verdade: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xm
 
 ### VDF legado OCI (somente referência)
 
-Fonte: [`../legacy-infra/assets/ODP-VDF.xml`](../legacy-infra/assets/ODP-VDF.xml).
+Fonte: [`../assets/scripts/ODP-VDF.xml`](../assets/scripts/ODP-VDF.xml).
 
 | Campo | Valor |
 |-------|-------|

@@ -44,7 +44,7 @@ Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
 |-------------------------------|-------------|--------|
 | `NetPublic` | Subnet pública + Security Group de entrada (porta 443/22 restrita por IP). | Recebe a pergunta no orquestrador. |
 | `NetInternalApp` | Subnet privada + SG de aplicação. | Hospeda a aplicação MCP. |
-| `NetDataPlane` | Subnet privada de dados + SG do cluster (acesso restrito ao master/worker). | Atlas, HDFS, Hive Metastore, banco PS. |
+| `NetDataPlane` | Subnet privada de dados + SG do cluster (acesso restrito ao master/worker). | Atlas, HDFS, Hive Metastore, massa laboratorial. |
 | `NetObservability` | Bucket S3 dedicado + IAM role da aplicação. | Evidências por `runId`, retenção sem sobrescrita. |
 
 ### Recursos por categoria
@@ -62,9 +62,9 @@ Fonte: [`rede-aws.puml`](../diagrams/rede-aws.puml)
 | Segurança | IAM roles (EC2 -> S3) | Mínimo privilégio. | Definir |
 | Acesso | Bastion ou Session Manager (preferível) | Evitar exposição SSH direta. | Decisão de operação |
 
-### Diferenças face ao laboratório OCI de referência
+### Ambiente legado
 
-A pasta [`../legacy-infra/`](../legacy-infra/index.md) contém o laboratório OCI de referência (ODP 1.2.2.0 em ARM). As principais diferenças para o alvo AWS x86 estão consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
+Um ambiente legado subdimensionado foi descartado deste repositório. Diferenças consolidadas em [`delta-oci-para-aws.md`](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

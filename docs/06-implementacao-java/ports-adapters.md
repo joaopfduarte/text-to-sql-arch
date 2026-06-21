@@ -52,7 +52,7 @@ O `SpringAiLlmAdapter` seleciona o provider por configuração (`app.llm.provide
 | Parser SQL | **Apache Calcite** (dialeto Hive). Decisão fechada; ver Cap.~4 (Escolhas Arquiteturais). |
 | Driver JDBC | `hive-jdbc` oficial para o subconjunto PS (92 tabelas) no cluster. |
 | Evidências | Filesystem local no MVP; S3 quando habilitarmos. |
-| Manifesto de FKs | JSON estático, fonte única alinhada a [`../04-arquitetura-dados/banco-putz-dominio.md`](../04-arquitetura-dados/banco-putz-dominio.md). |
+| Manifesto de FKs | JSON estático alinhado a [`../04-arquitetura-dados/banco-laboratorio-dominio.md`](../04-arquitetura-dados/banco-laboratorio-dominio.md). |
 
 ### Testabilidade
 

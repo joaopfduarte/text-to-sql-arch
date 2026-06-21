@@ -14,11 +14,12 @@ link_dir() {
 
 link_dir "$ROOT/evidence" "$DOCS/evidence"
 link_dir "$ROOT/templates" "$DOCS/templates"
-link_dir "$ROOT/db-reference" "$DOCS/db-reference"
 
 bash "$ROOT/scripts/render-diagrams.sh"
 
 mkdir -p "$DOCS/diagrams"
+# Remove symlinks órfãos (diagramas renomeados ou apagados)
+find "$DOCS/diagrams" -maxdepth 1 -type l ! -exec test -e {} \; -delete 2>/dev/null || true
 for f in "$ROOT/diagrams"/*.{puml,svg}; do
   [[ -e "$f" ]] || continue
   base="$(basename "$f")"
@@ -26,16 +27,6 @@ for f in "$ROOT/diagrams"/*.{puml,svg}; do
 done
 
 mkdir -p "$DOCS/assets/scripts"
-link_dir "$ROOT/legacy-infra/assets/ODP-VDF.xml" "$DOCS/assets/scripts/ODP-VDF.xml"
-
-mkdir -p "$DOCS/legacy-infra"
-for f in compute.tf network.tf security-list.tf provider.tf variables.tf vpn.tf iam.tf data.tf output.tf schema.yaml; do
-  link_dir "$ROOT/legacy-infra/$f" "$DOCS/legacy-infra/$f"
-done
-link_dir "$ROOT/legacy-infra/assets" "$DOCS/legacy-infra/assets"
-link_dir "$ROOT/legacy-infra/cloud-init" "$DOCS/legacy-infra/cloud-init"
-
-if [[ -f "$ROOT/adr/ADR-0003-inferencia-llm-deterministica.md" ]] && \
-   [[ ! -f "$DOCS/adr/ADR-0003-inferencia-llm-deterministica.md" ]]; then
-  cp "$ROOT/adr/ADR-0003-inferencia-llm-deterministica.md" "$DOCS/adr/"
+if [[ -f "$ROOT/assets/scripts/ODP-VDF.xml" ]]; then
+  link_dir "$ROOT/assets/scripts/ODP-VDF.xml" "$DOCS/assets/scripts/ODP-VDF.xml"
 fi

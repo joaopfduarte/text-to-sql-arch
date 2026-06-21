@@ -1,0 +1,17 @@
+flowchart LR
+  dump[Export relacional offline]
+  extract[Extracao subconjunto]
+  mask[Mascaramento PII]
+  bronze[Arquivos bronze]
+  hdfs[(HDFS laboratorio)]
+  hive[Tabelas Hive externas]
+  atlas[Registro Atlas]
+  mcp[Tools MCP catalogo]
+  jdbc[Executor JDBC]
+  harness[Harness experimental]
+  llm[Agente LLM]
+
+  dump --> extract --> mask --> bronze --> hdfs --> hive
+  hive --> atlas --> mcp
+  hive --> jdbc --> harness
+  mcp --> llm --> harness

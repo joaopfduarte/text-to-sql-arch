@@ -59,7 +59,7 @@ Modo baseline-static
   system  = system-shared-v1.md + system-baseline-v1.md
   user    = user-template-v1.md
             + {{QUESTION_TEXT}}
-            + putz_db.sql (DDL integral anexo)
+            + DDL anonimizado offline (DDL integral anexo)
 ```
 
 Diagrama:
@@ -77,7 +77,7 @@ flowchart TB
   end
   subgraph baseMode [Modo baseline-static]
     BaseRules[system-baseline-v1]
-    DDL[putz_db.sql anexo]
+    DDL[DDL anonimizado offline anexo]
     UserBase[user-template + pergunta]
   end
   shared --> McpRules

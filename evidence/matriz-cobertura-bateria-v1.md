@@ -8,10 +8,10 @@
 
 Fontes: [`bateria-30-perguntas-v1.csv`](bateria-30-perguntas-v1.csv) e
 [`gabarito-bateria-v1.md`](gabarito-bateria-v1.md). Tabelas conforme o DDL das 92
-([`putz_db.sql`](../db-reference/putz_db.sql)).
+([`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md)).
 
 A bateria adopta **6 cenários** (remove `Listagem simples` e `Filtro por enum` da taxonomia anterior de 8).
-Sincronizada com `content/cap4-metodologia.tex` (Onda 2, T11).
+Sincronizada com `documentacao-academica-externa/cap4-metodologia.tex` (Onda 2, T11).
 
 ## Cenário x perguntas
 
@@ -52,8 +52,8 @@ São 6 cenários; cada um com pelo menos 3 perguntas (mínimo I3).
 | Tema | Perguntas | Total |
 |------|-----------|-------|
 | Categorias de ativos | Q21, Q22, Q23, Q25, Q26 | 5 (>=4) |
-| Permissões de usuário (`putz_user_authority`) | Q24, Q26 | 2 (>=2) |
-| Jornada vídeo/painel (`publications_user`/render) | Q27, Q28, Q29, Q30 | 4 (>=3) |
+| Permissões de usuário (`tbl_54cf92bb`) | Q24, Q26 | 2 (>=2) |
+| Jornada vídeo/painel (`tbl_06d78b0c`/render) | Q27, Q28, Q29, Q30 | 4 (>=3) |
 
 ## Perguntas com `sql_esperados_max` > 1
 
@@ -66,55 +66,55 @@ São 6 cenários; cada um com pelo menos 3 perguntas (mínimo I3).
 
 Total: 4 perguntas (faixa 3-5 atendida).
 
-## Tabela PS x frequência
+## Tabela subconjunto laboratorial x frequência
 
 Frequência de uso por tabela na validação estrutural do gabarito (79 referências, 29 tabelas distintas
 das 92).
 
 | Tabela | Frequência | Perguntas |
 |--------|------------|-----------|
-| `project` | 8 | Q03, Q06, Q07, Q11, Q12, Q13, Q16, Q17 |
-| `transaction` | 6 | Q08, Q14, Q15, Q16, Q18, Q20 |
-| `person` | 6 | Q11, Q15, Q16, Q17, Q18, Q30 |
-| `asset_category` | 5 | Q21, Q22, Q23, Q25, Q26 |
-| `product` | 4 | Q02, Q11, Q16, Q19 |
-| `ibge__uf` | 4 | Q09, Q10, Q15, Q30 |
-| `project_render_item` | 4 | Q27, Q28, Q29, Q30 |
-| `project_render` | 4 | Q27, Q28, Q29, Q30 |
-| `project_payment` | 3 | Q03, Q06, Q13 |
-| `franquias` | 3 | Q01, Q04, Q05 |
-| `project_item` | 3 | Q11, Q16, Q19 |
-| `asset_item` | 3 | Q21, Q22, Q23 |
-| `asset_item__categories` | 3 | Q21, Q22, Q23 |
-| `publications_user` | 3 | Q27, Q28, Q29 |
-| `product_type` | 2 | Q02, Q19 |
-| `franquias__redes_franquia` | 2 | Q04, Q05 |
-| `ibge__city` | 2 | Q09, Q10 |
-| `asset_category__users` | 2 | Q25, Q26 |
-| `putz_user_authority` | 2 | Q24, Q26 |
-| `franquias__unidades` | 1 | Q01 |
-| `franquias__segmentos` | 1 | Q05 |
-| `timeline_event` | 1 | Q12 |
-| `project_step` | 1 | Q12 |
-| `transaction_coupon` | 1 | Q17 |
-| `subscriptions` | 1 | Q20 |
-| `subscription_plans` | 1 | Q20 |
-| `putz_authority` | 1 | Q24 |
-| `putz_user` | 1 | Q26 |
-| `publications` | 1 | Q28 |
+| `tbl_363ae7e9` | 8 | Q03, Q06, Q07, Q11, Q12, Q13, Q16, Q17 |
+| `tbl_c066178a` | 6 | Q08, Q14, Q15, Q16, Q18, Q20 |
+| `tbl_f193a446` | 6 | Q11, Q15, Q16, Q17, Q18, Q30 |
+| `tbl_d58bb5a4` | 5 | Q21, Q22, Q23, Q25, Q26 |
+| `tbl_891b1fc9` | 4 | Q02, Q11, Q16, Q19 |
+| `tbl_c78eb7ee` | 4 | Q09, Q10, Q15, Q30 |
+| `tbl_e019dc9e` | 4 | Q27, Q28, Q29, Q30 |
+| `tbl_21eee00c` | 4 | Q27, Q28, Q29, Q30 |
+| `tbl_6696932f` | 3 | Q03, Q06, Q13 |
+| `tbl_162cf7be` | 3 | Q01, Q04, Q05 |
+| `tbl_3a2c56ff` | 3 | Q11, Q16, Q19 |
+| `tbl_a6e2174e` | 3 | Q21, Q22, Q23 |
+| `tbl_c311310d` | 3 | Q21, Q22, Q23 |
+| `tbl_06d78b0c` | 3 | Q27, Q28, Q29 |
+| `tbl_ed8b2873` | 2 | Q02, Q19 |
+| `tbl_4c8d7ae5` | 2 | Q04, Q05 |
+| `tbl_2c1fc4f7` | 2 | Q09, Q10 |
+| `tbl_cca22dd2` | 2 | Q25, Q26 |
+| `tbl_54cf92bb` | 2 | Q24, Q26 |
+| `tbl_973ec6fa` | 1 | Q01 |
+| `tbl_8991e9dc` | 1 | Q05 |
+| `tbl_0bd88855` | 1 | Q12 |
+| `tbl_e9e0d929` | 1 | Q12 |
+| `tbl_6b881dfd` | 1 | Q17 |
+| `tbl_6cf5e405` | 1 | Q20 |
+| `tbl_6cc6cc99` | 1 | Q20 |
+| `tbl_d1556a76` | 1 | Q24 |
+| `tbl_c127eea9` | 1 | Q26 |
+| `tbl_4e5786c9` | 1 | Q28 |
 
 ## Domínios cobertos
 
 | Domínio | Tabelas na bateria |
 |---------|--------------------|
-| Franquias | `franquias`, `franquias__segmentos`, `franquias__redes_franquia`, `franquias__unidades` |
-| Projetos | `project`, `project_item`, `project_payment`, `project_step` |
-| Produtos | `product`, `product_type` |
-| Transações/cupons | `transaction`, `transaction_coupon` |
-| Assinaturas | `subscriptions`, `subscription_plans` |
-| Pessoas | `person` |
-| Geografia | `ibge__uf`, `ibge__city` |
-| Timeline | `timeline_event` |
-| Ativos | `asset_item`, `asset_item__categories`, `asset_category`, `asset_category__users` |
-| Permissões | `putz_user_authority`, `putz_authority`, `putz_user` |
-| Publicações/render | `publications_user`, `publications`, `project_render_item`, `project_render` |
+| domínio comercial principal | `tbl_162cf7be`, `tbl_8991e9dc`, `tbl_4c8d7ae5`, `tbl_973ec6fa` |
+| domínio operacional de entregas | `tbl_363ae7e9`, `tbl_3a2c56ff`, `tbl_6696932f`, `tbl_e9e0d929` |
+| domínio de catálogo | `tbl_891b1fc9`, `tbl_ed8b2873` |
+| domínio financeiro | `tbl_c066178a`, `tbl_6b881dfd` |
+| domínio de assinaturas | `tbl_6cf5e405`, `tbl_6cc6cc99` |
+| domínio de identidade | `tbl_f193a446` |
+| domínio geográfico de referência | `tbl_c78eb7ee`, `tbl_2c1fc4f7` |
+| domínio de linha do tempo | `tbl_0bd88855` |
+| domínio de mídia | `tbl_a6e2174e`, `tbl_c311310d`, `tbl_d58bb5a4`, `tbl_cca22dd2` |
+| domínio de acesso e auditoria | `tbl_54cf92bb`, `tbl_d1556a76`, `tbl_c127eea9` |
+| domínio de conteúdo externo | `tbl_06d78b0c`, `tbl_4e5786c9`, `tbl_e019dc9e`, `tbl_21eee00c` |

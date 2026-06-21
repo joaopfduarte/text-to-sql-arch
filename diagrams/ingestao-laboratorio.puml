@@ -2,11 +2,11 @@
 left to right direction
 skinparam backgroundColor transparent
 
-rectangle "DumpPSExportado" as dump
+rectangle "ExportRelacionalOffline" as dump
 rectangle "ExtracaoSubconjunto" as extracao
 rectangle "MascararPII" as mascarar
 rectangle "ArquivosBronze" as bronze
-database "HDFSDadosPSBronze" as hdfsBronze
+database "HDFSDadosLaboratorioBronze" as hdfsBronze
 rectangle "TabelasHiveExternas" as hiveExt
 rectangle "RegistroNoApacheAtlas" as atlasReg
 rectangle "ToolsMCPCatalog" as mcpTools

@@ -20,7 +20,7 @@ Não sobrescreva corridas anteriores. Qualquer ajuste gera novo `runId`.
 ## Artefatos de decisão humana (T11 / T08)
 
 Estes ficheiros são **preenchidos pelo autor**, não inferidos por agentes de IA. Ver
-`ai-interaction/correcao-metodologia.md` (repositório da monografia; secção «Decisões e execução
+`ai-interaction/correcao-metodologia.md` (pacote académico externo; secção «Decisões e execução
 exclusivas do autor»).
 
 | Ficheiro | Uso |
@@ -30,7 +30,7 @@ exclusivas do autor»).
 | [`matriz-cobertura-bateria-v1.md`](matriz-cobertura-bateria-v1.md) | Cobertura cenário × dificuldade × tabelas |
 | [`baseline-metricas-v1.csv`](baseline-metricas-v1.csv) | Métricas da campanha `baseline-static` v1 (Gemini-only, 30 corridas; `gabarito_match` por pergunta) |
 
-Esquema estático do comparativo simples: [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql).
+Esquema estático do comparativo simples: [`schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md).
 
 ## Inventário e catálogo de tools MCP (T06)
 

@@ -7,7 +7,7 @@
 1. **Antes** de gerar qualquer SQL, consulte o catálogo canônico via tools MCP disponíveis nesta sessão.
 2. Respeite o orçamento de **10 tool calls** por sessão. Planeje chamadas; evite repetições redundantes.
 3. Priorize, nesta ordem, quando aplicável:
-   - `catalog.listTables` — inventário de tabelas do subconjunto PS;
+   - `catalog.listTables` — inventário de tabelas do subconjunto laboratorial;
    - `catalog.describeTable` — colunas e tipos de tabelas candidatas;
    - `catalog.listRelationships` — junções e chaves entre tabelas envolvidas.
 4. Tools complementares do catálogo v1 podem ser usadas dentro do mesmo orçamento quando as basais

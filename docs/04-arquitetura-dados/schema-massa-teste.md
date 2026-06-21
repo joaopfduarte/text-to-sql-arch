@@ -1,9 +1,8 @@
-# Schema e massa de teste (PS)
+# Schema e massa de teste (laboratório)
 
 ## Propósito
 
-Fixar o schema relacional PS que compõe a massa fixa do harness e definir as regras de
-versionamento dessa massa.
+Fixar o subconjunto laboratorial (92 entidades) que compõe a massa fixa do harness e definir as regras de versionamento.
 
 ## Leitor
 
@@ -11,311 +10,264 @@ Pessoa que prepara a massa, monta o catálogo no Atlas e roda corridas.
 
 ## Pré-requisitos
 
-- [`banco-putz-dominio.md`](banco-putz-dominio.md)
-- [`carga-cluster-putz.md`](carga-cluster-putz.md)
+- [`00-glossario-anonimizacao.md`](../00-glossario-anonimizacao.md)
+- [`banco-laboratorio-dominio.md`](banco-laboratorio-dominio.md)
+- [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md)
 - [`catalogo-atlas.md`](catalogo-atlas.md)
-- [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql) (DDL canónico)
-- [`../db-reference/putz_db.md`](../db-reference/putz_db.md) (export legível)
 
 ## Conteúdo
 
 ### Decisão
 
-A massa de avaliação do TCC corresponde ao **schema completo** exportado do banco PS: **92 tabelas**
-definidas em [`putz_db.sql`](../db-reference/putz_db.sql). Esse recorte substitui qualquer schema
-sintético (anteriormente `sales.*`) e qualquer lista parcial anterior de 14 tabelas. Toda referência
-futura em contratos MCP, harness e exemplos deve citar tabelas reais desse inventário.
+A massa de avaliação corresponde a **92 entidades** com identificadores opacos (`tbl_*`). O export relacional completo permanece **offline**, fora deste repositório.
 
 ### Regras da massa
 
 - O schema é fixado antes das corridas finais e versionado em `datasetVersion`.
-- Cada pergunta tem SQL de referência ou resultado esperado, quando aplicável.
-- Alteração do schema exposto exige nova versão e justificativa em ADR.
-- Dados são extraídos do dump original e residem no cluster (HDFS/Hive), com mascaramento de PII quando
-  necessário.
+- Alteração do schema exposto exige nova versão e ADR.
+- Dados sensíveis são mascarados na carga conforme [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md).
 
-### Inventário completo (92 tabelas)
+### Inventário completo (92 entidades)
 
-Fonte canónica: [`putz_db.sql`](../db-reference/putz_db.sql). A tabela abaixo reproduz a ordem de
-`CREATE TABLE` do DDL e agrupa por domínio operacional (ver [`banco-putz-dominio.md`](banco-putz-dominio.md)).
-
-| # | Tabela | Domínio | Evidência (DDL) |
-|---|--------|---------|-----------------|
-| 1 | `asset_category` | Ativos digitais | [`putz_db.sql` L32](../db-reference/putz_db.sql) |
-| 2 | `asset_category__users` | Ativos digitais | [`putz_db.sql` L53](../db-reference/putz_db.sql) |
-| 3 | `asset_item` | Ativos digitais | [`putz_db.sql` L64](../db-reference/putz_db.sql) |
-| 4 | `asset_item__categories` | Ativos digitais | [`putz_db.sql` L90](../db-reference/putz_db.sql) |
-| 5 | `asset_item__voice_overs` | Ativos digitais | [`putz_db.sql` L101](../db-reference/putz_db.sql) |
-| 6 | `asset_retail_product` | Ativos digitais | [`putz_db.sql` L112](../db-reference/putz_db.sql) |
-| 7 | `asset_retail_product__categories` | Ativos digitais | [`putz_db.sql` L138](../db-reference/putz_db.sql) |
-| 8 | `asset_retail_product__voice_overs` | Ativos digitais | [`putz_db.sql` L149](../db-reference/putz_db.sql) |
-| 9 | `asset_retail_supplier` | Ativos digitais | [`putz_db.sql` L160](../db-reference/putz_db.sql) |
-| 10 | `asset_retail_unit` | Ativos digitais | [`putz_db.sql` L181](../db-reference/putz_db.sql) |
-| 11 | `asset_startup` | Ativos digitais | [`putz_db.sql` L200](../db-reference/putz_db.sql) |
-| 12 | `asset_voice_speaker` | Ativos digitais | [`putz_db.sql` L260](../db-reference/putz_db.sql) |
-| 13 | `asset_voice_voiceover` | Ativos digitais | [`putz_db.sql` L279](../db-reference/putz_db.sql) |
-| 14 | `competence` | Apoio operacional | [`putz_db.sql` L305](../db-reference/putz_db.sql) |
-| 15 | `competence_guide` | Apoio operacional | [`putz_db.sql` L323](../db-reference/putz_db.sql) |
-| 16 | `config_params` | Apoio operacional | [`putz_db.sql` L349](../db-reference/putz_db.sql) |
-| 17 | `DATABASECHANGELOG` | Controle Liquibase | [`putz_db.sql` L370](../db-reference/putz_db.sql) |
-| 18 | `DATABASECHANGELOGLOCK` | Controle Liquibase | [`putz_db.sql` L393](../db-reference/putz_db.sql) |
-| 19 | `franquias` | Franquias | [`putz_db.sql` L406](../db-reference/putz_db.sql) |
-| 20 | `franquias__expansao_interesse` | Franquias | [`putz_db.sql` L423](../db-reference/putz_db.sql) |
-| 21 | `franquias__investimentos_franquia` | Franquias | [`putz_db.sql` L438](../db-reference/putz_db.sql) |
-| 22 | `franquias__premiacoes` | Franquias | [`putz_db.sql` L454](../db-reference/putz_db.sql) |
-| 23 | `franquias__redes_franquia` | Franquias | [`putz_db.sql` L470](../db-reference/putz_db.sql) |
-| 24 | `franquias__redes_sociais` | Franquias | [`putz_db.sql` L486](../db-reference/putz_db.sql) |
-| 25 | `franquias__requisitos_franquia` | Franquias | [`putz_db.sql` L500](../db-reference/putz_db.sql) |
-| 26 | `franquias__segmentos` | Franquias | [`putz_db.sql` L517](../db-reference/putz_db.sql) |
-| 27 | `franquias__sub_segmentos` | Franquias | [`putz_db.sql` L529](../db-reference/putz_db.sql) |
-| 28 | `franquias__taxas_franquia` | Franquias | [`putz_db.sql` L542](../db-reference/putz_db.sql) |
-| 29 | `franquias__unidades` | Franquias | [`putz_db.sql` L559](../db-reference/putz_db.sql) |
-| 30 | `ibge_names_and_frequency` | Geografia (IBGE) | [`putz_db.sql` L575](../db-reference/putz_db.sql) |
-| 31 | `ibge_name_group_sum` | Geografia (IBGE) | [`putz_db.sql` L590](../db-reference/putz_db.sql) |
-| 32 | `ibge__city` | Geografia (IBGE) | [`putz_db.sql` L607](../db-reference/putz_db.sql) |
-| 33 | `ibge__name` | Geografia (IBGE) | [`putz_db.sql` L630](../db-reference/putz_db.sql) |
-| 34 | `ibge__name_frequency` | Geografia (IBGE) | [`putz_db.sql` L658](../db-reference/putz_db.sql) |
-| 35 | `ibge__name_group` | Geografia (IBGE) | [`putz_db.sql` L689](../db-reference/putz_db.sql) |
-| 36 | `ibge__name_render` | Geografia (IBGE) | [`putz_db.sql` L713](../db-reference/putz_db.sql) |
-| 37 | `ibge__uf` | Geografia (IBGE) | [`putz_db.sql` L733](../db-reference/putz_db.sql) |
-| 38 | `notification_whatsapp` | Integração externa | [`putz_db.sql` L754](../db-reference/putz_db.sql) |
-| 39 | `openai_assistants` | Integração externa | [`putz_db.sql` L806](../db-reference/putz_db.sql) |
-| 40 | `openai_conclusions` | Integração externa | [`putz_db.sql` L830](../db-reference/putz_db.sql) |
-| 41 | `page_faq` | Apoio operacional | [`putz_db.sql` L852](../db-reference/putz_db.sql) |
-| 42 | `person` | Pessoa | [`putz_db.sql` L872](../db-reference/putz_db.sql) |
-| 43 | `person_references` | Pessoa | [`putz_db.sql` L925](../db-reference/putz_db.sql) |
-| 44 | `portfolio` | Portfólio | [`putz_db.sql` L944](../db-reference/putz_db.sql) |
-| 45 | `portfolio__tags` | Portfólio | [`putz_db.sql` L973](../db-reference/putz_db.sql) |
-| 46 | `product` | Produto | [`putz_db.sql` L984](../db-reference/putz_db.sql) |
-| 47 | `product_competence` | Produto | [`putz_db.sql` L1005](../db-reference/putz_db.sql) |
-| 48 | `product_group` | Produto | [`putz_db.sql` L1022](../db-reference/putz_db.sql) |
-| 49 | `product_type` | Produto | [`putz_db.sql` L1039](../db-reference/putz_db.sql) |
-| 50 | `project` | Projetos | [`putz_db.sql` L1060](../db-reference/putz_db.sql) |
-| 51 | `project_calc` | Projetos | [`putz_db.sql` L1123](../db-reference/putz_db.sql) |
-| 52 | `project_case` | Projetos | [`putz_db.sql` L1169](../db-reference/putz_db.sql) |
-| 53 | `project_item` | Projetos | [`putz_db.sql` L1196](../db-reference/putz_db.sql) |
-| 54 | `project_item_request` | Projetos | [`putz_db.sql` L1236](../db-reference/putz_db.sql) |
-| 55 | `project_payment` | Projetos | [`putz_db.sql` L1256](../db-reference/putz_db.sql) |
-| 56 | `project_render` | Projetos | [`putz_db.sql` L1278](../db-reference/putz_db.sql) |
-| 57 | `project_render_group_name` | Projetos | [`putz_db.sql` L1336](../db-reference/putz_db.sql) |
-| 58 | `project_render_item` | Projetos | [`putz_db.sql` L1355](../db-reference/putz_db.sql) |
-| 59 | `project_render_log` | Projetos | [`putz_db.sql` L1411](../db-reference/putz_db.sql) |
-| 60 | `project_render_user` | Projetos | [`putz_db.sql` L1430](../db-reference/putz_db.sql) |
-| 61 | `project_step` | Projetos | [`putz_db.sql` L1442](../db-reference/putz_db.sql) |
-| 62 | `project__tags` | Projetos | [`putz_db.sql` L1473](../db-reference/putz_db.sql) |
-| 63 | `publications` | Publicações | [`putz_db.sql` L1484](../db-reference/putz_db.sql) |
-| 64 | `publications_complete` | Publicações | [`putz_db.sql` L1506](../db-reference/putz_db.sql) |
-| 65 | `publications_source` | Publicações | [`putz_db.sql` L1526](../db-reference/putz_db.sql) |
-| 66 | `publications_source__tags` | Publicações | [`putz_db.sql` L1561](../db-reference/putz_db.sql) |
-| 67 | `publications_source__type_users` | Publicações | [`putz_db.sql` L1573](../db-reference/putz_db.sql) |
-| 68 | `publications_user` | Publicações | [`putz_db.sql` L1590](../db-reference/putz_db.sql) |
-| 69 | `publication_task` | Publicações | [`putz_db.sql` L1619](../db-reference/putz_db.sql) |
-| 70 | `putz_authority` | Conta e segurança | [`putz_db.sql` L1650](../db-reference/putz_db.sql) |
-| 71 | `putz_persistent_audit_event` | Conta e segurança | [`putz_db.sql` L1661](../db-reference/putz_db.sql) |
-| 72 | `putz_persistent_audit_evt_data` | Conta e segurança | [`putz_db.sql` L1674](../db-reference/putz_db.sql) |
-| 73 | `putz_user` | Conta e segurança | [`putz_db.sql` L1686](../db-reference/putz_db.sql) |
-| 74 | `putz_user_authority` | Conta e segurança | [`putz_db.sql` L1716](../db-reference/putz_db.sql) |
-| 75 | `question` | Apoio operacional | [`putz_db.sql` L1727](../db-reference/putz_db.sql) |
-| 76 | `rel_product_type__groups` | Produto | [`putz_db.sql` L1746](../db-reference/putz_db.sql) |
-| 77 | `rel_product_type__tags` | Produto | [`putz_db.sql` L1757](../db-reference/putz_db.sql) |
-| 78 | `render_item_resume` | Apoio operacional | [`putz_db.sql` L1768](../db-reference/putz_db.sql) |
-| 79 | `satisfaction_survey` | Apoio operacional | [`putz_db.sql` L1785](../db-reference/putz_db.sql) |
-| 80 | `schedule` | Apoio operacional | [`putz_db.sql` L1804](../db-reference/putz_db.sql) |
-| 81 | `schedule_step` | Apoio operacional | [`putz_db.sql` L1822](../db-reference/putz_db.sql) |
-| 82 | `smart_websummit_rio` | Apoio operacional | [`putz_db.sql` L1845](../db-reference/putz_db.sql) |
-| 83 | `subscriptions` | Apoio operacional | [`putz_db.sql` L1862](../db-reference/putz_db.sql) |
-| 84 | `subscription_plans` | Apoio operacional | [`putz_db.sql` L1889](../db-reference/putz_db.sql) |
-| 85 | `tag` | Tags e classificação | [`putz_db.sql` L1918](../db-reference/putz_db.sql) |
-| 86 | `timeline_attachment` | Apoio operacional | [`putz_db.sql` L1937](../db-reference/putz_db.sql) |
-| 87 | `timeline_comment` | Apoio operacional | [`putz_db.sql` L1956](../db-reference/putz_db.sql) |
-| 88 | `timeline_event` | Apoio operacional | [`putz_db.sql` L1975](../db-reference/putz_db.sql) |
-| 89 | `transaction` | Transações | [`putz_db.sql` L2002](../db-reference/putz_db.sql) |
-| 90 | `transaction_coupon` | Transações | [`putz_db.sql` L2036](../db-reference/putz_db.sql) |
-| 91 | `transaction_coupon_remover` | Transações | [`putz_db.sql` L2065](../db-reference/putz_db.sql) |
-| 92 | `transaction_remover` | Transações | [`putz_db.sql` L2092](../db-reference/putz_db.sql) |
+| # | Entidade | Domínio |
+|---|----------|---------|
+| 1 | `tbl_d58bb5a4` | domínio de mídia |
+| 2 | `tbl_cca22dd2` | domínio de mídia |
+| 3 | `tbl_a6e2174e` | domínio de mídia |
+| 4 | `tbl_c311310d` | domínio de mídia |
+| 5 | `tbl_69fab9c0` | domínio de mídia |
+| 6 | `tbl_0bd3e50a` | domínio de mídia |
+| 7 | `tbl_0cd4d531` | domínio de mídia |
+| 8 | `tbl_98bbd86f` | domínio de mídia |
+| 9 | `tbl_f248ec25` | domínio de mídia |
+| 10 | `tbl_38b14384` | domínio de mídia |
+| 11 | `tbl_e0a11ad9` | domínio de mídia |
+| 12 | `tbl_9288f22d` | domínio de mídia |
+| 13 | `tbl_2210dca4` | domínio de mídia |
+| 14 | `tbl_5e464b14` | apoio operacional |
+| 15 | `tbl_cef676c5` | apoio operacional |
+| 16 | `tbl_bb1c74b7` | apoio operacional |
+| 17 | `tbl_d1cb73f6` | controle de migração |
+| 18 | `tbl_b7dfbbcb` | controle de migração |
+| 19 | `tbl_162cf7be` | domínio comercial principal |
+| 20 | `tbl_93460c22` | domínio comercial principal |
+| 21 | `tbl_54c1256a` | domínio comercial principal |
+| 22 | `tbl_254c881e` | domínio comercial principal |
+| 23 | `tbl_4c8d7ae5` | domínio comercial principal |
+| 24 | `tbl_05dc6f7a` | domínio comercial principal |
+| 25 | `tbl_fada6213` | domínio comercial principal |
+| 26 | `tbl_8991e9dc` | domínio comercial principal |
+| 27 | `tbl_95a1e6e1` | domínio comercial principal |
+| 28 | `tbl_40b45933` | domínio comercial principal |
+| 29 | `tbl_973ec6fa` | domínio comercial principal |
+| 30 | `tbl_23a8dee5` | domínio geográfico de referência |
+| 31 | `tbl_f64a1c03` | domínio geográfico de referência |
+| 32 | `tbl_2c1fc4f7` | domínio geográfico de referência |
+| 33 | `tbl_0c30d74e` | domínio geográfico de referência |
+| 34 | `tbl_bd01b86d` | domínio geográfico de referência |
+| 35 | `tbl_c6092460` | domínio geográfico de referência |
+| 36 | `tbl_e78e1fac` | domínio geográfico de referência |
+| 37 | `tbl_c78eb7ee` | domínio geográfico de referência |
+| 38 | `tbl_9b02bb2c` | domínio de conectores |
+| 39 | `tbl_d94d1042` | domínio de conectores |
+| 40 | `tbl_508411b3` | domínio de conectores |
+| 41 | `tbl_a63ac3ee` | apoio operacional |
+| 42 | `tbl_f193a446` | domínio de identidade |
+| 43 | `tbl_ae0a73d5` | domínio de identidade |
+| 44 | `tbl_f0944b44` | domínio de catálogo |
+| 45 | `tbl_ea9d95de` | domínio de catálogo |
+| 46 | `tbl_891b1fc9` | domínio de catálogo |
+| 47 | `tbl_feb88f1f` | domínio de catálogo |
+| 48 | `tbl_97a28ae4` | domínio de catálogo |
+| 49 | `tbl_ed8b2873` | domínio de catálogo |
+| 50 | `tbl_363ae7e9` | domínio operacional de entregas |
+| 51 | `tbl_b8f84c29` | domínio operacional de entregas |
+| 52 | `tbl_fb0188bb` | domínio operacional de entregas |
+| 53 | `tbl_3a2c56ff` | domínio operacional de entregas |
+| 54 | `tbl_73f0363b` | domínio operacional de entregas |
+| 55 | `tbl_6696932f` | domínio operacional de entregas |
+| 56 | `tbl_21eee00c` | domínio operacional de entregas |
+| 57 | `tbl_6b78d7ab` | domínio operacional de entregas |
+| 58 | `tbl_e019dc9e` | domínio operacional de entregas |
+| 59 | `tbl_68110fc1` | domínio operacional de entregas |
+| 60 | `tbl_086b56bc` | domínio operacional de entregas |
+| 61 | `tbl_e9e0d929` | domínio operacional de entregas |
+| 62 | `tbl_35a31063` | domínio operacional de entregas |
+| 63 | `tbl_4e5786c9` | domínio de conteúdo externo |
+| 64 | `tbl_03f58275` | domínio de conteúdo externo |
+| 65 | `tbl_ed7e8f08` | domínio de conteúdo externo |
+| 66 | `tbl_0f03f20e` | domínio de conteúdo externo |
+| 67 | `tbl_9705264a` | domínio de conteúdo externo |
+| 68 | `tbl_06d78b0c` | domínio de conteúdo externo |
+| 69 | `tbl_58680eab` | domínio de conteúdo externo |
+| 70 | `tbl_d1556a76` | domínio de acesso e auditoria |
+| 71 | `tbl_a4806350` | domínio de acesso e auditoria |
+| 72 | `tbl_a707320d` | domínio de acesso e auditoria |
+| 73 | `tbl_c127eea9` | domínio de acesso e auditoria |
+| 74 | `tbl_54cf92bb` | domínio de acesso e auditoria |
+| 75 | `tbl_bd19ace7` | apoio operacional |
+| 76 | `tbl_e34fa50f` | domínio de catálogo |
+| 77 | `tbl_db4293e4` | domínio de catálogo |
+| 78 | `tbl_ae9df279` | domínio operacional de entregas |
+| 79 | `tbl_0b894724` | apoio operacional |
+| 80 | `tbl_77034db9` | domínio operacional de entregas |
+| 81 | `tbl_4cde28f3` | domínio operacional de entregas |
+| 82 | `tbl_cc639883` | apoio operacional |
+| 83 | `tbl_6cf5e405` | domínio financeiro |
+| 84 | `tbl_6cc6cc99` | domínio financeiro |
+| 85 | `tbl_7933f344` | tags e classificação |
+| 86 | `tbl_50ff81ac` | domínio operacional de entregas |
+| 87 | `tbl_b5c51241` | domínio operacional de entregas |
+| 88 | `tbl_0bd88855` | domínio operacional de entregas |
+| 89 | `tbl_c066178a` | domínio financeiro |
+| 90 | `tbl_6b881dfd` | domínio financeiro |
+| 91 | `tbl_365b81cc` | domínio financeiro |
+| 92 | `tbl_63f841a0` | domínio financeiro |
 
 #### Resumo por domínio
 
 | Domínio | Quantidade |
 |---------|------------|
-| Ativos digitais | 13 |
-| Apoio operacional | 15 |
-| Controle Liquibase | 2 |
-| Franquias | 11 |
-| Geografia (IBGE) | 8 |
-| Integração externa | 3 |
-| Pessoa | 2 |
-| Portfólio | 2 |
-| Produto | 6 |
-| Projetos | 13 |
-| Publicações | 7 |
-| Conta e segurança | 5 |
-| Tags e classificação | 1 |
-| Transações | 4 |
+| apoio operacional | 7 |
+| controle de migração | 2 |
+| domínio comercial principal | 11 |
+| domínio de acesso e auditoria | 5 |
+| domínio de catálogo | 8 |
+| domínio de conectores | 3 |
+| domínio de conteúdo externo | 7 |
+| domínio de identidade | 2 |
+| domínio de mídia | 13 |
+| domínio financeiro | 6 |
+| domínio geográfico de referência | 8 |
+| domínio operacional de entregas | 19 |
+| tags e classificação | 1 |
 | **Total** | **92** |
 
-### FKs do schema (109 restrições)
+### Relacionamentos (FK lógicas)
 
-Lista derivada da secção `ALTER TABLE ... ADD CONSTRAINT` de [`putz_db.sql`](../db-reference/putz_db.sql).
-Notação: `origem.coluna -> destino.coluna`.
+Notação: `tbl_origem.col_origem -> tbl_destino.col_destino`.
 
-| Tabela origem | FK | Destino |
-|---------------|----|---------|
-| `asset_category` | `root_category_id` | `asset_category.id` |
-| `asset_category__users` | `categories_id` | `asset_category.id` |
-| `asset_category__users` | `person_id` | `putz_user.id` |
-| `asset_item__categories` | `asset_item_id` | `asset_item.id` |
-| `asset_item__categories` | `category_id` | `asset_category.id` |
-| `asset_item__voice_overs` | `asset_item_id` | `asset_item.id` |
-| `asset_item__voice_overs` | `voice_overs_id` | `asset_voice_voiceover.id` |
-| `asset_retail_product` | `default_supplier_id` | `asset_retail_supplier.id` |
-| `asset_retail_product` | `default_unit_id` | `asset_retail_unit.id` |
-| `asset_retail_product__categories` | `asset_retail_product_id` | `asset_retail_product.id` |
-| `asset_retail_product__categories` | `categories_id` | `asset_category.id` |
-| `asset_retail_product__voice_overs` | `asset_retail_product_id` | `asset_retail_product.id` |
-| `asset_retail_product__voice_overs` | `voice_overs_id` | `asset_voice_voiceover.id` |
-| `asset_startup` | `category_id` | `asset_category.id` |
-| `asset_voice_voiceover` | `category_id` | `asset_category.id` |
-| `asset_voice_voiceover` | `speaker_id` | `asset_voice_speaker.id` |
-| `competence_guide` | `competence_id` | `competence.id` |
-| `franquias` | `segmento_id` | `franquias__segmentos.id` |
-| `franquias` | `rede_id` | `franquias__redes_franquia.id` |
-| `franquias__expansao_interesse` | `franquia_id` | `franquias.id` |
-| `franquias__investimentos_franquia` | `franquia_id` | `franquias.id` |
-| `franquias__premiacoes` | `franquia_id` | `franquias.id` |
-| `franquias__redes_sociais` | `franquia_id` | `franquias.id` |
-| `franquias__requisitos_franquia` | `franquia_id` | `franquias.id` |
-| `franquias__sub_segmentos` | `segmento_id` | `franquias__segmentos.id` |
-| `franquias__taxas_franquia` | `franquia_id` | `franquias.id` |
-| `franquias__unidades` | `franquia_id` | `franquias.id` |
-| `ibge__city` | `uf_id` | `ibge__uf.id` |
-| `ibge__name` | `name_group_id` | `ibge__name_group.id` |
-| `ibge__name_frequency` | `uf_id` | `ibge__uf.id` |
-| `ibge__name_frequency` | `name_id` | `ibge__name.id` |
-| `ibge__name_render` | `ibge_name_id` | `ibge__name.id` |
-| `ibge__name_render` | `project_render_id` | `project_render.id` |
-| `notification_whatsapp` | `time_line_event_id` | `timeline_event.id` |
-| `notification_whatsapp` | `person_id` | `person.id` |
-| `notification_whatsapp` | `project_render_item_id` | `project_render_item.id` |
-| `person` | `company_id` | `person.id` |
-| `person_references` | `person_id` | `person.id` |
-| `portfolio` | `competence_id` | `competence.id` |
-| `portfolio` | `person_id` | `person.id` |
-| `portfolio__tags` | `portfolio_id` | `portfolio.id` |
-| `portfolio__tags` | `tags_id` | `tag.id` |
-| `product` | `product_type_id` | `product_type.id` |
-| `product_competence` | `competence_id` | `competence.id` |
-| `product_competence` | `product_type_id` | `product_type.id` |
-| `project` | `agency_id` | `person.id` |
-| `project` | `cancel_user_id` | `person.id` |
-| `project` | `client_id` | `person.id` |
-| `project` | `manager_id` | `person.id` |
-| `project` | `root_project_id` | `project.id` |
-| `project` | `vendor_id` | `person.id` |
-| `project_calc` | `id` | `project.id` |
-| `project_case` | `id` | `project.id` |
-| `project_item` | `freelancer_id` | `person.id` |
-| `project_item` | `product_id` | `product.id` |
-| `project_item` | `project_id` | `project.id` |
-| `project_item` | `project_step_id` | `project_step.id` |
-| `project_item_request` | `freelancer_id` | `person.id` |
-| `project_item_request` | `project_item_id` | `project_item.id` |
-| `project_payment` | `project_id` | `project.id` |
-| `project_render_group_name` | `ibge_name_group_id` | `ibge__name_group.id` |
-| `project_render_group_name` | `render_id` | `project_render.id` |
-| `project_render_item` | `person_id` | `person.id` |
-| `project_render_item` | `render_project_id` | `project_render.id` |
-| `project_render_log` | `project_render_item_id` | `project_render_item.id` |
-| `project_step` | `project_id` | `project.id` |
-| `project_step` | `step_id` | `schedule_step.id` |
-| `project__tags` | `project_id` | `project.id` |
-| `project__tags` | `tags_id` | `tag.id` |
-| `publications` | `publications_source_id` | `publications_source.id` |
-| `publications_source__tags` | `publication_source_id` | `publications_source.id` |
-| `publications_source__tags` | `tags_id` | `tag.id` |
-| `publications_source__type_users` | `person_id` | `person.id` |
-| `publications_user` | `project_render_item_id` | `project_render_item.id` |
-| `publications_user` | `publication_id` | `publications.id` |
-| `publications_user` | `owner_id` | `putz_user.id` |
-| `publication_task` | `publication_source_id` | `publications_source.id` |
-| `putz_persistent_audit_evt_data` | `event_id` | `putz_persistent_audit_event.event_id` |
-| `putz_user_authority` | `authority_name` | `putz_authority.name` |
-| `putz_user_authority` | `user_id` | `putz_user.id` |
-| `rel_product_type__groups` | `groups_id` | `product_group.id` |
-| `rel_product_type__groups` | `product_type_id` | `product_type.id` |
-| `rel_product_type__tags` | `product_type_id` | `product_type.id` |
-| `rel_product_type__tags` | `tags_id` | `tag.id` |
-| `satisfaction_survey` | `project_id` | `project.id` |
-| `satisfaction_survey` | `question_id` | `question.id` |
-| `schedule_step` | `schedule_id` | `schedule.id` |
-| `subscriptions` | `user_id` | `putz_user.id` |
-| `subscriptions` | `transaction_id` | `transaction.id` |
-| `subscriptions` | `subscription_plan_id` | `subscription_plans.id` |
-| `timeline_attachment` | `event_id` | `timeline_event.id` |
-| `timeline_comment` | `created_by` | `putz_user.login` |
-| `timeline_comment` | `event_id` | `timeline_event.id` |
-| `timeline_comment` | `root_comment_id` | `timeline_comment.id` |
-| `timeline_event` | `project_item_id` | `project_item.id` |
-| `timeline_event` | `project_step_id` | `project_step.id` |
-| `timeline_event` | `root_event_id` | `timeline_event.id` |
-| `transaction` | `person_id` | `person.id` |
-| `transaction` | `project_id` | `project.id` |
-| `transaction` | `project_item_id` | `project_item.id` |
-| `transaction` | `related_transaction_id` | `transaction.id` |
-| `transaction` | `subscription_id` | `subscriptions.id` |
-| `transaction_coupon` | `person_id` | `person.id` |
-| `transaction_coupon` | `person_owner_id` | `person.id` |
-| `transaction_coupon` | `project_id` | `project.id` |
-| `transaction_coupon` | `publications_user_id` | `publications_user.id` |
-| `transaction_coupon` | `project_render_id` | `project_render.id` |
-| `transaction_coupon` | `project_render_item_id` | `project_render_item.id` |
-| `transaction_coupon` | `transaction_id` | `transaction.id` |
+| Origem | Coluna | Destino |
+|--------|--------|---------|
+| `tbl_d58bb5a4` | `col_7c65d453` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_cca22dd2` | `col_a4e129cb` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_cca22dd2` | `col_3e19be2e` | `tbl_c127eea9.col_d7247819` |
+| `tbl_c311310d` | `col_00b5fea0` | `tbl_a6e2174e.col_d7247819` |
+| `tbl_c311310d` | `col_d75580b3` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_69fab9c0` | `col_00b5fea0` | `tbl_a6e2174e.col_d7247819` |
+| `tbl_69fab9c0` | `col_3d7dc4fa` | `tbl_2210dca4.col_d7247819` |
+| `tbl_0bd3e50a` | `col_73a8ac66` | `tbl_f248ec25.col_d7247819` |
+| `tbl_0bd3e50a` | `col_79c804ae` | `tbl_38b14384.col_d7247819` |
+| `tbl_0cd4d531` | `col_026426a8` | `tbl_0bd3e50a.col_d7247819` |
+| `tbl_0cd4d531` | `col_a4e129cb` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_98bbd86f` | `col_026426a8` | `tbl_0bd3e50a.col_d7247819` |
+| `tbl_98bbd86f` | `col_3d7dc4fa` | `tbl_2210dca4.col_d7247819` |
+| `tbl_e0a11ad9` | `col_d75580b3` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_2210dca4` | `col_d75580b3` | `tbl_d58bb5a4.col_d7247819` |
+| `tbl_2210dca4` | `col_56b2d112` | `tbl_9288f22d.col_d7247819` |
+| `tbl_cef676c5` | `col_58e38856` | `tbl_5e464b14.col_d7247819` |
+| `tbl_162cf7be` | `col_2cd9416d` | `tbl_8991e9dc.col_d7247819` |
+| `tbl_162cf7be` | `col_1d3e13bf` | `tbl_4c8d7ae5.col_d7247819` |
+| `tbl_93460c22` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_54c1256a` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_254c881e` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_05dc6f7a` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_fada6213` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_95a1e6e1` | `col_2cd9416d` | `tbl_8991e9dc.col_d7247819` |
+| `tbl_40b45933` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_973ec6fa` | `col_0bee3ba9` | `tbl_162cf7be.col_d7247819` |
+| `tbl_2c1fc4f7` | `col_7e317139` | `tbl_c78eb7ee.col_d7247819` |
+| `tbl_0c30d74e` | `col_451e2dea` | `tbl_c6092460.col_d7247819` |
+| `tbl_bd01b86d` | `col_7e317139` | `tbl_c78eb7ee.col_d7247819` |
+| `tbl_bd01b86d` | `col_30e09710` | `tbl_0c30d74e.col_d7247819` |
+| `tbl_e78e1fac` | `col_77d5e6dc` | `tbl_0c30d74e.col_d7247819` |
+| `tbl_e78e1fac` | `col_c1b6250a` | `tbl_21eee00c.col_d7247819` |
+| `tbl_9b02bb2c` | `col_84fa40f1` | `tbl_0bd88855.col_d7247819` |
+| `tbl_9b02bb2c` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_9b02bb2c` | `col_0c0112b1` | `tbl_e019dc9e.col_d7247819` |
+| `tbl_f193a446` | `col_35f9c31c` | `tbl_f193a446.col_d7247819` |
+| `tbl_ae0a73d5` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_f0944b44` | `col_58e38856` | `tbl_5e464b14.col_d7247819` |
+| `tbl_f0944b44` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_ea9d95de` | `col_b23d42a3` | `tbl_f0944b44.col_d7247819` |
+| `tbl_ea9d95de` | `col_678f2787` | `tbl_7933f344.col_d7247819` |
+| `tbl_891b1fc9` | `col_b80b7e90` | `tbl_ed8b2873.col_d7247819` |
+| `tbl_feb88f1f` | `col_58e38856` | `tbl_5e464b14.col_d7247819` |
+| `tbl_feb88f1f` | `col_b80b7e90` | `tbl_ed8b2873.col_d7247819` |
+| `tbl_363ae7e9` | `col_3b2a644b` | `tbl_f193a446.col_d7247819` |
+| `tbl_363ae7e9` | `col_d8136f0b` | `tbl_f193a446.col_d7247819` |
+| `tbl_363ae7e9` | `col_b8a29b43` | `tbl_f193a446.col_d7247819` |
+| `tbl_363ae7e9` | `col_45d948af` | `tbl_f193a446.col_d7247819` |
+| `tbl_363ae7e9` | `col_8557139b` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_363ae7e9` | `col_876094d5` | `tbl_f193a446.col_d7247819` |
+| `tbl_b8f84c29` | `col_d7247819` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_fb0188bb` | `col_d7247819` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_3a2c56ff` | `col_4fb11656` | `tbl_f193a446.col_d7247819` |
+| `tbl_3a2c56ff` | `col_1d6a5428` | `tbl_891b1fc9.col_d7247819` |
+| `tbl_3a2c56ff` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_3a2c56ff` | `col_8eb927db` | `tbl_e9e0d929.col_d7247819` |
+| `tbl_73f0363b` | `col_4fb11656` | `tbl_f193a446.col_d7247819` |
+| `tbl_73f0363b` | `col_cde4e6eb` | `tbl_3a2c56ff.col_d7247819` |
+| `tbl_6696932f` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_6b78d7ab` | `col_17727451` | `tbl_c6092460.col_d7247819` |
+| `tbl_6b78d7ab` | `col_ca66fbb5` | `tbl_21eee00c.col_d7247819` |
+| `tbl_e019dc9e` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_e019dc9e` | `col_a9bacc85` | `tbl_21eee00c.col_d7247819` |
+| `tbl_68110fc1` | `col_0c0112b1` | `tbl_e019dc9e.col_d7247819` |
+| `tbl_e9e0d929` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_e9e0d929` | `col_a8d455f3` | `tbl_4cde28f3.col_d7247819` |
+| `tbl_35a31063` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_35a31063` | `col_678f2787` | `tbl_7933f344.col_d7247819` |
+| `tbl_4e5786c9` | `col_7f2d060f` | `tbl_ed7e8f08.col_d7247819` |
+| `tbl_0f03f20e` | `col_e42eac70` | `tbl_ed7e8f08.col_d7247819` |
+| `tbl_0f03f20e` | `col_678f2787` | `tbl_7933f344.col_d7247819` |
+| `tbl_9705264a` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_06d78b0c` | `col_0c0112b1` | `tbl_e019dc9e.col_d7247819` |
+| `tbl_06d78b0c` | `col_cd1bfaa5` | `tbl_4e5786c9.col_d7247819` |
+| `tbl_06d78b0c` | `col_208355af` | `tbl_c127eea9.col_d7247819` |
+| `tbl_58680eab` | `col_e42eac70` | `tbl_ed7e8f08.col_d7247819` |
+| `tbl_a707320d` | `col_f847332a` | `tbl_a4806350.col_f847332a` |
+| `tbl_54cf92bb` | `col_3d8dba03` | `tbl_d1556a76.col_903c5b86` |
+| `tbl_54cf92bb` | `col_a0feb70e` | `tbl_c127eea9.col_d7247819` |
+| `tbl_e34fa50f` | `col_3f2ef352` | `tbl_97a28ae4.col_d7247819` |
+| `tbl_e34fa50f` | `col_b80b7e90` | `tbl_ed8b2873.col_d7247819` |
+| `tbl_db4293e4` | `col_b80b7e90` | `tbl_ed8b2873.col_d7247819` |
+| `tbl_db4293e4` | `col_678f2787` | `tbl_7933f344.col_d7247819` |
+| `tbl_0b894724` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_0b894724` | `col_9b7a10b8` | `tbl_bd19ace7.col_d7247819` |
+| `tbl_4cde28f3` | `col_fe23f0dd` | `tbl_77034db9.col_d7247819` |
+| `tbl_6cf5e405` | `col_a0feb70e` | `tbl_c127eea9.col_d7247819` |
+| `tbl_6cf5e405` | `col_d6dfb874` | `tbl_c066178a.col_d7247819` |
+| `tbl_6cf5e405` | `col_40f9020a` | `tbl_6cc6cc99.col_d7247819` |
+| `tbl_50ff81ac` | `col_f847332a` | `tbl_0bd88855.col_d7247819` |
+| `tbl_b5c51241` | `col_4e482a93` | `tbl_c127eea9.col_45c646de` |
+| `tbl_b5c51241` | `col_f847332a` | `tbl_0bd88855.col_d7247819` |
+| `tbl_b5c51241` | `col_688b1fc1` | `tbl_b5c51241.col_d7247819` |
+| `tbl_0bd88855` | `col_cde4e6eb` | `tbl_3a2c56ff.col_d7247819` |
+| `tbl_0bd88855` | `col_8eb927db` | `tbl_e9e0d929.col_d7247819` |
+| `tbl_0bd88855` | `col_bce88e4b` | `tbl_0bd88855.col_d7247819` |
+| `tbl_c066178a` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_c066178a` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_c066178a` | `col_cde4e6eb` | `tbl_3a2c56ff.col_d7247819` |
+| `tbl_c066178a` | `col_db393dd8` | `tbl_c066178a.col_d7247819` |
+| `tbl_c066178a` | `col_9b74c635` | `tbl_6cf5e405.col_d7247819` |
+| `tbl_6b881dfd` | `col_3e19be2e` | `tbl_f193a446.col_d7247819` |
+| `tbl_6b881dfd` | `col_63d4aedd` | `tbl_f193a446.col_d7247819` |
+| `tbl_6b881dfd` | `col_170f453c` | `tbl_363ae7e9.col_d7247819` |
+| `tbl_6b881dfd` | `col_39130e55` | `tbl_06d78b0c.col_d7247819` |
+| `tbl_6b881dfd` | `col_c1b6250a` | `tbl_21eee00c.col_d7247819` |
+| `tbl_6b881dfd` | `col_0c0112b1` | `tbl_e019dc9e.col_d7247819` |
+| `tbl_6b881dfd` | `col_d6dfb874` | `tbl_c066178a.col_d7247819` |
 
-### Cenários de pergunta cobertos
+### Volume da massa `massa_teste_laboratorio`
 
-A bateria definitiva (`batteryVersion` v1, commit `9985067`) distribui 30 perguntas em **seis cenários**
-metodológicos. Removidos da taxonomia anterior de oito cenários: `Listagem simples` e `Filtro por enum`.
-
-| Cenário | Perguntas (ex.) | Tipo de SQL esperado |
-|---------|-----------------|----------------------|
-| Junção 1:N | Q01--Q04 | `JOIN` directo |
-| Junção em cadeia | Q05, Q11, Q12, Q21, Q22 | `JOIN` múltiplos no mesmo domínio |
-| Agregação | Q06, Q07, Q13, Q23, Q24 | `SUM`/`COUNT`/`GROUP BY` |
-| Filtro temporal | Q08, Q14, Q29 | `WHERE` datas, janelas, `CASE` temporal |
-| Junção geográfica | Q09, Q10, Q15, Q30 | `JOIN` IBGE (`ibge__uf`, `ibge__city`) |
-| Junção cross-domínio | Q16--Q20, Q25--Q28 | `JOIN` entre domínios (projetos, ativos, publicações) |
-
-Inventário completo: [`../evidence/bateria-30-perguntas-v1.csv`](../evidence/bateria-30-perguntas-v1.csv).
-Matriz de cobertura: [`../evidence/matriz-cobertura-bateria-v1.md`](../evidence/matriz-cobertura-bateria-v1.md).
-
-A bateria de 30 perguntas deve distribuir cenários sobre domínios distintos do inventário completo.
-
-### Volume da massa `putz_teste` (fixa)
-
-O schema PS permanece inalterado no volume observado de `putz_teste` (~1388,27 MB), sem amplificação
-sintética. O volume é suficiente para os cenários de pergunta definidos no protocolo experimental e dispensa
-geração de dados artificiais que poderiam introduzir viés no cálculo da aderência estrutural.
-
-Regras de volume:
-
-1. a massa é extraída do dump original e fixada antes das corridas finais;
-2. nenhuma replicação ou geração sintética de registros é adotada no MVP;
-3. alteração do schema exposto exige nova `datasetVersion` e justificativa;
-4. contagens por tabela são validadas contra o dump original na carga.
-
-Riscos e controles:
-
-- privacidade: manter mascaramento de colunas sensíveis na fixação;
-- custo/tempo de carga: validar contagens por domínio após a ingestão única;
-- reprodutibilidade: `datasetVersion` fixa identifica a massa estável de cada campanha.
+Volume observado ~1388 MB (fixo, sem amplificação sintética no MVP).
 
 ### Artefatos esperados
 
-- Script de extração e fixação das 92 tabelas (a partir do dump original do PS).
-- Script de carga no cluster (ver [`carga-cluster-putz.md`](carga-cluster-putz.md)).
-- Inventário de perguntas por cenário.
-- Matriz de cobertura pergunta x tabelas/colunas/relacionamentos esperados.
-- Registro `datasetVersion` em cada `evidence/<runId>/context.json`.
+- Export relacional anonimizado (offline).
+- Script de carga: [`carga-cluster-laboratorio.md`](carga-cluster-laboratorio.md).
+- Bateria e gabarito em [`../evidence/`](../evidence/README.md).
 
 ## Próximo passo
 

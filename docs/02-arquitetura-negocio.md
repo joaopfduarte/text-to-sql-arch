@@ -20,8 +20,8 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 |------|-------|
 | Pessoa avaliadora | Submete pergunta em linguagem natural, recebe SQL e desfecho da execução. |
 | Operadora de corrida | Configura `runId`, dataset e contratos versionados. |
-| Camada semântica e de metadados (catálogo canônico) | Fonte de verdade dos metadados sobre o subconjunto PS (92 tabelas); implementada com Apache Atlas. |
-| Banco relacional PS | Fonte dos dados consultáveis (92 tabelas, subconjunto fixo). |
+| Camada semântica e de metadados (catálogo canônico) | Fonte de verdade dos metadados sobre o subconjunto laboratorial (92 tabelas); implementada com Apache Atlas. |
+| Banco relacional subconjunto laboratorial | Fonte dos dados consultáveis (92 tabelas, subconjunto fixo). |
 
 ### Blocos de negócio
 
@@ -31,8 +31,8 @@ Pessoa que precisa entender o que o sistema faz (sem entrar em camadas técnicas
 | Servidor MCP | Expõe tools com contratos estáveis, aplica validações de entrada e saída e centraliza a integração com o adaptador da camada semântica. |
 | Tools MCP | Descoberta de tabelas, detalhamento de colunas e inspeção de relacionamentos. |
 | Adaptador da camada semântica | Traduz respostas do catálogo canônico (Apache Atlas) para contrato interno, desacoplando mudanças de API. |
-| Catálogo canônico de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto PS (92 tabelas) exposto. |
-| Banco relacional de avaliação | Subconjunto estável do PS (92 tabelas), sem dados sensíveis, residente no cluster. |
+| Catálogo canônico de metadados | Apache Atlas registra entidades técnicas e classificações do subconjunto laboratorial (92 tabelas) exposto. |
+| Banco relacional de avaliação | Subconjunto estável do subconjunto laboratorial (92 tabelas), sem dados sensíveis, residente no cluster. |
 | Validador e executor SQL | Parse sintático via **Apache Calcite** (dialeto Hive), validação estrutural contra catálogo canônico e execução controlada em Hive com classificação de erro. |
 | Harness experimental | Registra trilha completa por corrida, calcula métricas essenciais e consolida evidências em JSONL. |
 

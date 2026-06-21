@@ -83,7 +83,7 @@ se aplica** ao baseline. Latência, tokens e FinOps **não** são métricas do m
 
 0. Auditar executabilidade das colas $G_i$ (§ Auditoria em
    [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md)).
-1. Anexar [`../db-reference/putz_db.sql`](../db-reference/putz_db.sql) ao prompt (injecção estática; 0 tool calls).
+1. Anexar [`../04-arquitetura-dados/schema-massa-teste.md`](../04-arquitetura-dados/schema-massa-teste.md) ao prompt (injecção estática; 0 tool calls).
 2. Submeter cada pergunta de [`../evidence/bateria-30-perguntas-v1.csv`](../evidence/bateria-30-perguntas-v1.csv)
    com `modelVersion` `gemini-3.5-flash` (campanha v1, um único provedor).
 3. Comparar resposta agregada final com $G_i$ em [`../evidence/gabarito-bateria-v1.md`](../evidence/gabarito-bateria-v1.md).
@@ -121,7 +121,7 @@ Fontes: docs em `guide-docs/external-documentation/`.
 - sobreajuste de prompt à massa fixa do PS;
 - variação temporal de comportamento da API de LLM;
 - simplificações do laboratório AWS frente a cenário corporativo real;
-- viés de domínio do PS (negócio de franquias/projetos) frente a outros domínios.
+- viés de domínio do PS (domínios comerciais e operacionais) frente a outros domínios.
 
 ### Evidência mínima por corrida
 

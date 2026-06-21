@@ -1,5 +1,5 @@
 site_name: Arquitetura e Engenharia do Produto TCC
-site_description: Documentação operacional Text-to-SQL com MCP e Apache Atlas
+site_description: Documentação operacional anonimizada Text-to-SQL com MCP e Apache Atlas
 site_url: https://example.com/
 strict: true
 
@@ -54,6 +54,7 @@ plugins:
 
 nav:
   - Início: index.md
+  - Glossário de anonimização: 00-glossario-anonimizacao.md
   - Leitura rápida: 00-leitura-rapida.md
   - Produto e escopo: 01-produto-e-escopo.md
   - Arquitetura de negócio: 02-arquitetura-negocio.md
@@ -62,14 +63,14 @@ nav:
     - Camadas MCP: 03-arquitetura-aplicacao/camadas-mcp.md
     - Modelo de domínio: 03-arquitetura-aplicacao/modelo-dominio.md
   - Arquitetura de dados:
-    - Banco XPTO (domínio): 04-arquitetura-dados/banco-xpto-dominio.md
+    - Banco laboratorial: 04-arquitetura-dados/banco-laboratorio-dominio.md
     - Schema massa de teste: 04-arquitetura-dados/schema-massa-teste.md
     - Catálogo Atlas: 04-arquitetura-dados/catalogo-atlas.md
-    - Carga no cluster: 04-arquitetura-dados/carga-cluster-xpto.md
+    - Carga no cluster: 04-arquitetura-dados/carga-cluster-laboratorio.md
   - Infraestrutura:
     - Visão AWS: 05-infraestrutura/visao-aws.md
     - Cluster Hadoop: 05-infraestrutura/cluster-hadoop.md
-    - Delta OCI para AWS: 05-infraestrutura/delta-oci-para-aws.md
+    - Delta legado para AWS: 05-infraestrutura/delta-oci-para-aws.md
     - VDF ODP x86: 05-infraestrutura/vdf-odp-x86.md
   - Implementação Java:
     - Módulos Spring: 06-implementacao-java/modulos-spring.md
@@ -77,6 +78,8 @@ nav:
   - Contratos MCP: 07-contratos-mcp/contracts-v1.md
   - Experimento e avaliação:
     - Protocolo: 08-experimento-avaliacao/protocolo-avaliacao.md
+    - Inferência e prompts: 08-experimento-avaliacao/llm-inferencia-e-prompts.md
+    - Métricas e fórmulas: 08-experimento-avaliacao/metricas-formulas.md
     - Runbook reprodutibilidade: 08-experimento-avaliacao/runbook-reprodutibilidade.md
   - Operação: 09-operacao.md
   - Rastreabilidade acadêmica: 10-rastreabilidade-academica.md
@@ -86,7 +89,6 @@ nav:
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
     - ADR-0002 Topologia AWS: adr/ADR-0002-topologia-aws-cluster-minimo.md
     - ADR-0003 Inferência LLM: adr/ADR-0003-inferencia-llm-deterministica.md
-  - Monografia: monografia.md
 
 markdown_extensions:
   - admonition
