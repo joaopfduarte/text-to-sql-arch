@@ -30,6 +30,19 @@ PATTERNS=(
   '\bXPTO\b'
 )
 
+# Reintrodução acidental de narrativa do cluster legado OCI/ARM (redirect_maps em mkdocs.yml é permitido)
+LEGACY_CLUSTER_PATTERNS=(
+  'delta-oci-para-aws'
+  'vcn-data-lake'
+  'ODP-1\.2'
+  '1\.2\.2\.0'
+  'centos9-aarch64'
+  'Graviton'
+  'Oracle Linux 9'
+  'legado OCI'
+  'VDF legado'
+)
+
 scan() {
   local label="$1"
   shift
@@ -53,8 +66,35 @@ scan() {
   fi
 }
 
+scan_legacy_cluster() {
+  local label="$1"
+  shift
+  local hits
+  hits="$(rg -i -n --hidden \
+    --glob '!.git/**' \
+    --glob '!site/**' \
+    --glob '!public/**' \
+    --glob '!.venv/**' \
+    --glob '!venv/**' \
+    --glob '!.cursor/**' \
+    --glob '!.cache/**' \
+    --glob '!mkdocs.yml' \
+    --glob '!scripts/check-anonymization.sh' \
+    "$@" 2>/dev/null || true)"
+  if [[ -n "$hits" ]]; then
+    echo "== $label =="
+    echo "$hits"
+    echo
+    FAIL=1
+  fi
+}
+
 for pat in "${PATTERNS[@]}"; do
   scan "padrão: $pat" "$pat" .
+done
+
+for pat in "${LEGACY_CLUSTER_PATTERNS[@]}"; do
+  scan_legacy_cluster "cluster legado: $pat" "$pat" .
 done
 
 while IFS= read -r f; do

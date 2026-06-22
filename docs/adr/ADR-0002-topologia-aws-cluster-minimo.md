@@ -21,8 +21,6 @@ A stack alvo está fechada no VDF canônico [VDF ODP x86](../assets/scripts/ODP-
 - Ubuntu 24.04
 - arquitetura x86_64
 
-Um ambiente legado subdimensionado (ARM/OCI) foi descartado do escopo operacional atual; ver comparativo em [Delta legado para AWS](../infraestrutura/delta-oci-para-aws.md).
-
 ## Decisão
 
 Adotar **cluster ODP em AWS x86_64 (Ubuntu 24.04, ODP 1.3.1.0)** com topologia experimental:
@@ -48,14 +46,12 @@ Adotar **cluster ODP em AWS x86_64 (Ubuntu 24.04, ODP 1.3.1.0)** com topologia e
 
 ## Alternativas rejeitadas
 
-- **Graviton ARM:** fora do escopo do VDF canônico.
+- **Topologias ARM ou subdimensionadas:** fora do escopo do VDF canônico x86.
 - **Atlas standalone:** contingência apenas; não solução principal.
-- **Replica integral do legado OCI:** stack ODP 1.2.2.0 em `aarch64`, removida do escopo operacional atual.
 
 ## Referências
 
 - [Cluster Hadoop](../infraestrutura/cluster-hadoop.md)
-- [Delta legado → AWS](../infraestrutura/delta-oci-para-aws.md)
 - [VDF ODP x86](../infraestrutura/vdf-odp-x86.md)
 - [Catálogo Atlas](../arquitetura/dados/catalogo-atlas.md)
 - [ADR-0001](ADR-0001-fundacao-arquitetural.md)

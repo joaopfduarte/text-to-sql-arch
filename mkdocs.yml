@@ -79,7 +79,8 @@ plugins:
         '04-arquitetura-dados/carga-cluster-laboratorio.md': 'arquitetura/dados/carga-cluster-laboratorio.md'
         '05-infraestrutura/visao-aws.md': 'infraestrutura/visao-aws.md'
         '05-infraestrutura/cluster-hadoop.md': 'infraestrutura/cluster-hadoop.md'
-        '05-infraestrutura/delta-oci-para-aws.md': 'infraestrutura/delta-oci-para-aws.md'
+        '05-infraestrutura/delta-oci-para-aws.md': 'infraestrutura/visao-aws.md'
+        'infraestrutura/delta-oci-para-aws.md': 'infraestrutura/visao-aws.md'
         '05-infraestrutura/vdf-odp-x86.md': 'infraestrutura/vdf-odp-x86.md'
         '06-implementacao-java/modulos-spring.md': 'implementacao/modulos-spring.md'
         '06-implementacao-java/ports-adapters.md': 'implementacao/ports-adapters.md'
@@ -125,7 +126,6 @@ nav:
   - Infraestrutura:
     - Visão AWS: infraestrutura/visao-aws.md
     - Cluster Hadoop: infraestrutura/cluster-hadoop.md
-    - Delta legado para AWS: infraestrutura/delta-oci-para-aws.md
     - VDF ODP x86: infraestrutura/vdf-odp-x86.md
   - Implementação Java:
     - Módulos Spring: implementacao/modulos-spring.md

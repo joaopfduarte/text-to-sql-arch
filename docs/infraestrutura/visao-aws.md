@@ -8,7 +8,6 @@ tags:
 
 !!! info "Recomendado para leitura prévia"
     - **[Visão lógica](../arquitetura/aplicacao/visao-logica.md)** — zonas lógicas de rede.
-    - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
     - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
 
 
@@ -47,7 +46,7 @@ Fonte: [Diagrama de rede AWS](../diagrams/rede-aws.svg)
 
 | Categoria | Recurso AWS | Tamanho/nota | Estado |
 |-----------|-------------|--------------|--------|
-| Rede | VPC `/24` | Equivalente ao `vcn-data-lake` (ver [Delta legado para AWS](delta-oci-para-aws.md)). | Definir Terraform |
+| Rede | VPC `/24` | VPC dedicada `/24` para o laboratório AWS. | Definir Terraform |
 | Rede | Subnets pública + privada | Mínimo 2 subnets em AZs diferentes para futuro HA. | Definir Terraform |
 | Computação | EC2 master (1 instância) | `m6i.2xlarge` (8 vCPU, 32 GiB), Atlas co-localizado. | Definido (ADR-0002) |
 | Computação | EC2 workers (3 instâncias) | `m6i.2xlarge` (8 vCPU, 32 GiB) para HDFS/YARN/Hive/HBase/Kafka. | Definido (ADR-0002) |
@@ -57,10 +56,6 @@ Fonte: [Diagrama de rede AWS](../diagrams/rede-aws.svg)
 | Segurança | Security Groups (3+: edge, app, data). | `deny by default`. | Definir |
 | Segurança | IAM roles (EC2 -> S3) | Mínimo privilégio. | Definir |
 | Acesso | Bastion ou Session Manager (preferível) | Evitar exposição SSH direta. | Decisão de operação |
-
-### Ambiente legado
-
-Um ambiente legado subdimensionado foi descartado do escopo operacional atual. Diferenças consolidadas em [Delta legado para AWS](delta-oci-para-aws.md).
 
 ### Custos e dimensionamento
 

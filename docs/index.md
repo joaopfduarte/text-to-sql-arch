@@ -124,7 +124,7 @@ tags:
         class="dc-m-0 dc-text-sm dc-leading-relaxed"
         style="color: var(--md-default-fg-color--light, var(--md-default-fg-color));"
       >
-        Cluster Hadoop em Oracle Linux 9, topologia AWS mínima e pipeline de carga reprodutível
+        Cluster Hadoop em Ubuntu 24.04, topologia AWS mínima e pipeline de carga reprodutível
         para massa de teste e experimentos.
       </p>
     </article>

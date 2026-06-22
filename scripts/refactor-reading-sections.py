@@ -35,10 +35,6 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
     ),
     "infraestrutura/visao-aws.md": ("Visão AWS", "topologia de rede e componentes na nuvem"),
     "infraestrutura/cluster-hadoop.md": ("Cluster Hadoop", "serviços ODP, sizing e operação"),
-    "infraestrutura/delta-oci-para-aws.md": (
-        "Delta legado para AWS",
-        "comparativo ambiente subdimensionado vs alvo x86",
-    ),
     "infraestrutura/vdf-odp-x86.md": ("VDF ODP x86", "stack canônica ODP 1.3.1.0 para o cluster"),
     "implementacao/modulos-spring.md": ("Módulos Spring", "estrutura de projetos e dependências"),
     "implementacao/ports-adapters.md": ("Ports e adapters", "portas hexagonais e adaptadores"),

@@ -18,7 +18,6 @@ PAGE_TITLES: dict[str, str] = {
     "arquitetura/dados/carga-cluster-laboratorio.md": "Carga no cluster",
     "infraestrutura/visao-aws.md": "Visão AWS",
     "infraestrutura/cluster-hadoop.md": "Cluster Hadoop",
-    "infraestrutura/delta-oci-para-aws.md": "Delta legado para AWS",
     "infraestrutura/vdf-odp-x86.md": "VDF ODP x86",
     "implementacao/modulos-spring.md": "Módulos Spring",
     "implementacao/ports-adapters.md": "Ports e adapters",

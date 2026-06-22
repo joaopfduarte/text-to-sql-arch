@@ -25,7 +25,7 @@ Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semâ
 | Papel | Leitura seguinte |
 |-------|------------------|
 | Dev Java | [Módulos Spring](../implementacao/modulos-spring.md), [Ports e adapters](../implementacao/ports-adapters.md), [Contratos MCP v1](../arquitetura/contratos-mcp/contracts-v1.md) |
-| Engenheiro de infra/dados | [Cluster Hadoop](../infraestrutura/cluster-hadoop.md), [Delta legado para AWS](../infraestrutura/delta-oci-para-aws.md), [VDF ODP x86](../infraestrutura/vdf-odp-x86.md), [Carga no cluster](../arquitetura/dados/carga-cluster-laboratorio.md) |
+| Engenheiro de infra/dados | [Cluster Hadoop](../infraestrutura/cluster-hadoop.md), [VDF ODP x86](../infraestrutura/vdf-odp-x86.md), [Carga no cluster](../arquitetura/dados/carga-cluster-laboratorio.md) |
 | Operador de corridas | [Protocolo de avaliação](../experimento/protocolo-avaliacao.md), [Inferência e prompts](../experimento/llm-inferencia-e-prompts.md), [Runbook de reprodutibilidade](../experimento/runbook-reprodutibilidade.md), [Operação](../operacao/index.md) |
 | Autor da pesquisa | [Rastreabilidade acadêmica](../pesquisa/rastreabilidade-academica.md) |
 | Pessoa que governa decisões | [Índice de ADRs](../adr/README.md) (ADR-0001, ADR-0002 e ADR-0003) |

@@ -2,7 +2,6 @@
 
 !!! info "Recomendado para leitura prévia"
     - **[Cluster Hadoop](cluster-hadoop.md)** — serviços ODP, sizing e operação.
-    - **[Delta legado para AWS](delta-oci-para-aws.md)** — comparativo ambiente subdimensionado vs alvo x86.
     - **[VDF ODP x86](../assets/scripts/ODP-VDF.xml)** — definição canônica da stack alvo.
 
 
@@ -35,23 +34,9 @@ Fonte de verdade: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
 | NIFI | 1.28.1 |
 | RANGER | 2.6.0 |
 
-### VDF legado OCI (somente referência)
-
-Fonte: [VDF ODP x86](../assets/scripts/ODP-VDF.xml).
-
-| Campo | Valor |
-|-------|-------|
-| Stack id | `ODP-1.2` |
-| Versão | `1.2.2.0` |
-| OS | `redhat9` |
-| Arquitetura | `aarch64` |
-| Repositório | `centos9-aarch64` |
-
 ### Implicação prática para a documentação
 
 - O alvo da pesquisa está fechado em x86 + Ubuntu 24.04 com ODP 1.3.1.0.
-- O legado OCI permanece apenas como referência de migração e comparação.
-- Qualquer citação a Graviton como alvo foi removida do pacote.
 
 !!! tip "Recomendado para leitura posterior"
     Seguinte: **[ADR-0002 Topologia AWS](../adr/ADR-0002-topologia-aws-cluster-minimo.md)** — cluster ODP mínimo, sizing e massa fixa.
