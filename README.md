@@ -83,7 +83,7 @@ mkdocs build --strict --site-dir public
 
 ## Publicação (GitHub Pages)
 
-O deploy é feito pelo workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml):
+O deploy é feito pelo [workflow GitHub Pages](.github/workflows/pages.yml):
 
 - **Pull requests:** validação completa (build de componentes, checks e MkDocs strict) — sem deploy.
 - **Push em `main`:** build + deploy para [https://joaopfduarte.github.io/text-to-sql-arch/](https://joaopfduarte.github.io/text-to-sql-arch/).
