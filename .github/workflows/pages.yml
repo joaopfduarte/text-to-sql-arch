@@ -47,7 +47,7 @@ jobs:
           sudo apt-get install -y -qq --no-install-recommends \
             libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 \
             shared-mime-info plantuml graphviz default-jre-headless ripgrep
-          rm -rf /var/lib/apt/lists/*
+          sudo rm -rf /var/lib/apt/lists/*
 
       - name: Instalar dependências Python
         run: pip install -r requirements.txt
