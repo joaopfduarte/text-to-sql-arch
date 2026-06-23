@@ -1,6 +1,9 @@
 site_name: Arquitetura MCP para Text-to-SQL Orientado a Metadados
 site_description: Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas
-site_url: https://example.com/
+site_url: https://joaopfduarte.github.io/text-to-sql-arch/
+repo_name: joaopfduarte/text-to-sql-arch
+repo_url: https://github.com/joaopfduarte/text-to-sql-arch
+edit_uri: edit/main/docs/
 strict: true
 
 extra:

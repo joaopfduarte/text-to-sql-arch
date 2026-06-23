@@ -81,6 +81,18 @@ mkdocs build --strict --site-dir public
 
 > O site é gerado em `public/` (ou `site/` no `mkdocs serve`). **Nunca** use `--site-dir docs/assets`: `docs/assets/` é fonte versionada (só `js/`, `css/`, `scripts/`). Valide com `bash scripts/check-docs-assets.sh`.
 
+## Publicação (GitHub Pages)
+
+O deploy é feito pelo workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml):
+
+- **Pull requests:** validação completa (build de componentes, checks e MkDocs strict) — sem deploy.
+- **Push em `main`:** build + deploy para [https://joaopfduarte.github.io/text-to-sql-arch/](https://joaopfduarte.github.io/text-to-sql-arch/).
+
+Configuração inicial (uma vez no repositório GitHub):
+
+1. **Settings → Pages → Build and deployment → Source:** `GitHub Actions`
+2. Após o primeiro push em `main`, o environment `github-pages` é criado automaticamente.
+
 ## Adicionar um Web Component
 
 A camada interativa segue Feature-Sliced Design em `src/`, com aliases `@shared/*` e `@features/*` (Vite + TypeScript). Para criar um novo componente:

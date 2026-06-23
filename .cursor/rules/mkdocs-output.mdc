@@ -12,7 +12,7 @@ alwaysApply: true
 | Comando | Destino correto |
 |---------|-----------------|
 | `mkdocs serve` | `site/` (padrão, gitignored) |
-| `mkdocs build --strict` | `public/` (CI GitLab Pages) |
+| `mkdocs build --strict` | `public/` (CI GitHub Pages) |
 
 ```bash
 # ✅ Local
