@@ -57,7 +57,6 @@ scan() {
     --glob '!.cache/**' \
     --glob '!.gitignore' \
     --glob '!scripts/check-anonymization.sh' \
-    --glob '!scripts/check-anonymous-build.sh' \
     "$@" 2>/dev/null || true)"
   if [[ -n "$hits" ]]; then
     echo "== $label =="
@@ -80,9 +79,7 @@ scan_legacy_cluster() {
     --glob '!.cursor/**' \
     --glob '!.cache/**' \
     --glob '!mkdocs.yml' \
-    --glob '!mkdocs.anonymous.yml' \
     --glob '!scripts/check-anonymization.sh' \
-    --glob '!scripts/check-anonymous-build.sh' \
     "$@" 2>/dev/null || true)"
   if [[ -n "$hits" ]]; then
     echo "== $label =="

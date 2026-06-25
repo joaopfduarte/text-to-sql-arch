@@ -1,6 +1,5 @@
 site/
 public/
-public-anonymous/
 .vite-out/
 dist/
 .cache/
