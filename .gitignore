@@ -1,5 +1,7 @@
 site/
 public/
+public-anonymous/
+.gh-pages-worktree/
 .vite-out/
 dist/
 .cache/
