@@ -18,6 +18,7 @@ Os blocos operacionais abaixo alimentam a documentação acadêmica (LaTeX/PDF),
 | [Banco laboratorial](../arquitetura/dados/banco-laboratorio-dominio.md) | Metodologia | Massa laboratorial |
 | [Visão AWS](../infraestrutura/visao-aws.md) | Metodologia / desenvolvimento | Cluster AWS |
 | [Contratos MCP v1](../arquitetura/contratos-mcp/contracts-v1.md) | Desenvolvimento | Contratos MCP v1 |
+| [Módulos Spring](../implementacao/modulos-spring.md) + [ADR-0005](../adr/ADR-0005-convencao-maven-pacotes-producao.md) | Desenvolvimento | Coordenadas Maven, pacotes Java, identity |
 | [Protocolo de avaliação](../experimento/protocolo-avaliacao.md) | Metodologia / resultados | Protocolo e métricas |
 | [Evidências experimentais](../evidence/README.md) | Resultados | Corridas e bateria |
 

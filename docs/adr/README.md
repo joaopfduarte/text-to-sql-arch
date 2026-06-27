@@ -22,3 +22,13 @@ Toda mudança arquitetural relevante deve ser registrada como ADR.
 - `Aceito`
 - `Substituido`
 - `Deprecado`
+
+## Índice (aceitos)
+
+| ADR | Título |
+|-----|--------|
+| [ADR-0001](ADR-0001-fundacao-arquitetural.md) | Fundação arquitetural do artefato |
+| [ADR-0002](ADR-0002-topologia-aws-cluster-minimo.md) | Topologia AWS cluster mínimo |
+| [ADR-0003](ADR-0003-inferencia-llm-deterministica.md) | Inferência LLM determinística |
+| [ADR-0004](ADR-0004-politica-select-only-passo5.md) | Política SELECT-only passo 5 |
+| [ADR-0005](ADR-0005-convencao-maven-pacotes-producao.md) | Convenção Maven e pacotes Java para produção |

@@ -1,80 +1,80 @@
 ---
-description: Domínios genéricos, entidades-âncora e FKs do schema laboratorial.
+description: Domínios de negócio, entidades-âncora e FKs do schema base_laboratorial.
 tags:
   - dados
 ---
 
-# Banco de domínio laboratorial
+# Banco de domínio laboratório (MySQL 8+)
 
 !!! info "Recomendado para leitura prévia"
-    - **[Schema massa de teste](schema-massa-teste.md)** — inventário das 92 entidades.
+    - **[Schema massa de teste](schema-massa-teste.md)** — inventário completo derivado do dump MySQL.
+    - **[Pacote experimental](../../experimento/pacote-experimental.md)** — reprodução local do experimento.
 
 
-### Convenção de nomenclatura
-
-- Tabelas: `tbl_<8 hex>`
-- Colunas: `col_<8 hex>`
-
-### Estatísticas
+### Identificador canônico
 
 | Item | Valor |
 |------|-------|
-| Entidades no índice | 92 |
-| Schema Hive/MySQL | `schema_laboratorio` / `massa_teste_laboratorio` |
+| SGBD reprodutível | MySQL **8+** |
+| Schema | **`base_laboratorial`** |
+| Dump versionado | [Dump MySQL base_laboratorial](../../dados/base_laboratorial.sql) |
+| Entidades no inventário | ver [Schema massa de teste](schema-massa-teste.md) |
+
+A carga Hive/Atlas no cluster laboratorial consome a mesma massa; o artefacto copiável para replicação
+local é o arquivo MySQL em [Instruções de importação MySQL](../../dados/README.md).
 
 ### Domínios identificados
 
-| Domínio genérico | Entidades representativas | Uso na pesquisa |
-|------------------|-------------------------|------------|
-| apoio operacional | `tbl_5e464b14`, `tbl_cef676c5`, `tbl_bb1c74b7`, `tbl_a63ac3ee`, `tbl_bd19ace7`, `tbl_0b894724`, … | Fora do MVP ou ruído |
-| controle de migração | `tbl_d1cb73f6`, `tbl_b7dfbbcb` | Fora do MVP ou ruído |
-| domínio comercial principal | `tbl_162cf7be`, `tbl_93460c22`, `tbl_54c1256a`, `tbl_254c881e`, `tbl_4c8d7ae5`, `tbl_05dc6f7a`, … | MVP |
-| domínio de acesso e auditoria | `tbl_d1556a76`, `tbl_a4806350`, `tbl_a707320d`, `tbl_c127eea9`, `tbl_54cf92bb` | Fora do MVP ou ruído |
-| domínio de catálogo | `tbl_f0944b44`, `tbl_ea9d95de`, `tbl_891b1fc9`, `tbl_feb88f1f`, `tbl_97a28ae4`, `tbl_ed8b2873`, … | MVP |
-| domínio de conectores | `tbl_9b02bb2c`, `tbl_d94d1042`, `tbl_508411b3` | Fora do MVP ou ruído |
-| domínio de conteúdo externo | `tbl_4e5786c9`, `tbl_03f58275`, `tbl_ed7e8f08`, `tbl_0f03f20e`, `tbl_9705264a`, `tbl_06d78b0c`, … | Fora do MVP ou ruído |
-| domínio de identidade | `tbl_f193a446`, `tbl_ae0a73d5` | Fora do MVP ou ruído |
-| domínio de mídia | `tbl_d58bb5a4`, `tbl_cca22dd2`, `tbl_a6e2174e`, `tbl_c311310d`, `tbl_69fab9c0`, `tbl_0bd3e50a`, … | Fora do MVP ou ruído |
-| domínio financeiro | `tbl_6cf5e405`, `tbl_6cc6cc99`, `tbl_c066178a`, `tbl_6b881dfd`, `tbl_365b81cc`, `tbl_63f841a0` | MVP |
-| domínio geográfico de referência | `tbl_23a8dee5`, `tbl_f64a1c03`, `tbl_2c1fc4f7`, `tbl_0c30d74e`, `tbl_bd01b86d`, `tbl_c6092460`, … | MVP |
-| domínio operacional de entregas | `tbl_363ae7e9`, `tbl_b8f84c29`, `tbl_fb0188bb`, `tbl_3a2c56ff`, `tbl_73f0363b`, `tbl_6696932f`, … | MVP |
-| tags e classificação | `tbl_7933f344` | Fora do MVP ou ruído |
+| Domínio | Entidades representativas | Uso na pesquisa |
+|---------|---------------------------|-----------------|
+| domínio comercial principal | `franquias`, `franquias__unidades`, `franquias__segmentos`, `franquias__redes_franquia`, … | Franquias, redes, segmentos (Q01–Q05) |
+| domínio de catálogo | `product`, `product_type`, `product_group`, `portfolio`, `competence`, … | Produtos e tipos (Q02, Q11, Q19) |
+| domínio operacional de entregas | `project`, `project_item`, `project_payment`, `project_render`, `project_render_item`, `timeline_event`, … | Projetos, renders, timeline (Q03–Q07, Q11–Q13, Q27–Q40) |
+| domínio financeiro | `transaction`, `transaction_coupon`, `subscriptions`, `subscription_plans` | Pagamentos e assinaturas (Q08, Q14–Q18, Q20, Q37–Q38) |
+| domínio geográfico de referência | `ibge__uf`, `ibge__city`, `ibge__name`, … | UF, cidades, regiões (Q09–Q10, Q15, Q30–Q32) |
+| domínio de mídia | `asset_category`, `asset_item`, `asset_voice_voiceover`, … | Ativos e categorias (Q21–Q23) |
+| domínio de identidade | `person`, `person_references` | Clientes, freelancers, patrocinadores (Q11, Q15–Q18, Q31–Q40) |
+| domínio de acesso e auditoria | `user`, `authority`, `user_authority`, `persistent_audit_event`, … | Permissões (Q24–Q26) |
+| domínio de conteúdo externo | `publications`, `publications_user`, `publications_source`, … | Publicações e solicitações (Q27–Q29, Q35–Q36) |
+| domínio de conectores | `openai_assistants`, `openai_conclusions`, `notification_whatsapp` | Integrações externas |
+| controle de migração | `DATABASECHANGELOG`, `DATABASECHANGELOGLOCK` | Liquibase |
+| apoio operacional | `config_params`, `page_faq`, `schedule`, `question`, … | Configuração e auxiliares |
+| tags e classificação | `tag`, `rel_product_type__tags` | Classificação transversal |
 
-### FKs confirmadas (amostra MVP)
+### FKs confirmadas (amostra da bateria)
 
-| Origem | Destino | Restrição |
-|--------|---------|-----------|
-| `tbl_162cf7be.col_2cd9416d` | `tbl_8991e9dc.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_162cf7be.col_1d3e13bf` | `tbl_4c8d7ae5.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_93460c22.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_54c1256a.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_254c881e.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_05dc6f7a.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_fada6213.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_40b45933.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_973ec6fa.col_0bee3ba9` | `tbl_162cf7be.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_2c1fc4f7.col_7e317139` | `tbl_c78eb7ee.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_9b02bb2c.col_3e19be2e` | `tbl_f193a446.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_f193a446.col_35f9c31c` | `tbl_f193a446.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_ae0a73d5.col_3e19be2e` | `tbl_f193a446.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_f0944b44.col_3e19be2e` | `tbl_f193a446.col_d7247819` | documentado em schema-massa-teste |
-| `tbl_891b1fc9.col_b80b7e90` | `tbl_ed8b2873.col_d7247819` | documentado em schema-massa-teste |
+| Origem | Destino | Uso |
+|--------|---------|-----|
+| `franquias.segmento_id` | `franquias__segmentos.id` | Q05 |
+| `franquias.rede_id` | `franquias__redes_franquia.id` | Q04, Q05 |
+| `franquias__unidades.franquia_id` | `franquias.id` | Q01 |
+| `product.product_type_id` | `product_type.id` | Q02, Q19 |
+| `project_payment.project_id` | `project.id` | Q03, Q06, Q13 |
+| `project_item.project_id` | `project.id` | Q11, Q16, Q19 |
+| `transaction.person_id` | `person.id` | Q15, Q18 |
+| `project_render_item.render_project_id` | `project_render.id` | Q27–Q40 |
+| `publications_user.project_render_item_id` | `project_render_item.id` | Q27–Q29, Q35–Q36 |
+| `user_authority.authority_name` | `authority.name` | Q24, Q26 |
+
+Lista completa de constraints: dump MySQL em [Dump MySQL base_laboratorial](../../dados/base_laboratorial.sql).
 
 ### Entidades-âncora para Text-to-SQL
 
 | Entidade | Motivo |
 |----------|--------|
-| `tbl_162cf7be` | Junções centrais do domínio comercial principal. |
-| `tbl_363ae7e9` | Enum e cadeias longas no domínio operacional. |
-| `tbl_c066178a` | Agregações no domínio financeiro. |
-| `tbl_f193a446` | Pivô do domínio de identidade. |
-| `tbl_891b1fc9` | Junções no domínio de catálogo. |
-| `tbl_2c1fc4f7` | Junção geográfica auxiliar. |
+| `franquias` | Junções centrais do domínio comercial (Q01–Q05). |
+| `project` | Núcleo operacional de entregas e pagamentos (Q03–Q07, Q11–Q13). |
+| `project_render_item` | Pedidos de vídeo e metadados JSON (Q27–Q40). |
+| `transaction` | Movimentação financeira e filtros temporais (Q08, Q14–Q18). |
+| `person` | Identidade, geografia e hierarquia sponsor (Q11, Q15–Q18, Q31–Q40). |
+| `asset_category` | Hierarquia de categorias de mídia (Q21–Q26). |
+| `product` / `product_type` | Catálogo e tipos (Q02, Q19). |
 
 ### Restrições
 
-- Não publicar nomes físicos de tabelas ou colunas.
-- Não incluir PII na massa publicada sem mascaramento.
+- PII institucional não é publicada na documentação entregável.
+- Colunas semiestruturadas `json_data` e `data_source` em `project_render_item`: ver
+  [json\_data e data\_source](../../evidence/json_data-data_source-schema-notes.md).
 
 !!! tip "Recomendado para leitura posterior"
-    Seguinte: **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
+    Seguinte: **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão no Hive/Atlas.

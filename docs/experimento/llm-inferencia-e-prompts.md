@@ -12,7 +12,7 @@ tags:
     - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
     - **[Módulos Spring](../implementacao/modulos-spring.md)** — estrutura de projetos e dependências.
     - **[Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json)** — versões dos artefatos de prompt.
-    - **[Schema `context.json`](../evidence/context-schema-v1.json)** — campos obrigatórios por corrida.
+    - **[Schema `context.json`](../evidence/context-schema.json)** — campos obrigatórios por corrida.
 
 
 ### Política de inferência v1
@@ -110,12 +110,12 @@ Antes de **qualquer** corrida da campanha:
 
 ### Schema `context.json`
 
-Canônico: [Schema context.json v1](../evidence/context-schema-v1.json).
+Canônico: [Schema do contexto](../evidence/context-schema.json).
 
 Exemplos:
 
-- Baseline: [Exemplo context baseline v1](../evidence/examples/context-baseline-v1.example.json)
-- MCP: [Exemplo context MCP v1](../evidence/examples/context-mcp-v1.example.json)
+- Baseline: [Exemplo context baseline](../evidence/examples/context-baseline.example.json)
+- MCP: [Exemplo context MCP](../evidence/examples/context-mcp.example.json)
 
 ### Mapeamento Spring AI
 

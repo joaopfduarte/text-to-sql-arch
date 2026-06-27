@@ -24,7 +24,7 @@ Fonte: [Diagrama de camadas MCP](../../diagrams/camadas-mcp.svg)
 O catálogo é **fechado em quinze tools** somente leitura: três basais (protocolo mínimo de avaliação) e doze
 complementares. As basais já têm porta e adapter definidos. Para as doze complementares, porta e adapter são
 **planejados** (desenho lógico, sem código Java nesta etapa), com referência cruzada ao endpoint Atlas. A seleção
-está em [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp-v1.md).
+está em [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp.md).
 
 ### Tabela `tool -> porta Java -> contrato JSON -> erro canônico`
 
@@ -70,7 +70,8 @@ Todas as tools retornam o envelope `{runId, toolVersion, status, data, error}` d
 
 ### Convenções de implementação
 
-- Pacote: `com.tcc.text2sql.adapters.in.mcp` (servidor) e `com.tcc.text2sql.adapters.out.atlas` (adapter). Ver [Módulos Spring](../../implementacao/modulos-spring.md).
+- Pacote: `br.com.text2sql.api.adapters.in.mcp` (servidor) e `br.com.text2sql.api.adapters.out.atlas`
+  (adapter). Ver [Módulos Spring](../../implementacao/modulos-spring.md).
 - Validação de entrada com Bean Validation (`jakarta.validation`).
 - Timeout por chamada: configurável; default sugerido 5 s para Atlas.
 - Retry com backoff exponencial limitado a 2 tentativas para `catalog_unavailable` ou `timeout`.

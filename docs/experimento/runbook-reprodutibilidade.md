@@ -24,7 +24,7 @@ Exemplo: `run-20260418-1540-7f3c`.
 
 ### Metadados obrigatórios por execução
 
-Registrados em `context.json` (schema: [Schema context.json v1](../evidence/context-schema-v1.json)):
+Registrados em `context.json` (schema: [Schema do contexto](../evidence/context-schema.json)):
 
 **Identificação e campanha**
 
@@ -38,7 +38,7 @@ Registrados em `context.json` (schema: [Schema context.json v1](../evidence/cont
 - `contractsVersion`
 - `toolBudget` (limite máximo de chamadas por sessão; **10** no MCP, **0** no baseline)
 
-**Inferência e prompts (v1)**
+**Inferência e prompts **
 
 - `promptVersion` (`v1`)
 - `inferenceConfigVersion` (`v1`)
@@ -48,8 +48,8 @@ Registrados em `context.json` (schema: [Schema context.json v1](../evidence/cont
 
 Detalhes e política (`temperature=0` no Gemini): [Inferência e prompts](llm-inferencia-e-prompts.md).
 
-Exemplos: [Exemplo context baseline v1](../evidence/examples/context-baseline-v1.example.json),
-[Exemplo context MCP v1](../evidence/examples/context-mcp-v1.example.json).
+Exemplos: [Exemplo context baseline](../evidence/examples/context-baseline.example.json),
+[Exemplo context MCP](../evidence/examples/context-mcp.example.json).
 
 ### Estrutura de evidência
 
@@ -107,7 +107,7 @@ Cada linha ou bloco deve permitir reconstruir:
 
 - [ ] Commit limpo e registrado (`commitHash`).
 - [ ] Versão do contrato MCP fixada (`contractsVersion`).
-- [ ] Dataset fixo e versionado (massa PS de 92 tabelas; ver `schema-massa-teste.md`).
+- [ ] Dataset fixo e versionado (schema `base_laboratorial`, 92 tabelas; ver `schema-massa-teste.md` e `dados/base_laboratorial.sql`).
 - [ ] Seed explícita.
 - [ ] Modelo, `provider`, `promptVersion` e `inferenceConfig` registrados (`temperature=0` no Gemini).
 - [ ] `promptArtifactsHash` calculado e conferido contra templates em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json).
@@ -122,39 +122,39 @@ Cada linha ou bloco deve permitir reconstruir:
 
 ### Campanha comparativo simples (`baseline-static`)
 
-Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha v1, **antes** do modo MCP. Sem tools MCP;
+Execução manual no ambiente Google (`gemini-3.5-flash`) na campanha baseline, **antes** do modo MCP. Sem tools MCP;
 esquema via DDL estático.
 
 **Esquema no prompt:** [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md) (92 tabelas MySQL).
 Registrar `commitHash` do código-fonte do artefato e hash ou versão do arquivo DDL em `datasetVersion` / notas da campanha.
 
-**Bateria:** [Bateria de 30 perguntas](../evidence/bateria-30-perguntas-v1.csv) +
-[Gabarito da bateria](../evidence/gabarito-bateria-v1.md) (`batteryVersion` v1, revisão
-aprovada).
+**Bateria:** [Bateria de perguntas](../evidence/bateria-40-perguntas.csv) +
+[Gabarito da bateria](../evidence/gabarito-bateria.md) (40 perguntas; campanha
+`baseline-static` completa em jun/2026 para Flash e Pro).
 
 #### Checklist pré-voo (`baseline-static`)
 
-- [ ] Auditoria de executabilidade: executar as 30 colas em `gabarito-bateria-v1.md` contra `massa_teste_laboratorio`; registrar em § Auditoria do mesmo arquivo; só prosseguir se 30/30 OK.
+- [ ] Auditoria de executabilidade: executar as 40 colas em `gabarito-bateria.md` contra `base_laboratorial` (MySQL 8+); registrar em § Auditoria do mesmo arquivo; só prosseguir se 40/40 OK.
 - [ ] Bateria e gabarito aprovados (`9985067`).
 - [ ] `DDL offline` versionado e anexado ao prompt de cada corrida.
 - [ ] `campaignId`: `baseline-static`; `toolBudget`: 0 (sem MCP).
 - [ ] `modelVersion` fixo `gemini-3.5-flash`; `provider`: `google`; `seed` explícita por campanha.
 - [ ] `inferenceConfig.temperature`: **0**; `maxOutputTokens`: **4096** (ver [Inferência e prompts](llm-inferencia-e-prompts.md)).
 - [ ] Templates de prompt v1 congelados; `promptArtifactsHash` registrado em cada `context.json`.
-- [ ] 30 perguntas = 30 corridas na campanha v1 (Gemini-only).
+- [ ] 40 perguntas = 40 corridas por modelo na campanha (`gemini-3.5-flash` e `gemini-3.1-pro`).
 - [ ] Gabarito $G_i$ disponível para classificar `gabaritoMatch`.
 
 #### Registro consolidado
 
-Preencher [Métricas baseline v1](../evidence/baseline-metricas-v1.csv) — uma linha por
+Preencher [Métricas baseline](../evidence/baseline-metricas.csv) — uma linha por
 corrida:
 
 | Coluna | Descrição |
 |--------|-----------|
 | `run_id` | Identificador único da corrida |
-| `question_id` | Q01--Q30 |
-| `model_version` | Campanha v1: `gemini-3.5-flash` |
-| `provider` | Campanha v1: `google` |
+| `question_id` | Q01--Q40 |
+| `model_version` | `gemini-3.5-flash` ou `gemini-3.1-pro` |
+| `provider` | `google` |
 | `gabarito_match` | `true` / `false` |
 | `notas_autor` | Observações opcionais |
 

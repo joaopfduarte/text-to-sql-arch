@@ -21,7 +21,7 @@ tags:
 | Master | `m6i.2xlarge` | 8 vCPU, 32 GiB | EBS gp3 >= 100 GiB |
 | Workers (3) | `m6i.2xlarge` | 8 vCPU, 32 GiB | EBS gp3 >= 100 GiB |
 
-Justificativa: suporta `massa_teste_laboratorio` (~1,4 GB) com replicação HDFS 3 e margem para Atlas + Hive.
+Justificativa: suporta a massa `base_laboratorial` (~1,4 GB) com replicação HDFS 3 e margem para Atlas + Hive.
 
 ### Serviços ODP
 
@@ -30,7 +30,7 @@ Justificativa: suporta `massa_teste_laboratorio` (~1,4 GB) com replicação HDFS
 | ZooKeeper | Coordenação |
 | HDFS | Armazenamento da massa (92 entidades) |
 | YARN | Execução distribuída |
-| Hive Metastore + HiveServer2 | Consultas SQL (`massa_teste_laboratorio`) |
+| Hive Metastore + HiveServer2 | Consultas SQL (`base_laboratorial`) |
 | Apache Atlas | Catálogo MCP |
 | HBase / Solr / Kafka | Dependências do Atlas |
 
@@ -59,4 +59,4 @@ Definir security groups intra-VPC na fase de implementação.
 ![Topologia do cluster AWS](../diagrams/cluster-topologia-aws.svg){ .uml-diagram width="100%" }
 
 !!! tip "Recomendado para leitura posterior"
-    Seguinte: **[Carga no cluster](../arquitetura/dados/carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
+    Seguinte: **[Carga no cluster](../arquitetura/dados/carga-cluster-laboratorio.md)** — pipeline de ingestão da massa de laboratório.

@@ -1,5 +1,5 @@
 ---
-description: Desenho experimental, bateria de 30 perguntas e critérios de desfecho.
+description: Desenho experimental, bateria de perguntas (40) e critérios de desfecho.
 tags:
   - experimento
 ---
@@ -40,7 +40,7 @@ Antes das etapas do protocolo, fixar configuração conforme [Inferência e prom
 | `topP` | omitido (`null`) |
 | Prompts | Templates v1 em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) |
 | Paridade | Instruções anti-alucinação idênticas em `system-shared-v1.md` |
-| Registro | `context.json` conforme [Schema context.json v1](../evidence/context-schema-v1.json) |
+| Registro | `context.json` conforme [Schema do contexto](../evidence/context-schema.json) |
 
 ### Checklist por corrida (modo MCP)
 
@@ -88,12 +88,15 @@ se aplica** ao baseline. Latência, tokens e FinOps **não** são métricas do m
 ### Protocolo do comparativo simples (`baseline-static`)
 
 0. Auditar executabilidade das colas $G_i$ (§ Auditoria em
-   [Gabarito da bateria](../evidence/gabarito-bateria-v1.md)).
+   [Gabarito da bateria](../evidence/gabarito-bateria.md)).
 1. Anexar [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md) ao prompt (injecção estática; 0 tool calls).
-2. Submeter cada pergunta de [Bateria de 30 perguntas](../evidence/bateria-30-perguntas-v1.csv)
-   com `modelVersion` `gemini-3.5-flash` (campanha v1, um único provedor).
-3. Comparar resposta agregada final com $G_i$ em [Gabarito da bateria](../evidence/gabarito-bateria-v1.md).
-4. Registrar métricas em [Métricas baseline v1](../evidence/baseline-metricas-v1.csv) (30 corridas).
+2. Submeter cada pergunta de [Bateria de perguntas](../evidence/bateria-40-perguntas.csv) (Q01–Q40) em modo
+   `baseline-static`, com $N_{\mathrm{base}} = 40$ corridas por `modelVersion`:
+   `gemini-3.5-flash` e `gemini-3.1-pro`.
+3. Comparar resposta agregada final com $G_i$ em [Gabarito da bateria](../evidence/gabarito-bateria.md).
+   Respostas **parciais** dentro da tolerância do gabarito contam como $g_i=1$.
+4. Registrar métricas em [Métricas baseline](../evidence/baseline-metricas.csv) e mapa de rastreabilidade em
+   [Auditoria gabarito](../evidence/baseline-auditoria-gabarito.md).
 
 Detalhes operacionais: [Runbook de reprodutibilidade](runbook-reprodutibilidade.md) (seção `baseline-static`).
 
@@ -138,7 +141,7 @@ Fontes: documentação Spring AI para integração OpenAI e Google (Gemini).
 - lista de SQLs (até 5) e desfechos por statement (MCP)
 - resultado de parse e execução
 - `metrics.json` conforme [Métricas e fórmulas](metricas-formulas.md)
-- `context.json` conforme [Schema context.json v1](../evidence/context-schema-v1.json)
+- `context.json` conforme [Schema do contexto](../evidence/context-schema.json)
 - `seed`, `modelVersion`, `promptVersion`, `commitHash`
 
 !!! tip "Recomendado para leitura posterior"

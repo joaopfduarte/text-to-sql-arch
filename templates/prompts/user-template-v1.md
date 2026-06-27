@@ -1,4 +1,4 @@
-# User message template (v1)
+# User message template v1
 
 > Substituir placeholders antes de enviar ao provedor LLM.
 
@@ -50,6 +50,6 @@ DDL.
 ```
 ```
 
-> **Nota operacional:** `{{SCHEMA_DDL_OFFLINE}}` é o conteúdo literal do export relacional offline
-> (ver [Schema massa de teste](../../docs/04-arquitetura-dados/schema-massa-teste.md)) no `commitHash` registrado em
-> `context.json`.
+> **Nota operacional:** `{{SCHEMA_DDL_OFFLINE}}` é o conteúdo literal de
+> [Dump MySQL base_laboratorial](../../dados/base_laboratorial.sql) (MySQL 8+, schema
+> `base_laboratorial`) no `commitHash` registrado em `context.json`.

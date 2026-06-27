@@ -22,6 +22,7 @@ link_dir() {
 
 link_dir "$ROOT/evidence" "$DOCS/evidence"
 link_dir "$ROOT/templates" "$DOCS/templates"
+link_dir "$ROOT/dados" "$DOCS/dados"
 
 bash "$ROOT/scripts/render-diagrams.sh"
 

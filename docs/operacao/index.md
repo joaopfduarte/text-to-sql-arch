@@ -11,7 +11,7 @@
 1. Subir o cluster (ou validar que está estável).
 2. Validar Atlas: tools MCP retornam o subconjunto laboratorial (92 tabelas) esperado.
 3. Gerar `runId` no formato `run-YYYYMMDD-HHMM-<id-curto>` (ver runbook).
-4. Registrar `context.json` com metadados completos (ver [Schema context.json v1](../evidence/context-schema-v1.json) e [Inferência e prompts](../experimento/llm-inferencia-e-prompts.md)): `runId`, `seed`, `modelVersion`, `provider`, `promptVersion`, `inferenceConfig`, `promptArtifactsHash`, `commitHash`, `datasetVersion`, `contractsVersion`.
+4. Registrar `context.json` com metadados completos (ver [Schema do contexto](../evidence/context-schema.json) e [Inferência e prompts](../experimento/llm-inferencia-e-prompts.md)): `runId`, `seed`, `modelVersion`, `provider`, `promptVersion`, `inferenceConfig`, `promptArtifactsHash`, `commitHash`, `datasetVersion`, `contractsVersion`.
 5. Executar a bateria de perguntas do harness.
 6. Coletar `session.jsonl`, `metrics.json` e `summary.md` em `evidence/<runId>/`.
 7. Encerrar/desligar recursos não necessários para reduzir custo.

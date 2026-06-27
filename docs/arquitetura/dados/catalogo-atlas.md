@@ -9,7 +9,7 @@ tags:
 
 !!! info "Recomendado para leitura prévia"
     - **[Banco laboratorial](banco-laboratorio-dominio.md)** — domínios genéricos, entidades-âncora e FKs.
-    - **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `massa_teste_laboratorio`.
+    - **[Carga no cluster](carga-cluster-laboratorio.md)** — pipeline de ingestão da massa `base_laboratorial`.
     - **[Camadas MCP](../aplicacao/camadas-mcp.md)** — mapeamento tool → porta → contrato → erro.
 
 
@@ -32,7 +32,7 @@ Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offli
 ### Ordem operacional
 
 1. Pré-processamento: extrair 92 entidades e mascarar PII ([Carga no cluster](carga-cluster-laboratorio.md)).
-2. Carga: HDFS + tabelas Hive externas em `massa_teste_laboratorio`.
+2. Carga: HDFS + tabelas Hive externas espelhando **`base_laboratorial`**.
 3. Catálogo: entidades visíveis no Atlas.
 4. Validação: tools basais MCP retornam o schema esperado.
 5. Corrida: agente gera SQL e executa no cluster.
@@ -41,8 +41,8 @@ Decisão: o agente consulta apenas o catálogo canônico via MCP. O export offli
 
 | Entidade Atlas | Origem | Comentário |
 |----------------|--------|------------|
-| `hive_db` (`schema_laboratorio`) | Hive Metastore | Database lógico fixo. |
-| `hive_table` (`schema_laboratorio.tbl_*`) | Hive Metastore | Uma por entidade (92). |
+| `hive_db` (`base_laboratorial`) | Hive Metastore | Database lógico fixo. |
+| `hive_table` (`base_laboratorial.*`) | Hive Metastore | Uma por entidade (92). |
 | `hive_column` | Hive Metastore | Colunas auditáveis (`col_*`). |
 | Relacionamentos (FK lógica) | Manifesto + API Atlas | Hive não preserva FKs originais. |
 
@@ -50,7 +50,7 @@ Restrição: o adaptador Atlas traduz relacionamentos a partir do manifesto docu
 
 ### Contratos expostos
 
-Ver [Contratos MCP v1](../contratos-mcp/contracts-v1.md). Catálogo fechado de quinze tools: [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp-v1.md).
+Ver [Contratos MCP v1](../contratos-mcp/contracts-v1.md). Catálogo fechado de quinze tools: [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp.md).
 
 ### Disponibilidade
 

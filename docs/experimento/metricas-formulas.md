@@ -9,7 +9,7 @@ tags:
 !!! info "Recomendado para leitura prévia"
     - **[Protocolo de avaliação](protocolo-avaliacao.md)** — desenho experimental, bateria e critérios de desfecho.
     - **[Runbook de reprodutibilidade](runbook-reprodutibilidade.md)** — passos para repetir uma corrida com evidências.
-    - **[Gabarito da bateria](../evidence/gabarito-bateria-v1.md)** — quando publicado.
+    - **[Gabarito da bateria](../evidence/gabarito-bateria.md)** — quando publicado.
     - **Tarifas GPT-5.4 Nano** — referência de custo do provedor (documentação oficial do provedor).
     - **Tarifas Gemini 3.5 Flash** — referência de custo do provedor (documentação oficial do provedor).
 
@@ -121,9 +121,10 @@ $$g_i = \mathbb{1}[\text{resposta agregada}_i = G_i]$$
 
 $$A_{\mathrm{gab}} = \frac{1}{N_{\mathrm{base}}}\sum_{i=1}^{N_{\mathrm{base}}} g_i$$
 
-Na campanha `baseline-static` v1, $N_{\mathrm{base}} = 30$ com um único `modelVersion` (`gemini-3.5-flash`).
-Extensão futura a segundo provedor é opcional e não se mistura com esta v1. A executabilidade das colas $G_i$
-no MySQL é pré-requisito documentado no gabarito e **não** entra em $A_{\mathrm{gab}}$.
+Na campanha `baseline-static`, $N_{\mathrm{base}} = 40$ com dois `modelVersion`
+(`gemini-3.5-flash`: $A_{\mathrm{gab}} = 47{,}5\%$; `gemini-3.1-pro`: $A_{\mathrm{gab}} = 77{,}5\%$).
+Respostas parcialmente corretas dentro da tolerância do gabarito contam como $g_i = 1$. A executabilidade das colas
+$G_i$ no MySQL é pré-requisito documentado no gabarito e **não** entra em $A_{\mathrm{gab}}$.
 
 
 ## Schema `metrics.json`

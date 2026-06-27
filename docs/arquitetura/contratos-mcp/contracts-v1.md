@@ -20,8 +20,8 @@ tags:
 
 ### Convenção de schema do catálogo
 
-- `schema = "laboratorio"`: subconjunto laboratorial (92 entidades) registrado em Apache Atlas como database `hive_db` chamado `schema_laboratorio`.
-- Nomes de tabela e coluna usam identificadores `tbl_*` e `col_*` conforme [Schema massa de teste](../dados/schema-massa-teste.md).
+- `schema = "laboratorio"`: subconjunto laboratorial (92 entidades) registrado em Apache Atlas como database `hive_db` chamado `base_laboratorial`.
+- Nomes de tabela e coluna usam identificadores reais do schema `base_laboratorial` conforme [Schema massa de teste](../dados/schema-massa-teste.md).
 
 ### Envelope padrão de resposta
 
@@ -41,7 +41,7 @@ Em erro, `status = "error"`, `data = null` e `error = { "code": "<canonico>", "m
 
 O catálogo da v1 é **fechado em quinze tools** de descoberta somente leitura sobre o Apache Atlas (API REST v2):
 três basais (protocolo mínimo de avaliação) e doze complementares (mesmo contrato, mesmo orçamento de 10 chamadas por
-sessão). Evidência da seleção em [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp-v1.md).
+sessão). Evidência da seleção em [Matriz de 15 tools MCP](../../evidence/matriz-15-tools-mcp.md).
 
 | # | Tool MCP | Papel | Operação Atlas (v2) |
 |---|----------|-------|---------------------|
@@ -80,20 +80,20 @@ Saída:
 ```json
 {
   "tables": [
-    { "name": "tbl_162cf7be", "type": "TABLE" },
-    { "name": "tbl_8991e9dc", "type": "TABLE" },
-    { "name": "tbl_4c8d7ae5", "type": "TABLE" },
-    { "name": "tbl_973ec6fa", "type": "TABLE" },
-    { "name": "tbl_363ae7e9", "type": "TABLE" },
-    { "name": "tbl_3a2c56ff", "type": "TABLE" },
-    { "name": "tbl_6696932f", "type": "TABLE" },
-    { "name": "tbl_f193a446", "type": "TABLE" },
-    { "name": "tbl_891b1fc9", "type": "TABLE" },
-    { "name": "tbl_ed8b2873", "type": "TABLE" },
-    { "name": "tbl_c066178a", "type": "TABLE" },
-    { "name": "tbl_6b881dfd", "type": "TABLE" },
-    { "name": "tbl_2c1fc4f7", "type": "TABLE" },
-    { "name": "tbl_c78eb7ee", "type": "TABLE" }
+    { "name": "franquias", "type": "TABLE" },
+    { "name": "franquias__segmentos", "type": "TABLE" },
+    { "name": "franquias__redes_franquia", "type": "TABLE" },
+    { "name": "franquias__unidades", "type": "TABLE" },
+    { "name": "project", "type": "TABLE" },
+    { "name": "project_item", "type": "TABLE" },
+    { "name": "project_payment", "type": "TABLE" },
+    { "name": "person", "type": "TABLE" },
+    { "name": "product", "type": "TABLE" },
+    { "name": "product_type", "type": "TABLE" },
+    { "name": "transaction", "type": "TABLE" },
+    { "name": "transaction_coupon", "type": "TABLE" },
+    { "name": "ibge__city", "type": "TABLE" },
+    { "name": "ibge__uf", "type": "TABLE" }
   ],
   "nextCursor": null
 }
@@ -106,7 +106,7 @@ Entrada:
 ```json
 {
   "schema": "laboratorio",
-  "table": "tbl_162cf7be"
+  "table": "franquias"
 }
 ```
 
@@ -114,14 +114,14 @@ Saída (colunas observadas em [Schema massa de teste](../dados/schema-massa-test
 
 ```json
 {
-  "table": "tbl_162cf7be",
+  "table": "franquias",
   "columns": [
-    { "name": "col_d7247819", "dataType": "INT", "nullable": false },
+    { "name": "id", "dataType": "INT", "nullable": false },
     { "name": "col_c0d85479", "dataType": "VARCHAR(255)", "nullable": false },
     { "name": "col_632ad9d4", "dataType": "VARCHAR(255)", "nullable": true },
     { "name": "col_6e8c4b2c", "dataType": "VARCHAR(255)", "nullable": true },
-    { "name": "col_2cd9416d", "dataType": "INT", "nullable": true },
-    { "name": "col_1d3e13bf", "dataType": "INT", "nullable": true },
+    { "name": "segmento_id", "dataType": "INT", "nullable": true },
+    { "name": "rede_id", "dataType": "INT", "nullable": true },
     { "name": "col_ee3dab3a", "dataType": "DATETIME", "nullable": true },
     { "name": "col_acadb37c", "dataType": "DATETIME", "nullable": true }
   ]
@@ -135,7 +135,7 @@ Entrada:
 ```json
 {
   "schema": "laboratorio",
-  "table": "tbl_162cf7be"
+  "table": "franquias"
 }
 ```
 
@@ -145,17 +145,17 @@ Saída (FKs confirmadas em [Schema massa de teste](../dados/schema-massa-teste.m
 {
   "relationships": [
     {
-      "fromTable": "tbl_162cf7be",
-      "fromColumn": "col_2cd9416d",
-      "toTable": "tbl_8991e9dc",
-      "toColumn": "col_d7247819",
+      "fromTable": "franquias",
+      "fromColumn": "segmento_id",
+      "toTable": "franquias__segmentos",
+      "toColumn": "id",
       "relationshipType": "FK"
     },
     {
-      "fromTable": "tbl_162cf7be",
-      "fromColumn": "col_1d3e13bf",
-      "toTable": "tbl_4c8d7ae5",
-      "toColumn": "col_d7247819",
+      "fromTable": "franquias",
+      "fromColumn": "rede_id",
+      "toTable": "franquias__redes_franquia",
+      "toColumn": "id",
       "relationshipType": "FK"
     }
   ]
@@ -165,7 +165,7 @@ Saída (FKs confirmadas em [Schema massa de teste](../dados/schema-massa-teste.m
 ### Tools complementares do catálogo v1
 
 As doze tools abaixo compartilham o envelope, a taxonomia de erro e o versionamento das basais. Todas são somente
-leitura sobre o Apache Atlas. Os exemplos usam entidades reais da massa laboratorial (`laboratorio.tbl_162cf7be`, `laboratorio.tbl_363ae7e9`).
+leitura sobre o Apache Atlas. Os exemplos usam entidades reais da massa laboratorial (`base_laboratorial.franquias`, `base_laboratorial.project`).
 
 #### 4) `catalog.searchTables`
 
@@ -176,7 +176,7 @@ Entrada:
 ```json
 {
   "schema": "laboratorio",
-  "query": "tbl_162cf7be",
+  "query": "franquias",
   "typeName": "hive_table",
   "limit": 25,
   "offset": 0
@@ -189,8 +189,8 @@ Saída:
 {
   "approximateCount": 4,
   "entities": [
-    { "guid": "a1b2-...", "name": "tbl_162cf7be", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" },
-    { "guid": "c3d4-...", "name": "tbl_8991e9dc", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_8991e9dc@cluster" }
+    { "guid": "a1b2-...", "name": "franquias", "typeName": "hive_table", "qualifiedName": "base_laboratorial.franquias@cluster" },
+    { "guid": "c3d4-...", "name": "franquias__segmentos", "typeName": "hive_table", "qualifiedName": "base_laboratorial.franquias__segmentos@cluster" }
   ]
 }
 ```
@@ -204,7 +204,7 @@ Entrada:
 ```json
 {
   "schema": "laboratorio",
-  "query": "tbl_363ae7e9",
+  "query": "project",
   "typeName": "hive_table",
   "excludeDeletedEntities": true,
   "limit": 25,
@@ -218,8 +218,8 @@ Saída:
 {
   "approximateCount": 3,
   "entities": [
-    { "guid": "e5f6-...", "name": "tbl_363ae7e9", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_363ae7e9@cluster" },
-    { "guid": "g7h8-...", "name": "tbl_3a2c56ff", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_3a2c56ff@cluster" }
+    { "guid": "e5f6-...", "name": "project", "typeName": "hive_table", "qualifiedName": "base_laboratorial.project@cluster" },
+    { "guid": "g7h8-...", "name": "project_item", "typeName": "hive_table", "qualifiedName": "base_laboratorial.project_item@cluster" }
   ],
   "aggregationMetrics": { "typeName": [ { "name": "hive_table", "count": 3 } ] }
 }
@@ -236,7 +236,7 @@ Entrada:
   "schema": "laboratorio",
   "typeName": "hive_table",
   "attrName": "name",
-  "attrValuePrefix": "tbl_c066178a",
+  "attrValuePrefix": "transaction",
   "limit": 25,
   "offset": 0
 }
@@ -248,8 +248,8 @@ Saída:
 {
   "approximateCount": 2,
   "entities": [
-    { "guid": "i9j0-...", "name": "tbl_c066178a", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_c066178a@cluster" },
-    { "guid": "k1l2-...", "name": "tbl_6b881dfd", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_6b881dfd@cluster" }
+    { "guid": "i9j0-...", "name": "transaction", "typeName": "hive_table", "qualifiedName": "base_laboratorial.transaction@cluster" },
+    { "guid": "k1l2-...", "name": "transaction_coupon", "typeName": "hive_table", "qualifiedName": "base_laboratorial.transaction_coupon@cluster" }
   ]
 }
 ```
@@ -263,7 +263,7 @@ Entrada:
 ```json
 {
   "schema": "laboratorio",
-  "query": "tbl_8991e9dc",
+  "query": "franquias__segmentos",
   "excludeDeletedEntities": true,
   "limit": 25,
   "offset": 0
@@ -276,7 +276,7 @@ Saída:
 {
   "approximateCount": 2,
   "entities": [
-    { "guid": "m3n4-...", "name": "tbl_8991e9dc", "typeName": "hive_table", "qualifiedName": "laboratorio.tbl_8991e9dc@cluster" }
+    { "guid": "m3n4-...", "name": "franquias__segmentos", "typeName": "hive_table", "qualifiedName": "base_laboratorial.franquias__segmentos@cluster" }
   ]
 }
 ```
@@ -302,7 +302,7 @@ Saída:
     "guid": "a1b2-...",
     "typeName": "hive_table",
     "status": "ACTIVE",
-    "attributes": { "name": "tbl_162cf7be", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" },
+    "attributes": { "name": "franquias", "qualifiedName": "base_laboratorial.franquias@cluster" },
     "classificationNames": []
   }
 }
@@ -318,7 +318,7 @@ Entrada:
 ```json
 {
   "typeName": "hive_table",
-  "qualifiedName": "laboratorio.tbl_162cf7be@cluster",
+  "qualifiedName": "base_laboratorial.franquias@cluster",
   "minExtInfo": true
 }
 ```
@@ -331,7 +331,7 @@ Saída:
     "guid": "a1b2-...",
     "typeName": "hive_table",
     "status": "ACTIVE",
-    "attributes": { "name": "tbl_162cf7be", "qualifiedName": "laboratorio.tbl_162cf7be@cluster" }
+    "attributes": { "name": "franquias", "qualifiedName": "base_laboratorial.franquias@cluster" }
   }
 }
 ```
@@ -355,7 +355,7 @@ Saída:
   "guid": "e5f6-...",
   "typeName": "hive_table",
   "status": "ACTIVE",
-  "displayText": "tbl_363ae7e9",
+  "displayText": "project",
   "classificationNames": []
 }
 ```
@@ -432,7 +432,7 @@ Saída:
     { "fromEntityId": "src-...", "toEntityId": "a1b2-...", "relationshipId": "rel-..." }
   ],
   "guidEntityMap": {
-    "a1b2-...": { "typeName": "hive_table", "displayText": "tbl_162cf7be" }
+    "a1b2-...": { "typeName": "hive_table", "displayText": "franquias" }
   }
 }
 ```
@@ -509,7 +509,7 @@ Exemplo de resposta de erro:
   "data": null,
   "error": {
     "code": "not_found",
-    "message": "Tabela 'tbl_inexistente' nao existe no catalogo 'laboratorio'."
+    "message": "Tabela 'inexistente' nao existe no catalogo 'laboratorio'."
   }
 }
 ```

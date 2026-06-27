@@ -28,8 +28,14 @@ docs/assets/scripts/*
 # Symlinks gerados por scripts/prepare-docs.sh
 /docs/evidence
 /docs/templates
+/docs/dados
 /docs/diagrams/*.puml
 /docs/diagrams/*.svg
+
+# Dump MySQL versionado (nomes de coluna legados no DDL)
+/dados/*
+!dados/README.md
+!dados/*.sql
 
 # Bloquear reintrodução acidental de artefatos sensíveis
 db-reference/

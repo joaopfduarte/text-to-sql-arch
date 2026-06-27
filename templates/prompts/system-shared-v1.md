@@ -1,4 +1,4 @@
-# System prompt compartilhado (v1)
+# System prompt compartilhado v1
 
 > Bloco comum aos modos `mcp` e `baseline-static`. Não editar de forma assimétrica entre campanhas.
 

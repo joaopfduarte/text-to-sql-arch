@@ -20,7 +20,7 @@ Conteúdo mínimo esperado:
 - `context.json`
 - `summary.md`
 
-Schema v1: [Schema context.json v1](context-schema-v1.json). Exemplos em [Exemplo context baseline v1](examples/context-baseline-v1.example.json).
+Schema: [Schema do contexto](context-schema.json). Exemplos em [Exemplo context baseline](examples/context-baseline.example.json).
 
 Não sobrescreva corridas anteriores. Qualquer ajuste gera novo `runId`.
 
@@ -32,12 +32,17 @@ exclusivas do autor»).
 
 | Arquivo | Uso |
 |----------|-----|
-| [Bateria de 30 perguntas](bateria-30-perguntas-v1.csv) | 30 perguntas; 6 cenários; SIMPLES / MÉDIA / COMPLEXA — **revisão humana aprovada** (`9985067`) |
-| [Gabarito da bateria](gabarito-bateria-v1.md) | Gabarito $G_i$ por `question_id`; inclui auditoria de executabilidade e resultado baseline v1 |
-| [Matriz de cobertura da bateria](matriz-cobertura-bateria-v1.md) | Cobertura cenário × dificuldade × tabelas |
-| [Métricas baseline v1](baseline-metricas-v1.csv) | Métricas da campanha `baseline-static` v1 (Gemini-only, 30 corridas; `gabarito_match` por pergunta) |
+| [Bateria de perguntas](bateria-40-perguntas.csv) | 40 perguntas; 6 cenários; SIMPLES / MÉDIA / COMPLEXA (10 / 10 / 20). Campo `pergunta_nl`: enunciado em linguagem natural para o usuário final, sem nomes de schema; mapeamento técnico em `notas_autor` e no gabarito |
+| [Gabarito da bateria](gabarito-bateria.md) | Gabarito $G_i$ por `question_id`; colas SQL de referência — **MySQL 8+**, schema `base_laboratorial` |
+| [Matriz de cobertura da bateria](matriz-cobertura-bateria.md) | Cobertura cenário × dificuldade × tabelas (40 perguntas) |
+| [Métricas baseline](baseline-metricas.csv) | Métricas da campanha `baseline-static`: 40 perguntas × 2 modelos
+(`gemini-3.5-flash`, `gemini-3.1-pro`); mapa $g_i$ em [Auditoria baseline](baseline-auditoria-gabarito.md) |
+| [Notas de expansão Q31–Q40](notas-expansao-q31-q40.md) | Documento de trabalho: padrão canônico, exploração e matriz de desenho de Q31–Q40 |
+| [json\_data e data\_source](json_data-data_source-schema-notes.md) | Schema e conteúdo das colunas semiestruturadas usadas em Q31–Q40 |
+| [Relatório de expansão Q31–Q40](relatorio-expansao-q31-q40.md) | Entrega da expansão da bateria para 40 perguntas: matriz, decisões, limitações e compilação |
 
-Esquema estático do comparativo simples: [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md).
+Esquema estático do comparativo simples: [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md)
+e [Pacote experimental](../experimento/pacote-experimental.md).
 
 ## Inventário e catálogo de tools MCP (T06)
 
@@ -46,8 +51,9 @@ Artefatos derivados do Swagger do Apache Atlas que sustentam o catálogo fechado
 | Arquivo | Uso |
 |----------|-----|
 | [Inventário Atlas API](inventario-atlas-api-para-mcp.md) | Triagem das operações de leitura da API REST v2 do Atlas |
-| [Matriz de 15 tools MCP](matriz-15-tools-mcp-v1.md) | Decisão final: 3 basais + 12 complementares, com mapeamento Atlas |
+| [Matriz de 15 tools MCP](matriz-15-tools-mcp.md) | Decisão final: 3 basais + 12 complementares, com mapeamento Atlas |
 
 Valores agregados ($A_{\mathrm{gab}}$) derivam do CSV baseline preenchido, conforme
-[Métricas e fórmulas](../experimento/metricas-formulas.md). A campanha v1 usa apenas
-`gemini-3.5-flash` ($N_{\mathrm{base}} = 30$); extensão a segundo provedor é opcional e não mistura com esta v1.
+[Métricas e fórmulas](../experimento/metricas-formulas.md). A campanha usa
+`gemini-3.5-flash` ($A_{\mathrm{gab}} = 47{,}5\%$, 19/40) e `gemini-3.1-pro` ($A_{\mathrm{gab}} = 77{,}5\%$,
+31/40), ambos em modo `baseline-static` com $N_{\mathrm{base}} = 40$.

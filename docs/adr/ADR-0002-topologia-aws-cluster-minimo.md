@@ -13,7 +13,7 @@ tags:
 
 ## Contexto
 
-A pesquisa precisa de um ambiente laboratorial reprodutível para executar o pipeline Text-to-SQL com catálogo Apache Atlas e massa de teste laboratorial (`massa_teste_laboratorio`, 92 entidades).
+A pesquisa precisa de um ambiente laboratorial reprodutível para executar o pipeline Text-to-SQL com catálogo Apache Atlas e massa de laboratório (`base_laboratorial`, 92 entidades).
 
 A stack alvo está fechada no VDF canônico [VDF ODP x86](../assets/scripts/ODP-VDF.xml):
 

@@ -12,6 +12,8 @@
 - **SqlSynthesisContext**: transforma contexto de metadados em SQL candidato.
 - **SqlValidationExecutionContext**: valida sintaxe via Apache Calcite (dialeto Hive), executa e classifica desfecho.
 - **ExperimentTrackingContext**: registra trilha da sessão e calcula métricas.
+- **IdentityContext**: autentica operadores da API pública; isolado do experimento Text-to-SQL em
+  Hive/Atlas (PostgreSQL local; ver [ADR-0005](../../adr/ADR-0005-convencao-maven-pacotes-producao.md)).
 
 ### Context map
 
@@ -61,13 +63,16 @@
 
 ### Convenção de pacotes (Spring Boot)
 
-- `com.tcc.text2sql.application`
-- `com.tcc.text2sql.domain`
-- `com.tcc.text2sql.ports`
-- `com.tcc.text2sql.adapters.in`
-- `com.tcc.text2sql.adapters.out`
-- `com.tcc.text2sql.config`
-- `com.tcc.text2sql.observability`
+Raiz: `br.com.text2sql.api` ([ADR-0005](../../adr/ADR-0005-convencao-maven-pacotes-producao.md)).
+
+- `br.com.text2sql.api.application`
+- `br.com.text2sql.api.domain`
+- `br.com.text2sql.api.ports`
+- `br.com.text2sql.api.adapters.in`
+- `br.com.text2sql.api.adapters.out`
+- `br.com.text2sql.api.config`
+- `br.com.text2sql.api.observability`
+- `br.com.text2sql.api.identity` (bounded context Identity)
 
 Detalhamento dos pacotes em [Módulos Spring](../../implementacao/modulos-spring.md) e das portas em [Ports e adapters](../../implementacao/ports-adapters.md).
 

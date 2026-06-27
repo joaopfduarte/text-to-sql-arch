@@ -31,7 +31,7 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
     ),
     "arquitetura/dados/carga-cluster-laboratorio.md": (
         "Carga no cluster",
-        "pipeline de ingestão da massa `massa_teste_laboratorio`",
+        "pipeline de ingestão da massa `base_laboratorial`",
     ),
     "infraestrutura/visao-aws.md": ("Visão AWS", "topologia de rede e componentes na nuvem"),
     "infraestrutura/cluster-hadoop.md": ("Cluster Hadoop", "serviços ODP, sizing e operação"),
@@ -55,6 +55,10 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
         "Runbook de reprodutibilidade",
         "passos para repetir uma corrida com evidências",
     ),
+    "experimento/pacote-experimental.md": (
+        "Pacote experimental",
+        "hub do pacote reprodutível Text-to-SQL",
+    ),
     "operacao/index.md": ("Operação", "ciclo de corrida, incidentes e governança"),
     "pesquisa/rastreabilidade-academica.md": (
         "Rastreabilidade acadêmica",
@@ -74,15 +78,23 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
         "ADR-0003 Inferência LLM",
         "determinismo, seeds e configuração de prompts",
     ),
-    "evidence/gabarito-bateria-v1.md": (
+    "adr/ADR-0004-politica-select-only-passo5.md": (
+        "ADR-0004 SELECT-only passo 5",
+        "política de validação SELECT-only no passo 5",
+    ),
+    "adr/ADR-0005-convencao-maven-pacotes-producao.md": (
+        "ADR-0005 Maven produção",
+        "convenção de pacotes Maven para produção",
+    ),
+    "evidence/gabarito-bateria.md": (
         "Gabarito da bateria",
         "colas SQL de referência por pergunta",
     ),
-    "evidence/matriz-cobertura-bateria-v1.md": (
+    "evidence/matriz-cobertura-bateria.md": (
         "Matriz de cobertura",
         "cenários, dificuldade e tabelas por pergunta",
     ),
-    "evidence/matriz-15-tools-mcp-v1.md": (
+    "evidence/matriz-15-tools-mcp.md": (
         "Matriz de 15 tools MCP",
         "seleção das tools do catálogo fechado",
     ),
@@ -90,7 +102,8 @@ PAGE_BLURBS: dict[str, tuple[str, str]] = {
         "Inventário Atlas API",
         "operações de leitura triadas para o MCP",
     ),
-    "evidence/context-schema-v1.json": ("Schema `context.json`", "campos obrigatórios por corrida"),
+    "evidence/context-schema.json": ("Schema `context.json`", "campos obrigatórios por corrida"),
+    "dados/README.md": ("Dump MySQL", "schema `base_laboratorial` versionado"),
     "templates/prompts/prompts-manifest-v1.json": (
         "Manifesto de prompts v1",
         "versões dos artefatos de prompt",

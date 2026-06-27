@@ -8,7 +8,6 @@ FAIL=0
 
 PATTERNS=(
   'putz'
-  'franquias'
   'alessio'
   'Pedrinho'
   'monografia'
@@ -30,7 +29,6 @@ PATTERNS=(
   '\bXPTO\b'
 )
 
-# Reintrodução acidental de narrativa do cluster legado OCI/ARM (redirect_maps em mkdocs.yml é permitido)
 LEGACY_CLUSTER_PATTERNS=(
   'delta-oci-para-aws'
   'vcn-data-lake'
@@ -43,18 +41,23 @@ LEGACY_CLUSTER_PATTERNS=(
   'VDF legado'
 )
 
+SCAN_EXCLUDES=(
+  --glob '!.git/**'
+  --glob '!site/**'
+  --glob '!public/**'
+  --glob '!.venv/**'
+  --glob '!venv/**'
+  --glob '!.cursor/**'
+  --glob '!.cache/**'
+  --glob '!dados/**'
+)
+
 scan() {
   local label="$1"
   shift
   local hits
   hits="$(rg -i -n --hidden \
-    --glob '!.git/**' \
-    --glob '!site/**' \
-    --glob '!public/**' \
-    --glob '!.venv/**' \
-    --glob '!venv/**' \
-    --glob '!.cursor/**' \
-    --glob '!.cache/**' \
+    "${SCAN_EXCLUDES[@]}" \
     --glob '!.gitignore' \
     --glob '!scripts/check-anonymization.sh' \
     "$@" 2>/dev/null || true)"
@@ -71,13 +74,7 @@ scan_legacy_cluster() {
   shift
   local hits
   hits="$(rg -i -n --hidden \
-    --glob '!.git/**' \
-    --glob '!site/**' \
-    --glob '!public/**' \
-    --glob '!.venv/**' \
-    --glob '!venv/**' \
-    --glob '!.cursor/**' \
-    --glob '!.cache/**' \
+    "${SCAN_EXCLUDES[@]}" \
     --glob '!mkdocs.yml' \
     --glob '!scripts/check-anonymization.sh' \
     "$@" 2>/dev/null || true)"

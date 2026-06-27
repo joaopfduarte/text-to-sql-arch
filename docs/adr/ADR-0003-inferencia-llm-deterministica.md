@@ -27,7 +27,7 @@ na comparação MCP vs baseline.
 4. Publicar templates versionados em [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json) com bloco
    **`system-shared-v1.md` idêntico** entre modos (regra de paridade anti-alucinação).
 5. Estender `context.json` com `promptVersion`, `inferenceConfig`, `promptArtifacts` e
-   `promptArtifactsHash` (schema [Schema context.json v1](../evidence/context-schema-v1.json)).
+   `promptArtifactsHash` (schema [Schema do contexto](../evidence/context-schema.json)).
 6. Para `gpt-5.4-nano` (MCP): registrar `temperatureSupported: false` e omitir `temperature` no request,
    conforme limitação dos modelos GPT-5 de raciocínio.
 7. Documentação canônica: [Inferência e prompts](../experimento/llm-inferencia-e-prompts.md).
@@ -58,4 +58,4 @@ na comparação MCP vs baseline.
 
 - [Inferência e prompts](../experimento/llm-inferencia-e-prompts.md)
 - [Manifesto de prompts v1](../templates/prompts/prompts-manifest-v1.json)
-- [Schema context.json v1](../evidence/context-schema-v1.json)
+- [Schema do contexto](../evidence/context-schema.json)

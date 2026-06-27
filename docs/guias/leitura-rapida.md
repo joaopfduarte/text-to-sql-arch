@@ -38,7 +38,7 @@ Se você chegou aqui, já consegue localizar o agente, o cluster, a camada semâ
 | Camada semântica e de metadados | Componente que expõe inventário estruturado de esquema ao agente via MCP. |
 | Catálogo canônico | Instanciação experimental da camada semântica; fonte única de metadados na corrida. |
 | Apache Atlas | Produto escolhido que implementa o catálogo canônico no cluster. |
-| subconjunto laboratorial | Schema relacional de 92 tabelas; subconjunto fixo é a massa de avaliação. |
+| subconjunto laboratorial | Schema relacional **`base_laboratorial`** (MySQL 8+); massa versionada em `dados/` |
 | `runId` | Identificador único por corrida, no formato `run-YYYYMMDD-HHMM-<id-curto>`. |
 | Erro estrutural | SQL que cita tabela/coluna/junção ausente do catálogo canônico. |
 | Aderência estrutural | Proporção de SQLs gerados sem erro estrutural. |

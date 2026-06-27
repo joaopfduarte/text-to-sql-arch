@@ -9,9 +9,10 @@ Documentação da pesquisa sobre engenharia do artefato Text-to-SQL com MCP, cam
 | Papel | Leitura inicial |
 |-------|-----------------|
 | Qualquer pessoa nova | [Leitura rápida](docs/guias/leitura-rapida.md) |
+| Reproduzir o experimento | [Pacote experimental](docs/experimento/pacote-experimental.md) |
 | Dev Java | [Visão lógica](docs/arquitetura/aplicacao/visao-logica.md) → [Módulos Spring](docs/implementacao/modulos-spring.md) → [Contratos MCP v1](docs/arquitetura/contratos-mcp/contracts-v1.md) |
 | Engenheiro de infra/dados | [Visão AWS](docs/infraestrutura/visao-aws.md) → [Cluster Hadoop](docs/infraestrutura/cluster-hadoop.md) → [Carga no cluster](docs/arquitetura/dados/carga-cluster-laboratorio.md) |
-| Operador de corridas | [Runbook de reprodutibilidade](docs/experimento/runbook-reprodutibilidade.md) → [Operação](docs/operacao/index.md) |
+| Operador de corridas | [Pacote experimental](docs/experimento/pacote-experimental.md) → [Runbook de reprodutibilidade](docs/experimento/runbook-reprodutibilidade.md) → [Operação](docs/operacao/index.md) |
 | Pesquisador | [Rastreabilidade acadêmica](docs/pesquisa/rastreabilidade-academica.md) |
 
 ## Mapa do repositório
@@ -31,6 +32,7 @@ documentation/
       mcp-architecture-viewer/
         index.ts           # import side-effect
         ui/                # <mcp-architecture-viewer>
+  dados/                   # dump MySQL base_laboratorial.sql
   docs/                    # site MkDocs (anonimizado), por domínio
     assets/scripts/ODP-VDF.xml
     index.md
@@ -86,7 +88,7 @@ mkdocs build --strict --site-dir public
 O deploy é feito pelo [workflow GitHub Pages](.github/workflows/pages.yml):
 
 - **Pull requests:** validação completa (build de componentes, checks e MkDocs strict) — sem deploy.
-- **Push em `main`:** build + deploy para [https://joaopfduarte.github.io/text-to-sql-arch/](https://joaopfduarte.github.io/text-to-sql-arch/).
+- **Push em `main`:** build + deploy para [Documentação relacionada](https://joaopfduarte.github.io/text-to-sql-arch/).
 
 Configuração inicial (uma vez no repositório GitHub):
 

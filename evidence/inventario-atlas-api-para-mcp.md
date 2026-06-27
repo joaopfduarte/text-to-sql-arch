@@ -22,7 +22,7 @@ tags:
 5. Tags fora de escopo: `GlossaryREST`, `NotificationREST`, `IndexRecoveryREST` e demais operações de escrita.
 
 
-## Mapa por tbl_7933f344 REST
+## Mapa por tag REST
 
 Utilidade Text-to-SQL avaliada de 1 (baixa) a 5 (alta). `L` indica leitura e `E` escrita.
 
@@ -72,6 +72,6 @@ Utilidade Text-to-SQL avaliada de 1 (baixa) a 5 (alta). `L` indica leitura e `E`
 
 ## Resultado
 
-Doze operações selecionadas como tools complementares. Somadas às três basais, fecham o catálogo MCP v1 em quinze
+Doze operações selecionadas como tools complementares. Somadas às três basais, fecham o catálogo MCP em quinze
 tools de descoberta somente leitura. A decisão final consta em
-[Matriz de 15 tools MCP](matriz-15-tools-mcp-v1.md).
+[Matriz de 15 tools MCP](matriz-15-tools-mcp.md).

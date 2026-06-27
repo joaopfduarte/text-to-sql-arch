@@ -95,6 +95,9 @@ plugins:
         '09-operacao.md': 'operacao/index.md'
         '10-rastreabilidade-academica.md': 'pesquisa/rastreabilidade-academica.md'
         'roadmap-5a6-meses.md': 'pesquisa/roadmap.md'
+        'evidence/gabarito-bateria-v1.md': 'evidence/gabarito-bateria.md'
+        'evidence/matriz-cobertura-bateria-v1.md': 'evidence/matriz-cobertura-bateria.md'
+        'evidence/matriz-15-tools-mcp-v1.md': 'evidence/matriz-15-tools-mcp.md'
   - glightbox:
       touchNavigation: true
       loop: false
@@ -125,6 +128,7 @@ nav:
       - Schema massa de teste: arquitetura/dados/schema-massa-teste.md
       - Catálogo Atlas: arquitetura/dados/catalogo-atlas.md
       - Carga no cluster: arquitetura/dados/carga-cluster-laboratorio.md
+      - Dump MySQL: dados/README.md
     - Contratos MCP: arquitetura/contratos-mcp/contracts-v1.md
   - Infraestrutura:
     - Visão AWS: infraestrutura/visao-aws.md
@@ -134,6 +138,7 @@ nav:
     - Módulos Spring: implementacao/modulos-spring.md
     - Ports e adapters: implementacao/ports-adapters.md
   - Experimento e avaliação:
+    - Pacote experimental: experimento/pacote-experimental.md
     - Protocolo: experimento/protocolo-avaliacao.md
     - Inferência e prompts: experimento/llm-inferencia-e-prompts.md
     - Métricas e fórmulas: experimento/metricas-formulas.md
@@ -141,18 +146,27 @@ nav:
   - Operação: operacao/index.md
   - Pesquisa:
     - Rastreabilidade acadêmica: pesquisa/rastreabilidade-academica.md
+    - Migração diagramas TikZ/PlantUML: pesquisa/migracao-diagramas-tikz-plantuml.md
     - Roadmap: pesquisa/roadmap.md
   - Evidências experimentais:
     - Índice: evidence/README.md
-    - Gabarito da bateria: evidence/gabarito-bateria-v1.md
-    - Matriz de cobertura: evidence/matriz-cobertura-bateria-v1.md
-    - Matriz 15 tools MCP: evidence/matriz-15-tools-mcp-v1.md
+    - Bateria de 40 perguntas: evidence/bateria-40-perguntas.csv
+    - Gabarito da bateria: evidence/gabarito-bateria.md
+    - Matriz de cobertura: evidence/matriz-cobertura-bateria.md
+    - Métricas baseline: evidence/baseline-metricas.csv
+    - Auditoria baseline: evidence/baseline-auditoria-gabarito.md
+    - Matriz 15 tools MCP: evidence/matriz-15-tools-mcp.md
     - Inventário Atlas API: evidence/inventario-atlas-api-para-mcp.md
+    - Schema context.json: evidence/context-schema.json
+    - Notas expansão Q31–Q40: evidence/notas-expansao-q31-q40.md
+    - Relatório expansão Q31–Q40: evidence/relatorio-expansao-q31-q40.md
   - ADRs:
     - Índice: adr/README.md
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
     - ADR-0002 Topologia AWS: adr/ADR-0002-topologia-aws-cluster-minimo.md
     - ADR-0003 Inferência LLM: adr/ADR-0003-inferencia-llm-deterministica.md
+    - ADR-0004 SELECT-only passo 5: adr/ADR-0004-politica-select-only-passo5.md
+    - ADR-0005 Maven produção: adr/ADR-0005-convencao-maven-pacotes-producao.md
 
 markdown_extensions:
   - meta
