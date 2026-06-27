@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "evidence/context-schema-v1.json",
-  "title": "context.json — metadados de reprodutibilidade por corrida (v1)",
-  "description": "Schema estendido para evidence/<runId>/context.json. Campos legados mantidos; v1 adiciona inferência LLM e versionamento de prompts.",
+  "$id": "evidence/context-schema.json",
+  "title": "context.json — metadados de reprodutibilidade por corrida ",
+  "description": "Schema estendido para evidence/<runId>/context.json. Campos legados mantidos; adiciona inferência LLM e versionamento de prompts.",
   "type": "object",
   "required": [
     "runId",
@@ -128,7 +128,7 @@
     "questionId": {
       "type": "string",
       "pattern": "^Q[0-9]{2}$",
-      "description": "Opcional: Q01–Q30 na bateria v1"
+          "description": "Opcional: Q01–Q40 na bateria"
     }
   },
   "additionalProperties": false,

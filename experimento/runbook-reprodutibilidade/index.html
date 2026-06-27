@@ -7,6 +7,8 @@
       
       
       
+        <link rel="canonical" href="https://joaopfduarte.github.io/text-to-sql-arch/experimento/runbook-reprodutibilidade/">
+      
       
         <link rel="prev" href="../metricas-formulas/">
       
@@ -60,7 +62,20 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Runbook reprodutibilidade - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="og:description" content="Passos operacionais para repetir uma corrida com evidências completas.">
+<meta property="og:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/experimento/runbook-reprodutibilidade.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://joaopfduarte.github.io/text-to-sql-arch/experimento/runbook-reprodutibilidade/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Runbook reprodutibilidade - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="twitter:description" content="Passos operacionais para repetir uma corrida com evidências completas.">
+<meta property="twitter:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/experimento/runbook-reprodutibilidade.png">
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -211,6 +226,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -247,6 +274,18 @@
     </a>
     Home
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix="">
     
@@ -657,6 +696,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -672,8 +715,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dados/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -687,8 +731,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
@@ -811,6 +861,8 @@
     </li>
   
 
+              
+            
               
             
           </ul>
@@ -1151,6 +1203,8 @@
       
         
       
+        
+      
     
     
     
@@ -1195,6 +1249,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pacote-experimental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacote experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1529,6 +1611,8 @@
       
         
       
+        
+      
     
     
     
@@ -1611,6 +1695,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../pesquisa/migracao-diagramas-tikz-plantuml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migração diagramas TikZ/PlantUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pesquisa/roadmap/" class="md-nav__link">
         
   
@@ -1650,6 +1762,18 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1723,7 +1847,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/gabarito-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/bateria-40-perguntas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bateria de 40 perguntas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/gabarito-bateria/" class="md-nav__link">
         
   
   
@@ -1751,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-cobertura-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/matriz-cobertura-bateria/" class="md-nav__link">
         
   
   
@@ -1779,7 +1931,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-15-tools-mcp-v1/" class="md-nav__link">
+      <a href="../../evidence/baseline-metricas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/baseline-auditoria-gabarito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditoria baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/matriz-15-tools-mcp/" class="md-nav__link">
         
   
   
@@ -1828,6 +2036,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/context-schema.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema context.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/notas-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/relatorio-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatório expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1846,6 +2138,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -2015,6 +2311,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0004-politica-select-only-passo5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0004 SELECT-only passo 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0005 Maven produção
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Aceito"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2065,7 +2424,7 @@
     
     
       <li class="md-path__item">
-        <a href="../protocolo-avaliacao/" class="md-path__link">
+        <a href="../pacote-experimental/" class="md-path__link">
           
   <span class="md-ellipsis">
     Experimento e avaliação
@@ -2104,6 +2463,17 @@
   </nav>
 
 
+  
+  
+    
+      
+    
+    <a href="https://github.com/joaopfduarte/text-to-sql-arch/raw/main/docs/experimento/runbook-reprodutibilidade.md" title="Exibir fonte desta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
 
 <h1 id="runbook-de-operacao-e-reprodutibilidade">Runbook de operação e reprodutibilidade<a class="headerlink" href="#runbook-de-operacao-e-reprodutibilidade" title="Permanent link">¶</a></h1>
 <div class="admonition info">
@@ -2120,7 +2490,7 @@
 <p><code>run-YYYYMMDD-HHMM-&lt;id-curto&gt;</code></p>
 <p>Exemplo: <code>run-20260418-1540-7f3c</code>.</p>
 <h3 id="metadados-obrigatorios-por-execucao">Metadados obrigatórios por execução<a class="headerlink" href="#metadados-obrigatorios-por-execucao" title="Permanent link">¶</a></h3>
-<p>Registrados em <code>context.json</code> (schema: <a href="../../evidence/context-schema-v1.json">Schema context.json v1</a>):</p>
+<p>Registrados em <code>context.json</code> (schema: <a href="../../evidence/context-schema.json">Schema do contexto</a>):</p>
 <p><strong>Identificação e campanha</strong></p>
 <ul>
 <li><code>runId</code></li>
@@ -2133,7 +2503,7 @@
 <li><code>contractsVersion</code></li>
 <li><code>toolBudget</code> (limite máximo de chamadas por sessão; <strong>10</strong> no MCP, <strong>0</strong> no baseline)</li>
 </ul>
-<p><strong>Inferência e prompts (v1)</strong></p>
+<p>**Inferência e prompts **</p>
 <ul>
 <li><code>promptVersion</code> (<code>v1</code>)</li>
 <li><code>inferenceConfigVersion</code> (<code>v1</code>)</li>
@@ -2142,8 +2512,8 @@
 <li><code>promptArtifactsHash</code> — SHA-256 dos quatro arquivos <code>.md</code> do manifesto v1</li>
 </ul>
 <p>Detalhes e política (<code>temperature=0</code> no Gemini): <a href="../llm-inferencia-e-prompts/">Inferência e prompts</a>.</p>
-<p>Exemplos: <a href="../../evidence/examples/context-baseline-v1.example.json">Exemplo context baseline v1</a>,
-<a href="../../evidence/examples/context-mcp-v1.example.json">Exemplo context MCP v1</a>.</p>
+<p>Exemplos: <a href="../../evidence/examples/context-baseline.example.json">Exemplo context baseline</a>,
+<a href="../../evidence/examples/context-mcp.example.json">Exemplo context MCP</a>.</p>
 <h3 id="estrutura-de-evidencia">Estrutura de evidência<a class="headerlink" href="#estrutura-de-evidencia" title="Permanent link">¶</a></h3>
 <p>Pasta por corrida:</p>
 <p><code>evidence/&lt;runId&gt;/</code></p>
@@ -2268,7 +2638,7 @@
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Commit limpo e registrado (<code>commitHash</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Versão do contrato MCP fixada (<code>contractsVersion</code>).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Dataset fixo e versionado (massa PS de 92 tabelas; ver <code>schema-massa-teste.md</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Dataset fixo e versionado (schema <code>base_laboratorial</code>, 92 tabelas; ver <code>schema-massa-teste.md</code> e <code>dados/base_laboratorial.sql</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Seed explícita.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Modelo, <code>provider</code>, <code>promptVersion</code> e <code>inferenceConfig</code> registrados (<code>temperature=0</code> no Gemini).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <code>promptArtifactsHash</code> calculado e conferido contra templates em <a href="../../templates/prompts/prompts-manifest-v1.json">Manifesto de prompts v1</a>.</li>
@@ -2282,27 +2652,27 @@
 <li>Correções devem gerar nova corrida com novo <code>runId</code>.</li>
 </ul>
 <h3 id="campanha-comparativo-simples-baseline-static">Campanha comparativo simples (<code>baseline-static</code>)<a class="headerlink" href="#campanha-comparativo-simples-baseline-static" title="Permanent link">¶</a></h3>
-<p>Execução manual no ambiente Google (<code>gemini-3.5-flash</code>) na campanha v1, <strong>antes</strong> do modo MCP. Sem tools MCP;
+<p>Execução manual no ambiente Google (<code>gemini-3.5-flash</code>) na campanha baseline, <strong>antes</strong> do modo MCP. Sem tools MCP;
 esquema via DDL estático.</p>
 <p><strong>Esquema no prompt:</strong> <a href="../../arquitetura/dados/schema-massa-teste/">Schema massa de teste</a> (92 tabelas MySQL).
 Registrar <code>commitHash</code> do código-fonte do artefato e hash ou versão do arquivo DDL em <code>datasetVersion</code> / notas da campanha.</p>
-<p><strong>Bateria:</strong> <a href="../../evidence/bateria-30-perguntas-v1.csv">Bateria de 30 perguntas</a> +
-<a href="../../evidence/gabarito-bateria-v1/">Gabarito da bateria</a> (<code>batteryVersion</code> v1, revisão
-aprovada).</p>
+<p><strong>Bateria:</strong> <a href="../../evidence/bateria-40-perguntas.csv">Bateria de perguntas</a> +
+<a href="../../evidence/gabarito-bateria/">Gabarito da bateria</a> (40 perguntas; campanha
+<code>baseline-static</code> completa em jun/2026 para Flash e Pro).</p>
 <h4 id="checklist-pre-voo-baseline-static">Checklist pré-voo (<code>baseline-static</code>)<a class="headerlink" href="#checklist-pre-voo-baseline-static" title="Permanent link">¶</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Auditoria de executabilidade: executar as 30 colas em <code>gabarito-bateria-v1.md</code> contra <code>massa_teste_laboratorio</code>; registrar em § Auditoria do mesmo arquivo; só prosseguir se 30/30 OK.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Auditoria de executabilidade: executar as 40 colas em <code>gabarito-bateria.md</code> contra <code>base_laboratorial</code> (MySQL 8+); registrar em § Auditoria do mesmo arquivo; só prosseguir se 40/40 OK.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Bateria e gabarito aprovados (<code>9985067</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <code>DDL offline</code> versionado e anexado ao prompt de cada corrida.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <code>campaignId</code>: <code>baseline-static</code>; <code>toolBudget</code>: 0 (sem MCP).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <code>modelVersion</code> fixo <code>gemini-3.5-flash</code>; <code>provider</code>: <code>google</code>; <code>seed</code> explícita por campanha.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <code>inferenceConfig.temperature</code>: <strong>0</strong>; <code>maxOutputTokens</code>: <strong>4096</strong> (ver <a href="../llm-inferencia-e-prompts/">Inferência e prompts</a>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Templates de prompt v1 congelados; <code>promptArtifactsHash</code> registrado em cada <code>context.json</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 30 perguntas = 30 corridas na campanha v1 (Gemini-only).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 40 perguntas = 40 corridas por modelo na campanha (<code>gemini-3.5-flash</code> e <code>gemini-3.1-pro</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Gabarito <span class="arithmatex">\(G_i\)</span> disponível para classificar <code>gabaritoMatch</code>.</li>
 </ul>
 <h4 id="registro-consolidado">Registro consolidado<a class="headerlink" href="#registro-consolidado" title="Permanent link">¶</a></h4>
-<p>Preencher <a href="../../evidence/baseline-metricas-v1.csv">Métricas baseline v1</a> — uma linha por
+<p>Preencher <a href="../../evidence/baseline-metricas.csv">Métricas baseline</a> — uma linha por
 corrida:</p>
 <table>
 <thead>
@@ -2318,15 +2688,15 @@ corrida:</p>
 </tr>
 <tr>
 <td><code>question_id</code></td>
-<td>Q01--Q30</td>
+<td>Q01--Q40</td>
 </tr>
 <tr>
 <td><code>model_version</code></td>
-<td>Campanha v1: <code>gemini-3.5-flash</code></td>
+<td><code>gemini-3.5-flash</code> ou <code>gemini-3.1-pro</code></td>
 </tr>
 <tr>
 <td><code>provider</code></td>
-<td>Campanha v1: <code>google</code></td>
+<td><code>google</code></td>
 </tr>
 <tr>
 <td><code>gabarito_match</code></td>
@@ -2449,7 +2819,7 @@ metodologia (Cap. 4).</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

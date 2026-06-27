@@ -7,6 +7,8 @@
       
       
       
+        <link rel="canonical" href="https://joaopfduarte.github.io/text-to-sql-arch/implementacao/modulos-spring/">
+      
       
         <link rel="prev" href="../../infraestrutura/vdf-odp-x86/">
       
@@ -60,7 +62,20 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Módulos Spring - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="og:description" content="Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas">
+<meta property="og:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/implementacao/modulos-spring.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://joaopfduarte.github.io/text-to-sql-arch/implementacao/modulos-spring/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Módulos Spring - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="twitter:description" content="Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas">
+<meta property="twitter:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/implementacao/modulos-spring.png">
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -211,6 +226,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -247,6 +274,18 @@
     </a>
     Home
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix="">
     
@@ -657,6 +696,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -672,8 +715,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dados/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -687,8 +731,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
@@ -811,6 +861,8 @@
     </li>
   
 
+              
+            
               
             
           </ul>
@@ -1147,10 +1199,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#estrutura-de-pacotes-raiz-comtcctext2sql" class="md-nav__link">
+  <a href="#coordenadas-maven-spring-initializr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Estrutura de pacotes (raiz com.tcc.text2sql)
+        Coordenadas Maven (Spring Initializr)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-pacotes-raiz-brcomtext2sqlapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de pacotes (raiz br.com.text2sql.api)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounded-context-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bounded context Identity
       
     </span>
   </a>
@@ -1162,6 +1236,17 @@
     <span class="md-ellipsis">
       
         Mapeamento bounded context → módulos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy
       
     </span>
   </a>
@@ -1251,6 +1336,8 @@
       
         
       
+        
+      
     
     
     
@@ -1297,6 +1384,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experimento/pacote-experimental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacote experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1457,6 +1572,8 @@
       
         
       
+        
+      
     
     
     
@@ -1539,6 +1656,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../pesquisa/migracao-diagramas-tikz-plantuml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migração diagramas TikZ/PlantUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pesquisa/roadmap/" class="md-nav__link">
         
   
@@ -1578,6 +1723,18 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1651,7 +1808,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/gabarito-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/bateria-40-perguntas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bateria de 40 perguntas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/gabarito-bateria/" class="md-nav__link">
         
   
   
@@ -1679,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-cobertura-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/matriz-cobertura-bateria/" class="md-nav__link">
         
   
   
@@ -1707,7 +1892,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-15-tools-mcp-v1/" class="md-nav__link">
+      <a href="../../evidence/baseline-metricas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/baseline-auditoria-gabarito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditoria baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/matriz-15-tools-mcp/" class="md-nav__link">
         
   
   
@@ -1756,6 +1997,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/context-schema.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema context.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/notas-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/relatorio-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatório expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1774,6 +2099,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -1943,6 +2272,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0004-politica-select-only-passo5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0004 SELECT-only passo 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0005 Maven produção
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Aceito"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2014,6 +2406,17 @@
                   
 
 
+  
+  
+    
+      
+    
+    <a href="https://github.com/joaopfduarte/text-to-sql-arch/raw/main/docs/implementacao/modulos-spring.md" title="Exibir fonte desta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
 
 <h1 id="modulos-spring">Módulos Spring<a class="headerlink" href="#modulos-spring" title="Permanent link">¶</a></h1>
 <div class="admonition info">
@@ -2022,17 +2425,99 @@
 <li><strong><a href="../../arquitetura/aplicacao/modelo-dominio/">Modelo de domínio</a></strong> — bounded contexts e agregados.</li>
 <li><strong><a href="../../arquitetura/aplicacao/visao-logica/">Visão lógica</a></strong> — camadas, fluxo operacional e zonas de rede.</li>
 <li><strong><a href="../ports-adapters/">Ports e adapters</a></strong> — portas hexagonais e adaptadores.</li>
+<li><strong><a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/">ADR-0005 Convenção Maven</a></strong> — decisão de <code>groupId</code>, pacote raiz e identity.</li>
 </ul>
 </div>
 <h3 id="stack-alvo">Stack alvo<a class="headerlink" href="#stack-alvo" title="Permanent link">¶</a></h3>
 <ul>
 <li>Java 25 (LTS).</li>
-<li>Spring Boot 3.x.</li>
+<li>Spring Boot 4.1.0.</li>
 <li>Spring AI com provedores <code>OpenAI</code> e <code>Google</code> (Gemini), via starters oficiais do ecossistema Spring AI.</li>
-<li>Spring MCP (componente para servidor MCP em Java; ver dependência específica disponível).</li>
-<li>Build com Maven ou Gradle (TBD).</li>
+<li>Spring MCP Server e Spring MCP Client (starters <code>spring-ai-mcp-server</code>, <code>spring-ai-mcp-client</code>).</li>
+<li>Build com <strong>Maven</strong> (geração base via <a href="https://start.spring.io">Spring Initializr</a>).</li>
 </ul>
-<h3 id="estrutura-de-pacotes-raiz-comtcctext2sql">Estrutura de pacotes (raiz <code>com.tcc.text2sql</code>)<a class="headerlink" href="#estrutura-de-pacotes-raiz-comtcctext2sql" title="Permanent link">¶</a></h3>
+<h3 id="coordenadas-maven-spring-initializr">Coordenadas Maven (Spring Initializr)<a class="headerlink" href="#coordenadas-maven-spring-initializr" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group</td>
+<td><code>br.com.text2sql</code></td>
+</tr>
+<tr>
+<td>Artifact</td>
+<td><code>api</code></td>
+</tr>
+<tr>
+<td>Name</td>
+<td><code>text2sql-api</code></td>
+</tr>
+<tr>
+<td>Package name</td>
+<td><code>br.com.text2sql.api</code></td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td>Jar</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Spring Boot</td>
+<td>4.1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Classe principal: <code>br.com.text2sql.api.Text2sqlApiApplication</code>.</p>
+<p>Dependências essenciais no Initializr (além do núcleo acima):</p>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Dependências (IDs Initializr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web</td>
+<td><code>web</code>, <code>spring-restclient</code></td>
+</tr>
+<tr>
+<td>SQL (experimento + identity)</td>
+<td><code>jdbc</code>, <code>data-jpa</code>, <code>postgresql</code>, <code>flyway</code></td>
+</tr>
+<tr>
+<td>Segurança</td>
+<td><code>security</code></td>
+</tr>
+<tr>
+<td>I/O</td>
+<td><code>validation</code></td>
+</tr>
+<tr>
+<td>Ops</td>
+<td><code>actuator</code></td>
+</tr>
+<tr>
+<td>Testes</td>
+<td><code>testcontainers</code></td>
+</tr>
+<tr>
+<td>AI</td>
+<td><code>spring-ai-mcp-server</code>, <code>spring-ai-mcp-client</code>, <code>spring-ai-openai</code>, <code>spring-ai-google-genai</code></td>
+</tr>
+</tbody>
+</table>
+<p>Dependências manuais no <code>pom.xml</code> (fora do Initializr): <code>calcite-core</code> (dialeto Hive), <code>hive-jdbc</code>
+(executor no cluster ODP).</p>
+<h3 id="estrutura-de-pacotes-raiz-brcomtext2sqlapi">Estrutura de pacotes (raiz <code>br.com.text2sql.api</code>)<a class="headerlink" href="#estrutura-de-pacotes-raiz-brcomtext2sqlapi" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -2043,43 +2528,77 @@
 </thead>
 <tbody>
 <tr>
-<td><code>com.tcc.text2sql.application</code></td>
+<td><code>br.com.text2sql.api.application</code></td>
 <td>Casos de uso: <code>DiscoverMetadataUseCase</code>, <code>GenerateSqlUseCase</code>, <code>ValidateAndExecuteUseCase</code>, <code>RecordRunUseCase</code>.</td>
 <td>Application</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.domain</code></td>
+<td><code>br.com.text2sql.api.domain</code></td>
 <td>Entidades, agregados, value objects, serviços de domínio (<code>StructuralAdherenceService</code>, <code>ToolBudgetPolicyService</code>, <code>TraceCompletenessService</code>).</td>
 <td>Domain</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.ports</code></td>
+<td><code>br.com.text2sql.api.ports</code></td>
 <td>Interfaces de entrada e saída (<code>MetadataLookupPort</code>, <code>SqlParsePort</code>, <code>SqlExecutionPort</code>, <code>RunEvidencePort</code>, <code>LlmCompletionPort</code>).</td>
 <td>Domain/Application</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.adapters.in</code></td>
+<td><code>br.com.text2sql.api.adapters.in</code></td>
 <td>Adaptadores de entrada: servidor MCP, REST do orquestrador. Subpacotes <code>.mcp</code> e <code>.rest</code>.</td>
 <td>Infrastructure</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.adapters.out</code></td>
+<td><code>br.com.text2sql.api.adapters.out</code></td>
 <td>Adaptadores de saída: Atlas, Apache Calcite (parse HiveQL), executor JDBC contra Hive, persistência de evidências (FS local ou S3). Subpacotes <code>.atlas</code>, <code>.calcite</code>, <code>.jdbc</code>, <code>.evidence</code>.</td>
 <td>Infrastructure</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.config</code></td>
+<td><code>br.com.text2sql.api.config</code></td>
 <td>Configurações Spring (<code>@Configuration</code>), beans, properties.</td>
 <td>Infrastructure</td>
 </tr>
 <tr>
-<td><code>com.tcc.text2sql.observability</code></td>
+<td><code>br.com.text2sql.api.observability</code></td>
 <td>Logs estruturados, métricas, exportação JSONL.</td>
 <td>Infrastructure</td>
 </tr>
 </tbody>
 </table>
+<h3 id="bounded-context-identity">Bounded context Identity<a class="headerlink" href="#bounded-context-identity" title="Permanent link">¶</a></h3>
+<p>Autenticação de operadores da API pública (<code>api.text2sql.com.br</code>). Persistência em <strong>PostgreSQL local</strong>,
+isolada da massa experimental Hive/Atlas. Pacotes sob <code>br.com.text2sql.api.identity</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Pacote</th>
+<th>Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>identity.domain</code></td>
+<td>Entidades <code>User</code>, <code>Role</code>; regras de credencial.</td>
+</tr>
+<tr>
+<td><code>identity.application</code></td>
+<td><code>AuthenticateUserUseCase</code>, <code>RegisterUserUseCase</code> (planejados).</td>
+</tr>
+<tr>
+<td><code>identity.ports</code></td>
+<td><code>AuthApiPort</code>, <code>UserRepositoryPort</code>.</td>
+</tr>
+<tr>
+<td><code>identity.adapters.in.rest</code></td>
+<td>Endpoints <code>/api/v1/auth/*</code>.</td>
+</tr>
+<tr>
+<td><code>identity.adapters.out.jpa</code></td>
+<td>Repositório JPA + Flyway (<code>users</code>, <code>user_roles</code>).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="mapeamento-bounded-context-modulos">Mapeamento bounded context → módulos<a class="headerlink" href="#mapeamento-bounded-context-modulos" title="Permanent link">¶</a></h3>
+<p>Caminhos <strong>relativos</strong> à raiz <code>br.com.text2sql.api</code>:</p>
 <table>
 <thead>
 <tr>
@@ -2108,8 +2627,40 @@
 <td><code>ExperimentTrackingContext</code></td>
 <td><code>application.tracking</code> + <code>adapters.out.evidence</code> + <code>observability</code></td>
 </tr>
+<tr>
+<td><code>IdentityContext</code></td>
+<td><code>identity.application</code> + <code>identity.adapters.out.jpa</code></td>
+</tr>
 </tbody>
 </table>
+<h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domínio público</td>
+<td><code>text2sql.com.br</code></td>
+</tr>
+<tr>
+<td>API REST</td>
+<td><code>https://api.text2sql.com.br</code></td>
+</tr>
+<tr>
+<td>Property sugerida</td>
+<td><code>app.public.base-url</code> = <code>https://api.text2sql.com.br</code></td>
+</tr>
+<tr>
+<td>CORS (frontend)</td>
+<td><code>https://text2sql.com.br</code>, <code>https://www.text2sql.com.br</code></td>
+</tr>
+</tbody>
+</table>
+<p>Configuração de proxy reverso (TLS, <code>X-Forwarded-*</code>) em <code>config</code>; ver <a href="../../infraestrutura/visao-aws/">Visão AWS</a>.</p>
 <h3 id="properties-principais-sugestao">Properties principais (sugestão)<a class="headerlink" href="#properties-principais-sugestao" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -2119,6 +2670,14 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>app.public.base-url</code></td>
+<td>URL pública da API (<code>https://api.text2sql.com.br</code>).</td>
+</tr>
+<tr>
+<td><code>app.public.allowed-origins</code></td>
+<td>Origens CORS permitidas para o frontend.</td>
+</tr>
 <tr>
 <td><code>app.mcp.tool-budget.default</code></td>
 <td>Orçamento padrão de chamadas de tool por sessão (valor de referência: <strong>10</strong>).</td>
@@ -2179,6 +2738,10 @@
 <td><code>app.run-id.template</code></td>
 <td>Template para geração de <code>runId</code>.</td>
 </tr>
+<tr>
+<td><code>spring.datasource.url</code></td>
+<td>JDBC PostgreSQL para identity (ex.: <code>jdbc:postgresql://localhost:5432/text2sql_identity</code>).</td>
+</tr>
 </tbody>
 </table>
 <h3 id="observacoes-de-organizacao">Observações de organização<a class="headerlink" href="#observacoes-de-organizacao" title="Permanent link">¶</a></h3>
@@ -2188,6 +2751,7 @@
 <li>Logs estruturados (JSONL) emitidos por <code>observability</code> com base em eventos do harness.</li>
 <li>A combinação <code>provider + model-version + datasetVersion + runId</code> deve ser gravada em <code>context.json</code> para reprodutibilidade.</li>
 <li>Hiperparâmetros de inferência e <code>promptVersion</code> seguem <a href="../../experimento/llm-inferencia-e-prompts/">Inferência e prompts</a>.</li>
+<li>PostgreSQL (identity) e Hive (experimento) são stores distintos; não compartilham esquema.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Recomendado para leitura posterior</p>
@@ -2292,7 +2856,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

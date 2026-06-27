@@ -7,6 +7,8 @@
       
       
       
+        <link rel="canonical" href="https://joaopfduarte.github.io/text-to-sql-arch/experimento/llm-inferencia-e-prompts/">
+      
       
         <link rel="prev" href="../protocolo-avaliacao/">
       
@@ -60,7 +62,20 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inferência e prompts - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="og:description" content="Hiperparâmetros LLM, templates de prompt e schema context.json.">
+<meta property="og:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/experimento/llm-inferencia-e-prompts.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://joaopfduarte.github.io/text-to-sql-arch/experimento/llm-inferencia-e-prompts/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Inferência e prompts - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="twitter:description" content="Hiperparâmetros LLM, templates de prompt e schema context.json.">
+<meta property="twitter:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/experimento/llm-inferencia-e-prompts.png">
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -211,6 +226,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -247,6 +274,18 @@
     </a>
     Home
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix="">
     
@@ -657,6 +696,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -672,8 +715,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dados/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -687,8 +731,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
@@ -811,6 +861,8 @@
     </li>
   
 
+              
+            
               
             
           </ul>
@@ -1151,6 +1203,8 @@
       
         
       
+        
+      
     
     
     
@@ -1195,6 +1249,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pacote-experimental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacote experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1479,6 +1561,8 @@
       
         
       
+        
+      
     
     
     
@@ -1561,6 +1645,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../pesquisa/migracao-diagramas-tikz-plantuml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migração diagramas TikZ/PlantUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pesquisa/roadmap/" class="md-nav__link">
         
   
@@ -1600,6 +1712,18 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1673,7 +1797,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/gabarito-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/bateria-40-perguntas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bateria de 40 perguntas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/gabarito-bateria/" class="md-nav__link">
         
   
   
@@ -1701,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-cobertura-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/matriz-cobertura-bateria/" class="md-nav__link">
         
   
   
@@ -1729,7 +1881,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-15-tools-mcp-v1/" class="md-nav__link">
+      <a href="../../evidence/baseline-metricas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/baseline-auditoria-gabarito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditoria baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/matriz-15-tools-mcp/" class="md-nav__link">
         
   
   
@@ -1778,6 +1986,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/context-schema.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema context.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/notas-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/relatorio-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatório expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1796,6 +2088,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -1965,6 +2261,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0004-politica-select-only-passo5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0004 SELECT-only passo 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0005 Maven produção
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Aceito"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2015,7 +2374,7 @@
     
     
       <li class="md-path__item">
-        <a href="../protocolo-avaliacao/" class="md-path__link">
+        <a href="../pacote-experimental/" class="md-path__link">
           
   <span class="md-ellipsis">
     Experimento e avaliação
@@ -2054,6 +2413,17 @@
   </nav>
 
 
+  
+  
+    
+      
+    
+    <a href="https://github.com/joaopfduarte/text-to-sql-arch/raw/main/docs/experimento/llm-inferencia-e-prompts.md" title="Exibir fonte desta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
 
 <h1 id="inferencia-llm-e-prompts-experimentais">Inferência LLM e prompts experimentais<a class="headerlink" href="#inferencia-llm-e-prompts-experimentais" title="Permanent link">¶</a></h1>
 <div class="admonition info">
@@ -2063,7 +2433,7 @@
 <li><strong><a href="../runbook-reprodutibilidade/">Runbook de reprodutibilidade</a></strong> — passos para repetir uma corrida com evidências.</li>
 <li><strong><a href="../../implementacao/modulos-spring/">Módulos Spring</a></strong> — estrutura de projetos e dependências.</li>
 <li><strong><a href="../../templates/prompts/prompts-manifest-v1.json">Manifesto de prompts v1</a></strong> — versões dos artefatos de prompt.</li>
-<li><strong><a href="../../evidence/context-schema-v1.json">Schema <code>context.json</code></a></strong> — campos obrigatórios por corrida.</li>
+<li><strong><a href="../../evidence/context-schema.json">Schema <code>context.json</code></a></strong> — campos obrigatórios por corrida.</li>
 </ul>
 </div>
 <h3 id="politica-de-inferencia-v1">Política de inferência v1<a class="headerlink" href="#politica-de-inferencia-v1" title="Permanent link">¶</a></h3>
@@ -2220,11 +2590,11 @@
    <code>context.json</code> de <strong>cada</strong> corrida.</li>
 </ol>
 <h3 id="schema-contextjson">Schema <code>context.json</code><a class="headerlink" href="#schema-contextjson" title="Permanent link">¶</a></h3>
-<p>Canônico: <a href="../../evidence/context-schema-v1.json">Schema context.json v1</a>.</p>
+<p>Canônico: <a href="../../evidence/context-schema.json">Schema do contexto</a>.</p>
 <p>Exemplos:</p>
 <ul>
-<li>Baseline: <a href="../../evidence/examples/context-baseline-v1.example.json">Exemplo context baseline v1</a></li>
-<li>MCP: <a href="../../evidence/examples/context-mcp-v1.example.json">Exemplo context MCP v1</a></li>
+<li>Baseline: <a href="../../evidence/examples/context-baseline.example.json">Exemplo context baseline</a></li>
+<li>MCP: <a href="../../evidence/examples/context-mcp.example.json">Exemplo context MCP</a></li>
 </ul>
 <h3 id="mapeamento-spring-ai">Mapeamento Spring AI<a class="headerlink" href="#mapeamento-spring-ai" title="Permanent link">¶</a></h3>
 <table>
@@ -2402,7 +2772,7 @@ modelo.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

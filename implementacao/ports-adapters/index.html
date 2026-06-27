@@ -7,11 +7,13 @@
       
       
       
+        <link rel="canonical" href="https://joaopfduarte.github.io/text-to-sql-arch/implementacao/ports-adapters/">
+      
       
         <link rel="prev" href="../modulos-spring/">
       
       
-        <link rel="next" href="../../experimento/protocolo-avaliacao/">
+        <link rel="next" href="../../experimento/pacote-experimental/">
       
       
         
@@ -60,7 +62,20 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ports e adapters - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="og:description" content="Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas">
+<meta property="og:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/implementacao/ports-adapters.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://joaopfduarte.github.io/text-to-sql-arch/implementacao/ports-adapters/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Ports e adapters - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="twitter:description" content="Interfaces Conversacionais Confiáveis — arquitetura e engenharia Text-to-SQL com MCP e Apache Atlas">
+<meta property="twitter:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/implementacao/ports-adapters.png">
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -211,6 +226,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -247,6 +274,18 @@
     </a>
     Home
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix="">
     
@@ -657,6 +696,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -672,8 +715,9 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dados/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -687,8 +731,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
@@ -811,6 +861,8 @@
     </li>
   
 
+              
+            
               
             
           </ul>
@@ -1197,6 +1249,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#portas-identity-planejadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portas Identity (planejadas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#decisoes-de-implementacao" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1242,6 +1305,8 @@
   
     
     
+      
+        
       
         
       
@@ -1297,6 +1362,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experimento/pacote-experimental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacote experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1457,6 +1550,8 @@
       
         
       
+        
+      
     
     
     
@@ -1539,6 +1634,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../pesquisa/migracao-diagramas-tikz-plantuml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migração diagramas TikZ/PlantUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pesquisa/roadmap/" class="md-nav__link">
         
   
@@ -1578,6 +1701,18 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1651,7 +1786,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/gabarito-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/bateria-40-perguntas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bateria de 40 perguntas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/gabarito-bateria/" class="md-nav__link">
         
   
   
@@ -1679,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-cobertura-bateria-v1/" class="md-nav__link">
+      <a href="../../evidence/matriz-cobertura-bateria/" class="md-nav__link">
         
   
   
@@ -1707,7 +1870,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evidence/matriz-15-tools-mcp-v1/" class="md-nav__link">
+      <a href="../../evidence/baseline-metricas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/baseline-auditoria-gabarito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditoria baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/matriz-15-tools-mcp/" class="md-nav__link">
         
   
   
@@ -1756,6 +1975,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/context-schema.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema context.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/notas-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evidence/relatorio-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatório expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1774,6 +2077,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -1943,6 +2250,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0004-politica-select-only-passo5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0004 SELECT-only passo 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0005 Maven produção
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Aceito"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2014,6 +2384,17 @@
                   
 
 
+  
+  
+    
+      
+    
+    <a href="https://github.com/joaopfduarte/text-to-sql-arch/raw/main/docs/implementacao/ports-adapters.md" title="Exibir fonte desta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
+
 
 <h1 id="portas-e-adaptadores-hexagonal">Portas e adaptadores (hexagonal)<a class="headerlink" href="#portas-e-adaptadores-hexagonal" title="Permanent link">¶</a></h1>
 <div class="admonition info">
@@ -2026,9 +2407,10 @@
 </div>
 <h3 id="convencao">Convenção<a class="headerlink" href="#convencao" title="Permanent link">¶</a></h3>
 <ul>
-<li>Portas vivem em <code>com.tcc.text2sql.ports</code>.</li>
+<li>Portas vivem em <code>br.com.text2sql.api.ports</code> (raiz e subpacotes: ver <a href="../modulos-spring/">Módulos Spring</a>).</li>
 <li>Cada porta é uma interface mínima (ISP).</li>
-<li>Adaptadores concretos implementam uma porta cada (SRP) e residem em <code>adapters.in</code> ou <code>adapters.out</code>.</li>
+<li>Adaptadores concretos implementam uma porta cada (SRP) e residem em <code>adapters.in</code> ou <code>adapters.out</code>
+  sob <code>br.com.text2sql.api</code>.</li>
 <li>Adaptadores nunca dependem uns dos outros; podem depender de bibliotecas externas e da porta correspondente.</li>
 </ul>
 <h3 id="portas-de-entrada-driven-by-external">Portas de entrada (driven by external)<a class="headerlink" href="#portas-de-entrada-driven-by-external" title="Permanent link">¶</a></h3>
@@ -2043,12 +2425,12 @@
 <tbody>
 <tr>
 <td><code>OrchestratorApiPort</code></td>
-<td><code>RestOrchestratorAdapter</code> (<code>adapters.in.rest</code>)</td>
+<td><code>RestOrchestratorAdapter</code> (<code>br.com.text2sql.api.adapters.in.rest</code>)</td>
 <td>Cliente HTTP do avaliador.</td>
 </tr>
 <tr>
 <td><code>McpToolGatewayPort</code></td>
-<td><code>SpringMcpServerAdapter</code> (<code>adapters.in.mcp</code>)</td>
+<td><code>SpringMcpServerAdapter</code> (<code>br.com.text2sql.api.adapters.in.mcp</code>)</td>
 <td>Servidor MCP exposto ao agente LLM.</td>
 </tr>
 </tbody>
@@ -2097,6 +2479,29 @@
 <td><code>MetricsSinkPort</code></td>
 <td><code>JsonlMetricsAdapter</code> (<code>observability</code>)</td>
 <td>Arquivo <code>metrics.json</code> por corrida.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="portas-identity-planejadas">Portas Identity (planejadas)<a class="headerlink" href="#portas-identity-planejadas" title="Permanent link">¶</a></h3>
+<p>Bounded context <code>identity</code>; pacotes sob <code>br.com.text2sql.api.identity</code> (ver <a href="../../adr/ADR-0005-convencao-maven-pacotes-producao/">ADR-0005</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Porta</th>
+<th>Adaptador concreto</th>
+<th>Sistema externo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AuthApiPort</code></td>
+<td><code>RestAuthAdapter</code> (<code>identity.adapters.in.rest</code>)</td>
+<td>Cliente HTTP de login/registro.</td>
+</tr>
+<tr>
+<td><code>UserRepositoryPort</code></td>
+<td><code>JpaUserRepositoryAdapter</code> (<code>identity.adapters.out.jpa</code>)</td>
+<td>PostgreSQL (Spring Data JPA).</td>
 </tr>
 </tbody>
 </table>
@@ -2196,13 +2601,13 @@
         
         
           
-          <a href="../../experimento/protocolo-avaliacao/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Protocolo">
+          <a href="../../experimento/pacote-experimental/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Pacote experimental">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Protocolo
+                Pacote experimental
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2241,7 +2646,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

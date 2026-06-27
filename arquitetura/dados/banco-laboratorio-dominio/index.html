@@ -3,9 +3,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Domínios genéricos, entidades-âncora e FKs do schema laboratorial.">
+        <meta name="description" content="Domínios de negócio, entidades-âncora e FKs do schema base_laboratorial.">
       
       
+      
+        <link rel="canonical" href="https://joaopfduarte.github.io/text-to-sql-arch/arquitetura/dados/banco-laboratorio-dominio/">
       
       
         <link rel="prev" href="../../aplicacao/modelo-dominio/">
@@ -60,7 +62,20 @@
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="Banco laboratorial - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="og:description" content="Domínios de negócio, entidades-âncora e FKs do schema base_laboratorial.">
+<meta property="og:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/arquitetura/dados/banco-laboratorio-dominio.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://joaopfduarte.github.io/text-to-sql-arch/arquitetura/dados/banco-laboratorio-dominio/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Banco laboratorial - Arquitetura MCP para Text-to-SQL Orientado a Metadados">
+<meta property="twitter:description" content="Domínios de negócio, entidades-âncora e FKs do schema base_laboratorial.">
+<meta property="twitter:image" content="https://joaopfduarte.github.io/text-to-sql-arch/assets/images/social/arquitetura/dados/banco-laboratorio-dominio.png">
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -89,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#banco-de-dominio-laboratorial" class="md-skip">
+        <a href="#banco-de-dominio-laboratorio-mysql-8" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -211,6 +226,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -247,6 +274,18 @@
     </a>
     Home
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaopfduarte/text-to-sql-arch" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    joaopfduarte/text-to-sql-arch
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix="">
     
@@ -659,6 +698,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -672,8 +715,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked="">
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../dados/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -687,8 +731,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
@@ -768,21 +818,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#convencao-de-nomenclatura" class="md-nav__link">
+  <a href="#identificador-canonico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Convenção de nomenclatura
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estatisticas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Estatísticas
+        Identificador canônico
       
     </span>
   </a>
@@ -801,10 +840,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fks-confirmadas-amostra-mvp" class="md-nav__link">
+  <a href="#fks-confirmadas-amostra-da-bateria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FKs confirmadas (amostra MVP)
+        FKs confirmadas (amostra da bateria)
       
     </span>
   </a>
@@ -924,6 +963,8 @@
     </li>
   
 
+              
+            
               
             
           </ul>
@@ -1262,6 +1303,8 @@
       
         
       
+        
+      
     
     
     
@@ -1308,6 +1351,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../experimento/pacote-experimental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pacote experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1468,6 +1539,8 @@
       
         
       
+        
+      
     
     
     
@@ -1550,6 +1623,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../pesquisa/migracao-diagramas-tikz-plantuml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migração diagramas TikZ/PlantUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../pesquisa/roadmap/" class="md-nav__link">
         
   
@@ -1589,6 +1690,18 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1662,7 +1775,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../evidence/gabarito-bateria-v1/" class="md-nav__link">
+      <a href="../../../evidence/bateria-40-perguntas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bateria de 40 perguntas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/gabarito-bateria/" class="md-nav__link">
         
   
   
@@ -1690,7 +1831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../evidence/matriz-cobertura-bateria-v1/" class="md-nav__link">
+      <a href="../../../evidence/matriz-cobertura-bateria/" class="md-nav__link">
         
   
   
@@ -1718,7 +1859,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../evidence/matriz-15-tools-mcp-v1/" class="md-nav__link">
+      <a href="../../../evidence/baseline-metricas.csv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/baseline-auditoria-gabarito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditoria baseline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/matriz-15-tools-mcp/" class="md-nav__link">
         
   
   
@@ -1767,6 +1964,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/context-schema.json" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema context.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/notas-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidence/relatorio-expansao-q31-q40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatório expansão Q31–Q40
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1785,6 +2066,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -1954,6 +2239,69 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/ADR-0004-politica-select-only-passo5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0004 SELECT-only passo 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adr/ADR-0005-convencao-maven-pacotes-producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-0005 Maven produção
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Aceito"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2054,20 +2402,27 @@
   </nav>
 
 
+  
+  
+    
+      
+    
+    <a href="https://github.com/joaopfduarte/text-to-sql-arch/raw/main/docs/arquitetura/dados/banco-laboratorio-dominio.md" title="Exibir fonte desta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+    </a>
+  
 
-<h1 id="banco-de-dominio-laboratorial">Banco de domínio laboratorial<a class="headerlink" href="#banco-de-dominio-laboratorial" title="Permanent link">¶</a></h1>
+
+<h1 id="banco-de-dominio-laboratorio-mysql-8">Banco de domínio laboratório (MySQL 8+)<a class="headerlink" href="#banco-de-dominio-laboratorio-mysql-8" title="Permanent link">¶</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Recomendado para leitura prévia</p>
 <ul>
-<li><strong><a href="../schema-massa-teste/">Schema massa de teste</a></strong> — inventário das 92 entidades.</li>
+<li><strong><a href="../schema-massa-teste/">Schema massa de teste</a></strong> — inventário completo derivado do dump MySQL.</li>
+<li><strong><a href="../../../experimento/pacote-experimental/">Pacote experimental</a></strong> — reprodução local do experimento.</li>
 </ul>
 </div>
-<h3 id="convencao-de-nomenclatura">Convenção de nomenclatura<a class="headerlink" href="#convencao-de-nomenclatura" title="Permanent link">¶</a></h3>
-<ul>
-<li>Tabelas: <code>tbl_&lt;8 hex&gt;</code></li>
-<li>Colunas: <code>col_&lt;8 hex&gt;</code></li>
-</ul>
-<h3 id="estatisticas">Estatísticas<a class="headerlink" href="#estatisticas" title="Permanent link">¶</a></h3>
+<h3 id="identificador-canonico">Identificador canônico<a class="headerlink" href="#identificador-canonico" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -2077,179 +2432,165 @@
 </thead>
 <tbody>
 <tr>
-<td>Entidades no índice</td>
-<td>92</td>
+<td>SGBD reprodutível</td>
+<td>MySQL <strong>8+</strong></td>
 </tr>
 <tr>
-<td>Schema Hive/MySQL</td>
-<td><code>schema_laboratorio</code> / <code>massa_teste_laboratorio</code></td>
+<td>Schema</td>
+<td><strong><code>base_laboratorial</code></strong></td>
+</tr>
+<tr>
+<td>Dump versionado</td>
+<td><a href="../../../dados/base_laboratorial.sql">Dump MySQL base_laboratorial</a></td>
+</tr>
+<tr>
+<td>Entidades no inventário</td>
+<td>ver <a href="../schema-massa-teste/">Schema massa de teste</a></td>
 </tr>
 </tbody>
 </table>
+<p>A carga Hive/Atlas no cluster laboratorial consome a mesma massa; o artefacto copiável para replicação
+local é o arquivo MySQL em <a href="../../../dados/">Instruções de importação MySQL</a>.</p>
 <h3 id="dominios-identificados">Domínios identificados<a class="headerlink" href="#dominios-identificados" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Domínio genérico</th>
+<th>Domínio</th>
 <th>Entidades representativas</th>
 <th>Uso na pesquisa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>apoio operacional</td>
-<td><code>tbl_5e464b14</code>, <code>tbl_cef676c5</code>, <code>tbl_bb1c74b7</code>, <code>tbl_a63ac3ee</code>, <code>tbl_bd19ace7</code>, <code>tbl_0b894724</code>, …</td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
-<td>controle de migração</td>
-<td><code>tbl_d1cb73f6</code>, <code>tbl_b7dfbbcb</code></td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
 <td>domínio comercial principal</td>
-<td><code>tbl_162cf7be</code>, <code>tbl_93460c22</code>, <code>tbl_54c1256a</code>, <code>tbl_254c881e</code>, <code>tbl_4c8d7ae5</code>, <code>tbl_05dc6f7a</code>, …</td>
-<td>MVP</td>
-</tr>
-<tr>
-<td>domínio de acesso e auditoria</td>
-<td><code>tbl_d1556a76</code>, <code>tbl_a4806350</code>, <code>tbl_a707320d</code>, <code>tbl_c127eea9</code>, <code>tbl_54cf92bb</code></td>
-<td>Fora do MVP ou ruído</td>
+<td><code>franquias</code>, <code>franquias__unidades</code>, <code>franquias__segmentos</code>, <code>franquias__redes_franquia</code>, …</td>
+<td>Franquias, redes, segmentos (Q01–Q05)</td>
 </tr>
 <tr>
 <td>domínio de catálogo</td>
-<td><code>tbl_f0944b44</code>, <code>tbl_ea9d95de</code>, <code>tbl_891b1fc9</code>, <code>tbl_feb88f1f</code>, <code>tbl_97a28ae4</code>, <code>tbl_ed8b2873</code>, …</td>
-<td>MVP</td>
-</tr>
-<tr>
-<td>domínio de conectores</td>
-<td><code>tbl_9b02bb2c</code>, <code>tbl_d94d1042</code>, <code>tbl_508411b3</code></td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
-<td>domínio de conteúdo externo</td>
-<td><code>tbl_4e5786c9</code>, <code>tbl_03f58275</code>, <code>tbl_ed7e8f08</code>, <code>tbl_0f03f20e</code>, <code>tbl_9705264a</code>, <code>tbl_06d78b0c</code>, …</td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
-<td>domínio de identidade</td>
-<td><code>tbl_f193a446</code>, <code>tbl_ae0a73d5</code></td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
-<td>domínio de mídia</td>
-<td><code>tbl_d58bb5a4</code>, <code>tbl_cca22dd2</code>, <code>tbl_a6e2174e</code>, <code>tbl_c311310d</code>, <code>tbl_69fab9c0</code>, <code>tbl_0bd3e50a</code>, …</td>
-<td>Fora do MVP ou ruído</td>
-</tr>
-<tr>
-<td>domínio financeiro</td>
-<td><code>tbl_6cf5e405</code>, <code>tbl_6cc6cc99</code>, <code>tbl_c066178a</code>, <code>tbl_6b881dfd</code>, <code>tbl_365b81cc</code>, <code>tbl_63f841a0</code></td>
-<td>MVP</td>
-</tr>
-<tr>
-<td>domínio geográfico de referência</td>
-<td><code>tbl_23a8dee5</code>, <code>tbl_f64a1c03</code>, <code>tbl_2c1fc4f7</code>, <code>tbl_0c30d74e</code>, <code>tbl_bd01b86d</code>, <code>tbl_c6092460</code>, …</td>
-<td>MVP</td>
+<td><code>product</code>, <code>product_type</code>, <code>product_group</code>, <code>portfolio</code>, <code>competence</code>, …</td>
+<td>Produtos e tipos (Q02, Q11, Q19)</td>
 </tr>
 <tr>
 <td>domínio operacional de entregas</td>
-<td><code>tbl_363ae7e9</code>, <code>tbl_b8f84c29</code>, <code>tbl_fb0188bb</code>, <code>tbl_3a2c56ff</code>, <code>tbl_73f0363b</code>, <code>tbl_6696932f</code>, …</td>
-<td>MVP</td>
+<td><code>project</code>, <code>project_item</code>, <code>project_payment</code>, <code>project_render</code>, <code>project_render_item</code>, <code>timeline_event</code>, …</td>
+<td>Projetos, renders, timeline (Q03–Q07, Q11–Q13, Q27–Q40)</td>
+</tr>
+<tr>
+<td>domínio financeiro</td>
+<td><code>transaction</code>, <code>transaction_coupon</code>, <code>subscriptions</code>, <code>subscription_plans</code></td>
+<td>Pagamentos e assinaturas (Q08, Q14–Q18, Q20, Q37–Q38)</td>
+</tr>
+<tr>
+<td>domínio geográfico de referência</td>
+<td><code>ibge__uf</code>, <code>ibge__city</code>, <code>ibge__name</code>, …</td>
+<td>UF, cidades, regiões (Q09–Q10, Q15, Q30–Q32)</td>
+</tr>
+<tr>
+<td>domínio de mídia</td>
+<td><code>asset_category</code>, <code>asset_item</code>, <code>asset_voice_voiceover</code>, …</td>
+<td>Ativos e categorias (Q21–Q23)</td>
+</tr>
+<tr>
+<td>domínio de identidade</td>
+<td><code>person</code>, <code>person_references</code></td>
+<td>Clientes, freelancers, patrocinadores (Q11, Q15–Q18, Q31–Q40)</td>
+</tr>
+<tr>
+<td>domínio de acesso e auditoria</td>
+<td><code>user</code>, <code>authority</code>, <code>user_authority</code>, <code>persistent_audit_event</code>, …</td>
+<td>Permissões (Q24–Q26)</td>
+</tr>
+<tr>
+<td>domínio de conteúdo externo</td>
+<td><code>publications</code>, <code>publications_user</code>, <code>publications_source</code>, …</td>
+<td>Publicações e solicitações (Q27–Q29, Q35–Q36)</td>
+</tr>
+<tr>
+<td>domínio de conectores</td>
+<td><code>openai_assistants</code>, <code>openai_conclusions</code>, <code>notification_whatsapp</code></td>
+<td>Integrações externas</td>
+</tr>
+<tr>
+<td>controle de migração</td>
+<td><code>DATABASECHANGELOG</code>, <code>DATABASECHANGELOGLOCK</code></td>
+<td>Liquibase</td>
+</tr>
+<tr>
+<td>apoio operacional</td>
+<td><code>config_params</code>, <code>page_faq</code>, <code>schedule</code>, <code>question</code>, …</td>
+<td>Configuração e auxiliares</td>
 </tr>
 <tr>
 <td>tags e classificação</td>
-<td><code>tbl_7933f344</code></td>
-<td>Fora do MVP ou ruído</td>
+<td><code>tag</code>, <code>rel_product_type__tags</code></td>
+<td>Classificação transversal</td>
 </tr>
 </tbody>
 </table>
-<h3 id="fks-confirmadas-amostra-mvp">FKs confirmadas (amostra MVP)<a class="headerlink" href="#fks-confirmadas-amostra-mvp" title="Permanent link">¶</a></h3>
+<h3 id="fks-confirmadas-amostra-da-bateria">FKs confirmadas (amostra da bateria)<a class="headerlink" href="#fks-confirmadas-amostra-da-bateria" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
 <th>Origem</th>
 <th>Destino</th>
-<th>Restrição</th>
+<th>Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>tbl_162cf7be.col_2cd9416d</code></td>
-<td><code>tbl_8991e9dc.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>franquias.segmento_id</code></td>
+<td><code>franquias__segmentos.id</code></td>
+<td>Q05</td>
 </tr>
 <tr>
-<td><code>tbl_162cf7be.col_1d3e13bf</code></td>
-<td><code>tbl_4c8d7ae5.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>franquias.rede_id</code></td>
+<td><code>franquias__redes_franquia.id</code></td>
+<td>Q04, Q05</td>
 </tr>
 <tr>
-<td><code>tbl_93460c22.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>franquias__unidades.franquia_id</code></td>
+<td><code>franquias.id</code></td>
+<td>Q01</td>
 </tr>
 <tr>
-<td><code>tbl_54c1256a.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>product.product_type_id</code></td>
+<td><code>product_type.id</code></td>
+<td>Q02, Q19</td>
 </tr>
 <tr>
-<td><code>tbl_254c881e.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>project_payment.project_id</code></td>
+<td><code>project.id</code></td>
+<td>Q03, Q06, Q13</td>
 </tr>
 <tr>
-<td><code>tbl_05dc6f7a.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>project_item.project_id</code></td>
+<td><code>project.id</code></td>
+<td>Q11, Q16, Q19</td>
 </tr>
 <tr>
-<td><code>tbl_fada6213.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>transaction.person_id</code></td>
+<td><code>person.id</code></td>
+<td>Q15, Q18</td>
 </tr>
 <tr>
-<td><code>tbl_40b45933.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>project_render_item.render_project_id</code></td>
+<td><code>project_render.id</code></td>
+<td>Q27–Q40</td>
 </tr>
 <tr>
-<td><code>tbl_973ec6fa.col_0bee3ba9</code></td>
-<td><code>tbl_162cf7be.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>publications_user.project_render_item_id</code></td>
+<td><code>project_render_item.id</code></td>
+<td>Q27–Q29, Q35–Q36</td>
 </tr>
 <tr>
-<td><code>tbl_2c1fc4f7.col_7e317139</code></td>
-<td><code>tbl_c78eb7ee.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
-</tr>
-<tr>
-<td><code>tbl_9b02bb2c.col_3e19be2e</code></td>
-<td><code>tbl_f193a446.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
-</tr>
-<tr>
-<td><code>tbl_f193a446.col_35f9c31c</code></td>
-<td><code>tbl_f193a446.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
-</tr>
-<tr>
-<td><code>tbl_ae0a73d5.col_3e19be2e</code></td>
-<td><code>tbl_f193a446.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
-</tr>
-<tr>
-<td><code>tbl_f0944b44.col_3e19be2e</code></td>
-<td><code>tbl_f193a446.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
-</tr>
-<tr>
-<td><code>tbl_891b1fc9.col_b80b7e90</code></td>
-<td><code>tbl_ed8b2873.col_d7247819</code></td>
-<td>documentado em schema-massa-teste</td>
+<td><code>user_authority.authority_name</code></td>
+<td><code>authority.name</code></td>
+<td>Q24, Q26</td>
 </tr>
 </tbody>
 </table>
+<p>Lista completa de constraints: dump MySQL em <a href="../../../dados/base_laboratorial.sql">Dump MySQL base_laboratorial</a>.</p>
 <h3 id="entidades-ancora-para-text-to-sql">Entidades-âncora para Text-to-SQL<a class="headerlink" href="#entidades-ancora-para-text-to-sql" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -2260,39 +2601,44 @@
 </thead>
 <tbody>
 <tr>
-<td><code>tbl_162cf7be</code></td>
-<td>Junções centrais do domínio comercial principal.</td>
+<td><code>franquias</code></td>
+<td>Junções centrais do domínio comercial (Q01–Q05).</td>
 </tr>
 <tr>
-<td><code>tbl_363ae7e9</code></td>
-<td>Enum e cadeias longas no domínio operacional.</td>
+<td><code>project</code></td>
+<td>Núcleo operacional de entregas e pagamentos (Q03–Q07, Q11–Q13).</td>
 </tr>
 <tr>
-<td><code>tbl_c066178a</code></td>
-<td>Agregações no domínio financeiro.</td>
+<td><code>project_render_item</code></td>
+<td>Pedidos de vídeo e metadados JSON (Q27–Q40).</td>
 </tr>
 <tr>
-<td><code>tbl_f193a446</code></td>
-<td>Pivô do domínio de identidade.</td>
+<td><code>transaction</code></td>
+<td>Movimentação financeira e filtros temporais (Q08, Q14–Q18).</td>
 </tr>
 <tr>
-<td><code>tbl_891b1fc9</code></td>
-<td>Junções no domínio de catálogo.</td>
+<td><code>person</code></td>
+<td>Identidade, geografia e hierarquia sponsor (Q11, Q15–Q18, Q31–Q40).</td>
 </tr>
 <tr>
-<td><code>tbl_2c1fc4f7</code></td>
-<td>Junção geográfica auxiliar.</td>
+<td><code>asset_category</code></td>
+<td>Hierarquia de categorias de mídia (Q21–Q26).</td>
+</tr>
+<tr>
+<td><code>product</code> / <code>product_type</code></td>
+<td>Catálogo e tipos (Q02, Q19).</td>
 </tr>
 </tbody>
 </table>
 <h3 id="restricoes">Restrições<a class="headerlink" href="#restricoes" title="Permanent link">¶</a></h3>
 <ul>
-<li>Não publicar nomes físicos de tabelas ou colunas.</li>
-<li>Não incluir PII na massa publicada sem mascaramento.</li>
+<li>PII institucional não é publicada na documentação entregável.</li>
+<li>Colunas semiestruturadas <code>json_data</code> e <code>data_source</code> em <code>project_render_item</code>: ver
+  <a href="../../../evidence/json_data-data_source-schema-notes/">json_data e data_source</a>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Recomendado para leitura posterior</p>
-<p>Seguinte: <strong><a href="../carga-cluster-laboratorio/">Carga no cluster</a></strong> — pipeline de ingestão da massa <code>massa_teste_laboratorio</code>.</p>
+<p>Seguinte: <strong><a href="../carga-cluster-laboratorio/">Carga no cluster</a></strong> — pipeline de ingestão no Hive/Atlas.</p>
 </div>
 
 
@@ -2396,7 +2742,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.path", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.view"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
