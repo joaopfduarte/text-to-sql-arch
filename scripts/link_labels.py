@@ -46,8 +46,6 @@ PAGE_TITLES: dict[str, str] = {
     "evidence/matriz-15-tools-mcp.md": "Matriz de 15 tools MCP",
     "evidence/inventario-atlas-api-para-mcp.md": "Inventário Atlas API",
     "evidence/context-schema.json": "Schema do contexto",
-    "evidence/notas-expansao-q31-q40.md": "Notas de expansão Q31–Q40",
-    "evidence/relatorio-expansao-q31-q40.md": "Relatório de expansão Q31–Q40",
     "evidence/json_data-data_source-schema-notes.md": "Notas json_data e data_source",
     "evidence/examples/context-baseline.example.json": "Exemplo context baseline",
     "evidence/examples/context-mcp.example.json": "Exemplo context MCP",

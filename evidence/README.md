@@ -37,9 +37,7 @@ exclusivas do autor»).
 | [Matriz de cobertura da bateria](matriz-cobertura-bateria.md) | Cobertura cenário × dificuldade × tabelas (40 perguntas) |
 | [Métricas baseline](baseline-metricas.csv) | Métricas da campanha `baseline-static`: 40 perguntas × 2 modelos
 (`gemini-3.5-flash`, `gemini-3.1-pro`); mapa $g_i$ em [Auditoria baseline](baseline-auditoria-gabarito.md) |
-| [Notas de expansão Q31–Q40](notas-expansao-q31-q40.md) | Documento de trabalho: padrão canônico, exploração e matriz de desenho de Q31–Q40 |
 | [json\_data e data\_source](json_data-data_source-schema-notes.md) | Schema e conteúdo das colunas semiestruturadas usadas em Q31–Q40 |
-| [Relatório de expansão Q31–Q40](relatorio-expansao-q31-q40.md) | Entrega da expansão da bateria para 40 perguntas: matriz, decisões, limitações e compilação |
 
 Esquema estático do comparativo simples: [Schema massa de teste](../arquitetura/dados/schema-massa-teste.md)
 e [Pacote experimental](../experimento/pacote-experimental.md).

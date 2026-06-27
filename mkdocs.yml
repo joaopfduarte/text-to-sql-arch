@@ -158,8 +158,6 @@ nav:
     - Matriz 15 tools MCP: evidence/matriz-15-tools-mcp.md
     - Inventário Atlas API: evidence/inventario-atlas-api-para-mcp.md
     - Schema context.json: evidence/context-schema.json
-    - Notas expansão Q31–Q40: evidence/notas-expansao-q31-q40.md
-    - Relatório expansão Q31–Q40: evidence/relatorio-expansao-q31-q40.md
   - ADRs:
     - Índice: adr/README.md
     - ADR-0001 Fundação: adr/ADR-0001-fundacao-arquitetural.md
